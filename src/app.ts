@@ -7,7 +7,7 @@ import path from 'path';
 import config from "config";
 import log from "./logger";
 import connect from "./db/connect";
-import route from "./routes";
+import route from "./route/index.route";
 
 class App {
   private app: express.Application;
@@ -44,6 +44,8 @@ class App {
     this.app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
     // For api config
     this.app.get('/ping', this.ping);
+    // Configure route
+    this.app.use(route);
   }
 
   private cors = () => {

@@ -1,10 +1,11 @@
 import { Router } from 'express';
 const router = Router();
+import { AuthController } from '../controller/auth.controller'
 
 
-router.post('/ping2', (req, res) => {
-    return res.status(200).json({ message: "ping response" });
-});
-
+router.post('otp/generate', AuthController.generateOTP)
+router.post('otp/verify', AuthController.verifyOTP)
+router.post('register', AuthController.register)
+router.post('/login', AuthController.login)
 
 export default router;
