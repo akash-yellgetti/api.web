@@ -1,0 +1,7 @@
+dist
+node_modules
+momentaUtilities
+.vs
+.vscode
+package-lock.json
+.idea
