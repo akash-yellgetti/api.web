@@ -16,6 +16,7 @@ class App {
   constructor() {
     this.app = express();
     this.listen();
+    this.processError();
     this.initialize();
     this.cors();
   }
@@ -65,10 +66,44 @@ class App {
   private ping = (req: any, res: any) => {
     const result = {
       project: 'Welcome to Momenta ' + config.get("program"),
+      mode : config.get("mode"),
       dateTime: new Date(new Date().toUTCString()),
       version: config.get("version"),
     };
     return res.status(200).json(result);
+  }
+
+  private processError = () => {
+    this.app.use((err: any, req: any, res: any, next: any) => {
+      if (err instanceof Error) {
+        log.error(JSON.stringify({ level: 'error', message: `${err.stack || err}` }));
+      } else {
+        log.error(JSON.stringify({ level: 'error', message: err }));
+      }
+      return res.json(err).status(err.status || 500);
+    });
+    const infoObject: any = {
+      type: 'server',
+      program: config.get("program"),
+      mode: config.get("mode"),
+      timestamp: new Date(),
+    };
+    process
+      .on('unhandledRejection', (reason: any, p) => {
+        infoObject.message = 'Promise unhandled rejection';
+        infoObject.data = JSON.stringify({
+          p,
+          reason: reason.stack || reason,
+        });
+        log.info(infoObject);
+      })
+      .on('uncaughtException', (err) => {
+        infoObject.message = 'Process uncaught exception';
+        infoObject.data = JSON.stringify({
+          reason: err.stack || err,
+        }),
+        log.info(infoObject);
+      });
   }
 }
 
