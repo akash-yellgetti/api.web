@@ -42,7 +42,7 @@ class App {
     // for parsing application/xwww-form-urlencoded
     this.app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
     // For api config
-    this.app.get('ping', this.ping);
+    this.app.get('/ping', this.ping);
   }
 
   private cors = () => {
@@ -58,12 +58,17 @@ class App {
  
   private listen = () => {
     this.app.listen(config.get("port"), () => {
-      console.log(`| Name : ${config.get("program")} | Mode : ${config.get("mode")} | Version : ${config.get("version")} | Port : ${config.get("port")} |`);
+      log.info(`| Name : ${config.get("program")} | Mode : ${config.get("mode")} | Version : ${config.get("version")} | Port : ${config.get("port")} |`);
     });
   }
 
   private ping = (req: any, res: any) => {
-    return res.status(200).json({ message: "ping response" });
+    const result = {
+      project: 'Welcome to Momenta ' + config.get("program"),
+      dateTime: new Date(new Date().toUTCString()),
+      version: config.get("version"),
+    };
+    return res.status(200).json(result);
   }
 }
 
