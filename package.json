@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --config nodemon.json src/app.ts",
     "dev": "nodemon --config nodemon.json src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
