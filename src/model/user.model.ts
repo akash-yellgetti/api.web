@@ -8,6 +8,8 @@ export interface UserDocument extends mongoose.Document {
   dob: Date;
   email: string;
   password: string;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
@@ -15,11 +17,14 @@ export interface UserDocument extends mongoose.Document {
 
 const UserSchema = new mongoose.Schema(
   {
-    first_name: { type: String, required: true },
-    last_name: { type: String, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     dob: { type: Date, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    isActive: { type: Boolean, default: 1 },
+    createdBy: { type: String },
+    updatedBy: { type: String },
   },
   { timestamps: true }
 );
