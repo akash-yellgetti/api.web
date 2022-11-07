@@ -4,13 +4,14 @@ import cors from 'cors';
 import fs from 'fs';
 import morganLogger from 'morgan';
 import path from 'path';
-import config from "config";
-import log from "./logger";
-import connect from "./db/connect";
-import route from "./route/index.route";
+import { setting } from "./setting";
+import log from "../logger";
+import { db } from "./db";
+import route from "../route/index.route";
 
 class App {
   private app: express.Application;
+  private db: any;
   private static instance: App;
 
   constructor() {
@@ -19,6 +20,7 @@ class App {
     this.processError();
     this.initialize();
     this.cors();
+    this.db = db.connect(setting.db);
   }
 
   // tslint:disable-next-line
@@ -42,7 +44,7 @@ class App {
     this.app.use(bodyParser.json({ limit: '50MB' }));
     // for parsing application/xwww-form-urlencoded
     this.app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
-    // For api config
+    // For api setting
     this.app.get('/ping', this.ping);
     // Configure route
     this.app.use(route);
@@ -60,17 +62,17 @@ class App {
   }
  
   private listen = () => {
-    this.app.listen(config.get("port"), () => {
-      log.info(`| Name : ${config.get("program")} | Mode : ${config.get("mode")} | Version : ${config.get("version")} | Port : ${config.get("port")} |`);
+    this.app.listen(setting["port"], () => {
+      log.info(`| Name : ${setting["program"]} | Mode : ${setting["mode"]} | Version : ${setting["version"]} | Port : ${setting["port"]} |`);
     });
   }
 
   private ping = (req: any, res: any) => {
     const result = {
-      project: 'Welcome to Momenta ' + config.get("program"),
-      mode : config.get("mode"),
+      project: 'Welcome to Momenta ' + setting["program"],
+      mode : setting["mode"],
       dateTime: new Date(new Date().toUTCString()),
-      version: config.get("version"),
+      version: setting["version"],
     };
     return res.status(200).json(result);
   }
@@ -86,8 +88,8 @@ class App {
     });
     const infoObject: any = {
       type: 'server',
-      program: config.get("program"),
-      mode: config.get("mode"),
+      program: setting["program"],
+      mode: setting["mode"],
       timestamp: new Date(),
     };
     process

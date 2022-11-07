@@ -1,10 +1,16 @@
-export default {
+export const setting = {
     program: "api",
     mode: "dev",
     port: 5000,
     version: "1.0.0",
     host: "localhost",
-    dbUri: "mongodb://localhost:27017/rest-api",
+    
+    db: {
+      host: "mo",
+      user: "admin",
+      password: "passw0rd1",
+      db: "admin"
+    },
     saltWorkFactor: 10,
     accessTokenTtl: "15m",
     refreshTokenTtl: "1y",
