@@ -8,6 +8,7 @@ import { setting } from "./setting";
 import log from "../logger";
 import { db } from "./db";
 import route from "../route/index.route";
+import mongoose from "mongoose";
 
 class App {
   private app: express.Application;
@@ -45,6 +46,7 @@ class App {
     // for parsing application/xwww-form-urlencoded
     this.app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
     // For api setting
+    this.app.get('/', this.ping);
     this.app.get('/ping', this.ping);
     // Configure route
     this.app.use(route);
@@ -72,7 +74,7 @@ class App {
       project: 'Welcome to Momenta ' + setting["program"],
       mode : setting["mode"],
       dateTime: new Date(new Date().toUTCString()),
-      version: setting["version"],
+      version: setting["version"]
     };
     return res.status(200).json(result);
   }

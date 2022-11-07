@@ -1,12 +1,12 @@
 export const setting = {
     program: "api",
     mode: "dev",
-    port: 5000,
+    port: 5001,
     version: "1.0.0",
     host: "localhost",
     
     db: {
-      host: "mo",
+      host: "mongo",
       user: "admin",
       password: "passw0rd1",
       db: "admin"
