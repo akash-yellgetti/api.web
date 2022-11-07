@@ -1,3 +1,4 @@
+import * as express from 'express';
 class Auth {
 
   generateOTP = () => {
@@ -8,8 +9,13 @@ class Auth {
 
   }
 
-  register = () => {
+  register = async (request: express.Request, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params};
+    try {
+      return response.status(200).json(inputs);
+    } catch (error) {
 
+    }
   }
 
   login = (req: any, res: any) => {
