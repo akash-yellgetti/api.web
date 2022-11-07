@@ -8,24 +8,22 @@ class DB {
     useUnifiedTopology: true,
   }) => {
     const uri = `mongodb://${credential.user}:${credential.password}@${credential.host}/${credential.db}?authSource=admin`;
-    return mongoose
-    .connect(uri, options, (err) => {
-      if(err) {
-        log.error("db error", err);
-      } else {
-        log.info("Database connected");
-      }
-    });
+    mongoose.connect(uri, options);
+    mongoose.connection.on("error", this.error);
+    mongoose.connection.on("connected", this.connected);
   }
 
-  error = () => {
-
+  error = (err: any) => {
+    log.error("mongoose connection issue", err)
   }
 
-  connection = () => {
-
+  connected = (err: any, res: any) => {
+    if (err) {
+      log.error("mongoose connection issue", err)
+    } else {
+      log.info("mongoose is connected", res)
+    }
   }
 }
-
 
 export const db = new DB();

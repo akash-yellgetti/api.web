@@ -21,7 +21,7 @@ class App {
     this.processError();
     this.initialize();
     this.cors();
-    this.db = db.connect(setting.db);
+    db.connect(setting.db);
   }
 
   // tslint:disable-next-line
