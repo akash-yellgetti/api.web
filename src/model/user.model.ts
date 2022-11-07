@@ -3,8 +3,10 @@ import bcrypt from "bcrypt";
 import { setting } from "../config/setting";
 
 export interface UserDocument extends mongoose.Document {
+  first_name: string;
+  last_name: string;
+  dob: Date;
   email: string;
-  name: string;
   password: string;
   createdAt: Date;
   updatedAt: Date;
@@ -13,8 +15,10 @@ export interface UserDocument extends mongoose.Document {
 
 const UserSchema = new mongoose.Schema(
   {
+    first_name: { type: String, required: true },
+    last_name: { type: String, required: true },
+    dob: { type: Date, required: true },
     email: { type: String, required: true, unique: true },
-    name: { type: String, required: true },
     password: { type: String, required: true },
   },
   { timestamps: true }
