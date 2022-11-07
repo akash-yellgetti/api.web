@@ -23,28 +23,28 @@ const UserSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     isActive: { type: Boolean, default: 1 },
-    createdBy: { type: String },
-    updatedBy: { type: String },
+    createdBy: { type: String, default: null },
+    updatedBy: { type: String, default: null },
   },
   { timestamps: true }
 );
 
-UserSchema.pre("save", async function (next: mongoose.HookNextFunction) {
-  let user = this as UserDocument;
+// UserSchema.pre("save", async function (next: any) {
+//   let user = this as UserDocument;
 
-  // only hash the password if it has been modified (or is new)
-  if (!user.isModified("password")) return next();
+//   // only hash the password if it has been modified (or is new)
+//   if (!user.isModified("password")) return next();
 
-  // Random additional data
-  const salt = await bcrypt.genSalt(setting["saltWorkFactor"]);
+//   // Random additional data
+//   const salt = await bcrypt.genSalt(setting["saltWorkFactor"]);
 
-  const hash = await bcrypt.hashSync(user.password, salt);
+//   const hash = await bcrypt.hashSync(user.password, salt);
 
-  // Replace the password with the hash
-  user.password = hash;
+//   // Replace the password with the hash
+//   user.password = hash;
 
-  return next();
-});
+//   return next();
+// });
 
 // Used for logging in
 UserSchema.methods.comparePassword = async function (

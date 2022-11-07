@@ -1,10 +1,10 @@
 import jsonwebtoken from "jsonwebtoken";
-import config from "config";
+import { setting } from "../config/setting";
 
-const privateKey = config.get("privateKey") as string;
+const privateKey = setting["privateKey"];
 
 class Jwt {
-  sign = (object: Object, options?: jwt.SignOptions | undefined) => {
+  sign = (object: Object, options?: jsonwebtoken.SignOptions | undefined) => {
     return jsonwebtoken.sign(object, privateKey, options);
   }
 
@@ -13,7 +13,7 @@ class Jwt {
       const decoded = jsonwebtoken.verify(token, privateKey);
 
       return { valid: true, expired: false, decoded };
-    } catch (error) {
+    } catch (error: any) {
       return {
         valid: false,
         expired: error.message === "jwt expired",

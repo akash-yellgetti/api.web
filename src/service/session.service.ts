@@ -1,5 +1,5 @@
 import { LeanDocument, FilterQuery, UpdateQuery } from "mongoose";
-import config from "config";
+import { setting } from "../config/setting";
 import { get } from "lodash";
 import { UserDocument } from "../model/user.model";
 import Session, { SessionDocument } from "../model/session.model";
@@ -7,7 +7,7 @@ import { jwt } from "../utils/jwt.utils";
 import { userService } from "./user.service";
 
 
-class session {
+class SessionService {
 
     createSession = async (userId: string, userAgent: string) => {
         const session = await Session.create({ user: userId, userAgent });
@@ -18,18 +18,11 @@ class session {
     createAccessToken = ({
         user,
         session,
-    }: {
-        user:
-        | Omit<UserDocument, "password">
-        | LeanDocument<Omit<UserDocument, "password">>;
-        session:
-        | Omit<SessionDocument, "password">
-        | LeanDocument<Omit<SessionDocument, "password">>;
-    }) => {
+    }: any) => {
         // Build and return the new access token
         const accessToken = jwt.sign(
             { ...user, session: session._id },
-            { expiresIn: config.get("accessTokenTtl") } // 15 minutes
+            { expiresIn: setting["accessTokenTtl"] } // 15 minutes
         );
 
         return accessToken;
@@ -51,7 +44,7 @@ class session {
         // Make sure the session is still valid
         if (!session || !session?.valid) return false;
 
-        const user = await userService.read({ _id: session.user });
+        const user = await userService.read({ _id: session.userId });
 
         if (!user) return false;
 
@@ -71,3 +64,6 @@ class session {
         return Session.find(query).lean();
     }
 }
+
+
+export const sessionService = new SessionService();

@@ -96,19 +96,19 @@ class App {
     };
     process
       .on('unhandledRejection', (reason: any, p) => {
-        infoObject.message = 'Promise unhandled rejection';
+        infoObject.message = 'Process unhandled rejection';
         infoObject.data = JSON.stringify({
           p,
           reason: reason.stack || reason,
         });
-        log.info(infoObject);
+        log.error(infoObject);
       })
       .on('uncaughtException', (err) => {
         infoObject.message = 'Process uncaught exception';
         infoObject.data = JSON.stringify({
           reason: err.stack || err,
         }),
-        log.info(infoObject);
+        log.error(infoObject);
       });
   }
 }
