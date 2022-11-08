@@ -49,7 +49,14 @@ class App {
     this.app.get('/', this.ping);
     this.app.get('/ping', this.ping);
     // Configure route
-    this.app.use(route);
+    
+    // this.app.use(function (req, res, next) {
+    //   //Enabling CORS
+    //   res.header("Access-Control-Allow-Origin", "*");
+    //   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+    //     next();
+    //   });
   }
 
   private cors = () => {
@@ -60,7 +67,9 @@ class App {
       origin: '*',
       preflightContinue: false,
     };
+    log.info(options)
     this.app.use(cors());
+    this.app.use(route);
   }
  
   private listen = () => {

@@ -6,7 +6,7 @@ export const setting = {
     host: "localhost",
     
     db: {
-      host: "mongo",
+      host: "194.195.116.219",
       user: "admin",
       password: "passw0rd1",
       db: "admin"

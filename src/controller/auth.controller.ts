@@ -4,6 +4,7 @@ import { setting } from "../config/setting";
 import log from "../logger";
 import { userService } from "../service/user.service";
 import { sessionService } from "../service/session.service";
+import { apiResponse } from '../utils/response.utils';
 
 class Auth {
 
@@ -18,7 +19,6 @@ class Auth {
   register = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params};
     log.info('controller.auth.register');
-
     try {
       const user = userService.create(inputs);
       return response.status(200).json(inputs);
@@ -35,7 +35,7 @@ class Auth {
     const user = await userService.validatePassword(request.body);
 
     if (!user) {
-      return response.status(401).send("Invalid username or password");
+      return apiResponse(response,{ code: 401, status: 'error', data:  null, message: "Invalid username or password" });
     }
 
     // Create a session
@@ -53,8 +53,7 @@ class Auth {
     });
 
     // send refresh & access token back
-    return response.send({ accessToken, refreshToken });
-    // return response.status(200).json(inputs);
+    return apiResponse(response,{ code: 200, status: 'success', data:  { accessToken, refreshToken }, message: 'Login Succesful' });
   }
 
   resetPassword = () => {
