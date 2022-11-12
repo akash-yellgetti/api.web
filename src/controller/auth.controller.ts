@@ -53,7 +53,7 @@ class Auth {
     });
 
     // send refresh & access token back
-    return apiResponse(response,{ code: 200, status: 'success', data:  { accessToken, refreshToken }, message: 'Login Succesful' });
+    return apiResponse(response,{ code: 200, status: 'success', data:  { user, tokens: { accessToken, refreshToken } }, message: 'Login Succesful' });
   }
 
   resetPassword = () => {

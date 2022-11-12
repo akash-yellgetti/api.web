@@ -1,22 +1,31 @@
+import http from "http";
 import express from "express";
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import fs from 'fs';
+import mongoose from "mongoose";
 import morganLogger from 'morgan';
 import path from 'path';
+import { Server } from "socket.io";
 import { setting } from "./setting";
-import log from "../logger";
 import { db } from "./db";
+import log from "../logger";
 import route from "../route/index.route";
-import mongoose from "mongoose";
 
 class App {
   private app: express.Application;
+  private server: any;
   private db: any;
   private static instance: App;
 
   constructor() {
-    this.app = express();
+    const app = express();
+    this.app = app;
+    const server = http.createServer(app);
+    if(setting && setting.socket) {
+      const io = new Server(server);
+    }
+    this.server = server;
     this.listen();
     this.processError();
     this.initialize();
@@ -48,15 +57,6 @@ class App {
     // For api setting
     this.app.get('/', this.ping);
     this.app.get('/ping', this.ping);
-    // Configure route
-    
-    // this.app.use(function (req, res, next) {
-    //   //Enabling CORS
-    //   res.header("Access-Control-Allow-Origin", "*");
-    //   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
-    //     next();
-    //   });
   }
 
   private cors = () => {
@@ -67,13 +67,12 @@ class App {
       origin: '*',
       preflightContinue: false,
     };
-    log.info(options)
     this.app.use(cors());
     this.app.use(route);
   }
  
   private listen = () => {
-    this.app.listen(setting["port"], () => {
+    this.server.listen(setting["port"], () => {
       log.info(`| Name : ${setting["program"]} | Mode : ${setting["mode"]} | Version : ${setting["version"]} | Port : ${setting["port"]} |`);
     });
   }

@@ -4,7 +4,7 @@ export const setting = {
     port: 5001,
     version: "1.0.0",
     host: "localhost",
-    
+    socket: true,
     db: {
       host: "194.195.116.219",
       user: "admin",

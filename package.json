@@ -24,6 +24,7 @@
     "nanoid": "^4.0.0",
     "pino": "^8.7.0",
     "pino-pretty": "^9.1.1",
+    "socket.io": "^4.5.3",
     "yup": "^0.32.11"
   },
   "devDependencies": {
