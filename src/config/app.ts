@@ -3,12 +3,13 @@ import express from "express";
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import fs from 'fs';
+import path from 'path';
 import mongoose from "mongoose";
 import morganLogger from 'morgan';
-import path from 'path';
 import { Server } from "socket.io";
 import { setting } from "./setting";
-import { db } from "./db";
+import { socketIO } from "../utils/socket.util";
+import DB from "./db";
 import log from "../logger";
 import route from "../route/index.route";
 
@@ -16,6 +17,7 @@ class App {
   private app: express.Application;
   private server: any;
   private db: any;
+  private io: any;
   private static instance: App;
 
   constructor() {
@@ -23,14 +25,17 @@ class App {
     this.app = app;
     const server = http.createServer(app);
     if(setting && setting.socket) {
-      const io = new Server(server);
+      this.io = new Server(server);
+      this.io.on('connection', socketIO)
     }
     this.server = server;
     this.listen();
     this.processError();
     this.initialize();
     this.cors();
-    db.connect(setting.db);
+    if(setting && setting.db) {
+      new DB(setting.db)
+    }
   }
 
   // tslint:disable-next-line
@@ -55,11 +60,6 @@ class App {
     // for parsing application/xwww-form-urlencoded
     this.app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
     // For api setting
-    this.app.get('/', this.ping);
-    this.app.get('/ping', this.ping);
-  }
-
-  private cors = () => {
     const options: cors.CorsOptions = {
       allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
       credentials: true,
@@ -69,6 +69,19 @@ class App {
     };
     this.app.use(cors());
     this.app.use(route);
+    this.app.get('/', (req, res) => {
+      res.sendFile(path.resolve(__dirname,'../views/index.html'));
+    });
+    this.app.get('/ping', this.ping);
+
+    this.app.get('/socket', (req, res) => {
+      res.sendFile(path.resolve(__dirname,'../views/socket.html'));
+    });
+
+  }
+
+  private cors = () => {
+
   }
  
   private listen = () => {
@@ -119,6 +132,10 @@ class App {
         log.error(infoObject);
       });
   }
+
+  // getSocket = () => {
+  //   return this.io;
+  // }
 }
 
 
