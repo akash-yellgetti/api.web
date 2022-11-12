@@ -6,18 +6,28 @@ class SocketService {
     create = async (input: any) => {
       try {
         console.log(input)
-        return await Socket.create(input);
+        return await Socket.findOneAndUpdate(input, {
+            new: true,
+            upsert: true // Make this update into an upsert
+          });
       } catch(e) {
         throw e;
       }
     }
 
-    read = (query: any) => {
-        return Socket.findOne(query).lean();
+    read = async (query: any) => {
+      return await Socket.find(query).lean();
     }
 
-    update = () => {
-        
+    readOne = async (query: any) => {
+      return await Socket.findOne(query).lean();
+    }
+
+    update = async (filter: any, update: any) => {
+      return await Socket.findOneAndUpdate(filter, update, {
+        new: true,
+        upsert: true // Make this update into an upsert
+      });
     }
 
     // Soft Delete

@@ -11,7 +11,7 @@ class UserService {
     }
 
     read = (query: any) => {
-        return User.findOne(query).lean();
+      return User.find(query).lean();
     }
 
     update = () => {

@@ -9,7 +9,7 @@ export const setting = {
       host: "194.195.116.219",
       user: "admin",
       password: "passw0rd1",
-      db: "admin"
+      db: "app"
     },
     saltWorkFactor: 10,
     accessTokenTtl: "15m",

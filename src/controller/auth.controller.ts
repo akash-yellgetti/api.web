@@ -21,7 +21,7 @@ class Auth {
     log.info('controller.auth.register');
     try {
       const user = userService.create(inputs);
-      return response.status(200).json(inputs);
+      return apiResponse(response,{ code: 200, status: 'success', data:  user, message: 'Registered Succesful' });
     } catch (e) {
       log.error('adsa');
       return response.status(409).json(e);

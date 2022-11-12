@@ -13,7 +13,7 @@ import DB from "./db";
 import log from "../logger";
 import route from "../route/index.route";
 
-class App {
+export class App {
   private app: express.Application;
   private server: any;
   private db: any;
@@ -138,10 +138,10 @@ class App {
       });
   }
 
-  // getSocket = () => {
-  //   return this.io;
-  // }
+  getSocketIO = () => {
+    return this.io;
+  }
 }
 
 
-export default new App();
+export const app =  new App();
