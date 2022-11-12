@@ -5,3 +5,4 @@ momentaUtilities
 .vscode
 package-lock.json
 .idea
+src/views/app

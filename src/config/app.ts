@@ -59,6 +59,8 @@ class App {
     this.app.use(bodyParser.json({ limit: '50MB' }));
     // for parsing application/xwww-form-urlencoded
     this.app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
+    // Serving Static Files
+    this.app.use(express.static(path.resolve(__dirname,'../views/app')));
     // For api setting
     const options: cors.CorsOptions = {
       allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
@@ -70,7 +72,7 @@ class App {
     this.app.use(cors());
     this.app.use(route);
     this.app.get('/', (req, res) => {
-      res.sendFile(path.resolve(__dirname,'../views/index.html'));
+      res.sendFile(path.resolve(__dirname,'../views/app/index.html'));
     });
     this.app.get('/ping', this.ping);
 
