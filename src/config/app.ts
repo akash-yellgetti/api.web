@@ -24,8 +24,17 @@ class App {
     const app = express();
     this.app = app;
     const server = http.createServer(app);
+    const options: cors.CorsOptions = {
+      allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
+      credentials: true,
+      methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+      origin: '*',
+      preflightContinue: false,
+    };
     if(setting && setting.socket) {
-      this.io = new Server(server);
+      this.io = new Server(server, {
+        cors: options
+      });
       this.io.on('connection', socketIO)
     }
     this.server = server;
@@ -62,13 +71,7 @@ class App {
     // Serving Static Files
     this.app.use(express.static(path.resolve(__dirname,'../views/app')));
     // For api setting
-    const options: cors.CorsOptions = {
-      allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
-      credentials: true,
-      methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-      origin: '*',
-      preflightContinue: false,
-    };
+    
     this.app.use(cors());
     this.app.use(route);
     this.app.get('/', (req, res) => {
