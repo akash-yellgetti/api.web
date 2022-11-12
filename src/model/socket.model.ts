@@ -2,21 +2,23 @@ import mongoose from "mongoose";
 import { UserDocument } from "./user.model";
 import { DeviceDocument } from "./device.model";
 
-export interface ScoketDocument extends mongoose.Document {
+export interface SocketDocument extends mongoose.Document {
   userId: UserDocument["_id"];
   deviceId: DeviceDocument["_id"];
   socketId: string;
+  isActive: Boolean;
 };
 
 const SocketSchema = new mongoose.Schema(
   {
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     deviceId: { type: String, default: null },
-    socketId: { type: String }
+    socketId: { type: String },
+    isActive: { type: Boolean, default: true }
   },
   { timestamps: true }
 );
 
-const Session = mongoose.model<SessionDocument>("Session", SocketSchema);
+const Socket = mongoose.model<SocketDocument>("Socket", SocketSchema);
 
-export default Session;
+export default Socket;

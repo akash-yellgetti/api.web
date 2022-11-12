@@ -2,9 +2,11 @@ import mongoose from "mongoose";
 import { UserDocument } from "./user.model";
 
 export interface DeviceDocument extends mongoose.Document {
-  user: UserDocument["_id"];
-  valid: boolean;
-  userAgent: string;
+  userId: UserDocument["_id"];
+  model: string;
+  os: string;
+  version: string;
+  token: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -12,12 +14,15 @@ export interface DeviceDocument extends mongoose.Document {
 const DeviceSchema = new mongoose.Schema(
   {
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-    valid: { type: Boolean, default: true },
-    userAgent: { type: String },
+    model: { type: String },
+    os: { type: String },
+    version: { type: String },
+    token: { type: String },
+    isActive: { type: Boolean, default: true }
   },
   { timestamps: true }
 );
 
-const Device = mongoose.model<DeviceDocument>("Session", DeviceSchema);
+const Device = mongoose.model<DeviceDocument>("Device", DeviceSchema);
 
 export default Device;
