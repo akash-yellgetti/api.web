@@ -1,28 +1,13 @@
 import { DocumentDefinition, FilterQuery } from "mongoose";
 import { omit } from "lodash";
+import { Model } from "./model.service";
 import User, { UserDocument } from "../model/user.model";
-class UserService {
-    create = async (input: DocumentDefinition<UserDocument>) => {
-      try {
-        return await User.create(input);
-      } catch(e) {
-        throw e;
-      }
-    }
+class UserService extends Model {
 
-    read = (query: any) => {
-      return User.find(query).lean();
+    constructor() {
+      super(User);
     }
-
-    update = () => {
-        
-    }
-
-    // Soft Delete
-    delete = () => {
-        
-    }
-
+    
     validatePassword = async ({
       email,
       password,

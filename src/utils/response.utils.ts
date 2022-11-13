@@ -11,8 +11,11 @@ interface res {
     message: string,
 }
 
-export const apiResponse = (response: any, res: res) => {
-    return response.send(omit(res, 'code'));
+class Api {
+    response = (response: any, res: res) => {
+        return response.send(omit(res, 'code'));
+    }    
 }
 
 
+export const api = new Api();

@@ -5,11 +5,11 @@ import log from "../logger";
 import { socketService } from "../service";
 import { api } from '../utils/response.utils';
 
-class Socket {
+class Session {
 
   list = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params};
-    log.info('controller.socket.list');
+    log.info('controller.session.list');
     try {
       const user = await socketService.read({  isActive: true });
       return api.response(response,{ code: 200, status: 'success', data:  user, message: 'Socket Active List' });
@@ -20,4 +20,4 @@ class Socket {
   }
 }
 
-export const SocketController = new Socket();
+export const SessionController = new Session();

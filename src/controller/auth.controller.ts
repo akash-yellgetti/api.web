@@ -2,9 +2,9 @@ import * as express from 'express';
 import { jwt } from "../utils/jwt.utils";
 import { setting } from "../config/setting";
 import log from "../logger";
-import { userService } from "../service/user.service";
-import { sessionService } from "../service/session.service";
-import { apiResponse } from '../utils/response.utils';
+import { userService } from "../service";
+import { sessionService } from "../service";
+import { api } from '../utils/response.utils';
 
 class Auth {
 
@@ -21,7 +21,7 @@ class Auth {
     log.info('controller.auth.register');
     try {
       const user = userService.create(inputs);
-      return apiResponse(response,{ code: 200, status: 'success', data:  user, message: 'Registered Succesful' });
+      return api.response(response,{ code: 200, status: 'success', data:  user, message: 'Registered Succesful' });
     } catch (e) {
       log.error('adsa');
       return response.status(409).json(e);
@@ -35,7 +35,7 @@ class Auth {
     const user = await userService.validatePassword(request.body);
 
     if (!user) {
-      return apiResponse(response,{ code: 401, status: 'error', data:  null, message: "Invalid username or password" });
+      return api.response(response,{ code: 401, status: 'error', data:  null, message: "Invalid username or password" });
     }
 
     // Create a session
@@ -53,7 +53,7 @@ class Auth {
     });
 
     // send refresh & access token back
-    return apiResponse(response,{ code: 200, status: 'success', data:  { user, tokens: { accessToken, refreshToken } }, message: 'Login Succesful' });
+    return api.response(response,{ code: 200, status: 'success', data:  { user, tokens: { accessToken, refreshToken } }, message: 'Login Succesful' });
   }
 
   resetPassword = () => {

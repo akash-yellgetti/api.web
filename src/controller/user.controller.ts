@@ -1,17 +1,15 @@
 import * as express from 'express';
-import { jwt } from "../utils/jwt.utils";
-import { setting } from "../config/setting";
 import log from "../logger";
-import { socketService } from "../service";
+import { socketService, userService } from "../service";
 import { api } from '../utils/response.utils';
 
-class Socket {
+class User {
 
-  list = async (request: express.Request, response: express.Response) => {
+  detail = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params};
     log.info('controller.socket.list');
     try {
-      const user = await socketService.read({  isActive: true });
+      const user = await userService.readOne({   "_id": "636fdc904b636473a49a613f" });
       return api.response(response,{ code: 200, status: 'success', data:  user, message: 'Socket Active List' });
     } catch (e) {
       log.error( e);
@@ -20,4 +18,4 @@ class Socket {
   }
 }
 
-export const SocketController = new Socket();
+export const UserController = new User();
