@@ -1,7 +1,7 @@
 import { DocumentDefinition, FilterQuery } from "mongoose";
 import { omit } from "lodash";
 import { Model } from "./model.service";
-import User, { UserDocument } from "../model/user.model";
+import { User, UserDocument } from "../model";
 class UserService extends Model {
 
     constructor() {

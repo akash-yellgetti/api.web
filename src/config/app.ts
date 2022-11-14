@@ -11,7 +11,7 @@ import { setting } from "./setting";
 import { socketIO } from "../utils/socket.util";
 import DB from "./db";
 import log from "../logger";
-import route from "../route/index.route";
+import { router } from "../route";
 
 export class App {
   private app: express.Application;
@@ -73,7 +73,7 @@ export class App {
     // For api setting
     
     this.app.use(cors());
-    this.app.use(route);
+    this.app.use(router);
     this.app.get('/', (req, res) => {
       res.sendFile(path.resolve(__dirname,'../views/app/index.html'));
     });

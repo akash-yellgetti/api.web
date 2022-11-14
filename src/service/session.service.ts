@@ -1,10 +1,10 @@
 import { LeanDocument, FilterQuery, UpdateQuery } from "mongoose";
 import { setting } from "../config/setting";
 import { get } from "lodash";
-import { UserDocument } from "../model/user.model";
-import Session, { SessionDocument } from "../model/session.model";
+import { Session, SessionDocument  } from "../model";
 import { jwt } from "../utils/jwt.utils";
 import { userService } from "./user.service";
+
 
 
 class SessionService {
