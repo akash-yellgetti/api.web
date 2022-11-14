@@ -10,7 +10,7 @@ import { Server } from "socket.io";
 import { setting } from "./setting";
 import { socketIO } from "../utils/socket.util";
 import DB from "./db";
-import log from "../logger";
+import { log } from '../utils';
 import { route } from "./route";
 
 export class App {

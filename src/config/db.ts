@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import config from "config";
-import log from "../logger";
+import { log } from '../utils';
 
 export default class DB {
   // private static instance: DB;

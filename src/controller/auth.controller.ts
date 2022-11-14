@@ -1,10 +1,10 @@
 import * as express from 'express';
 import { jwt } from "../utils/jwt.utils";
 import { setting } from "../config/setting";
-import log from "../logger";
+
 import { userService } from "../service";
 import { sessionService } from "../service";
-import { api } from '../utils/response.utils';
+import { api, log } from '../utils';
 
 class Auth {
 

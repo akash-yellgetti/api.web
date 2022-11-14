@@ -1,7 +1,6 @@
 import * as express from 'express';
-import log from "../logger";
-import { socketService, userService } from "../service";
-import { api } from '../utils/response.utils';
+import { userService } from "../service";
+import { api, log } from '../utils';
 
 class User {
 
