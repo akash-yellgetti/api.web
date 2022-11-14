@@ -1,7 +1,7 @@
 import { get } from "lodash";
 import { Request, Response, NextFunction } from "express";
-import { decode } from "../utils";
-import { reIssueAccessToken } from "../service";
+import { jwt, Api } from "../utils";
+import { sessionService } from "../service";
 
 export const auth = async (
   req: Request,
@@ -13,11 +13,19 @@ export const auth = async (
     ""
   );
 
-  const refreshToken = get(req, "headers.x-refresh");
+  const refreshToken: any = get(req, "headers.x-refresh");
 
-  if (!accessToken) return next();
+  if (!accessToken) {
+    return new Api(res).code(401).error().send({ message: 'No Token Found.' })
+  };
 
-  const { decoded, expired } = decode(accessToken);
+  // if (!accessToken) return next();
+
+  const { decoded, expired } = jwt.decode(accessToken);
+
+  if (!decoded) {
+    return new Api(res).code(401).error().send({ message: 'Invalid Token Found.' })
+  }
 
   if (decoded) {
     // @ts-ignore
@@ -27,13 +35,13 @@ export const auth = async (
   }
 
   if (expired && refreshToken) {
-    const newAccessToken = await reIssueAccessToken({ refreshToken });
+    const newAccessToken = await sessionService.reIssueAccessToken({ refreshToken });
 
     if (newAccessToken) {
       // Add the new access token to the response header
       res.setHeader("x-access-token", newAccessToken);
 
-      const { decoded } = decode(newAccessToken);
+      const { decoded } = jwt.decode(newAccessToken);
 
       // @ts-ignore
       req.user = decoded;
