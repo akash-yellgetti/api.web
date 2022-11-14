@@ -19,6 +19,4 @@ const SocketSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Socket = mongoose.model<SocketDocument>("Socket", SocketSchema);
-
-export default Socket;
+export const Socket = mongoose.model<SocketDocument>("Socket", SocketSchema);

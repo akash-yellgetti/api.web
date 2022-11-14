@@ -4,7 +4,7 @@ import { app } from '../config/app';
 
 
 
-export enum SocketEvents {
+enum SocketEvents {
   // room events
   JoinSocket = 'join-socket',
   leaveSocket = 'leave-socket',

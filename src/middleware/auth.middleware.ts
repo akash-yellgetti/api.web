@@ -1,7 +1,7 @@
 import { get } from "lodash";
 import { Request, Response, NextFunction } from "express";
-import { decode } from "../utils/jwt.utils";
-import { reIssueAccessToken } from "../service/session.service";
+import { decode } from "../utils";
+import { reIssueAccessToken } from "../service";
 
 export const auth = async (
   req: Request,
