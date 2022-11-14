@@ -1,6 +1,6 @@
-import { Router } from 'express';
-const router = Router();
 import { AuthController } from '../controller/auth.controller'
+import { Router } from 'express';
+
 
 import { validateRequest } from "../middleware";
 import {
@@ -8,10 +8,8 @@ import {
   createUserSessionSchema,
 } from "../schema/user.schema";
 
-
-router.post('/otp/generate', AuthController.generateOTP)
-router.post('/otp/verify', AuthController.verifyOTP)
-router.post('/register', validateRequest(createUserSchema), AuthController.register)
-router.post('/login', AuthController.login)
-
-export default router;
+export const auth = Router();
+auth.post('/otp/generate', AuthController.generateOTP)
+auth.post('/otp/verify', AuthController.verifyOTP)
+auth.post('/register', validateRequest(createUserSchema), AuthController.register)
+auth.post('/login', AuthController.login)

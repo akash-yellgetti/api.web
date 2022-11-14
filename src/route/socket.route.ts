@@ -1,9 +1,5 @@
-import { Router } from 'express';
-const router = Router();
 import { SocketController } from '../controller';
+import { Router } from 'express';
+export const socket = Router();
 
-
-router.get('/list', SocketController.list)
-
-
-export default router;
+socket.get('/list', SocketController.list)
