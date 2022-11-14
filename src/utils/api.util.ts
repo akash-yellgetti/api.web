@@ -41,6 +41,6 @@ export class Api {
 
     send = (payload: any) => {
         const r = omit(extend(this.res, payload), 'code');
-        return this.response.status(r.code).json(r);
+        return this.response.status(this.res.code).json(r);
     }
 }
