@@ -4,7 +4,7 @@ import { setting } from "../config/setting";
 
 import { userService } from "../service";
 import { sessionService } from "../service";
-import { api, log } from '../utils';
+import { Api, api, log } from '../utils';
 
 class Auth {
 
@@ -20,7 +20,7 @@ class Auth {
     const inputs = { ...request.body, ...request.params};
     log.info('controller.auth.register');
     try {
-      const user = userService.create(inputs);
+      const user = await userService.create(inputs);
       return api.response(response,{ code: 200, status: 'success', data:  user, message: 'Registered Succesful' });
     } catch (e) {
       log.error('adsa');
@@ -54,6 +54,18 @@ class Auth {
 
     // send refresh & access token back
     return api.response(response,{ code: 200, status: 'success', data:  { user, tokens: { accessToken, refreshToken } }, message: 'Login Succesful' });
+  }
+
+  check = async (request: any, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params};
+    const user = request.user;
+    log.info('controller.auth.check');
+    try {
+      const payload = { data: user, message: 'authenicated successfully.' };
+      return new Api(response).success().code(200).send(payload);
+    } catch (e) {
+      return new Api(response).error().code(200).send(e);
+    }
   }
 
   resetPassword = () => {

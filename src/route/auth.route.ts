@@ -1,6 +1,6 @@
 import { AuthController } from '../controller/auth.controller'
 import { Router } from 'express';
-
+import { auth as authenicate } from '../middleware';
 
 import { validateRequest } from "../middleware";
 import {
@@ -13,3 +13,4 @@ auth.post('/otp/generate', AuthController.generateOTP)
 auth.post('/otp/verify', AuthController.verifyOTP)
 auth.post('/register', validateRequest(createUserSchema), AuthController.register)
 auth.post('/login', AuthController.login)
+auth.get('/check', authenicate, AuthController.check)
