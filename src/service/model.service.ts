@@ -1,5 +1,8 @@
+import { omit } from "lodash";
+
 export class Model {
   private model: any;
+  protected hidden: any = [];
 
   constructor(model: any) {
     this.model = model;
@@ -14,7 +17,10 @@ export class Model {
   }
 
   readOne = async (query: any) => {
-    return await this.model.findOne(query).lean();
+    const hidden = this.hidden || [];
+    // console.log(this.model)
+    const data = await this.model.findOne(query).lean();
+    return omit(data, hidden);
   }
 
   update = async (where: any, updateData: any) => {

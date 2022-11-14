@@ -3,7 +3,7 @@ import { omit } from "lodash";
 import { Model } from "./model.service";
 import { User, UserDocument } from "../model";
 class UserService extends Model {
-
+    protected hidden: any = ['__v', 'isActive', 'password', 'createdBy', 'updatedBy', 'createdAt', 'updatedAt'];
     constructor() {
       super(User);
     }

@@ -9,7 +9,9 @@ class User {
     const user = request.user;
     log.info('controller.User.detail');
     try {
-      const payload = { code: 200,  data:  user, message: 'User detail' };
+      const detail = await userService.readOne({ _id: user._id });
+      console.log('detail', detail)
+      const payload = { code: 200,  data:  detail, message: 'User detail' };
       return new Api(response).success().code(200).send(payload);
     } catch (e) {
       log.error( e);
