@@ -12,6 +12,6 @@ import { authRequest } from "../schema";
 export const auth = Router();
 auth.post('/otp/generate', AuthController.generateOTP)
 auth.post('/otp/verify', AuthController.verifyOTP)
-auth.post('/register', validateRequest(createUserSchema), AuthController.register)
+auth.post('/register', validateRequest(authRequest.register), AuthController.register)
 auth.post('/login', validateRequest(authRequest.login), AuthController.login)
 auth.get('/check', authenicate, AuthController.check)
