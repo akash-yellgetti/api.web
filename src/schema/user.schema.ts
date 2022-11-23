@@ -4,6 +4,9 @@ export const createUserSchema = object({
   body: object({
     firstName: string().required("Name is required"),
     lastName: string().required("Name is required"),
+    email: string()
+      .email("Must be a valid email")
+      .required("Email is required"),
     password: string()
       .required("Password is required")
       .min(6, "Password is too short - should be 6 chars minimum.")
@@ -12,9 +15,7 @@ export const createUserSchema = object({
       [ref("password"), null],
       "Passwords must match"
     ),
-    email: string()
-      .email("Must be a valid email")
-      .required("Email is required"),
+    
   }),
 });
 

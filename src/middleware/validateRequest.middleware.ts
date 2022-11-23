@@ -1,6 +1,6 @@
 import { AnySchema } from "yup";
 import { Request, Response, NextFunction } from "express";
-import { log } from '../utils';
+import { Api, log } from '../utils';
 
 const validate = (schema: AnySchema) => async (
   req: Request,
@@ -12,12 +12,12 @@ const validate = (schema: AnySchema) => async (
       body: req.body,
       query: req.query,
       params: req.params,
-    });
+    }, { abortEarly: false });
 
     return next();
   } catch (e: any) {
-    log.error(e);
-    return res.status(400).send(e.errors);
+    // log.error(e);
+    return new Api(res).code(400).error().send({ message: 'Validation Failed.', data: e.inner  })
   }
 };
 
