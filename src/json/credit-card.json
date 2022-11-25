@@ -1,0 +1,65 @@
+[
+    {
+        "cardName": "ICICI BANK PLATINUM",
+        "billDateOfMonth": "23",
+        "dueDateOfMonth": "10",
+        "cardLimit": 420000,
+        "cardCurrentRemainingLimit": 350000
+    },
+    {
+        "cardName": "ICICI AMAZON",
+        "billDateOfMonth": "23",
+        "dueDateOfMonth": "10",
+        "cardLimit": 420000,
+        "cardCurrentRemainingLimit": 350000
+    },
+    {
+        "cardName": "AXIS NEO",
+        "billDateOfMonth": "15",
+        "dueDateOfMonth": "4",
+        "cardLimit": 202000,
+        "cardCurrentRemainingLimit": 202000
+    },
+    {
+        "cardName": "AXIS VISTARA",
+        "billDateOfMonth": "24",
+        "dueDateOfMonth": "8",
+        "cardLimit": 202000,
+        "cardCurrentRemainingLimit": 202000
+    },
+    {
+        "cardName": "RBL SUPER",
+        "billDateOfMonth": "15",
+        "dueDateOfMonth": "28",
+        "cardLimit": 102000,
+        "cardCurrentRemainingLimit": 102000
+    },
+    {
+        "cardName": "IndusIn",
+        "billDateOfMonth": "5",
+        "dueDateOfMonth": "20",
+        "cardLimit": 196000,
+        "cardCurrentRemainingLimit": 196000
+    },
+    {
+        "cardName": "UNI",
+        "billDateOfMonth": "10",
+        "dueDateOfMonth": "20",
+        "cardLimit": 100000,
+        "cardCurrentRemainingLimit": 100000
+    },
+    {
+        "cardName": "SLICE",
+        "billDateOfMonth": "1",
+        "dueDateOfMonth": "5",
+        "cardLimit": 360000,
+        "cardCurrentRemainingLimit": 360000
+    },
+    {
+        "cardName": "ONE CARD",
+        "billDateOfMonth": "15",
+        "dueDateOfMonth": "28",
+        "cardLimit": 360000,
+        "cardCurrentRemainingLimit": 360000
+    }
+]

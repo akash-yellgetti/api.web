@@ -1,0 +1,17 @@
+[
+    {
+        "name": "ICICI BANK SALARY",
+        "type": "saving",
+        "balance": 100000
+    },
+    {
+        "name": "Axis BANK SALARY",
+        "type": "saving",
+        "balance": 100000
+    },
+    {
+        "name": "Axis BANK CURRENT",
+        "type": "Current",
+        "balance": 100000
+    }
+]

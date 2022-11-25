@@ -8,6 +8,10 @@
     "dev": "nodemon --config nodemon.json src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "mdSeed": {
+    "seedersFolder": "./src/seeders",
+    "customSeederTemplate": "./src/seeders/seeder.template.ejs"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -20,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mongoose": "^6.7.1",
+    "mongoose-data-seed": "^2.1.6",
     "morgan": "^1.10.0",
     "nanoid": "^4.0.0",
     "pino": "^8.7.0",

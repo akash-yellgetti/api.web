@@ -1,0 +1,80 @@
+[
+    {
+        "title": "Panu Axis Loan",
+        "initialAmount": 280000,
+        "initialRateOfInterest": 17,
+        "initialEmi": 6500,
+        "initialTenureInMonths": 60,
+        "initialRateOfInterestTyoe": "floating",
+        "currentRemainingAmount": 280000,
+        "currentRateOfInterest": 17,
+        "currentEmi": 6500,
+        "CurrentTenureInMonths": 60,
+        "currentRateOfInterestTyoe": "floating"
+    },
+    {
+        "title": "Akash Axis Loan",
+        "initialAmount": 700000,
+        "initialRateOfInterest": 17,
+        "initialEmi": 15500,
+        "initialTenureInMonths": 65,
+        "initialRateOfInterestTyoe": "floating",
+        "currentRemainingAmount": 100000,
+        "currentRateOfInterest": 17,
+        "currentEmi": 15500,
+        "CurrentTenureInMonths": 6,
+        "currentRateOfInterestTyoe": "floating"
+    },
+    {
+        "title": "Home Loan",
+        "initialAmount": 4034630,
+        "initialRateOfInterest": 8.8,
+        "initialEmi": 40444,
+        "initialTenureInMonths": 180,
+        "initialRateOfInterestTyoe": "floating",
+        "currentRemainingAmount": 2497905.26,
+        "currentRateOfInterest": 8.65,
+        "currentEmi": 50000,
+        "CurrentTenureInMonths": 62,
+        "currentRateOfInterestTyoe": "floating"
+    },
+    {
+        "title": "Home Loan + Addon",
+        "initialAmount": 500000,
+        "initialRateOfInterest": 8.9,
+        "initialEmi": 9764,
+        "initialTenureInMonths": 65,
+        "initialRateOfInterestTyoe": "fixed",
+        "currentRemainingAmount": 489961,
+        "currentRateOfInterest": 8.9,
+        "currentEmi": 50000,
+        "CurrentTenureInMonths": 63,
+        "currentRateOfInterestTyoe": "floating"
+    },
+    {
+        "title": "Bhavesh Europe",
+        "initialAmount": 300000,
+        "initialRateOfInterest": 0,
+        "initialEmi": 0,
+        "initialTenureInMonths": 6,
+        "initialRateOfInterestTyoe": "floating",
+        "currentRemainingAmount": 300000,
+        "currentRateOfInterest": 0,
+        "currentEmi": 0,
+        "CurrentTenureInMonths": 6,
+        "currentRateOfInterestTyoe": "floating"
+    },
+    {
+        "title": "Kiran Mama",
+        "initialAmount": 100000,
+        "initialRateOfInterest": 0,
+        "initialEmi": 0,
+        "initialTenureInMonths": 2,
+        "initialRateOfInterestTyoe": "floating",
+        "currentRemainingAmount": 100000,
+        "currentRateOfInterest": 0,
+        "currentEmi": 0,
+        "CurrentTenureInMonths": 2,
+        "currentRateOfInterestTyoe": "floating"
+    }
+]

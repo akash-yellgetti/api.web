@@ -1,5 +1,7 @@
 import { object, string, ref } from "yup";
 
+export const user = [];
+
 export const createUserSchema = object({
   body: object({
     firstName: string().required("Name is required"),
