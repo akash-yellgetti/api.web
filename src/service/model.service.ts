@@ -24,6 +24,13 @@ export class Model {
   }
 
   update = async (where: any, updateData: any) => {
+    return await this.model.update(where, updateData, {
+      new: true,
+      upsert: true // Make this update into an upsert
+    });
+  }
+
+  updateOne = async (where: any, updateData: any) => {
     return await this.model.findOneAndUpdate(where, updateData, {
       new: true,
       upsert: true // Make this update into an upsert

@@ -7,15 +7,15 @@ export const auth: any = {
             lastName: string().required("Last Name is required"),
             dob: date().required("Last Name is required"),
             gender: string().required("Gender is required"),
-            mobileNo: string().required("Mobile Number is required").min(1000000000).max(9999999999),
+            mobileNo: number().required("Mobile Number is required").min(1000000000).max(9999999999),
             type: string().required(),
 
         })
     }),
     verifyOTP: object({
         body: object({
-            mobileNo: string().required("Mobile Number is required").min(1000000000).max(9999999999),
-            otp: string().required("OTP is required").min(100000).max(999999),
+            mobileNo: number().required("Mobile Number is required").min(1000000000).max(9999999999),
+            no: number().required("OTP is required").min(1000).max(9999),
         })
     }),
     register: object({

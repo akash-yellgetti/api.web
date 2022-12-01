@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema(
     mobileNo: { type: Number, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    isActive: { type: Boolean, default: 1 },
+    isActive: { type: Number, default: 1 },
     createdBy: { type: String, default: null },
     updatedBy: { type: String, default: null },
   },

@@ -7,6 +7,7 @@ export interface DeviceDocument extends mongoose.Document {
   os: string;
   version: string;
   token: string;
+  isActive: Number,
   createdAt: Date;
   updatedAt: Date;
 }
