@@ -6,3 +6,4 @@ momentaUtilities
 package-lock.json
 .idea
 src/views/app
+src/public/uploads/profile
