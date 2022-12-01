@@ -9,7 +9,7 @@ export const auth = async (
   next: NextFunction
 ) => {
   const accessToken = get(req, "headers.authorization", "").replace(
-    /^Bearer\s/,
+    /^JWT\s/,
     ""
   );
 

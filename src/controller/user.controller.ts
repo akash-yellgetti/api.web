@@ -1,8 +1,30 @@
 import * as express from 'express';
+import path from 'path';
+import fs from 'fs';
 import { userService } from "../service";
 import { Api, api, log } from '../utils';
 
 class User {
+
+  profilePicture = async (request: any, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params};
+    const files = request.files;
+    log.info('controller.User.profilePicture');
+    console.log('inputs', inputs);
+    console.log('files', files);
+    try {
+
+      const file = request.files[0];
+      const newFileName = new Date().getTime() + "_" + file.originalname;
+      const targetPath = path.join(__dirname, '../public/uploads/profile/'+newFileName)
+      const newFile = fs.createWriteStream(targetPath).write(file.buffer);
+
+      return new Api(response).success().code(200).send({});
+    } catch (e) {
+      log.error( e);
+      return new Api(response).error().code(200).send(e);
+    }
+  }
 
   detail = async (request: any, response: express.Response) => {
     const inputs = { ...request.body, ...request.params};
