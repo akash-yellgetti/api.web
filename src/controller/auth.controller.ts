@@ -75,7 +75,7 @@ class Auth {
     log.info('controller.auth.register');
     try {
       const user = await userService.create(inputs);
-      return api.response(response,{ code: 200, status: 'success', data:  user, message: 'Registered Succesful' });
+      return new Api(response).success().code(200).send({  data:  user, message: "Registered Succesful" });
     } catch (e) {
       return new Api(response).error().code(200).send(e);
     }
