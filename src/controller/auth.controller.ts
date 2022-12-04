@@ -57,14 +57,14 @@ class Auth {
       }
 
       if (temp && temp.no === inputs.no) {
-        return new Api(response).error().code(200).send({  data:  temp, message: "Otp Verified Successfully" });
+        return new Api(response).success().code(200).send({  data:  temp, message: "Otp Verified Successfully" });
       }
 
       const noTry: any =  parseInt(temp.try) + 1;
       
       const updateData = await otpService.update(query.where, { try: noTry });
 
-      return new Api(response).success().code(211).send({  data:  updateData, message: "Otp Doesn't match" });
+      return new Api(response).error().code(211).send({  data:  updateData, message: "Otp Doesn't match" });
     } catch (e) {
       return new Api(response).error().code(200).send(e);
     }
