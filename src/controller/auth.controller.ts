@@ -56,7 +56,7 @@ class Auth {
         return new Api(response).error().code(402).send(err);
       }
 
-      if (temp && temp.no === inputs.no) {
+      if (temp && temp.no === parseInt(inputs.no)) {
         return new Api(response).success().code(200).send({  data:  temp, message: "Otp Verified Successfully" });
       }
 
