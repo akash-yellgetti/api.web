@@ -29,7 +29,7 @@ class Auth {
       };
       const data: any = await otpService.create(createData);
       
-      return new Api(response).error().code(200).send({   data, message: 'OTP generated Succesful'});
+      return new Api(response).success().code(200).send({   data, message: 'OTP generated Succesful'});
     } catch (e) {
       console.log(e)
       return new Api(response).error().code(400).send(e);
