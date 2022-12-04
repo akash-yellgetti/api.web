@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema(
     lastName: { type: String, required: true },
     dob: { type: Date, required: true },
     gender: { type: String, required: true },
-    mobileNo: { type: Number, required: true },
+    mobileNo: { type: Number, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     isActive: { type: Number, default: 1 },
