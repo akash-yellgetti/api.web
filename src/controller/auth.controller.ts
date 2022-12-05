@@ -3,6 +3,7 @@ import { jwt } from "../utils/jwt.utils";
 import { setting } from "../config/setting";
 import { userService, sessionService, otpService } from "../service";
 import { Api, api, log } from '../utils';
+import { sms } from '../utils/sms.util';
 
 class Auth {
 
@@ -21,13 +22,16 @@ class Auth {
       if(tempOtp.length > 0) {
         await otpService.update(query.where, { isActive : 0 });
       }
-
+      const no: any = Math.floor((Math.random() * 9000) + 1000);
       const createData = {
         "mobileNo": inputs["mobileNo"],
         "type":  inputs["type"],
-        "no": Math.floor((Math.random() * 9000) + 1000)
+        "no": no
       };
       const data: any = await otpService.create(createData);
+      const message = "Your OTP to register/access ITSLETS is "+createData.no+". Please do not share it with anyone."
+
+      sms([createData.mobileNo], message);
       
       return new Api(response).success().code(200).send({   data, message: 'OTP generated Succesful'});
     } catch (e) {
