@@ -6,24 +6,40 @@
         "gender": "m",
         "mobileNo": 9920021073,
         "email": "aakash5792@gmail.com",
-        "password": "AAbb12$"
-    },
-    {
-        "firstName": "Panu",
-        "lastName": "Naik",
-        "dob": "1992-03-28",
-        "gender": "f",
-        "mobileNo": 9987654047,
-        "email": "panunaik66@gmail.com",
-        "password": "AAbb12$"
-    },
-    {
-        "firstName": "Prem",
-        "lastName": "Thumma",
-        "dob": "1974-02-09",
-        "gender": "f",
-        "mobileNo": 9930268068,
-        "email": "thummaprem@yahoo.com",
-        "password": "AAbb12$"
+        "password": "AAbb12$",
+        "finance": {
+            "incomes": [
+
+            ],
+            "expenses": [
+
+            ],
+            "goals": [
+
+            ]
+        },
+        "habits": [
+            {
+                "title": "Media",
+                "description": "Media",
+                "location": "",
+                "url": "",
+                "notes": "",
+                "allData": false,
+                "start": "",
+                "end": "",
+                "invites": [
+                    {
+                        "firstName": "Panu",
+                        "lastName": "Naik",
+                        "email": "paninaik66@gmail.com"
+                    }
+                ],
+                "alert": [
+                    "15", "5" 
+                ],
+                "currentStatus": "busy"
+            }
+        ]
     }
 ]
