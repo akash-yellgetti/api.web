@@ -12,7 +12,7 @@ export const setting = {
       db: "app"
     },
     saltWorkFactor: 10,
-    accessTokenTtl: "15m",
+    accessTokenTtl: "180m",
     refreshTokenTtl: "1y",
     privateKey: `-----BEGIN RSA PRIVATE KEY-----
     MIICWwIBAAKBgQCQNBc4IP2ewViqE+ZHbnqGoCZFyAUtrxKmO4k/boSvBisJH6BX

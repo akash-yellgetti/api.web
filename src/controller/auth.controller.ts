@@ -110,7 +110,7 @@ class Auth {
     });
 
     // send refresh & access token back
-    return api.response(response,{ code: 200, status: 'success', data:  { user, tokens: { accessToken, refreshToken } }, message: 'Login Succesful' });
+    return new Api(response).success().code(200).send({  data:  { user, tokens: { accessToken, refreshToken } }, message: 'Login Succesful' });
   }
 
   check = async (request: any, response: express.Response) => {
