@@ -92,7 +92,7 @@ class Auth {
     const user = await userService.validatePassword(request.body);
 
     if (!user) {
-      return api.response(response,{ code: 401, status: 'error', data:  null, message: "Invalid username or password" });
+      return new Api(response).error().code(401).send({ data:  null, message: "Invalid username or password" });
     }
 
     // Create a session
