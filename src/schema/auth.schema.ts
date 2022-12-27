@@ -3,8 +3,8 @@ import { object, string, ref, date, number } from "yup";
 export const auth: any = {
     generateOTP: object({
         body: object({
-            firstName: string().matches(/^[A-Za-z ]*$/, "Please enter valid First name").max(40).required("First Name is required");
-            lastName: string().matches(/^[A-Za-z ]*$/, "Please enter valid Last name").max(40).required("Last Name is required");
+            firstName: string().matches(/^[A-Za-z ]*$/, "Please enter valid First name").max(40).required("First Name is required"),
+            lastName: string().matches(/^[A-Za-z ]*$/, "Please enter valid Last name").max(40).required("Last Name is required"),
             dob: date().required("Date of birth is required"),
             gender: string().required("Gender is required"),
             mobileNo: number().required("Mobile Number is required").min(1000000000).max(9999999999),
@@ -20,8 +20,8 @@ export const auth: any = {
     }),
     register: object({
         body: object({
-            firstName: string().matches(/^[A-Za-z ]*$/, "Please enter valid First name").max(40).required("First Name is required");
-            lastName: string().matches(/^[A-Za-z ]*$/, "Please enter valid Last name").max(40).required("Last Name is required");
+            firstName: string().matches(/^[A-Za-z ]*$/, "Please enter valid First name").max(40).required("First Name is required"),
+            lastName: string().matches(/^[A-Za-z ]*$/, "Please enter valid Last name").max(40).required("Last Name is required"),
             dob: date().required("Date of birth is required"),
             gender: string().required("Gender is required"),
             mobileNo: number().required("Mobile Number is required").min(1000000000).max(9999999999),
