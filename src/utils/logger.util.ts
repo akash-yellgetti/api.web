@@ -2,6 +2,7 @@ import pinoLogger from "pino";
 import dayjs from "dayjs";
 import winston from 'winston';
 import winstonMongodb from 'winston-mongodb';
+require('winston-mongodb');
 // const winston = require('winston');
 
 
@@ -65,15 +66,22 @@ class Logger {
       format: formatter,
     });
 
-    // const transportMongoDB = new winston.transports.MongoDB({
-    //   db: 'mongodb://admin:passw0rd1@194.195.116.219/app?authSource=admin',
-    //   collection: 'logs'
-    // });
+    const transportMongoDB = new winston.transports.MongoDB({
+      //mongo database connection link
+      db: 'mongodb://admin:passw0rd1@194.195.116.219/app?authSource=admin',
+      options: {
+        useUnifiedTopology: true
+      },
+      // A collection to save json formatted logs
+      collection: 'server_logs',
+
+    });
 
     this.logger = winston.createLogger({
       transports: [
-        transportFile,
-        transportConsole
+        // transportFile,
+        transportConsole,
+        // transportMongoDB
       ],
     });
   }

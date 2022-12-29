@@ -83,6 +83,7 @@ class Auth {
       return new Api(response).success().code(200).send({  data:  user, message: "Registered Succesful" });
     } catch (e: any) {
       const code = e && e.code ? e.code : 400;
+      log.error('controller.auth.register', { ...e });
       return new Api(response).error().code(code).send({ ...e });
     }
   }
