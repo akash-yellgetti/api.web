@@ -23,6 +23,7 @@ export default class DB {
 
   connect = (credential: any, options: any) => {
     const uri = `mongodb://${credential.user}:${credential.password}@${credential.host}/${credential.db}?authSource=admin`;
+    mongoose.set('strictQuery', false);
     mongoose.connect(uri, options);
     mongoose.connection.on("connected", this.connected);
     mongoose.connection.on("reconnected", this.reconnected);
