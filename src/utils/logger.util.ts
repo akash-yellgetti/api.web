@@ -38,7 +38,7 @@ const customLevels = {
 };
 
 const formatter = winston.format.combine(
-  // winston.format.colorize(),
+  winston.format.colorize(),
   winston.format.timestamp({ format: 'YYYY-MMM-DD HH:mm:ss' }),
   // winston.format.splat(),
   winston.format.printf((info) => {
@@ -53,29 +53,26 @@ class Logger {
   private logger: winston.Logger;
 
   constructor() {
-    const prodTransport = new winston.transports.File({
-      filename: 'logs/error.log',
-      level: 'error',
-    });
-    const transportFile = new winston.transports.File({
-      filename: 'logs.log',
-      format: formatter,
-    });
+
+    // const transportFile = new winston.transports.File({
+    //   filename: 'logs.log',
+    //   format: formatter,
+    // });
 
     const transportConsole = new winston.transports.Console({
       format: formatter,
     });
 
-    const transportMongoDB = new winston.transports.MongoDB({
-      //mongo database connection link
-      db: 'mongodb://admin:passw0rd1@194.195.116.219/app?authSource=admin',
-      options: {
-        useUnifiedTopology: true
-      },
-      // A collection to save json formatted logs
-      collection: 'server_logs',
+    // const transportMongoDB = new winston.transports.MongoDB({
+    //   //mongo database connection link
+    //   db: 'mongodb://admin:passw0rd1@194.195.116.219/app?authSource=admin',
+    //   options: {
+    //     useUnifiedTopology: true
+    //   },
+    //   // A collection to save json formatted logs
+    //   collection: 'server_logs',
 
-    });
+    // });
 
     this.logger = winston.createLogger({
       transports: [
