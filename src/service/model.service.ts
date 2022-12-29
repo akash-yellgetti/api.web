@@ -9,11 +9,19 @@ export class Model {
   }
 
   public create = async (inputs: any) => {
-    return await this.model.create(inputs);
+    try {
+      return await this.model.create(inputs);
+    } catch (error) {
+      this.errorHandler(error)
+    }
   }
 
   read = async (query: any) => {
-    return await this.model.find(query).lean();
+    try {
+      return await this.model.find(query).lean();
+    } catch (error) {
+      this.errorHandler(error)
+    }
   }
 
   readOne = async (query: any) => {
@@ -51,5 +59,22 @@ export class Model {
       new: true,
       upsert: true // Make this update into an upsert
     });
+  }
+
+
+  errorHandler = (error: any) => {
+    const res: any = { code: 422, message: null };
+    switch (error.code) {
+      case 11000:
+        res.message = `Duplicate ${JSON.stringify(error.keyValue)} is not allowed`;
+        throw res;
+        break;
+    
+      default:
+        res.message = 'Data validation failed.';
+        res.data = error.errors;
+        throw res;
+        break;
+    }
   }
 }

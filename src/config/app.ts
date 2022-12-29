@@ -10,8 +10,10 @@ import { Server } from "socket.io";
 import { setting } from "./setting";
 import { socketIO } from "../utils/socket.util";
 import DB from "./db";
-import { log } from '../utils';
+import { Api, log } from '../utils';
 import { route } from "./route";
+import ErrorHandler from "../utils/error-handler.util";
+import { processExceptionHandler } from "./processExceptionHandler";
 
 export class App {
   private app: express.Application;
@@ -39,7 +41,7 @@ export class App {
     }
     this.server = server;
     this.listen();
-    this.processError();
+    this.processExceptionHandler();
     this.initialize();
     this.cors();
     if(setting && setting.db) {
@@ -74,6 +76,7 @@ export class App {
     // For api setting
     
     this.app.use(cors());
+    this.app.use(ErrorHandler);
     this.app.use(route);
     this.app.get('/', (req, res) => {
       res.sendFile(path.resolve(__dirname,'../views/app/index.html'));
@@ -106,37 +109,35 @@ export class App {
     return res.status(200).json(result);
   }
 
-  private processError = () => {
-    this.app.use((err: any, req: any, res: any, next: any) => {
-      if (err instanceof Error) {
-        log.error(JSON.stringify({ level: 'error', message: `${err.stack || err}` }));
-      } else {
-        log.error(JSON.stringify({ level: 'error', message: err }));
-      }
-      return res.json(err).status(err.status || 500);
-    });
-    const infoObject: any = {
-      type: 'server',
-      program: setting["program"],
-      mode: setting["mode"],
-      timestamp: new Date(),
-    };
-    process
-      .on('unhandledRejection', (reason: any, p) => {
-        infoObject.message = 'Process unhandled rejection';
-        infoObject.data = JSON.stringify({
-          p,
-          reason: reason.stack || reason,
-        });
-        log.error(infoObject);
-      })
-      .on('uncaughtException', (err) => {
-        infoObject.message = 'Process uncaught exception';
-        infoObject.data = JSON.stringify({
-          reason: err.stack || err,
-        }),
-        log.error(infoObject);
-      });
+  private processExceptionHandler = () => {
+
+    process.on('unhandledRejection', processExceptionHandler.unhandledRejection);
+    process.on('uncaughtException', processExceptionHandler.uncaughtException);
+    process.on('warning', processExceptionHandler.warning);
+    
+    // const infoObject: any = {
+    //   type: 'server',
+    //   program: setting["program"],
+    //   mode: setting["mode"],
+    //   timestamp: new Date(),
+    // };
+    // process
+    //   .on('unhandledRejection', (reason: any, p) => {
+    //     infoObject.message = 'Process unhandled rejection';
+    //     infoObject.data = JSON.stringify({
+    //       p,
+    //       reason: reason.stack || reason,
+    //     });
+    //     log.error(infoObject);
+    //     // return new Api(response).error().code(200).send(reason);
+    //   })
+    //   .on('uncaughtException', (err) => {
+    //     infoObject.message = 'Process uncaught exception';
+    //     infoObject.data = JSON.stringify({
+    //       reason: err.stack || err,
+    //     }),
+    //     log.error(infoObject);
+    //   });
   }
 
   getSocketIO = () => {

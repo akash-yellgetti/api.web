@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import { setting } from "../config/setting";
+import uniqueValidator from 'mongoose-unique-validator';
 
 export interface UserDocument extends mongoose.Document {
   first_name: string;
@@ -23,8 +24,8 @@ const UserSchema = new mongoose.Schema(
     lastName: { type: String, required: true },
     dob: { type: Date, required: true },
     gender: { type: String, required: true },
+    email: { type: String, required: true, unique: true, trim: true, lowercase: true },
     mobileNo: { type: Number, required: true, unique: true },
-    email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     isActive: { type: Number, default: 1 },
     createdBy: { type: String, default: null },
@@ -32,6 +33,8 @@ const UserSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+UserSchema.plugin(uniqueValidator);
 
 // UserSchema.pre("save", async function (next: any) {
 //   let user = this as UserDocument;
@@ -49,6 +52,15 @@ const UserSchema = new mongoose.Schema(
 
 //   return next();
 // });
+
+
+UserSchema.methods.uniqueMobileNo = async function (
+  candidatePassword: string
+) {
+  const user = this as UserDocument;
+
+  return bcrypt.compare(candidatePassword, user.password).catch((e) => false);
+};
 
 // Used for logging in
 UserSchema.methods.comparePassword = async function (

@@ -4,6 +4,7 @@ import { setting } from "../config/setting";
 import { userService, sessionService, otpService } from "../service";
 import { Api, api, log } from '../utils';
 import { sms } from '../utils/sms.util';
+import { HttpStatusCode } from '../config/constant';
 
 class Auth {
 
@@ -80,8 +81,9 @@ class Auth {
     try {
       const user = await userService.create(inputs);
       return new Api(response).success().code(200).send({  data:  user, message: "Registered Succesful" });
-    } catch (e) {
-      return new Api(response).error().code(200).send(e);
+    } catch (e: any) {
+      const code = e && e.code ? e.code : 400;
+      return new Api(response).error().code(code).send({ ...e });
     }
   }
 
