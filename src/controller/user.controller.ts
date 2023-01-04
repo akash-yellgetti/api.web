@@ -65,6 +65,26 @@ class User {
       return new Api(response).error().code(200).send(e);
     }
   }
+
+  update = async (request: any, response: express.Response) => {
+    const inputs = _.pick({ ...request.body, ...request.params}, ['firstName', 'lastName']);
+    const user = request.user;
+    log.info('controller.User.detail');
+    try {
+      const updateData: any = { ...inputs };
+      if(Object.keys(updateData).length > 0) {
+        await userService.updateOne({ _id: user._id }, updateData);
+      }
+
+      const payload = { code: 200,  data:  updateData, message: 'Updated User details.' };
+      return new Api(response).success().code(200).send(payload);
+    } catch (e) {
+      log.error( e);
+      return new Api(response).error().code(200).send(e);
+    }
+  }
+
+  
 }
 
 export const UserController = new User();
