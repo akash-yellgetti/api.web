@@ -2,6 +2,14 @@ import { curlRequest } from '../utils/curlRequest.util';
 import moment from 'moment';
 
 class MoneyControlService {
+
+  search = async (text: string) => {
+    const url: string = 'https://www.moneycontrol.com/mccode/common/autosuggestion_solr.php?classic=true&type=1&format=json&query='+text;
+    const response: any = await curlRequest('GET', url);
+    const data = {...response};
+    return data;
+  }
+
   getCandleData = async (
     symbol: string,
     resolution: number,
