@@ -1,10 +1,26 @@
 import { curlRequest } from '../utils/curlRequest.util';
 import moment from 'moment';
+import _ from 'lodash';
 
 class MoneyControlService {
 
   search = async (text: string) => {
     const url: string = 'https://www.moneycontrol.com/mccode/common/autosuggestion_solr.php?classic=true&type=1&format=json&query='+text;
+    const response: any = await curlRequest('GET', url);
+    const data = {...response};
+    return data;
+  }
+
+  detail = async (code: string) => {
+    const url: string = 'https://priceapi-aws.moneycontrol.com/pricefeed/nse/equitycash/' + code;
+    const response: any = await curlRequest('GET', url);
+    const data = {...response};
+    return data;
+  }
+
+
+  historicalData = async (code: string) => {
+    const url: string = 'https://www.moneycontrol.com/tech_charts/nse/his/' + _.toLower(code) + '.csv';
     const response: any = await curlRequest('GET', url);
     const data = {...response};
     return data;
