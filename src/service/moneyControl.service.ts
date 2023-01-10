@@ -61,7 +61,7 @@ class MoneyControlService {
   };
 
   getNormalDateFormat = (timestamp: number) => { //1672221600
-    return moment(new Date(timestamp * 1000)).format('MMMM DD, YYYY, hh:mm' ); // December 28, 2022, 3:30
+    return moment(new Date(timestamp * 1000)).format('llll'); // December 28, 2022, 3:30
   }
 }
 
