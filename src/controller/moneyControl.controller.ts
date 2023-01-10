@@ -21,7 +21,16 @@ class MoneyControl {
     const user = request.user;
     log.info('controller.auth.check');
     try {
-      const data = await moneyControlService.getCandleData('TATASTEEL', 60, 1667513983, 1673245626, 308,'INR');
+      const params: any = {
+        symbol: 'TATASTEEL',
+        min: 60,
+        from: 1667513983,
+        to: 1673245626,
+        countback: 308,
+        currencyCode: 'INR',
+        ...inputs
+      }
+      const data = await moneyControlService.getCandleData(params.symbol, params.min, params.from, params.to, params.countback, params.currencyCode);
       const payload = { data, message: 'stock candles.' };
       return new Api(response).success().code(200).send(payload);
     } catch (e) {
