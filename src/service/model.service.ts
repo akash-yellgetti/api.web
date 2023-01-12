@@ -1,4 +1,5 @@
 import { omit } from "lodash";
+import { log } from "../utils";
 
 export class Model {
   protected model: any;
@@ -71,6 +72,7 @@ export class Model {
 
 
   errorHandler = (error: any) => {
+    log.error(error);
     const res: any = { code: 422, message: null };
     switch (error.code) {
       case 11000:

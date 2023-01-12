@@ -3,7 +3,8 @@ import { UserDocument } from "./user.model";
 
 export interface ConversationDocument extends mongoose.Document {
   type: { type: String },
-  typeId: { type: String },
+  typeId: { type: String }, // self user id
+  userId: { type: String }, // self user id
   isActive: Number,
   createdAt: Date;
   updatedAt: Date;
@@ -13,6 +14,7 @@ const ConversationSchema = new mongoose.Schema(
   {
     type: { type: String, required: true },
     typeId: { type: mongoose.Schema.Types.ObjectId, required: true },
+    userId: { type: mongoose.Schema.Types.ObjectId, required: true },
     isActive: { type: Number, default: 1 },
     createdBy: { type: String, default: null },
     updatedBy: { type: String, default: null },

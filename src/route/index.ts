@@ -3,4 +3,5 @@ export { socket } from "./socket.route";
 export { user } from "./user.route";
 export { moneyControl } from "./moneyControl.route";
 export { group } from "./group.route";
+export { conversation } from "./conversation.route";
 
