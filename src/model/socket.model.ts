@@ -14,7 +14,9 @@ const SocketSchema = new mongoose.Schema(
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     deviceId: { type: String, default: null },
     socketId: { type: String },
-    isActive: { type: Number, default: 1 }
+    isActive: { type: Number, default: 1 },
+    createdBy: { type: String, default: null },
+    updatedBy: { type: String, default: null },
   },
   { timestamps: true }
 );

@@ -16,7 +16,7 @@ const validate = (schema: AnySchema) => async (
 
     return next();
   } catch (e: any) {
-    // log.error(e);
+    log.error(e);
     return new Api(res).code(400).error().send({ message: 'Validation Failed.', data: e.inner  })
   }
 };

@@ -1,7 +1,7 @@
 import { omit } from "lodash";
 
 export class Model {
-  private model: any;
+  protected model: any;
   protected hidden: any = [];
 
   constructor(model: any) {
@@ -11,6 +11,14 @@ export class Model {
   public create = async (inputs: any) => {
     try {
       return await this.model.create(inputs);
+    } catch (error) {
+      this.errorHandler(error)
+    }
+  }
+
+  public bulkCreate = async (inputs: any) => {
+    try {
+      return await this.model.insertMany(inputs);
     } catch (error) {
       this.errorHandler(error)
     }

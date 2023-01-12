@@ -19,7 +19,9 @@ const DeviceSchema = new mongoose.Schema(
     os: { type: String },
     version: { type: String },
     token: { type: String },
-    isActive: { type: Boolean, default: true }
+    isActive: { type: Number, default: 1 },
+    createdBy: { type: String, default: null },
+    updatedBy: { type: String, default: null },
   },
   { timestamps: true }
 );

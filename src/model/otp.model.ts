@@ -16,7 +16,9 @@ const OtpSchema = new mongoose.Schema(
     no: { type: Number, required: true },
     type: { type: String, required: true },
     try: { type: Number, default: 0 },
-    isActive: { type: Number, default: 1 }
+    isActive: { type: Number, default: 1 },
+    createdBy: { type: String, default: null },
+    updatedBy: { type: String, default: null },
   },
   { timestamps: true }
 );

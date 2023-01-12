@@ -14,7 +14,9 @@ const SessionSchema = new mongoose.Schema(
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     valid: { type: Boolean, default: true },
     userAgent: { type: String },
-    isActive: { type: Number, default: 1 }
+    isActive: { type: Number, default: 1 },
+    createdBy: { type: String, default: null },
+    updatedBy: { type: String, default: null },
   },
   { timestamps: true }
 );
