@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { conversationService, messageService } from "../service";
+import { conversationService, conversationMemberService, conversationMessageService } from "../service";
 import { Api, api, log } from '../utils';
 import _ from 'lodash';
 
@@ -10,15 +10,17 @@ class Conversation {
     const user = request.user;
     log.info('controller.auth.check');
     try {
-      let conversation: any = await conversationService.readOne({ typeId: inputs.typeId, userId: user._id  });
+      const userIds = [user._id, inputs.typeId];
+      let conversation: any = await conversationMemberService.getConversation(userIds);
       if(Object.keys(conversation).length === 0) {
-        conversation = await conversationService.create({  typeId: inputs.typeId, type: inputs.type, userId: user._id, createdBy: user._id, updatedBy: user._id });
+        conversation = await conversationMemberService.createConversation({  typeId: inputs.typeId, type: inputs.type, userId: user._id, createdBy: user._id, updatedBy: user._id }, user);
       }
-      const message = await messageService.create({ typeId: inputs.typeId, type: inputs.data.type, text: inputs.data.text, conversationId: conversation._id, createdBy: user._id, updatedBy: user._id });
-      const payload = { data: { conversation, message }, message: 'conversation created successfully.' };
+      const conversationMessage = await conversationMessageService.create({ userId: user._id, type: inputs.data.type, text: inputs.data.text, conversationId: conversation._id, createdBy: user._id, updatedBy: user._id });
+      const payload = { data: { conversation, message: conversationMessage }, message: 'conversation created successfully.' };
       return new Api(response).success().code(200).send(payload);
-    } catch (e) {
-      return new Api(response).error().code(200).send(e);
+    } catch (e: any) {
+      log.error(e.message, e);
+      return new Api(response).error().code(400).send(e);
     }
   }
 }

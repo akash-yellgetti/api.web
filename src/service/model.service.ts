@@ -70,6 +70,24 @@ export class Model {
     });
   }
 
+  // Aggregate
+  aggregate = async (query: any) => {
+    try {
+      return await this.model.aggregate(query).exec();
+    } catch (error) {
+      this.errorHandler(error)
+    }
+  }
+
+  // Aggregate One
+  aggregateOne = async (query: any) => {
+    try {
+      const ret = await this.model.aggregate(query).exec();
+      return ret && ret.length ? ret[0] : [];
+    } catch (error) {
+      this.errorHandler(error)
+    }
+  }
 
   errorHandler = (error: any) => {
     log.error(error);

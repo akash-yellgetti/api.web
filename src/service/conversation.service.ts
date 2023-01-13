@@ -5,7 +5,9 @@ import { Conversation } from "../model";
 class ConversationService extends Model {
   constructor() {
     super(Conversation);
-  } 
+  }
+
+  
 }
 
 

@@ -4,6 +4,5 @@ export { sessionService } from "./session.service";
 export { otpService } from "./otp.service";
 export { moneyControlService } from "./moneyControl.service";
 export { conversationService } from "./conversation.service";
-export { messageService } from "./message.service";
-export { groupService } from "./group.service";
-export { groupMemberService } from "./groupMember.service";
+export { conversationMemberService } from "./conversationMember.service";
+export { conversationMessageService } from "./conversationMessage.service";
