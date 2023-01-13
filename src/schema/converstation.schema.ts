@@ -16,6 +16,16 @@ export const converstation = {
         id: string().required("ID is required"),
       }),
     },
+    list: object({
+      body: object({
+        // id: string().required("ID is required"),
+      }),
+    }),
+    history: object({
+      body: object({
+        id: string().required("ID is required"),
+      }),
+    }),
     update: object({
       body: object({
         id: string().required("ID is required"),
