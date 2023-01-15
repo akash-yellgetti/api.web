@@ -2,6 +2,8 @@
 import { Model } from "./model.service";
 import { ConversationMember } from "../model";
 import { conversationService } from "./conversation.service";
+import mongoose from "mongoose";
+import _ from "lodash";
 
 class ConversationMemberService extends Model {
   constructor() {
@@ -20,28 +22,17 @@ class ConversationMemberService extends Model {
   }
 
   getConversation = async (userIds: any) => {
+    const ids = _.map(userIds, (r) => {
+      return new mongoose.Types.ObjectId(r);
+    })
     const query = [
-      // {
-      //   $match: {
-      //     userId: {
-      //       $in: userIds
-      //     },
-      //   },
-      // },
       {
         $group: {
           _id: '$conversationId',
           users: { "$addToSet": "$userId" }
         }
       },
-      // {
-      //   $replaceRoot: {
-      //     newRoot: {
-      //       $mergeObjects: [{ $arrayElemAt: ['$uniqueValues', 0] }, '$$ROOT'],
-      //     },
-      //   },
-      // },
-      // { "$match": { "users": { "$all": userIds } } }
+      { "$match": { "users": { "$all": ids } } }
     ];
     return await this.aggregateOne(query);
   }
