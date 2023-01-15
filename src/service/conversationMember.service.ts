@@ -21,6 +21,42 @@ class ConversationMemberService extends Model {
     return await this.bulkCreate(data);
   }
 
+  getConversations = async (userIds: any) => {
+    const ids = _.map(userIds, (r) => {
+      return new mongoose.Types.ObjectId(r);
+    })
+    const query = [
+      {
+        $lookup:
+          {
+            from: "conversations",
+            foreignField: "_id",
+            localField: "conversationId",
+            as: "conversationDetail"
+          }
+      },
+      {
+        $lookup:
+          {
+            from: "users",
+            foreignField: "_id",
+            localField: "userId",
+            as: "userDetail"
+          }
+      },
+      {
+        $group: {
+          _id: '$conversationId',
+          users: { "$addToSet": "$userId" },
+          usersDetail: { "$addToSet": "$userDetail" },
+          conversationDetail: { "$addToSet": "$conversationDetail" }
+        }
+      },
+      { "$match": { "users": { "$all": ids } } }
+    ];
+    return await this.aggregate(query);
+  }
+
   getConversation = async (userIds: any) => {
     const ids = _.map(userIds, (r) => {
       return new mongoose.Types.ObjectId(r);

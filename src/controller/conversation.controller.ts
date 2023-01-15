@@ -12,7 +12,20 @@ class Conversation {
     const user = request.user;
     log.info('controller.auth.check');
     try {
-      const  data: any = await conversationMemberService.getConversation([user._id]);
+      const  conversations: any = await conversationMemberService.getConversations([user._id]);
+      const data: any = [];
+      for(let i in conversations) {
+        if (conversations[i]) {
+          const conversation: any = conversations[i];
+          const usersDetail: any = _.keyBy(_.flatten(_.get(conversation, 'usersDetail')), '_id');
+          const users: any = _.map(conversation['users'],  (uId) => {
+            return _.get(usersDetail, uId);
+          });
+          data.push(_.extend(_.first(_.flatten(conversation['conversationDetail'])), { users }));
+        }
+        
+      }
+
       const payload = { data, message: 'conversation list.' };
       return new Api(response).success().code(200).send(payload);
     } catch (e: any) {
