@@ -27,9 +27,29 @@ class ConversationMemberService extends Model {
     })
     const query = [
       {
+        $lookup:
+          {
+            from: "conversations",
+            foreignField: "_id",
+            localField: "conversationId",
+            as: "conversationDetail"
+          }
+      },
+      {
+        $lookup:
+          {
+            from: "users",
+            foreignField: "_id",
+            localField: "userId",
+            as: "userDetail"
+          }
+      },
+      {
         $group: {
           _id: '$conversationId',
-          users: { "$addToSet": "$userId" }
+          users: { "$addToSet": "$userId" },
+          usersDetail: { "$addToSet": "$userDetail" },
+          conversationDetail: { "$addToSet": "$conversationDetail" }
         }
       },
       { "$match": { "users": { "$all": ids } } }

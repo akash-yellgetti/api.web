@@ -12,21 +12,7 @@ class Conversation {
     const user = request.user;
     log.info('controller.auth.check');
     try {
-      const userIds = [user._id, inputs.typeId];
-      let data: any = await conversationMemberService.aggregate([
-        { $match :  { userId: new mongoose.Types.ObjectId(user._id)  } },
-         
-        {
-          $lookup:
-            {
-              from: "conversations",
-              localField: "conversationId",
-              foreignField: "_id",
-              as: "conversationDetail"
-            }
-        }
-      ]);
-      
+      const  data: any = await conversationMemberService.getConversation([user._id]);
       const payload = { data, message: 'conversation list.' };
       return new Api(response).success().code(200).send(payload);
     } catch (e: any) {
