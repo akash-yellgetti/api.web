@@ -1,4 +1,4 @@
-import { auth, socket, user, moneyControl, group, conversation } from '../route';
+import { auth, socket, user, moneyControl, group, conversation, notification } from '../route';
 import { Router } from 'express';
 export const route = Router();
 
@@ -8,3 +8,4 @@ route.use('/user', user);
 route.use('/money-control', moneyControl);
 route.use('/group', group);
 route.use('/conversation', conversation);
+route.use('/notification', notification);

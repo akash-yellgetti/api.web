@@ -4,7 +4,7 @@ import { Socket } from "../model";
 class SocketService extends Model {
   constructor() {
     super(Socket);
-  } 
+  }
 }
 
 

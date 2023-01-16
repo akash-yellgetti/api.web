@@ -1,38 +1,60 @@
-
-import { socketService } from "../service/socket.service";
 import { app } from '../config/app';
+import { socket } from '../route';
+import { log } from './logger.util';
 
+class SocketService {
+  private connection: any = null;
 
+  connected = () => {
+    log.info('Socket connect');
+  };
 
-enum SocketEvents {
-  // room events
-  JoinSocket = 'join-socket',
-  leaveSocket = 'leave-socket',
+  disconnect = () => {
+    log.error('Socket Disconnect', this.connection.id);
+  };
 
+  join = () => {};
+
+  leave = () => {};
+
+  message = () => {};
+
+  ping = () => {};
+
+  reconnect = () => {};
 }
+
+const socketService = new SocketService();
+
+
 
 export const socketIO = (socket: any) => {
-  console.log('a user connected');
 
-  // console.log(app.getSocketIO())
 
-  socket.on(SocketEvents.JoinSocket, async (data: any) => {
-    await socketService.update({ socketId: socket.id }, { userId: data.userId });
-    const users = await socketService.read({ isActive: true });
-    app.getSocketIO().sockets.emit('users', users);
-  })
   
-  socket.on('chat.message', async (data: any) => {
-    console.log(data)
-    const user: any = await socketService.readOne({ userId: data.userId, isActive: true });
-    console.log(user)
-    console.log('chat.message', data.message);
-    // io.emit('chat message', msg);
-    socket.to(user.socketId).emit({ scoketId: socket.id, message: data.message  });
-  });
+  socket.on("connected", async (data: any) => {
+    socket.join("main-channel");
+    // socket.join("notification-channel");
+  })
 
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-    socketService.softDelete({ socketId: socket.id }, { isActive: false });
-  });
-}
+  setInterval(function () { 
+    // socket
+    socket.to("main-channel").emit("notification", { title: "Sample Notification"+ new Date().getTime() });
+  }, 20 * 1000);
+  
+
+  // socket.emit("noti")
+
+  socket.on("disconnect", async (data: any) => {
+    
+  })
+
+  socket.on("join", async (data: any) => {
+    
+  })
+
+  socket.on("leave", async (data: any) => {
+    
+  })
+
+};

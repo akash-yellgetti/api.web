@@ -4,7 +4,7 @@ export const converstation = {
     create: object({
         body: object({
           type: string().required("Type is required"),
-          typeId: string().required("Type ID is required"),
+          conversationId: string().required("conversation ID is required"),
           data: object({
             type: string().required("Date type is required"),
             text: string(),

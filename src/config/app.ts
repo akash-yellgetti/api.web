@@ -14,6 +14,7 @@ import { Api, log } from '../utils';
 import { route } from "./route";
 import ErrorHandler from "../utils/error-handler.util";
 import { processExceptionHandler } from "./processExceptionHandler";
+import { socket } from "../route";
 
 export class App {
   private app: express.Application;
@@ -34,10 +35,28 @@ export class App {
       preflightContinue: false,
     };
     if(setting && setting.socket) {
-      this.io = new Server(server, {
+      const io = new Server(server, {
         cors: options
       });
-      this.io.on('connection', socketIO)
+      this.io = io;
+      this.io.on('connection', (socket: any) => {
+        socket.on("connected", async (data: any) => {
+          socket.join("main-channel");
+          // socket.join("notification-channel");
+        })
+      
+        setInterval(function () { 
+          // socket
+          io.to("main-channel").emit("notification", { title: "Sample Notification "+ new Date().getTime() });
+        }, 20 * 1000);
+        
+      
+        // socket.emit("noti")
+      
+        socket.on("disconnect", async (data: any) => {
+          
+        })
+      })
     }
     this.server = server;
     this.listen();

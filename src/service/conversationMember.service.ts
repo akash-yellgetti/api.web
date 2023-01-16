@@ -21,7 +21,8 @@ class ConversationMemberService extends Model {
     return await this.bulkCreate(data);
   }
 
-  getConversations = async (userIds: any) => {
+  getConversations = async (inputs: any, user: any) => {
+    const userIds = [user._id];
     const ids = _.map(userIds, (r) => {
       return new mongoose.Types.ObjectId(r);
     })
@@ -36,6 +37,12 @@ class ConversationMemberService extends Model {
           }
       },
       {
+        $unwind: {
+          path: '$conversationDetail',
+          preserveNullAndEmptyArrays: false
+        }
+      },
+      {
         $lookup:
           {
             from: "users",
@@ -45,59 +52,34 @@ class ConversationMemberService extends Model {
           }
       },
       {
-        $group: {
-          _id: '$conversationId',
-          users: { "$addToSet": "$userId" },
-          usersDetail: { "$addToSet": "$userDetail" },
-          conversationDetail: { "$addToSet": "$conversationDetail" }
+        $unwind: {
+          path: '$userDetail',
+          preserveNullAndEmptyArrays: false
         }
       },
-      { "$match": { "users": { "$all": ids } } }
+      {
+        $group: {
+          _id: '$conversationId',
+          users: { "$addToSet": "$userDetail" },
+          // usersDetail: { "$addToSet": "$userDetail" },
+          conversationDetail: { "$first": "$conversationDetail" }
+        }
+      },
+      { "$match": { "users._id": { "$in": ids } } }
     ];
     return await this.aggregate(query);
   }
 
-  getConversation = async (userIds: any) => {
-    const ids = _.map(userIds, (r) => {
-      return new mongoose.Types.ObjectId(r);
-    })
-    const query = [
-      {
-        $lookup:
-          {
-            from: "conversations",
-            foreignField: "_id",
-            localField: "conversationId",
-            as: "conversationDetail"
-          }
-      },
-      {
-        $lookup:
-          {
-            from: "users",
-            foreignField: "_id",
-            localField: "userId",
-            as: "userDetail"
-          }
-      },
-      {
-        $group: {
-          _id: '$conversationId',
-          users: { "$addToSet": "$userId" },
-          usersDetail: { "$addToSet": "$userDetail" },
-          conversationDetail: { "$addToSet": "$conversationDetail" }
-        }
-      },
-      { "$match": { "users": { "$all": ids } } }
-    ];
-    return await this.aggregateOne(query);
+  getConversation = async (inputs: any, user: any) => {
+    const conservations: any = await this.getConversations(inputs, user);
+    const conversation: any = _.find(conservations, { _id: inputs.conservationId });
   }
 
-  createConversation = async (inputs: any, user: any) => {
-    const conversation = await conversationService.create({ type: inputs.type });
-    const conversationMembers = await this.addUsers([inputs.typeId], conversation._id, user._id);
-    return await this.getConversation([user._id, inputs.typeId])
-  }
+  // createConversation = async (inputs: any, user: any) => {
+  //   const conversation = await conversationService.create({ type: inputs.type });
+  //   const conversationMembers = await this.addUsers([inputs.typeId], conversation._id, user._id);
+  //   return await this.getConversation([user._id, inputs.typeId])
+  // }
   
 }
 

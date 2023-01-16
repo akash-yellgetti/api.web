@@ -1,5 +1,6 @@
 import { omit } from "lodash";
 import { log } from "../utils";
+import _ from "lodash";
 
 export class Model {
   protected model: any;
@@ -80,10 +81,10 @@ export class Model {
   }
 
   // Aggregate One
-  aggregateOne = async (query: any) => {
+  aggregateOne = async (query: any, condition: any) => {
     try {
-      const ret = await this.model.aggregate(query).exec();
-      return ret && ret.length ? ret[0] : [];
+      const data: any = await this.aggregate(query);
+      return _.find(data, condition);
     } catch (error) {
       this.errorHandler(error)
     }
