@@ -45,10 +45,10 @@ export class App {
           // socket.join("notification-channel");
         })
       
-        setInterval(function () { 
-          // socket
-          io.to("main-channel").emit("notification", { title: "Sample Notification "+ new Date().getTime() });
-        }, 20 * 1000);
+        // setInterval(function () { 
+        //   // socket
+        //   io.to("main-channel").emit("notification", { title: "Sample Notification "+ new Date().getTime() });
+        // }, 20 * 1000);
         
       
         // socket.emit("noti")
