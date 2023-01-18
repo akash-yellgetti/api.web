@@ -15,6 +15,7 @@ import { route } from "./route";
 import ErrorHandler from "../utils/error-handler.util";
 import { processExceptionHandler } from "./processExceptionHandler";
 import { socket } from "../route";
+import { channel } from "diagnostics_channel";
 
 export class App {
   private app: express.Application;
@@ -44,15 +45,23 @@ export class App {
           socket.join("main-channel");
           // socket.join("notification-channel");
         })
+
+        socket.on("join", async (data: any = { channels: [] }) => {
+          const channels = data.channels;
+          console.log(socket.id, channels)
+          for(const i in channels) {
+            const channel = channels[i];
+            socket.join(channel);
+          }
+        })
+
+        socket.on("send", async (r: any = { evtName: '' }) => {
+          if(r && r.evtName && r.evtName === 'chat.message.send') {
+            io.to(r.conversationId).emit("receive", { ...r, ...r.data });
+          }
+        })
       
-        // setInterval(function () { 
-        //   // socket
-        //   io.to("main-channel").emit("notification", { title: "Sample Notification "+ new Date().getTime() });
-        // }, 20 * 1000);
-        
-      
-        // socket.emit("noti")
-      
+     
         socket.on("disconnect", async (data: any) => {
           
         })

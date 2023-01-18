@@ -4,10 +4,9 @@ import {
   conversationMemberService,
   conversationMessageService
 } from '../service';
-import { Api, api, log } from '../utils';
+import { Api, log } from '../utils';
 import _ from 'lodash';
-import { ConversationMessage } from '../model';
-import mongoose from 'mongoose';
+import { app } from '../config/app';
 
 class Conversation {
   list = async (request: any, response: express.Response) => {
