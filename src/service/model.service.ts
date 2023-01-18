@@ -26,9 +26,9 @@ export class Model {
     }
   }
 
-  read = async (query: any, limit: number = 25) => {
+  read = async (query: any, limit: number = 25, sort: any = { _id: 1 }) => {
     try {
-      return await this.model.find(query).limit(limit).lean();
+      return await this.model.find(query).sort(sort).limit(limit).lean();
     } catch (error) {
       this.errorHandler(error)
     }

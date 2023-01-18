@@ -67,7 +67,18 @@ class ConversationMemberService extends Model {
       },
       { "$match": { "users._id": { "$in": ids } } }
     ];
-    return await this.aggregate(query);
+    const conversations: any = await this.aggregate(query);
+
+    for(let i in conversations) {
+      if (conversations[i]) {
+        const conversation: any = conversations[i];
+        conversation['history'] = await this.read({
+          conversationId: conversation._id
+        }, 10, { _id: -1 });
+      }
+    }
+
+    return conversations;
   }
 
   getConversation = async (inputs: any, user: any) => {

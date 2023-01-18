@@ -45,6 +45,7 @@ class Conversation {
   create = async (request: any, response: express.Response) => {
     const inputs: any = _.pick({ ...request.body, ...request.params }, [
       'name',
+      'type',
       'members'
     ]);
     const name: string = inputs && inputs.name ? inputs.name : '';
@@ -52,7 +53,7 @@ class Conversation {
     log.info('controller.User.detail');
     try {
       const conversation: any = await conversationService.create({
-        type: 'group',
+        type: inputs.type,
         name,
         createdBy: user._id,
         updatedBy: user._id
@@ -65,7 +66,7 @@ class Conversation {
       const payload = {
         code: 200,
         data: { group: conversation, groupMembers: conversationMembers },
-        message: 'Group created.'
+        message: 'Conversation created.'
       };
       return new Api(response).success().code(200).send(payload);
     } catch (e: any) {
@@ -94,9 +95,9 @@ class Conversation {
         message: 'Group created.'
       };
       return new Api(response).success().code(200).send(payload);
-    } catch (e) {
-      log.error(e);
-      return new Api(response).error().code(200).send(e);
+    } catch (e: any) {
+      log.error(e.message, e);
+      return new Api(response).error().code(400).send(e);
     }
   };
 
