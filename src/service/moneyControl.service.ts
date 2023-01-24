@@ -63,6 +63,16 @@ class MoneyControlService {
   getNormalDateFormat = (timestamp: number) => { //1672221600
     return moment(new Date(timestamp * 1000)).utcOffset("+05:30").format('llll'); // December 28, 2022, 3:30
   }
+
+  findPeaks = (data: any) => {
+    let peaks = [];
+    for (let i = 1; i < data.length - 1; i++) {
+        if (data[i] > data[i-1] && data[i] > data[i+1]) {
+            peaks.push(data[i]);
+        }
+    }
+    return peaks;
+  }
 }
 
 export const moneyControlService = new MoneyControlService();

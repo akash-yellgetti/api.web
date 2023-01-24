@@ -8,4 +8,5 @@ export const moneyControl = Router();
 
 moneyControl.post('/search', auth,  MoneyControlController.search);
 moneyControl.post('/candles', auth,  MoneyControlController.getCandleData);
+moneyControl.post('/peaks', auth,  MoneyControlController.getPeaks);
 
