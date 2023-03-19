@@ -20,14 +20,15 @@ class SocketEvent {
   }
 
   connection = async (socket: any) => {
-    socket.on("connect", this.connect);
+    socket.on("connected", this.connected);
     socket.on("join", this.join);
     socket.on("send", this.send);
     socket.on("disconnect", this.disconnect);
   }
 
-  connect = async (data: any) => {
-      
+  connected = async (data: any) => {
+    console.log('Event online');
+    console.log(data);
   }
 
   join = async (data: any) => {
@@ -35,7 +36,8 @@ class SocketEvent {
   }
 
   send = async (data: any) => {
-
+    console.log('Event send');
+    data.eventTo ? this.io.to(data.eventTo).emit(data.eventName, data) : this.io.emit(data.eventName, data);
   }
 
   disconnect = async (data: any) => {
