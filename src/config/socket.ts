@@ -20,6 +20,8 @@ class SocketEvent {
   }
 
   connection = async (socket: any) => {
+    console.log('new user connection', socket.id);
+    socket.emit("authenticated", { id: socket.id })
     socket.on("connected", this.connected);
     socket.on("join", this.join);
     socket.on("send", this.send);
