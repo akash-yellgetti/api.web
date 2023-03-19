@@ -5,6 +5,7 @@ class SocketEvent {
   private static instance: SocketEvent;
   private io: any;
   private socket: any;
+  private users: any = {};
 
   // tslint:disable-next-line
   public static getInstance(): SocketEvent {
@@ -15,17 +16,43 @@ class SocketEvent {
       return SocketEvent.instance;
   }
 
+  set = (socket: any) => {
+    this.users[socket.id] = '';
+  }
   setIo = (io: any) => {
     this.io = io;
   }
 
+  all = (name: string, data: any) => {
+    this.io.emit(name, data);
+  }
+
+  specific = (toId: string, name: string, data: any) => {
+    this.io.to(toId).emit(name, data);
+  }
+
+  specificself = (socket: any, name: string, data: any) => {
+    socket.emit(name, data);
+  }
+
   connection = async (socket: any) => {
     console.log('new user connection', socket.id);
-    socket.emit("authenticated", { id: socket.id })
+
+    this.set(socket);
+    socket.emit('userSocketId', socket.id)
+    this.publishUsers(socket);
+
+    // socket.emit("users", this.users);
     socket.on("connected", this.connected);
     socket.on("join", this.join);
     socket.on("send", this.send);
-    socket.on("disconnect", this.disconnect);
+    socket.on("disconnect", () => {
+      this.disconnect(socket);
+    });
+  }
+
+  publishUsers = async (socket: any) => {
+    this.io.emit("users", this.users);
   }
 
   connected = async (data: any) => {
@@ -42,8 +69,9 @@ class SocketEvent {
     data.eventTo ? this.io.to(data.eventTo).emit(data.eventName, data) : this.io.emit(data.eventName, data);
   }
 
-  disconnect = async (data: any) => {
-      
+  disconnect = async (socket: any) => {
+    delete this.users[socket.id];
+    this.publishUsers(socket);
   }
 }
 
