@@ -1,7 +1,13 @@
+const fs = require('fs');
+const path = require('path');
 
+// Load historical stock data
+const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../json/tcs.json'), 'utf-8'));
 
 const capital = 10000; // available capital
+console.log('capital ', capital)
 const risk = 0.02; // maximum risk per trade
+console.log('risk percent ', risk)
 
 // Returns an array of daily returns
 function calculateReturns(data) {
@@ -16,9 +22,7 @@ function calculateReturns(data) {
 const returns = calculateReturns(data);
 // volatility of the stock
 const volatility = returns.reduce((a, b) => a + b, 0) / returns.length;
-
-
-
+console.log('volatility ', volatility)
 
 const pearsonCorrelationCoEfficient = (data, returns) => {
    
@@ -37,8 +41,9 @@ const pearsonCorrelationCoEfficient = (data, returns) => {
  };
  
  const correlation = pearsonCorrelationCoEfficient(data, returns);
-
+console.log('correlation ', correlation)
 
 const positionSize = (risk * capital) / (volatility * correlation);
+console.log('positionSize ', positionSize)
 const shares = Math.floor(positionSize); //round down to the nearest whole number
-
+console.log('shares ', shares)

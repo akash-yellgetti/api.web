@@ -6,16 +6,14 @@ import fs from 'fs';
 import path from 'path';
 import mongoose from "mongoose";
 import morganLogger from 'morgan';
-import { Server } from "socket.io";
 import { setting } from "./setting";
-import { socketIO } from "../utils/socket.util";
 import DB from "./db";
 import { Api, log } from '../utils';
 import { route } from "./route";
 import ErrorHandler from "../utils/error-handler.util";
 import { processExceptionHandler } from "./processExceptionHandler";
-import { socket } from "../route";
-import { channel } from "diagnostics_channel";
+import { socket } from './socket';
+
 
 export class App {
   private app: express.Application;
@@ -28,44 +26,11 @@ export class App {
     const app = express();
     this.app = app;
     const server = http.createServer(app);
-    const options: cors.CorsOptions = {
-      allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
-      credentials: true,
-      methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-      origin: '*',
-      preflightContinue: false,
-    };
+    
     if(setting && setting.socket) {
-      const io = new Server(server, {
-        cors: options
-      });
-      this.io = io;
-      this.io.on('connection', (socket: any) => {
-        socket.on("connected", async (data: any) => {
-          socket.join("main-channel");
-          // socket.join("notification-channel");
-        })
 
-        socket.on("join", async (data: any = { channels: [] }) => {
-          const channels = data.channels;
-          console.log(socket.id, channels)
-          for(const i in channels) {
-            const channel = channels[i];
-            socket.join(channel);
-          }
-        })
-
-        socket.on("send", async (r: any = { evtName: '' }) => {
-          if(r && r.evtName && r.evtName === 'chat.message.send') {
-            io.to(r.conversationId).emit("receive", { ...r, ...r.data });
-          }
-        })
+      socket.initiate(server);
       
-     
-        socket.on("disconnect", async (data: any) => {
-          
-        })
-      })
     }
     this.server = server;
     this.listen();
@@ -128,13 +93,13 @@ export class App {
   }
 
   private ping = (req: any, res: any) => {
-    const result = {
-      project: 'Welcome to Momenta ' + setting["program"],
+    const data = {
+      project: 'Welcome to Backend ' + setting["program"],
       mode : setting["mode"],
       dateTime: new Date(new Date().toUTCString()),
       version: setting["version"]
     };
-    return res.status(200).json(result);
+    return new Api(res).success().code(200).send({ data, message: 'Ping Reponse'});
   }
 
   private processExceptionHandler = () => {
@@ -173,5 +138,4 @@ export class App {
   }
 }
 
-
-export const app =  new App();
+export const app = App.getInstance();

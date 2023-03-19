@@ -6,7 +6,7 @@ export const setting = {
     host: "localhost",
     socket: true,
     db: {
-      host: "194.195.116.219",
+      host: "itslets.com",
       user: "admin",
       password: "passw0rd1",
       db: "app"
