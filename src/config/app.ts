@@ -7,7 +7,7 @@ import path from 'path';
 import mongoose from "mongoose";
 import morganLogger from 'morgan';
 import { setting } from "./setting";
-import DB from "./db";
+import { db } from "./db";
 import { Api, log } from '../utils';
 import { route } from "./route";
 import ErrorHandler from "../utils/error-handler.util";
@@ -28,9 +28,7 @@ export class App {
     const server = http.createServer(app);
     
     if(setting && setting.socket) {
-
       socket.initiate(server);
-      
     }
     this.server = server;
     this.listen();
@@ -38,7 +36,7 @@ export class App {
     this.initialize();
     this.cors();
     if(setting && setting.db) {
-      new DB(setting.db)
+      db.setConfig(setting.db).connect();
     }
   }
 
