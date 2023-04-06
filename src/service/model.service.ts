@@ -26,7 +26,7 @@ export class Model {
     }
   }
 
-  read = async (query: any, limit: number = 25, sort: any = { _id: 1 }) => {
+  read = async (query: any = {}, limit: number = 25, sort: any = { _id: 1 }) => {
     try {
       return await this.model.find(query).sort(sort).limit(limit).lean();
     } catch (error) {
@@ -56,11 +56,8 @@ export class Model {
   }
 
   // Soft Delete
-  delete = async (where: any, updateData: any) => {
-    return await this.model.findOneAndUpdate(where, updateData, {
-      new: true,
-      upsert: true // Make this update into an upsert
-    });
+  hardDelete = async (where: any) => {
+    return await this.model.remove(where);
   }
 
   // Soft Delete

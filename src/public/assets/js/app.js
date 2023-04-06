@@ -16,6 +16,7 @@ app.controller('myCtrl', function ($scope, _, socket) {
   socket.on('userSocketId', (id) => {
     console.log('userSocketId', id);
     socket.id = id
+    $scope.userSocketId = id;
   })
 
   socket.on('users', (users) => {
@@ -45,6 +46,7 @@ app.controller('myCtrl', function ($scope, _, socket) {
 
   socket.on('public-chat-message', (data) => {
     console.log(data);
+    alert(JSON.stringify(data))
   })
   
 });
