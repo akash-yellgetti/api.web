@@ -14,7 +14,7 @@ class Conversation {
     const user = request.user;
     log.info('controller.auth.check');
     try {
-      const conversations: any = await conversationMemberService.getConversations(inputs, user);
+      const conversations: any = await conversationService.getConversations(inputs, user);
       const payload = { data: conversations, message: 'conversation list.' };
       return new Api(response).success().code(200).send(payload);
     } catch (e: any) {
