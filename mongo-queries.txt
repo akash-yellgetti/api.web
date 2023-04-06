@@ -1,0 +1,88 @@
+[
+  {
+    $match: { _id: ObjectId("642f050f3a6625867442f89d") }
+  },
+  {
+    $lookup: {
+      from: "conversationmembers",
+      localField: "_id",
+      foreignField: "conversationId",
+      as: "members"
+    }
+  },
+  {
+     $unwind: {
+       path: "$members",
+       // includeArrayIndex: 'string',
+       preserveNullAndEmptyArrays: true
+     }
+  },
+  
+  {
+    $lookup: {
+      from: "conversationmessages",
+      localField: "_id",
+      foreignField: "conversationId",
+      as: "messages"
+    }
+  },
+  {
+     $unwind: {
+       path: "$messages",
+       // includeArrayIndex: 'string',
+       preserveNullAndEmptyArrays: true
+     }
+  },
+  
+  {
+    $project: {
+      _id: 1,
+      "userId": "$members.userId",
+      "type": "$messages.type",
+      "text": "$messages.text"
+    }
+  }
+]
+
+
+-----------------------------------------------------------------------------------
+
+[
+    {
+      $lookup: {
+        from: "conversationmembers",
+        let: {
+          id: "$_id",
+        },
+        pipeline: [
+          {
+            $match: {
+              $expr: {
+                $eq: ["$$id", "$conversationId"],
+              },
+            },
+          },
+  
+          {
+            $lookup: {
+              from: "users",
+              localField: "userId",
+              foreignField: "_id",
+              as: "user",
+            },
+          }
+        ],
+        as: "members",
+      },
+    },
+    {
+      $lookup: {
+        from: "conversationmessages",
+        localField: "_id",
+        foreignField: "conversationId",
+        as: "messages",
+      },
+    },
+  ]
+
+  -----------------------------------------------------------------------------------
