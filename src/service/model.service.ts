@@ -42,7 +42,7 @@ export class Model {
   }
 
   update = async (where: any, updateData: any) => {
-    return await this.model.update(where, updateData, {
+    return await this.model.updateMany(where, updateData, {
       new: true,
       upsert: true // Make this update into an upsert
     });

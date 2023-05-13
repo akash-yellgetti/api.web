@@ -1,5 +1,7 @@
 import { Server } from 'socket.io';
 import { conversationMessageService, socketService } from '../service';
+import _ from 'lodash';
+import mongoose from "mongoose";
 
 class SocketEvent {
   private static instance: SocketEvent;
@@ -42,7 +44,7 @@ class SocketEvent {
 
     this.set(socket);
     socket.emit('userSocketId', socket.id);
-    this.publishUsers(socket);
+    
 
     // socket.emit("users", this.users);
     socket.on('connected', this.connected);
@@ -53,17 +55,26 @@ class SocketEvent {
     });
   };
 
-  publishUsers = async (socket: any) => {
-    this.io.emit('users', socketService.read());
+  publishUsers = async (socket: any, functionName: string = 'No Name') => {
+    const users: any = await socketService.read({ isActive: 1 });
+    console.log(users)
+    
+    const user: any = _.find(users, { socketId: socket.id });
+    console.log(functionName, user)
+    this.io.emit('onlineUsers', { userId: user?.userId, users });
   };
 
   connected = async (data: any) => {
-    console.log('Event: Connected');
+    // console.log('Event: Connected');
     // console.log('data', data);
-    socketService.create({
-      userId: data.user._id,
-      socketId: data.user.userSocketId
-    });
+    await socketService.updateSocketRecord(data);
+    this.publishUsers(this.socket, 'connected');
+    // const socketRecord = await this.
+    // socketService.update({
+    //   userId: data.user._id,
+    //   socketId: data.user.userSocketId,
+    //   deviceId: data.user.deviceId,
+    // });
   };
 
   join = async ({ channels }: any) => {
@@ -94,8 +105,8 @@ class SocketEvent {
 
   disconnect = async (socket: any) => {
     delete this.users[socket.id];
-    socketService.hardDelete({ socketId: socket.id });
-    this.publishUsers(socket);
+    await socketService.update({ socketId: socket.id }, { isActive: 0 });
+    this.publishUsers(socket, 'disconnected');
   };
 }
 
