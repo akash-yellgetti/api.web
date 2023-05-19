@@ -78,26 +78,30 @@ class SocketEvent {
   };
 
   join = async ({ channels }: any) => {
+    // console.table(channels);
+    console.log(channels);
     for (const i in channels) {
-      this.socket.join(channels[i]);
+      const room = channels[i];
+      console.log(this.socket.id, room);
+      this.socket.join(room);
     }
   };
 
   send = async (res: any) => {
     console.log('Event send', res);
-    switch (res.eventName) {
-      case 'chat.message.receive':
-        conversationMessageService.create({
-          conversationId: res.conversationId,
-          userId: res.userId,
-          type: res.data.type,
-          text: res.data.text
-        });
-        break;
+    // switch (res.eventName) {
+    //   case 'chat.message.receive':
+    //     conversationMessageService.create({
+    //       conversationId: res.conversationId,
+    //       userId: res.userId,
+    //       type: res.data.type,
+    //       text: res.data.text
+    //     });
+    //     break;
 
-      default:
-        break;
-    }
+    //   default:
+    //     break;
+    // }
     res.eventTo
       ? this.io.to(res.eventTo).emit(res.eventName, res)
       : this.io.emit(res.eventName, res);
