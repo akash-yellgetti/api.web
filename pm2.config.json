@@ -1,8 +1,8 @@
 {
     "apps": [
       {
-        "name": "your-app-name",
-        "script": "app.js",
+        "name": "api",
+        "script": "dist/config/app.js",
         "instances": "1",
         "autorestart": true,
         "watch": false,
