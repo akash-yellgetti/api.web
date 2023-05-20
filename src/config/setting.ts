@@ -1,18 +1,18 @@
 export const setting = {
-    program: "api",
-    mode: "dev",
-    port: 5001,
-    version: "1.0.0",
-    host: "localhost",
-    socket: true,
-    db: {
-      host: "194.195.116.219",
-      user: "admin",
-      password: "passw0rd1",
-      db: "app"
-    },
-    saltWorkFactor: 10,
-    accessTokenTtl: "180m",
-    refreshTokenTtl: "1y",
-    privateKey: `samplePrivateKey`,
-  };
+  program: 'api',
+  mode: 'dev',
+  port: process.env.NODE_PORT || 3001,
+  version: '1.0.0',
+  host: process.env.NODE_HOST || 'localhost',
+  socket: true,
+  db: {
+    host: process.env.NODE_DB_HOST || 'localhost',
+    user: process.env.NODE_DB_USER || '',
+    password: process.env.NODE_DB_PASSWORD || '',
+    db: process.env.NODE_DB_NAME || 'app'
+  },
+  saltWorkFactor: 10,
+  accessTokenTtl: '180m',
+  refreshTokenTtl: '1y',
+  privateKey: `samplePrivateKey`
+};
