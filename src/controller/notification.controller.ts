@@ -21,7 +21,7 @@ class Notification {
       if(userSocket && userSocket.socketId) {
         app.getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
       }
-      return new Api(response).success().code(200).send({ payload: notification });
+      return new Api(response).success().code(200).send({ data: notification });
     } catch (e: any) {
       log.error(e.message, e);
       return new Api(response).error().code(400).send(e);
@@ -33,8 +33,8 @@ class Notification {
     const user: any = request.user;
     log.info('controller.session.list');
     try {
-      const notifications = await notificationService.read({ recipient: new mongoose.Types.ObjectId(user._id) });
-      return new Api(response).success().code(200).send({ payload: notifications });
+      const data = await notificationService.read({ recipient: new mongoose.Types.ObjectId(user._id) });
+      return new Api(response).success().code(200).send({ data });
     } catch (e: any) {
       log.error(e.message, e);
       return new Api(response).error().code(400).send(e);
