@@ -1,18 +1,27 @@
 import * as express from 'express';
 import { jwt } from '../utils/jwt.utils';
 import { setting } from '../config/setting';
-import { socketService } from '../service';
+import { socketService, userService } from '../service';
 import { Api, api, log } from '../utils';
 import { app } from '../config/app';
-
+import { notificationService } from '../service/notification.service';
+import mongoose from "mongoose";
+import { notification } from '../route';
 class Notification {
   send = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     log.info('controller.socket.list');
     try {
-        app.getSocketIO().to("main-channel").emit("notification", inputs)
-      //   const user = await socketService.read({  isActive: true });
-      return new Api(response).success().code(200).send({});
+      const notification: any = await notificationService.create({
+        title: inputs.title,
+        description: inputs.description,
+        recipient: inputs.recipient
+      });
+      const userSocket: any = await socketService.readOne({  userId: new mongoose.Types.ObjectId(inputs.recipient), isActive: 1 });
+      if(userSocket && userSocket.socketId) {
+        app.getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
+      }
+      return new Api(response).success().code(200).send(notification);
     } catch (e: any) {
       log.error(e.message, e);
       return new Api(response).error().code(400).send(e);
