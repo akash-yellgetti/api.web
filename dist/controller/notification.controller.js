@@ -40,6 +40,19 @@ class Notification {
                 return new utils_1.Api(response).error().code(400).send(e);
             }
         });
+        this.list = (request, response) => __awaiter(this, void 0, void 0, function* () {
+            const inputs = Object.assign(Object.assign({}, request.body), request.params);
+            const user = request.user;
+            utils_1.log.info('controller.session.list');
+            try {
+                const notifications = yield notification_service_1.notificationService.read({ recipient: new mongoose_1.default.Types.ObjectId(user._id) });
+                return new utils_1.Api(response).success().code(200).send({ payload: notifications });
+            }
+            catch (e) {
+                utils_1.log.error(e.message, e);
+                return new utils_1.Api(response).error().code(400).send(e);
+            }
+        });
     }
 }
 exports.NotificationController = new Notification();

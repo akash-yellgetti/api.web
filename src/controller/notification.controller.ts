@@ -27,6 +27,19 @@ class Notification {
       return new Api(response).error().code(400).send(e);
     }
   };
+
+  list = async (request: any, response: express.Response) => {
+    const inputs: any = { ...request.body, ...request.params};
+    const user: any = request.user;
+    log.info('controller.session.list');
+    try {
+      const notifications = await notificationService.read({ recipient: new mongoose.Types.ObjectId(user._id) });
+      return new Api(response).success().code(200).send({ payload: notifications });
+    } catch (e: any) {
+      log.error(e.message, e);
+      return new Api(response).error().code(400).send(e);
+    }
+  }
 }
 
 export const NotificationController = new Notification();
