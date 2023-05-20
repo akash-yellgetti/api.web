@@ -8,19 +8,32 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationController = void 0;
+const service_1 = require("../service");
 const utils_1 = require("../utils");
 const app_1 = require("../config/app");
+const notification_service_1 = require("../service/notification.service");
+const mongoose_1 = __importDefault(require("mongoose"));
 class Notification {
     constructor() {
         this.send = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             utils_1.log.info('controller.socket.list');
             try {
-                app_1.app.getSocketIO().to("main-channel").emit("notification", inputs);
-                //   const user = await socketService.read({  isActive: true });
-                return new utils_1.Api(response).success().code(200).send({});
+                const notification = yield notification_service_1.notificationService.create({
+                    title: inputs.title,
+                    description: inputs.description,
+                    recipient: inputs.recipient
+                });
+                const userSocket = yield service_1.socketService.readOne({ userId: new mongoose_1.default.Types.ObjectId(inputs.recipient), isActive: 1 });
+                if (userSocket && userSocket.socketId) {
+                    app_1.app.getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
+                }
+                return new utils_1.Api(response).success().code(200).send(notification);
             }
             catch (e) {
                 utils_1.log.error(e.message, e);

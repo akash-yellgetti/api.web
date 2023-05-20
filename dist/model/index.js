@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConversationMessage = exports.ConversationMember = exports.Conversation = exports.Otp = exports.Device = exports.Session = exports.Socket = exports.User = void 0;
+exports.Notification = exports.ConversationMessage = exports.ConversationMember = exports.Conversation = exports.Otp = exports.Device = exports.Session = exports.Socket = exports.User = void 0;
 var user_model_1 = require("./user.model");
 Object.defineProperty(exports, "User", { enumerable: true, get: function () { return user_model_1.User; } });
 var socket_model_1 = require("./socket.model");
@@ -17,3 +17,5 @@ var conversationMember_model_1 = require("./conversationMember.model");
 Object.defineProperty(exports, "ConversationMember", { enumerable: true, get: function () { return conversationMember_model_1.ConversationMember; } });
 var conversationMessage_model_1 = require("./conversationMessage.model");
 Object.defineProperty(exports, "ConversationMessage", { enumerable: true, get: function () { return conversationMessage_model_1.ConversationMessage; } });
+var notification_model_1 = require("./notification.model");
+Object.defineProperty(exports, "Notification", { enumerable: true, get: function () { return notification_model_1.Notification; } });
