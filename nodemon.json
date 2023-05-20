@@ -6,7 +6,11 @@
       "ts": "node -r ts-node/register"
     },
     "env": {
-      "NODE_ENV": "development"
+      "NODE_ENV": "development",
+      "NODE_PORT": 3000,
+      "NODE_DB_HOST": "api.itslets.com",
+      "NODE_DB_USER": "admin",
+      "NODE_DB_PASSWORD": "passw0rd1"
     },
     "ext": "js,json,ts"
   }

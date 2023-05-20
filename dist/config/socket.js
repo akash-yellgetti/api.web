@@ -27,6 +27,9 @@ class SocketEvent {
         this.setIo = (io) => {
             this.io = io;
         };
+        this.getIo = () => {
+            return this.io;
+        };
         this.all = (name, data) => {
             this.io.emit(name, data);
         };
@@ -111,6 +114,9 @@ class SocketEvent {
 const socketEvent = SocketEvent.getInstance();
 class Socket {
     constructor() {
+        this.getIo = () => {
+            return this.io;
+        };
         this.initiate = (server) => {
             const options = {
                 allowedHeaders: [

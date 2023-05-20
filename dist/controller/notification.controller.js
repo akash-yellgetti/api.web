@@ -33,7 +33,7 @@ class Notification {
                 if (userSocket && userSocket.socketId) {
                     app_1.app.getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
                 }
-                return new utils_1.Api(response).success().code(200).send(notification);
+                return new utils_1.Api(response).success().code(200).send({ payload: notification });
             }
             catch (e) {
                 utils_1.log.error(e.message, e);

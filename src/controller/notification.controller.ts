@@ -21,7 +21,7 @@ class Notification {
       if(userSocket && userSocket.socketId) {
         app.getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
       }
-      return new Api(response).success().code(200).send(notification);
+      return new Api(response).success().code(200).send({ payload: notification });
     } catch (e: any) {
       log.error(e.message, e);
       return new Api(response).error().code(400).send(e);

@@ -91,7 +91,7 @@ class App {
             //   });
         };
         this.getSocketIO = () => {
-            return this.io;
+            return socket_1.socket.getIo();
         };
         const app = (0, express_1.default)();
         this.app = app;

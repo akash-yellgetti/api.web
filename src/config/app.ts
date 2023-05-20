@@ -132,7 +132,7 @@ export class App {
   }
 
   getSocketIO = () => {
-    return this.io;
+    return socket.getIo();
   }
 }
 

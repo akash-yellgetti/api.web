@@ -27,6 +27,10 @@ class SocketEvent {
     this.io = io;
   };
 
+  getIo = () => {
+    return this.io;
+  };
+
   all = (name: string, data: any) => {
     this.io.emit(name, data);
   };
@@ -128,6 +132,10 @@ class Socket {
 
     return Socket.instance;
   }
+
+  getIo = () => {
+    return this.io;
+  };
 
   initiate = (server: any) => {
     const options: any = {
