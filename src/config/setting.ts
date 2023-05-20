@@ -6,9 +6,9 @@ export const setting = {
     host: "localhost",
     socket: true,
     db: {
-      host: "localhost",
-      // user: "admin",
-      // password: "passw0rd1",
+      host: "mongo",
+      user: "admin",
+      password: "passw0rd1",
       db: "app"
     },
     saltWorkFactor: 10,
