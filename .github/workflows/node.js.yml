@@ -16,6 +16,10 @@ jobs:
         node-version: 18.x
     - run: npm i
     - run: npm run build --if-present
+    - git add dist
+    - git diff --quiet && git diff --staged --quiet || git commit -m "dist build"
+    - git pull origin master
+    - git push origin master
   deploy:
     runs-on: self-hosted
     steps:
