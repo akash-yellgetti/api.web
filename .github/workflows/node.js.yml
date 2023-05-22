@@ -19,8 +19,7 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - run: cd 
-      - run: cd docker
       - run: cp -r ~/actions-runner/_work/api.web/api.web ~/docker/volumes/api.web
+      - run: cd ~/docker
       - run: sudo docker-compose down
       - run: sudo docker-compose up -d
