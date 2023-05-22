@@ -69,9 +69,10 @@ export class App {
     this.app.use(cors());
     this.app.use(ErrorHandler);
     this.app.use(route);
-    this.app.get('/', (req, res) => {
-      res.sendFile(path.resolve(__dirname,'../views/app/index.html'));
-    });
+    // this.app.get('/', (req, res) => {
+    //   res.sendFile(path.resolve(__dirname,'../views/app/index.html'));
+    // });
+    this.app.get('/', this.ping);
     this.app.get('/ping', this.ping);
 
     this.app.get('/socket', (req, res) => {
