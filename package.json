@@ -8,7 +8,8 @@
     "dev": "nodemon --config nodemon.json src/app.ts",
     "prettier-format": "npx prettier --config .prettierrc . --write",
     "eslint-prettier-format": "npx eslint-config-prettier .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "mdSeed": {
     "seedersFolder": "./src/seeders",
