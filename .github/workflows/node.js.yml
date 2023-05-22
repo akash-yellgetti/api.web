@@ -21,6 +21,7 @@ jobs:
     - run: git pull origin master
     - run: git push origin master
   deploy:
+    needs: build
     runs-on: self-hosted
     steps:
       - run: cp -r ~/actions-runner/_work/api.web/api.web/* ~/docker/volumes/api.web/.
