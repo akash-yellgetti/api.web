@@ -93,7 +93,7 @@ export class App {
 
   private ping = (req: any, res: any) => {
     const data = {
-      project: 'Welcome to Backend ' + setting["program"],
+      project: 'Welcome to Backend - ' + setting["program"],
       mode : setting["mode"],
       dateTime: new Date(new Date().toUTCString()),
       version: setting["version"]
