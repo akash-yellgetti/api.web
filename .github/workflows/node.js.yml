@@ -20,7 +20,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - run: cp -r ~/actions-runner/_work/api.web/api.web ~/docker/volumes/api.web
-      - run: cd ~/docker
+      # - run: cd ~/docker
       - run: pwd
-      - run: docker-compose down
-      - run: docker-compose up -d
+      - run: sudo ~/docker/docker-compose down
+      - run: sudo ~/docker/docker-compose up -d
