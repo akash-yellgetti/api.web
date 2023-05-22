@@ -16,6 +16,8 @@ jobs:
         node-version: 18.x
     - run: npm i
     - run: npm run build --if-present
+    - run: git config --global user.email "github-actions@example.com"
+    - run: git config --global user.name "github-actions"
     - run: git add dist
     - run: git diff --quiet && git diff --staged --quiet || git commit -m "dist build"
     - run: git pull origin master
