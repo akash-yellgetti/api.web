@@ -3,6 +3,7 @@ import { persoanlTransactionService } from '../service';
 import { Api, api, log } from '../utils';
 import _ from 'lodash';
 import { group } from 'console';
+import mongoose from 'mongoose';
 
 class PersonalTransaction {
   create = async (request: any, response: express.Response) => {
@@ -25,6 +26,39 @@ class PersonalTransaction {
         data: persoanlTransaction,
         message: 'persoanlTransaction created.'
       };
+      return new Api(response).success().code(200).send(payload);
+    } catch (e: any) {
+      log.error(e.message, e);
+      return new Api(response).error().code(400).send(e);
+    }
+  };
+
+  list = async (request: any, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    const user = request.user;
+    log.info('controller.auth.check');
+    try {
+
+      const query: any = [
+        {
+          $match: {
+            userId: new mongoose.Types.ObjectId(user._id)
+          }
+        },
+        {
+          $addFields: {
+            transactionMonth: { $month: "$date" },
+          },
+        },
+        {
+          $match: {
+            transactionMonth: inputs.month
+          }
+        }
+      ];
+
+      const transactions: any = await persoanlTransactionService.aggregate(query);
+      const payload = { data: transactions, message: 'transaction list.' };
       return new Api(response).success().code(200).send(payload);
     } catch (e: any) {
       log.error(e.message, e);
