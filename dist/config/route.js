@@ -11,3 +11,4 @@ exports.route.use('/money-control', route_1.moneyControl);
 exports.route.use('/group', route_1.group);
 exports.route.use('/conversation', route_1.conversation);
 exports.route.use('/notification', route_1.notification);
+exports.route.use('/personal/transaction', route_1.personalTransaction);
