@@ -5,4 +5,5 @@ export { moneyControl } from "./moneyControl.route";
 export { group } from "./group.route";
 export { conversation } from "./conversation.route";
 export { notification } from "./notification.route";
+export { personalTransaction } from "./personalTransaction.route";
 

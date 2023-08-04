@@ -6,3 +6,4 @@ export { moneyControlService } from "./moneyControl.service";
 export { conversationService } from "./conversation.service";
 export { conversationMemberService } from "./conversationMember.service";
 export { conversationMessageService } from "./conversationMessage.service";
+export { persoanlTransactionService } from "./persoanlTransaction.service";

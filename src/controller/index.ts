@@ -6,3 +6,4 @@ export { MoneyControlController } from './moneyControl.controller';
 export { GroupController } from './group.controller';
 export { ConversationController } from './conversation.controller';
 export { NotificationController } from './notification.controller';
+export { PersonalTransactionController } from './personalTransaction.controller';
