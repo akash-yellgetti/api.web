@@ -31,10 +31,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MoneyControlController = void 0;
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
+const moment_1 = __importDefault(require("moment"));
 const utils_1 = require("../utils");
 const service_1 = require("../service");
 class MoneyControl {
@@ -56,18 +60,28 @@ class MoneyControl {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             const user = request.user;
             utils_1.log.info('controller.auth.check');
+            console.log(inputs);
+            // Get the current date and time
+            const now = new Date();
+            // Set the target time to 9:00 AM
+            // const targetTime = new Date(now);
+            const targetTime = service_1.moneyControlService.getNextNonWeekendDay(now);
+            targetTime.setHours(9, 0, 0, 0); // Set hours to 9, minutes to 0, seconds to 0, milliseconds to 0
+            const duration = '3';
+            // Calculate the difference in minutes
+            const timeDifferenceInMinutes = Math.floor((targetTime - now) / (1000 * 60));
+            const countback = (Math.abs(Math.round(timeDifferenceInMinutes / Number(duration))) - 5).toString();
+            const fromdateTimeString = targetTime;
+            const from = (0, moment_1.default)(fromdateTimeString, "YYYY-MM-DD HH:mm:ss").unix();
+            const todateTimeString = new Date();
+            // const todateTimeString = "2024-01-25 15:30:05";
+            const to = (0, moment_1.default)(todateTimeString, "YYYY-MM-DD HH:mm:ss").unix();
+            // console.log(to)
             try {
-                const params = Object.assign({ symbol: 'TATASTEEL', min: 5, 
-                    // from: (new Date('2022-11-28 09:00 GMT').getTime()/1000),
-                    // to: (new Date('2022-12-02 03:30 GMT').getTime()/1000),
-                    countback: 76, currencyCode: 'INR' }, inputs);
-                console.log(new Date(params.from).toUTCString());
-                // example '2022-12-02 03:30 GMT'
-                params.from = (new Date(params.from).getTime() / 1000),
-                    params.to = (new Date(params.to).getTime() / 1000),
-                    console.log('from', new Date(params.from * 1000));
-                console.log('to', new Date(params.to * 1000));
-                const data = yield service_1.moneyControlService.getCandleData(params.symbol, params.min, params.from, params.to, params.countback, params.currencyCode);
+                const params = Object.assign({ symbol: 'TATASTEEL', duration: 3, from,
+                    to,
+                    countback, currencyCode: 'INR', type: 'stock' }, inputs);
+                const data = yield service_1.moneyControlService.getCandleData(params);
                 const payload = { data, message: 'stock candles.' };
                 return new utils_1.Api(response).success().code(200).send(payload);
             }
