@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as fs from 'fs';
 import * as path from 'path';
+import moment from 'moment';
 import _ from 'lodash';
 import { Api, log } from '../utils';
 import { moneyControlService } from "../service";
@@ -24,27 +25,42 @@ class MoneyControl {
     const inputs = { ...request.body, ...request.params };
     const user = request.user;
     log.info('controller.auth.check');
+    console.log(inputs)
+
+
+    // Get the current date and time
+    const now: any = new Date();
+
+    // Set the target time to 9:00 AM
+    // const targetTime = new Date(now);
+    const targetTime: any = moneyControlService.getNextNonWeekendDay(now);
+    targetTime.setHours(9, 0, 0, 0); // Set hours to 9, minutes to 0, seconds to 0, milliseconds to 0
+
+    const duration = '3';
+    // Calculate the difference in minutes
+    const timeDifferenceInMinutes = Math.floor((targetTime - now) / (1000 * 60));
+    const countback = (Math.abs(Math.round(timeDifferenceInMinutes/Number(duration)))-5).toString();
+
+    const fromdateTimeString = targetTime;
+    const from = moment(fromdateTimeString, "YYYY-MM-DD HH:mm:ss").unix();
+    const todateTimeString = new Date();
+    // const todateTimeString = "2024-01-25 15:30:05";
+    const to = moment(todateTimeString, "YYYY-MM-DD HH:mm:ss").unix();
+    // console.log(to)
+  
     try {
       const params: any = {
         symbol: 'TATASTEEL',
-        min: 5,
-        // from: (new Date('2022-11-28 09:00 GMT').getTime()/1000),
-        // to: (new Date('2022-12-02 03:30 GMT').getTime()/1000),
-        countback: 76,
+        duration: 3,
+        from,
+        to,
+        countback,
         currencyCode: 'INR',
+        type: 'stock',
         ...inputs
       }
 
-      console.log(new Date(params.from).toUTCString())
-
-      // example '2022-12-02 03:30 GMT'
-      params.from =  (new Date(params.from).getTime()/1000),
-      params.to =  (new Date(params.to).getTime()/1000),
-        
-      console.log('from', new Date(params.from*1000))
-      console.log('to', new Date(params.to*1000))
-    
-      const data = await moneyControlService.getCandleData(params.symbol, params.min, params.from, params.to, params.countback, params.currencyCode);
+      const data = await moneyControlService.getCandleData(params);
       const payload = { data, message: 'stock candles.' };
       return new Api(response).success().code(200).send(payload);
     } catch (e) {

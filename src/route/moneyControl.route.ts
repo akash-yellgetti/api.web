@@ -6,7 +6,7 @@ export const moneyControl = Router();
 
 
 
-moneyControl.post('/search', auth,  MoneyControlController.search);
-moneyControl.post('/candles', auth,  MoneyControlController.getCandleData);
-moneyControl.post('/peaks', auth,  MoneyControlController.getPeaks);
+moneyControl.post('/search',  MoneyControlController.search);
+moneyControl.post('/candles',  MoneyControlController.getCandleData);
+moneyControl.post('/peaks',  MoneyControlController.getPeaks);
 
