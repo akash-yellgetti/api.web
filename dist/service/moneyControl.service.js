@@ -25,10 +25,10 @@ class MoneyControlService {
             const data = [...response];
             return data;
         });
-        this.detail = (code) => __awaiter(this, void 0, void 0, function* () {
-            const url = 'https://priceapi-aws.moneycontrol.com/pricefeed/nse/equitycash/' + code;
+        this.details = (code) => __awaiter(this, void 0, void 0, function* () {
+            const url = 'https://priceapi.moneycontrol.com/pricefeed/nse/equitycash/' + code;
             const response = yield (0, curlRequest_util_1.curlRequest)('GET', url);
-            const data = Object.assign({}, response);
+            const data = Object.assign({}, response.data);
             return data;
         });
         this.historicalData = (code) => __awaiter(this, void 0, void 0, function* () {

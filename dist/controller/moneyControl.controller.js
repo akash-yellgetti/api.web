@@ -46,7 +46,7 @@ class MoneyControl {
         this.search = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             const user = request.user;
-            utils_1.log.info('controller.auth.check');
+            utils_1.log.info('controller.money-control.search');
             try {
                 const data = yield service_1.moneyControlService.search(inputs.text);
                 const payload = { data, message: 'stock candles.' };
@@ -56,11 +56,23 @@ class MoneyControl {
                 return new utils_1.Api(response).error().code(400).send(e);
             }
         });
+        this.details = (request, response) => __awaiter(this, void 0, void 0, function* () {
+            const inputs = Object.assign(Object.assign({}, request.body), request.params);
+            const user = request.user;
+            utils_1.log.info('controller.money-control.details');
+            try {
+                const data = yield service_1.moneyControlService.details(inputs.code);
+                const payload = { data, message: 'share details.' };
+                return new utils_1.Api(response).success().code(200).send(payload);
+            }
+            catch (e) {
+                return new utils_1.Api(response).error().code(400).send(e);
+            }
+        });
         this.getCandleData = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             const user = request.user;
-            utils_1.log.info('controller.auth.check');
-            console.log(inputs);
+            utils_1.log.info('controller.money-control.getCandleData');
             // Get the current date and time
             const now = new Date();
             // Set the target time to 9:00 AM
