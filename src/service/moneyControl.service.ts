@@ -157,7 +157,7 @@ class MoneyControlService {
         data[i]['dayLow'] = dayLow;
         dayHigh = Math.max(candle.high, dayHigh)
         dayLow = Math.min(candle.low, dayLow)
-        dayMid = _.mean([dayHigh, dayLow]);
+        dayMid = Number(_.mean([dayHigh, dayLow]).toFixed());
       } else {
         data[i]['dayHigh'] = dayHigh;
         data[i]['dayMid'] = dayMid;
