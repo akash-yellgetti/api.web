@@ -12,9 +12,11 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap.min.js"></script>
-  <script src= 
-  "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"> 
-      </script> 
+  <!-- Include Bootstrap Typeahead library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+  <!-- Include Bloodhound library for handling remote data -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+
 
 </head>
 
@@ -52,98 +54,17 @@
         <hr>
         <h3>Datatable</h3>
         <div class="table-responsive">
-          <table id="example" class="table table-striped table-bordered" ></table>
+          <table id="example" class="table table-striped table-bordered"></table>
         </div>
       </div>
-      
+
     </div>
   </div>
- 
+
 </body>
 
-<script>
+<script src="assets/js/custom.js"></script>
 
 
-
-  $(document).ready(function(){
-
-    // Initialize Typeahead with an empty source (data will be fetched via AJAX)
-    $('#searchBox').typeahead({
-        source: []
-    });
-
-    // Set up AJAX call to fetch autocomplete suggestions
-    $('#searchBox').on('keyup', function() {
-      const parser = new DOMParser();
-        var text = $(this).val();
-        if(text.length ===  0) {
-          $('#searchBox').typeahead('destroy');
-          $('#searchBox').typeahead({
-        source: []
-    });
-        }
-        // Make an AJAX call to fetch data based on the user's input
-        $.ajax({
-            url: 'http://localhost:5001/money-control/search', // Replace with your actual API endpoint
-            method: 'POST',
-            data: { text },
-            success: function(data) {
-                const source = data.data.map(r => r.pdt_dis_nm)
-                // Update Typeahead source with the fetched data
-                $('#searchBox').typeahead('destroy'); // Destroy the previous instance
-                $('#searchBox').typeahead({
-                    source
-                });
-            },
-            error: function(error) {
-                console.error('Error fetching autocomplete data:', error);
-            }
-        });
-    });
-
-  new DataTable('#example', {
-    ajax: {
-      url: 'http://localhost:5001/money-control/candles',
-      type: 'POST',
-      "contentType": "application/json",
-      data: function (d) {
-        return JSON.stringify({
-          "symbol": "ICICIBANK",
-          "duration": 3,
-          "countback": 2393
-        })
-      }
-    },
-    "pageLength": 20,
-    order: [[0, 'desc']],
-    columns: [
-      { title: "timestamp", data: "timestamp" },
-      { title: "open", data: "open" },
-      { title: "high", data: "high" },
-      { title: "low", data: "low" },
-      { title: "close", data: "close" },
-      { title: "volume", data: "volume" },
-      { title: "ema2", data: "ema2" },
-      { title: "ema3", data: "ema3" },
-      { title: "ema5", data: "ema5" },
-      { title: "ema10", data: "ema10" },
-      { title: "ema15", data: "ema15" },
-      { title: "ema20", data: "ema20" },
-      { title: "dayHigh", data: "dayHigh" },
-      { title: "dayMid", data: "dayMid" },
-      { title: "dayLow", data: "dayLow" },
-      { title: "trend", data: "trend" },
-      { title: "signal", data: "signal" },
-      { title: "price", data: "price" },
-      { title: "stopLoss", data: "stopLoss" },
-      { title: "stopLossHit", data: "stopLossHit" },
-    ],
-    // processing: true,
-    // serverSide: true
-  });
-
-
-});
-</script>
 
 </html>
