@@ -11,7 +11,7 @@ class MoneyControl {
   search = async (request: any, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     const user = request.user;
-    log.info('controller.auth.check');
+    log.info('controller.money-control.search');
     try {
       const data = await moneyControlService.search(inputs.text);
       const payload = { data, message: 'stock candles.' };
@@ -21,16 +21,25 @@ class MoneyControl {
     }
   };
 
+  details = async (request: any, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    const user = request.user;
+    log.info('controller.money-control.details');
+    try {
+      const data = await moneyControlService.details(inputs.code);
+      const payload = { data, message: 'share details.' };
+      return new Api(response).success().code(200).send(payload);
+    } catch (e) {
+      return new Api(response).error().code(400).send(e);
+    }
+  };
+
   getCandleData = async (request: any, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     const user = request.user;
-    log.info('controller.auth.check');
-    console.log(inputs)
-
-
+    log.info('controller.money-control.getCandleData');
     // Get the current date and time
     const now: any = new Date();
-
     // Set the target time to 9:00 AM
     // const targetTime = new Date(now);
     const targetTime: any = moneyControlService.getNextNonWeekendDay(now);

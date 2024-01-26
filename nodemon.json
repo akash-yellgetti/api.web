@@ -8,9 +8,9 @@
     "env": {
       "NODE_ENV": "development",
       "NODE_PORT": 5001,
-      "NODE_DB_HOST": "api.itslets.com",
-      "NODE_DB_USER": "admin",
-      "NODE_DB_PASSWORD": "passw0rd1"
+      "NODE_DB_HOST": "cluster0.1gf9npw.mongodb.net",
+      "NODE_DB_USER": "akash5792bts",
+      "NODE_DB_PASSWORD": "ydPCbuP5poz961cV"
     },
     "ext": "js,json,ts"
   }

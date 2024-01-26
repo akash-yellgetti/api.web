@@ -12,10 +12,10 @@ class MoneyControlService {
     return data;
   }
 
-  detail = async (code: string) => {
-    const url: string = 'https://priceapi-aws.moneycontrol.com/pricefeed/nse/equitycash/' + code;
+  details = async (code: string) => {
+    const url: string = 'https://priceapi.moneycontrol.com/pricefeed/nse/equitycash/' + code;
     const response: any = await curlRequest('GET', url);
-    const data = {...response};
+    const data = {...response.data};
     return data;
   }
 

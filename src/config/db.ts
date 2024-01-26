@@ -28,10 +28,11 @@ class DB {
 
   connect = () => {
     const config: any = this.getConfig();
-    const uri =
-      config.user && config.password
-        ? `mongodb://${config.user}:${config.password}@${config.host}/${config.db}?authSource=admin`
-        : `mongodb://${config.host}/${config.db}?authSource=admin`;
+    const uri = `mongodb+srv://${config.user}:${config.password}@${config.host}/?retryWrites=true&w=majority`;
+    // const uri =
+    //   config.user && config.password
+    //     ? `mongodb://${config.user}:${config.password}@${config.host}/${config.db}?authSource=admin`
+    //     : `mongodb://${config.host}/${config.db}?authSource=admin`;
     mongoose.set('strictQuery', false);
     mongoose.connect(uri, this.options);
     mongoose.connection.on('connected', this.connected);
