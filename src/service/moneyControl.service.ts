@@ -65,6 +65,7 @@ class MoneyControlService {
 
 
   algoTrade = (data: any) => {
+    const accountFund = 100000;
     // ema
     const ema2 = talib.EMA(data.c, 2);
     const ema3 = talib.EMA(data.c, 3);
