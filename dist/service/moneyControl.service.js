@@ -22,7 +22,10 @@ class MoneyControlService {
         this.search = (text) => __awaiter(this, void 0, void 0, function* () {
             const url = 'https://www.moneycontrol.com/mccode/common/autosuggestion_solr.php?classic=true&type=1&format=json&query=' + text;
             const response = yield (0, curlRequest_util_1.curlRequest)('GET', url);
-            const data = [...response];
+            const data = lodash_1.default.map(response, (r) => {
+                r.symbol = lodash_1.default.trim(lodash_1.default.split(r.pdt_dis_nm, ',')[1]);
+                return r;
+            });
             return data;
         });
         this.details = (code) => __awaiter(this, void 0, void 0, function* () {
