@@ -8,7 +8,10 @@ class MoneyControlService {
   search = async (text: string) => {
     const url: string = 'https://www.moneycontrol.com/mccode/common/autosuggestion_solr.php?classic=true&type=1&format=json&query='+text;
     const response: any = await curlRequest('GET', url);
-    const data = [...response];
+    const data = _.map(response, (r) => {
+      r.symbol = _.trim(_.split(r.pdt_dis_nm, ',')[1]);
+      return r;
+    });
     return data;
   }
 
