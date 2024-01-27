@@ -13,6 +13,10 @@ $(document).ready(function () {
         });
       }
     },
+    dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
     lengthMenu: [
       [10, 20, 25, 50, 60, 80, 100, 120, 126, 127, 130, -1],
       [10, 20, 25, 50, 60, 80, 100, 120, 126, 127, 130, 'All']
