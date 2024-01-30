@@ -108,13 +108,13 @@ class MoneyControlService {
                     candle['price'] = '';
                     candle['stopLoss'] = '';
                     candle['stopLossHit'] = '';
-                    if (candle['trend'] == 'down' && candle['close'] < previousCandle['close'] && candle['ema3'] < candle['dayLow'] && candle['dayLow'] != 1000000) {
+                    if (candle['trend'] == 'down' && candle['close'] <= previousCandle['close'] && candle['ema3'] < candle['dayLow'] && candle['dayLow'] != 1000000) {
                         candle['signal'] = 'Sell';
                         candle['price'] = candle['close'];
                         candle['stopLoss'] = previousCandle['high'];
                         candle['stopLossHit'] = candle['high'] > previousCandle['high'];
                     }
-                    if (candle['trend'] == 'up' && candle['close'] > previousCandle['close'] && candle['ema3'] > candle['dayHigh'] && candle['dayHigh'] != -1000000) {
+                    if (candle['trend'] == 'up' && candle['close'] >= previousCandle['close'] && candle['ema3'] > candle['dayHigh'] && candle['dayHigh'] != -1000000) {
                         candle['signal'] = 'Buy';
                         candle['price'] = candle['close'];
                         candle['stopLoss'] = previousCandle['low'];
