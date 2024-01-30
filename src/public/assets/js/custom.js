@@ -59,6 +59,8 @@ $(document).ready(function () {
       { title: 'ema10', data: 'ema10' },
       { title: 'ema15', data: 'ema15' },
       { title: 'ema20', data: 'ema20' },
+      { title: 'priceChange', data: 'priceChange' },
+      { title: 'volumeChange', data: 'volumeChange' },
 
       // { title: 'trend', data: 'trend' },
       // { title: 'signal', data: 'signal' },

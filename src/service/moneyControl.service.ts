@@ -95,7 +95,9 @@ class MoneyControlService {
       if (res[i]) {
         const previousCandle = res[Number(i) > 0 ? Number(i)-1 : i];
         const candle = res[i];
-
+        candle['priceChange'] = candle['close']-previousCandle['close'];
+        candle['volumeChange'] = candle['volume']-previousCandle['volume'];
+        
         
 
         candle['trend'] = 'side';
