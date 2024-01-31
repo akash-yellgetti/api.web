@@ -63,74 +63,97 @@ class MoneyControlService {
     return peaks;
   }
 
+  calculateVWAP = (trades: any) => {
+    let totalValue = 0;
+    let totalVolume = 0;  
+    for (const i in trades) {
+      if(trades[i]) {
+        const trade = trades[i];
+        totalValue += trade.close * trade.volume;
+        totalVolume += trade.volume;
+        // Calculate VWAP
+        trades[i]['vwap'] = totalValue / totalVolume;
+      }
+      
+    }
+    // console.log(trades)
+    return trades;
+  }
+
 
   algoTrade = (data: any) => {
-    const accountFund = 100000;
-    // ema
-    const ema2 = talib.EMA(data.c, 2);
-    const ema3 = talib.EMA(data.c, 3);
-    const ema5 = talib.EMA(data.c, 5);
-    const ema10 = talib.EMA(data.c, 10);
-    const ema15 = talib.EMA(data.c, 15);
-    const ema20 = talib.EMA(data.c, 20);
+    try {
+      const accountFund = 100000;
+      // ema
+      const ema2 = talib.EMA(data.c, 2);
+      const ema3 = talib.EMA(data.c, 3);
+      const ema5 = talib.EMA(data.c, 5);
+      const ema10 = talib.EMA(data.c, 10);
+      const ema15 = talib.EMA(data.c, 15);
+      const ema20 = talib.EMA(data.c, 20);
 
-    let res = data.t.map((item: any, i: any) => ({
-      timestamp: moment.unix(item).format("YYYY-MM-DD HH:mm:ss"),
-      open: data["o"][i],
-      high: data["h"][i],
-      low: data["l"][i],
-      close: data["c"][i],
-      volume: data["v"][i],
-      ema2: i >= 5 ? Number(ema2[i-2].toFixed(2)) : 0,
-      ema3: i >= 5 ? Number(ema2[i-3].toFixed(2)) : 0,
-      ema5: i >= 5 ? Number(ema5[i-5].toFixed(2)) : 0,
-      ema10: i >= 10 ? Number(ema10[i-10].toFixed(2)) : 0,
-      ema15: i >= 15 ? Number(ema15[i-15].toFixed(2)) : 0,
-      ema20: i >= 20 ? Number(ema20[i-20].toFixed(2)) : 0,
-    }));
+      let res = data.t.map((item: any, i: any) => ({
+        timestamp: moment.unix(item).format("YYYY-MM-DD HH:mm:ss"),
+        open: data["o"][i],
+        high: data["h"][i],
+        low: data["l"][i],
+        close: data["c"][i],
+        volume: data["v"][i],
+        ema2: i >= 5 ? Number(ema2[i-2].toFixed(2)) : 0,
+        ema3: i >= 5 ? Number(ema2[i-3].toFixed(2)) : 0,
+        ema5: i >= 5 ? Number(ema5[i-5].toFixed(2)) : 0,
+        ema10: i >= 10 ? Number(ema10[i-10].toFixed(2)) : 0,
+        ema15: i >= 15 ? Number(ema15[i-15].toFixed(2)) : 0,
+        ema20: i >= 20 ? Number(ema20[i-20].toFixed(2)) : 0,
+      }));
 
-    res = this.identifyFirst30MinuteCandles(res);
+      res = this.calculateVWAP(res);
 
-    for (const i in res) {
-      if (res[i]) {
-        const previousCandle = res[Number(i) > 0 ? Number(i)-1 : i];
-        const candle = res[i];
-        candle['priceChange'] = candle['close']-previousCandle['close'];
-        candle['volumeChange'] = candle['volume']-previousCandle['volume'];
-        
-        
+      res = this.identifyFirst30MinuteCandles(res);
 
-        candle['trend'] = 'side';
-        if(candle['ema5'] >= candle['ema10'] && candle['ema10'] >= candle['ema15'] && candle['ema15'] >= candle['ema20'] ) {
-          candle['trend'] = 'up'
+      for (const i in res) {
+        if (res[i]) {
+          const previousCandle = res[Number(i) > 0 ? Number(i)-1 : i];
+          const candle = res[i];
+          candle['priceChange'] = candle['close']-previousCandle['close'];
+          candle['volumeChange'] = candle['volume']-previousCandle['volume'];
+          
+          
+
+          candle['trend'] = 'side';
+          if(candle['ema5'] >= candle['ema10'] && candle['ema10'] >= candle['ema15'] && candle['ema15'] >= candle['ema20'] ) {
+            candle['trend'] = 'up'
+          }
+          
+          if(candle['ema5'] <= candle['ema10'] && candle['ema10'] <= candle['ema15'] && candle['ema15'] <= candle['ema20'] ) {
+            candle['trend'] = 'down'
+          }
+
+          candle['signal'] = '';
+          candle['price'] = '';
+          candle['stopLoss'] = '';
+          candle['stopLossHit'] = '';
+
+          if(candle['trend'] == 'down' && candle['close'] <= previousCandle['close'] && candle['ema3'] < candle['dayLow'] && candle['dayLow'] != 1000000) {
+            candle['signal'] = 'Sell';
+            candle['price'] = candle['close'];
+            candle['stopLoss'] = previousCandle['high'];
+            candle['stopLossHit'] =  candle['high'] > previousCandle['high'];
+          }
+
+          if(candle['trend'] == 'up' && candle['close'] >= previousCandle['close'] && candle['ema3'] > candle['dayHigh'] && candle['dayHigh'] != -1000000) {
+            candle['signal'] = 'Buy';
+            candle['price'] = candle['close'];
+            candle['stopLoss'] = previousCandle['low'];
+            candle['stopLossHit'] =  candle['low'] < previousCandle['low'];
+          }
+          
         }
-        
-        if(candle['ema5'] <= candle['ema10'] && candle['ema10'] <= candle['ema15'] && candle['ema15'] <= candle['ema20'] ) {
-          candle['trend'] = 'down'
-        }
-
-        candle['signal'] = '';
-        candle['price'] = '';
-        candle['stopLoss'] = '';
-        candle['stopLossHit'] = '';
-
-        if(candle['trend'] == 'down' && candle['close'] <= previousCandle['close'] && candle['ema3'] < candle['dayLow'] && candle['dayLow'] != 1000000) {
-          candle['signal'] = 'Sell';
-          candle['price'] = candle['close'];
-          candle['stopLoss'] = previousCandle['high'];
-          candle['stopLossHit'] =  candle['high'] > previousCandle['high'];
-        }
-
-        if(candle['trend'] == 'up' && candle['close'] >= previousCandle['close'] && candle['ema3'] > candle['dayHigh'] && candle['dayHigh'] != -1000000) {
-          candle['signal'] = 'Buy';
-          candle['price'] = candle['close'];
-          candle['stopLoss'] = previousCandle['low'];
-          candle['stopLossHit'] =  candle['low'] < previousCandle['low'];
-        }
-        
       }
+      return res;
+    } catch (error) {
+      throw error;
     }
-    return res;
   }
 
   identifyFirst30MinuteCandles(data: any) {

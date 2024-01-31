@@ -32,6 +32,10 @@ function refreshChart(data) {
                 data: _.values(_.mapValues(data, 'close'))
             },
             {
+                name: 'vwap',
+                data: _.values(_.mapValues(data, 'vwap'))
+            },
+            {
                 name: 'dayLow',
                 data: _.values(_.mapValues(_.map(data, r => {
                     r.dayLow = r && (r.dayLow === 0 || r.dayLow === 1000000) ? r.close : r.dayLow;
@@ -53,22 +57,22 @@ function refreshChart(data) {
                 }), 'dayMid'))
             },
 
-            {
-                name: 'ema5',
-                data: _.values(_.mapValues(_.map(data, r => {
-                    r.ema5 = r && (r.ema5 === 0 ) ? r.close : r.ema5;
-                    return r;
-                }), 'ema5'))
-            },
+            // {
+            //     name: 'ema5',
+            //     data: _.values(_.mapValues(_.map(data, r => {
+            //         r.ema5 = r && (r.ema5 === 0 ) ? r.close : r.ema5;
+            //         return r;
+            //     }), 'ema5'))
+            // },
 
 
-            {
-                name: 'ema10',
-                data: _.values(_.mapValues(_.map(data, r => {
-                    r.ema10 = r && (r.ema10 === 0 ) ? r.close : r.ema10;
-                    return r;
-                }), 'ema10'))
-            },
+            // {
+            //     name: 'ema10',
+            //     data: _.values(_.mapValues(_.map(data, r => {
+            //         r.ema10 = r && (r.ema10 === 0 ) ? r.close : r.ema10;
+            //         return r;
+            //     }), 'ema10'))
+            // },
              
         ]
     });
