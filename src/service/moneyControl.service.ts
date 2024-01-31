@@ -72,7 +72,7 @@ class MoneyControlService {
         totalValue += trade.close * trade.volume;
         totalVolume += trade.volume;
         // Calculate VWAP
-        trades[i]['vwap'] = totalValue / totalVolume;
+        trades[i]['vwap'] =  Number((totalValue / totalVolume).toFixed(2));
       }
       
     }
