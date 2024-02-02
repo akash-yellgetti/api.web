@@ -6,6 +6,7 @@ export const moneyControl = Router();
 
 
 
+moneyControl.post('/option-chain',  MoneyControlController.optionChain);
 moneyControl.post('/search',  MoneyControlController.search);
 moneyControl.post('/details',  MoneyControlController.details);
 moneyControl.post('/candles',  MoneyControlController.getCandleData);

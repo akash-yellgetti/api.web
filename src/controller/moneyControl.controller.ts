@@ -8,6 +8,20 @@ import { moneyControlService } from "../service";
 
 
 class MoneyControl {
+
+  optionChain = async (request: any, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    const user = request.user;
+    log.info('controller.money-control.optionChain');
+    try {
+      const data = await moneyControlService.optionChain(inputs);
+      const payload = { data, message: 'optionChain data.' };
+      return new Api(response).success().code(200).send(payload);
+    } catch (e) {
+      return new Api(response).error().code(400).send(e);
+    }
+  };
+
   search = async (request: any, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     const user = request.user;
