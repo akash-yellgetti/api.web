@@ -43,6 +43,19 @@ const utils_1 = require("../utils");
 const service_1 = require("../service");
 class MoneyControl {
     constructor() {
+        this.optionChain = (request, response) => __awaiter(this, void 0, void 0, function* () {
+            const inputs = Object.assign(Object.assign({}, request.body), request.params);
+            const user = request.user;
+            utils_1.log.info('controller.money-control.optionChain');
+            try {
+                const data = yield service_1.moneyControlService.optionChain(inputs);
+                const payload = { data, message: 'optionChain data.' };
+                return new utils_1.Api(response).success().code(200).send(payload);
+            }
+            catch (e) {
+                return new utils_1.Api(response).error().code(400).send(e);
+            }
+        });
         this.search = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             const user = request.user;
