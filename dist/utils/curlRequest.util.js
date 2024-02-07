@@ -8,15 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.curlRequest = void 0;
-const request_promise_1 = __importDefault(require("request-promise"));
+const axios = require('axios');
 const curlRequest = (method, url, headers = {}, body = null, params = {}) => __awaiter(void 0, void 0, void 0, function* () {
     const options = Object.assign({ method, url, headers, body }, params);
-    const res = yield (0, request_promise_1.default)(options);
-    return JSON.parse(res);
+    // const res: any = await request(options);
+    const res = yield axios.request(options);
+    return res.data;
 });
 exports.curlRequest = curlRequest;
