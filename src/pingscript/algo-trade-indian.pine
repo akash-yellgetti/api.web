@@ -90,8 +90,8 @@ ema = input.bool(true, title="Exponential Moving Average")
 maColor(fma, sma) =>
     fma > sma and ta.change(fma - sma, 3) > 0 ? color.new(color.lime, 0) : fma < sma and ta.change(fma - sma, 3) < 0 ? color.new(color.red, 0) : color.new(color.yellow, 0)
 
-fastMA = ema ? ta.sma(src, fastLen) : ta.sma(src, fastLen)
-slowMA = ema ? ta.sma(src, slowLen) : ta.sma(src, slowLen)
+fastMA = ema ? ta.ema(src, fastLen) : ta.sma(src, fastLen)
+slowMA = ema ? ta.ema(src, slowLen) : ta.sma(src, slowLen)
 
 fastMAP = plot(fastMA, color=maColor(fastMA, slowMA), linewidth=3, title="fastTrend")
 slowMAP = plot(slowMA, color=maColor(fastMA, slowMA), linewidth=3, title="slowTrend")
@@ -236,14 +236,14 @@ else
 if upCrossover and inIntradayTimeRange
     strategy.close_all('Enter New Buy')
     strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
-    strategy.exit("Exit Buy", from_entry="Enter Buy", stop=lowestLow)    
+    strategy.exit("Exit Buy", from_entry="Enter Buy", stop=fastMA)
     strategy.entry("Enter Buy", strategy.long, positionSize)
     
 // Sell Entry and exit
 if downCrossunder and inIntradayTimeRange
     strategy.close_all('Enter New Sell')
     strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
-    strategy.exit("Exit Sell", from_entry="Enter Sell", stop=highestHigh)
+    strategy.exit("Exit Sell", from_entry="Enter Sell", stop=fastMA)
     strategy.entry("Enter Sell", strategy.short, positionSize)
 
 // Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
