@@ -1,0 +1,345 @@
+//@version=5
+strategy("05FEB2024-v1", shorttitle="05FEB2024-v1", overlay=true)
+
+
+// --------------------------------------------------------------------------
+// Day High Mid and Low 
+// --------------------------------------------------------------------------
+var float hh = na
+var float ll = na
+var float mid = na
+var int startTime = na
+
+// Function to check if the current bar is within the first 30 minutes
+isFirst30Minutes() =>
+    hour == input.int(9, title="End Hour") and minute <= input.int(30, title="End Minute")
+
+// Reset values at the start of a new day
+if (dayofweek != dayofweek[1])
+    hh := na
+    ll := na
+    mid := na
+    startTime := na
+
+// Calculate and plot the first 30 minutes high and low
+if (isFirst30Minutes())
+    if (na(startTime))
+        startTime := time
+        hh := high
+        ll := low
+        mid := math.avg(hh, ll)
+    else
+        hh := math.max(hh, high)
+        ll := math.min(ll, low)
+        mid := math.avg(hh, ll)
+
+
+plotshape(series=isFirst30Minutes(), title="First 30 Minutes", location=location.belowbar, color=color.new(color.green, 0), size=size.small)
+plot(hh, color=color.new(color.green, 0), title="Day High", linewidth=3)
+plot(ll, color=color.new(color.red, 0), title="Day Low", linewidth=3)
+plot(mid, color=color.new(color.orange, 0), title="Day Mid", linewidth=3)
+
+
+// --------------------------------------------------------------------------
+
+
+len = 5
+
+// Input parameters
+length = input.int(len, title="Length", minval=1)
+
+//
+toggleBreaks  = input(true, title = "Show Breaks" )
+leftBars  = input(15, title = "Left Bars ")
+rightBars  = input(15, title = "Right Bars")
+volumeThresh  = input(20, title = "Volume Threshold")
+//
+float highUsePivot = fixnan(ta.pivothigh(leftBars, rightBars)[1])
+float lowUsePivot = fixnan(ta.pivotlow(leftBars, rightBars)[1])
+r1 = plot(highUsePivot, color=ta.change(highUsePivot) ? na : #ff008c,  linewidth=3, offset=-(rightBars+1), title="Resistance")
+s1 = plot(lowUsePivot, color=ta.change(lowUsePivot) ? na : #4837a7,  linewidth=3, offset=-(rightBars+1), title="Support")
+
+//Volume %
+short = ta.ema(volume, 5)
+long = ta.ema(volume, 10)   
+osc = 100 * (short - long) / long
+
+
+//For breaks with volume
+plotshape(toggleBreaks and ta.crossunder(close,lowUsePivot) and not (open - close < high - open) and osc > volumeThresh, title = "Break", text = 'B', style = shape.labeldown, location = location.abovebar, color= color.red,textcolor = color.white, size = size.tiny)
+plotshape(toggleBreaks and ta.crossover(close,highUsePivot ) and not(open - low > close - open) and osc > volumeThresh, title = "Break", text = 'B', style = shape.labelup, location = location.belowbar, color= color.green,textcolor = color.white, size = size.tiny)
+
+//For bull / bear wicks
+plotshape(toggleBreaks and ta.crossover(close,highUsePivot ) and open - low > close - open , title = "Break", text = 'Bull Wick', style = shape.labelup, location = location.belowbar, color= color.green,textcolor = color.white,  size = size.tiny)
+plotshape(toggleBreaks and ta.crossunder(close,lowUsePivot) and open - close < high - open , title = "Break", text = 'Bear Wick', style = shape.labeldown, location = location.abovebar, color= color.red,textcolor = color.white,  size = size.tiny)
+
+
+if (ta.crossunder(close,lowUsePivot) and osc > volumeThresh)
+    alert("Support Broken", alert.freq_once_per_bar_close)
+
+if (ta.crossover(close,highUsePivot) and osc > volumeThresh)
+    alert("Resistance Broken", alert.freq_once_per_bar_close)
+
+
+
+// --------------------------------------------------------------------------
+
+vwap = ta.vwap(close)
+plot(vwap, color=color.new(color.blue, 0), title="VWAP", linewidth=3)
+ 
+
+ema5 = ta.ema(close, len)
+plot(ema5, color=#3cad1a, title="EMA 5", linewidth=3)
+
+avgPrice = ta.ema(math.avg(open,  close), 1)
+// plot(avgPrice, color=color.new(color.purple, 0), title="EMA 50", linewidth=2)
+
+// plotshape(series= ta.crossunder(close, ema5)  ,  color=#f30000, text = 'Risk S', textcolor = #ffffff, style=shape.labeldown, size=size.small, location=location.abovebar)
+if(ta.crossunder(close, ema5))
+    alert("Close crossed below EMA 5", alert.freq_once_per_bar_close)
+
+// plotshape(series= ta.crossover(close, ema5)  ,  color=color.teal, text = 'Risk B', textcolor = #ffffff, style=shape.labelup, size=size.small, location=location.belowbar)
+if(ta.crossover(close, ema5))
+    alert("Close crossed above EMA 5", alert.freq_once_per_bar_close)
+// --------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------
+// Madrid Trend Spotter
+// --------------------------------------------------------------------------
+src = input(close, title="Source")
+fastLen = input.int(5, title="Fast Length", minval=1)
+slowLen = input.int(13, title="Slow Length", minval=1)
+ema = input.bool(true, title="Exponential Moving Average")
+
+maColor(fma, sma) =>
+    fma > sma and ta.change(fma - sma, 3) > 0 ? color.new(color.lime, 0) : fma < sma and ta.change(fma - sma, 3) < 0 ? color.new(color.red, 0) : color.new(color.yellow, 0)
+
+fastMA = ema ? ta.ema(src, fastLen) : ta.sma(src, fastLen)
+slowMA = ema ? ta.ema(src, slowLen) : ta.sma(src, slowLen)
+
+// fastMAP = plot(fastMA, color=maColor(fastMA, slowMA), linewidth=3, title="fastTrend")
+// slowMAP = plot(slowMA, color=maColor(fastMA, slowMA), linewidth=3, title="slowTrend")
+// fill(fastMAP, slowMAP, color=maColor(fastMA, slowMA), transp=70, title="Area")
+
+
+
+
+
+//------------------------------------------------------------------------------
+//Settings
+//-----------------------------------------------------------------------------{
+// length = input.int(14, 'Swing Detection Lookback')
+mult = input.float(1., 'Slope', minval = 0, step = .1)
+calcMethod = input.string('Atr', 'Slope Calculation Method', options = ['Atr','Stdev','Linreg'])
+backpaint = input(true, tooltip = 'Backpainting offset displayed elements in the past. Disable backpainting to see real time information returned by the indicator.')
+
+//Style
+upCss = input.color(color.teal, 'Up Trendline Color', group = 'Style')
+dnCss = input.color(color.red, 'Down Trendline Color', group = 'Style')
+showExt = input(true, 'Show Extended Lines')
+
+//-----------------------------------------------------------------------------}
+//Calculations
+//-----------------------------------------------------------------------------{
+var upper = 0.
+var lower = 0.
+var slope_ph = 0.
+var slope_pl = 0.
+
+var offset = backpaint ? length : 0
+
+n = bar_index
+// src = close
+
+ph = ta.pivothigh(length, length)
+pl = ta.pivotlow(length, length)
+
+//Slope Calculation Method
+slope = switch calcMethod
+    'Atr'    => ta.atr(length) / length * mult
+    'Stdev'  => ta.stdev(src,length) / length * mult
+    'Linreg' => math.abs(ta.sma(src * n, length) - ta.sma(src, length) * ta.sma(n, length)) / ta.variance(n, length) / 2 * mult
+
+//Get slopes and calculate trendlines
+slope_ph := ph ? slope : slope_ph
+slope_pl := pl ? slope : slope_pl
+
+upper := ph ? ph : upper - slope_ph
+lower := pl ? pl : lower + slope_pl
+
+var upos = 0
+var dnos = 0
+upos := ph ? 0 : close > upper - slope_ph * length ? 1 : upos
+dnos := pl ? 0 : close < lower + slope_pl * length ? 1 : dnos
+
+//-----------------------------------------------------------------------------}
+//Extended Lines
+//-----------------------------------------------------------------------------{
+var uptl  = line.new(na,na,na,na, color = upCss, style = line.style_dashed, extend = extend.right)
+var dntl  = line.new(na,na,na,na, color = dnCss, style = line.style_dashed, extend = extend.right)
+
+if ph and showExt
+    uptl.set_xy1(n-offset, backpaint ? ph : upper - slope_ph * length)
+    uptl.set_xy2(n-offset+1, backpaint ? ph - slope : upper - slope_ph * (length+1))
+
+if pl and showExt
+    dntl.set_xy1(n-offset, backpaint ? pl : lower + slope_pl * length)
+    dntl.set_xy2(n-offset+1, backpaint ? pl + slope : lower + slope_pl * (length+1))
+
+//-----------------------------------------------------------------------------}
+//Plots
+//-----------------------------------------------------------------------------{
+plot(backpaint ? upper : upper - slope_ph * length, 'Upper', color = ph ? na : upCss, offset = -offset)
+plot(backpaint ? lower : lower + slope_pl * length, 'Lower', color = pl ? na : dnCss, offset = -offset)
+
+//Breakouts
+plotshape(upos > upos[1] ? low : na, "Upper Break"
+  , shape.labelup
+  , location.absolute
+  , upCss
+  , text = "B"
+  , textcolor = color.white
+  , size = size.tiny)
+
+plotshape(dnos > dnos[1] ? high : na, "Lower Break"
+  , shape.labeldown
+  , location.absolute
+  , dnCss
+  , text = "S"
+  , textcolor = color.white
+  , size = size.tiny)
+
+//-----------------------------------------------------------------------------}
+//Alerts
+//-----------------------------------------------------------------------------{
+// alertcondition(upos > upos[1], 'Upward Breakout', 'Price broke the down-trendline upward')
+// alertcondition(dnos > dnos[1], 'Downward Breakout', 'Price broke the up-trendline downward')
+if upos > upos[1]
+    alert('Upward Breakout', alert.freq_once_per_bar_close)
+
+if dnos > dnos[1]
+    alert('Downward Breakout', alert.freq_once_per_bar_close)
+
+
+//-----------------------------------------------------------------------------}
+//Alerts
+//-----------------------------------------------------------------------------{
+// alertcondition(upos > upos[1], 'Upward Breakout', 'Price broke the down-trendline upward')
+// alertcondition(dnos > dnos[1], 'Downward Breakout', 'Price broke the up-trendline downward')
+
+// === INPUT BACKTEST RANGE ===
+i_from = input.time(defval = timestamp("30 Jan 2024 09:00 +0000"), title = "From")
+i_thru = input.time(defval = timestamp("30 JAN 2024 03:15 +0000"), title = "Thru")
+
+// === INPUT SHOW PLOT ===
+i_show = input     (defval = true, title = "Show Date Range")
+// === FUNCTION EXAMPLE ===
+date() => time >= i_from and time <= i_thru  // create date function "within window of time"
+// === PLOTTING ===
+bgcolor(color = i_show and date() ? color.new(color.gray, 90) : na)  // plot if "Show Date Range" and "within window of time"
+// Calculate the high and low of the second candle
+secondCandleHigh = request.security(syminfo.tickerid, "3", high[2])
+secondCandleLow = request.security(syminfo.tickerid, "3", low[2])
+
+// Plot the high and low lines on the chart
+// plot(secondCandleHigh, color=color.green, title="Second Candle High", linewidth = 3)
+// plot(secondCandleLow, color=color.red, title="Second Candle Low", linewidth = 3)
+
+// Define intraday time range (e.g., 09:30 AM to 03:30 PM)
+intradayStartTime = timestamp(year, month, dayofmonth, 09, 30)
+intradayEndTime = timestamp(year, month, dayofmonth, 14, 59)
+// Define exit time (e.g., 03:15 PM)
+// exitTime = timestamp(year, month, dayofmonth, 14, 45)
+exitTime = timestamp(year, month, dayofmonth, 15, 00)
+// exitTime = timestamp(year, month, dayofmonth, 15, 12)
+// Entry conditions within the intraday time range
+inIntradayTimeRange = (time >= intradayStartTime) and (time <= intradayEndTime)
+// Exit condition at 03:15 PM
+exitCondition = time >= exitTime
+
+// Initial fund
+initialEquity = 100000
+availableEquity = initialEquity
+// Position sizing based on a fixed percentage of the available equity (adjust as needed)
+riskPercentage = 1
+positionSize = 75
+// Stop-loss percentage (adjust as needed)
+// stopLossPercentage = input(1, title="Stop-Loss Percentage") / 100
+
+
+// Function to calculate position size dynamically
+calcPositionSize() =>
+    availableEquity * riskPercentage / close
+
+// Check if there are any open trades before entering a new position
+openTrades = strategy.opentrades
+noOpenTrades = openTrades == 0
+
+
+lowestLow = ta.ema(close, 3)
+highestHigh = ta.ema(close, 3)
+
+
+
+
+if upos > upos[1] and inIntradayTimeRange
+    strategy.close_all('Enter New Buy')
+    strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+    strategy.exit("Exit Buy", from_entry="Enter Buy", stop=lowestLow)    
+    strategy.entry("Enter Buy", strategy.long, positionSize)
+    
+
+if dnos > dnos[1] and inIntradayTimeRange
+    strategy.close_all('Enter New Sell')
+    strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
+    strategy.exit("Exit Sell", from_entry="Enter Sell", stop=highestHigh)
+    strategy.entry("Enter Sell", strategy.short, positionSize)
+    
+
+
+// STEP 2:
+// Determine trail stop loss prices
+longStopPrice = 0.0
+shortStopPrice = 0.0
+
+longStopPrice := if strategy.position_size > 0
+    stopValue = lowestLow
+    math.max(stopValue, longStopPrice[1])
+else
+    0
+
+shortStopPrice := if strategy.position_size < 0
+    stopValue = highestHigh
+    math.min(stopValue, shortStopPrice[1])
+else
+    999999
+
+
+// STEP 3:
+// Submit exit orders for trail stop loss price
+if strategy.position_size > 0
+    strategy.exit("XL TRL STP", stop=longStopPrice)
+
+if strategy.position_size < 0
+    strategy.exit("XS TRL STP", stop=shortStopPrice)
+
+// Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
+if exitCondition
+    strategy.close_all('Closing All orders')
+
+
+
+
+// Exit conditions (simple exit at crossover or crossunder)
+// strategy.close("Buy", when=inIntradayTimeRange)
+// strategy.close("Sell", when=inIntradayTimeRange)
+
+
+// if inIntradayTimeRange == true
+    // strategy.close('Sell')
+    
+// strategy.entry('Sell', strategy.long, when = dnos > dnos[1])
+
+
+
+//-----------------------------------------------------------------------------}
