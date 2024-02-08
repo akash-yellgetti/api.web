@@ -98,7 +98,7 @@ fastMAP = plot(fastMA, color=maColor(fastMA, slowMA), linewidth=3, title="fastTr
 slowMAP = plot(slowMA, color=maColor(fastMA, slowMA), linewidth=3, title="slowTrend")
 fill(fastMAP, slowMAP, color=maColor(fastMA, slowMA), transp=70, title="Area")
 upCrossover = ta.crossover(fastMA, slowMA)
-plotshape(series=upCrossover,  color=color.teal, text = 'B', textcolor = #ffffff, style=shape.labelup, size=size.tiny, location=location.belowbar)
+plotshape(series=upCrossover,  color=#44ce1b, text = 'B', textcolor = #ffffff, style=shape.labelup, size=size.tiny, location=location.belowbar)
 if(upCrossover)
     alert("Fast crossed above Slow MA 5", alert.freq_once_per_bar_close)
 downCrossunder = ta.crossunder(fastMA, slowMA)
@@ -116,7 +116,7 @@ calcMethod = input.string('Atr', 'Slope Calculation Method', options = ['Atr','S
 backpaint = input(true, tooltip = 'Backpainting offset displayed elements in the past. Disable backpainting to see real time information returned by the indicator.')
 
 //Style
-upCss = input.color(color.teal, 'Up Trendline Color', group = 'Style')
+upCss = input.color(color.green, 'Up Trendline Color', group = 'Style')
 dnCss = input.color(color.red, 'Down Trendline Color', group = 'Style')
 showExt = input(true, 'Show Extended Lines')
 
@@ -178,7 +178,7 @@ plot(backpaint ? lower : lower + slope_pl * length, 'Lower', color = pl ? na : d
 plotshape(upos > upos[1] ? low : na, "Upper Break"
   , shape.labelup
   , location.absolute
-  , upCss
+  , #bbdb44
   , text = "B"
   , textcolor = color.white
   , size = size.tiny)
@@ -186,7 +186,7 @@ plotshape(upos > upos[1] ? low : na, "Upper Break"
 plotshape(dnos > dnos[1] ? high : na, "Lower Break"
   , shape.labeldown
   , location.absolute
-  , dnCss
+  , #f2a134
   , text = "S"
   , textcolor = color.white
   , size = size.tiny)
