@@ -230,7 +230,7 @@ inIntradayTimeRange = (time >= intradayStartTime) and (time <= intradayEndTime)
 // Exit condition at 03:15 PM
 exitCondition = time >= exitTime
 // Quatity
-positionSize = 75
+positionSize = 25
 
 // STEP 2:
 // Determine trail stop loss prices
@@ -278,18 +278,17 @@ if shortSignal
     strategy.exit("Exit Sell", from_entry="Enter Sell", stop=fastMA)
     strategy.entry("Enter Sell", strategy.short, positionSize)
 
-// if IsLong() and upCrossover and inIntradayTimeRange
-    // log.info('strategy.opentrades {0}', strategy.opentrades)
-//     // strategy.close_all('Enter New Buy')
-//     // strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
-//     strategy.exit("Exit Buy", from_entry="Enter Buy", stop=fastMA)
-//     strategy.entry("Enter Buy", strategy.long, positionSize)
+// if upCrossover and inIntradayTimeRange
+//     strategy.close_all('Enter New Buy')
+//     strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("Exit Buy 1", from_entry="Enter Buy 1", stop=fastMA)
+//     strategy.entry("Enter Buy 1", strategy.long, positionSize)
 
-// if IsShort() and downCrossunder and inIntradayTimeRange
-//     // strategy.close_all('Enter New Sell')
-//     // strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
-//     strategy.exit("Exit Sell", from_entry="Enter Sell", stop=fastMA)
-//     strategy.entry("Enter Sell", strategy.short, positionSize)
+// if downCrossunder and inIntradayTimeRange
+//     strategy.close_all('Enter New Sell')
+//     strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("Exit Sell 1", from_entry="Enter Sell 1", stop=fastMA)
+//     strategy.entry("Enter Sell 1", strategy.short, positionSize)
 
 
 // Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
