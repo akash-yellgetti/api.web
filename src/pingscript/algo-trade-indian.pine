@@ -39,6 +39,22 @@ plot(hh, color=color.new(color.green, 0), title="Day High", linewidth=3)
 plot(ll, color=color.new(color.red, 0), title="Day Low", linewidth=3)
 plot(mid, color=color.new(color.orange, 0), title="Day Mid", linewidth=3)
 
+// Day High Crossed
+dayHighCrossed = ta.crossover(close, hh)
+plotshape(series=dayHighCrossed,  color=#44ce1b, text = 'Day High Crossed', textcolor = #ffffff, style=shape.labelup, size=size.tiny, location=location.belowbar)
+if dayHighCrossed
+    alert('Cross over day high', alert.freq_once_per_bar_close)
+
+// Day Low Crossed
+dayLowCrossed = ta.crossunder(close, ll)
+plotshape(series=dayLowCrossed,  color=#f30000, text = 'Day Low Crossed', textcolor = #ffffff, style=shape.labeldown, size=size.tiny, location=location.abovebar)
+if dayLowCrossed
+    alert('Cross down day low', alert.freq_once_per_bar_close)
+
+// vwap
+vwap = ta.vwap(close)
+plot(vwap, color=color.new(color.blue, 0), title="VWAP", linewidth=3)
+
 // --------------------------------------------------------------------------
 // Madrid Trend Spotter
 // --------------------------------------------------------------------------
@@ -190,6 +206,12 @@ plotshape(dnos > dnos[1] ? high : na, "Lower Break"
   , textcolor = color.white
   , size = size.tiny)
 
+if upos > upos[1]
+    alert('Upward Breakout', alert.freq_once_per_bar_close)
+
+if dnos > dnos[1]
+    alert('Downward Breakout', alert.freq_once_per_bar_close)
+
 
 
 //-----------------------------------------------------------------------------}
@@ -210,10 +232,6 @@ exitCondition = time >= exitTime
 // Quatity
 positionSize = 75
 
-highestHigh = ta.highest(close, 3)
-lowestLow = ta.lowest(close, 3)
-
-
 // STEP 2:
 // Determine trail stop loss prices
 longStopPrice = 0.0
@@ -232,24 +250,51 @@ else
     999999
 
 
+// IsLong() returns 'true' when the strategy has an open long
+// position. Returns 'false' when the script is short or flat.
+IsLong() =>
+    strategy.position_size > 0
+
+// IsShort() returns 'true' when the strategy has an open short
+// position. Returns 'false' when the script is long or flat.
+IsShort() =>
+    strategy.position_size < 0
+
+// Define strategy parameters
+longSignal = upos > upos[1] and inIntradayTimeRange
+shortSignal = dnos > dnos[1] and inIntradayTimeRange
+
 // Buy Entry and exit
-if upCrossover and inIntradayTimeRange
+if longSignal
     strategy.close_all('Enter New Buy')
     strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
     strategy.exit("Exit Buy", from_entry="Enter Buy", stop=fastMA)
     strategy.entry("Enter Buy", strategy.long, positionSize)
     
 // Sell Entry and exit
-if downCrossunder and inIntradayTimeRange
+if shortSignal
     strategy.close_all('Enter New Sell')
     strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
     strategy.exit("Exit Sell", from_entry="Enter Sell", stop=fastMA)
     strategy.entry("Enter Sell", strategy.short, positionSize)
 
+// if IsLong() and upCrossover and inIntradayTimeRange
+    // log.info('strategy.opentrades {0}', strategy.opentrades)
+//     // strategy.close_all('Enter New Buy')
+//     // strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("Exit Buy", from_entry="Enter Buy", stop=fastMA)
+//     strategy.entry("Enter Buy", strategy.long, positionSize)
+
+// if IsShort() and downCrossunder and inIntradayTimeRange
+//     // strategy.close_all('Enter New Sell')
+//     // strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("Exit Sell", from_entry="Enter Sell", stop=fastMA)
+//     strategy.entry("Enter Sell", strategy.short, positionSize)
+
+
 // Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
 if exitCondition
     strategy.close_all('Closing All orders')
-
 
 // Submit exit orders for trail stop loss price
 if strategy.position_size > 0
