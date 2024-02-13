@@ -2,8 +2,9 @@ import { curlRequest } from '../utils/curlRequest.util';
 import moment from 'moment';
 import _ from 'lodash';
 const axios = require('axios');
-const talib = require('ta-lib');
-
+// const talib = require('ta-lib');
+const ta = require('technicalindicators');
+// const CrossOver = ta.CrossOver;
 
 class MoneyControlService {
 
@@ -103,17 +104,24 @@ class MoneyControlService {
     return trades;
   }
 
-
   algoTrade = (data: any) => {
     try {
-      const accountFund = 100000;
-      // ema
-      const ema2 = talib.EMA(data.c, 2);
-      const ema3 = talib.EMA(data.c, 3);
-      const ema5 = talib.EMA(data.c, 5);
-      const ema10 = talib.EMA(data.c, 10);
-      const ema15 = talib.EMA(data.c, 15);
-      const ema20 = talib.EMA(data.c, 20);
+      
+      
+      const period = 5;
+      
+      const input = ta.HeikinAshi.calculate({ open: data.o, high: data.h, low: data.l, close: data.c, volume: data.v });
+      // data.vwap = ta.sma(smaInput)
+      const smaInput = {
+        period,
+        values: input.c
+      };
+      const vwap = ta.vwap(input);
+      const ema5 = ta.ema({period , values : input.close});
+      const ema10 = ta.ema({period: period * 2, values : input.close});
+      const emaBuySignal = ta.crossOver({ lineA: ema5, lineB: ema10  });
+      
+    
 
       let res = data.t.map((item: any, i: any) => ({
         timestamp: moment.unix(item).format("YYYY-MM-DD HH:mm:ss"),
@@ -122,12 +130,50 @@ class MoneyControlService {
         low: data["l"][i],
         close: data["c"][i],
         volume: data["v"][i],
-        ema2: i >= 5 ? Number(ema2[i-2].toFixed(2)) : 0,
-        ema3: i >= 5 ? Number(ema2[i-3].toFixed(2)) : 0,
-        ema5: i >= 5 ? Number(ema5[i-5].toFixed(2)) : 0,
-        ema10: i >= 10 ? Number(ema10[i-10].toFixed(2)) : 0,
-        ema15: i >= 15 ? Number(ema15[i-15].toFixed(2)) : 0,
-        ema20: i >= 20 ? Number(ema20[i-20].toFixed(2)) : 0,
+        vwap: vwap[i],
+        ema5: ema5[i],
+        ema10: ema10[i],
+        emaBuySignal,
+
+        // ema2: i >= 5 ? Number(ema2[i-2].toFixed(2)) : 0,
+        // ema3: i >= 5 ? Number(ema2[i-3].toFixed(2)) : 0,
+        // ema5: i >= 5 ? Number(ema5[i-5].toFixed(2)) : 0,
+        // ema10: i >= 10 ? Number(ema10[i-10].toFixed(2)) : 0,
+        // ema15: i >= 15 ? Number(ema15[i-15].toFixed(2)) : 0,
+        // ema20: i >= 20 ? Number(ema20[i-20].toFixed(2)) : 0,
+      }));
+
+      return res;
+    } catch (error) {
+      console.log(error) 
+    }
+  }
+
+
+  _algoTrade = (data: any) => {
+    try {
+      const accountFund = 100000;
+      // ema
+      // const ema2 = talib.EMA(data.c, 2);
+      // const ema3 = talib.EMA(data.c, 3);
+      // const ema5 = talib.EMA(data.c, 5);
+      // const ema10 = talib.EMA(data.c, 10);
+      // const ema15 = talib.EMA(data.c, 15);
+      // const ema20 = talib.EMA(data.c, 20);
+
+      let res = data.t.map((item: any, i: any) => ({
+        timestamp: moment.unix(item).format("YYYY-MM-DD HH:mm:ss"),
+        open: data["o"][i],
+        high: data["h"][i],
+        low: data["l"][i],
+        close: data["c"][i],
+        volume: data["v"][i],
+        // ema2: i >= 5 ? Number(ema2[i-2].toFixed(2)) : 0,
+        // ema3: i >= 5 ? Number(ema2[i-3].toFixed(2)) : 0,
+        // ema5: i >= 5 ? Number(ema5[i-5].toFixed(2)) : 0,
+        // ema10: i >= 10 ? Number(ema10[i-10].toFixed(2)) : 0,
+        // ema15: i >= 15 ? Number(ema15[i-15].toFixed(2)) : 0,
+        // ema20: i >= 20 ? Number(ema20[i-20].toFixed(2)) : 0,
       }));
 
       res = this.calculateVWAP(res);

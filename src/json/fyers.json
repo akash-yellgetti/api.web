@@ -1,0 +1,6087 @@
+[
+    {
+     "symbol": "20MICRONS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "360ONE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "3IINFOLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "3MINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "5PAISA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "AARTIDRUGS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AARTIIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AARTIPHARM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AARTISURF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "AAVAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ABB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ABBOTINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ABCAPITAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ABFRL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ABSLBANETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ACC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ACCELYA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ACE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ACI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ACLGATI",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ADANIENSOL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ADANIENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ADANIGREEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ADANIPORTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ADFFOODS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ADORWELD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ADSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ADVANIHOTR",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ADVENZYMES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AEGISCHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AEROFLEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AFFLE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AGARIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "AGI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AHL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "AHLUCONT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AIAENG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AJANTPHARM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AJMERA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "AKZOINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ALEMBICLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ALICON",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ALKEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ALKYLAMINE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ALLCARGO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ALLSEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ALPL30IETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "AMBER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AMBIKCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "AMBUJACEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AMIORG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AMRUTANJAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ANANDRATHI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ANANTRAJ",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ANDHRAPAP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ANDHRSUGAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ANGELONE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ANMOL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ANUP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ANURAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ANZEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "APARINDS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "APCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "APCOTEXIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "APEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "APLAPOLLO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "APLLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "APOLLOHOSP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "APOLLOPIPE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "APOLLOTYRE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "APTECHT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "APTUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ARE&M",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ARIHANTCAP",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ARIHANTSUP",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ARMANFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ARROWGREEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ARTEMISMED",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ARVIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ARVINDFASN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ARVSMART",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ASAHIINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ASAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ASALCBR",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ASHIANA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ASHOKA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ASHOKLEY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ASIANPAINT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ASIANTILES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ASTEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ASTERDM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ASTRAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ASTRAMICRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ASTRAZEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ATFL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ATGL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ATUL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ATULAUTO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AUBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AUROPHARMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AUTOAXLES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AVADHSUGAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AVALON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AVANTIFEED",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AVG",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "AVTNPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "AWHCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AXISBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "AXISBNKETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "AXISCADES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "AXISGOLD",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "AXITA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BAJAJ",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BAJAJCON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BAJAJELEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BAJAJFINSV",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BAJAJHCARE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "BAJAJHIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BAJAJHLDNG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BAJFINANCE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BALAJITELE",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "BALAMINES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BALKRISIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BALMLAWRIE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BALRAMCHIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BANCOINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BANDHANBNK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BANKBARODA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BANKBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BANKIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "BANKINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BARBEQUE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BASF",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BATAINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BAYERCROP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BBTC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BCG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BCLIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BDL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BECTORFOOD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BEML",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BEPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BERGEPAINT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BFINVEST",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "BFUTILITIE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BGRENERGY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BHAGCHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "BHAGERIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "BHARATFORG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BHARATRAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "BHARTIARTL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BHEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BIGBLOC",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "BIOCON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BIRET",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "BIRLACABLE",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "BIRLACORPN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BLISSGVS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BLKASHYAP",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "BLS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BLUEDART",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BLUESTARCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BODALCHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "BOROLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BORORENEW",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BOSCHLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BPCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BRIGADE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BRITANNIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BSE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "BSLGOLDETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "BSOFT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CAMLINFINE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CAMPUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CAMS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CANBK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CANFINHOME",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CANTABIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CAPACITE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CAPLIPOINT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CARBORUNIV",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CARERATING",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CARTRADE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CARYSIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CASTROLIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CDSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CEATLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CENTENKA",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "CENTRALBK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CENTRUM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CENTUM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CENTURYPLY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CENTURYTEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CERA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CESC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CGCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CGPOWER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CHALET",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CHAMBLFERT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CHEMBOND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CHEMCON",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "CHEMPLASTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CHENNPETRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CHOICEIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CHOLAFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CHOLAHLDNG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CIEINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CIGNITITEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CIPLA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CLEAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CLSEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CMSINFO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "COALINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "COFFEEDAY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "COFORGE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "COLPAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CONCOR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CONCORDBIO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CONFIPET",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CONSOFINVT",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "CONTROLPR",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "COROMANDEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "COSMOFIRST",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CPSEETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CRAFTSMAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CREATIVE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CREDITACC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CRISIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CROMPTON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CSBBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CSLFINANCE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CUB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CUMMINSIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CYBERTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CYIENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "CYIENTDLM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DABUR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DALBHARAT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DALMIASUG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DATAMATICS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DATAPATTNS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DBOL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DCAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DCBBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DCMSHRIRAM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DCMSRIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DCW",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DCXINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DEEPAKFERT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DEEPAKNTR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DEEPINDS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DELHIVERY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DENORA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DEVYANI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DHAMPURSUG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DHANI",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DHANUKA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DHARMAJ",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DHUNINV",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "DIAMINESQ",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "DIAMONDYD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DISHTV",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DIVGIITTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DIVISLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DIXON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DLF",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DLINKINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DMART",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DODLA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DOLATALGO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DOLLAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DONEAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "DPWIRES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "DREAMFOLKS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DRREDDY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DSPGOLDETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "DSPNEWETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "DSPSILVETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "DSSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "DWARKESH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "DYCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "DYNAMATECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EASEMYTRIP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EBBETF0430",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ECLERX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EDELWEISS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EGOLD",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "EICHERMOT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EIDPARRY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EIHAHOTELS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "EIHOTEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EKC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ELECON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ELECTCAST",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ELGIEQUIP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ELIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "EMAMILTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EMBASSY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EMUDHRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ENDURANCE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ENGINERSIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ENIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "EPIGRAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "EPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EQUITASBNK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ERIS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EROSMEDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ESABINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ESAFSFB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ESCORTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ESILVER",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ESTER",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ETHOSLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EVEREADY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EVERESTIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "EXIDEIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EXPLEOSOL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "EXXARO",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "FACT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FAIRCHEMOR",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "FAZE3Q",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "FCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FDC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FEDERALBNK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FEDFINA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FIEMIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FILATEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FINCABLES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FINEORG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FINOPB",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "FINPIPE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FIVESTAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FLUOROCHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FMGOETZE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FOCUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "FOODSIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "FORTIS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FOSECOIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "FSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "FUSION",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GABRIEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GAEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GAIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GALAXYSURF",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GANDHAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GANECOS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GANESHBE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GARFIBRES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GATEWAY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GENESYS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GENUSPAPER",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "GEOJITFSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GEPIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GESHIP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GFLLIMITED",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GHCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GHCLTEXTIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "GICHSGFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GICRE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GILLETTE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GILT5YBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "GIPCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GLAND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GLAXO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GLENMARK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GLOBAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GLOBUSSPR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GMBREW",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GMDCLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GMMPFAUDLR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GMRINFRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GNA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GNFC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GOACARBON",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "GOCLCORP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GOCOLORS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GODFRYPHLP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GODREJAGRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GODREJCP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GODREJIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GODREJPROP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GOKEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GOKULAGRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GOLDBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GOLDIAM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GOLDIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GOODLUCK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GPIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GPPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GRANULES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GRAPHITE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GRASIM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GRAVITA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GREAVESCOT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GREENLAM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GREENPANEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GREENPLY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GRINDWELL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GRMOVER",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GRSE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GRWRHITECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GSFC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GSPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GTPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GUFICBIO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GUJALKALI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GUJGASLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GULFOILLUB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "GULPOLY",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HAPPSTMNDS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HARDWYN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HARIOMPIPE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HARSHA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HATHWAY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HATSUN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HAVELLS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HBLPOWER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HCG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HCLTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HDFCAMC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HDFCBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HDFCGOLD",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "HDFCLIFE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HDFCLIQUID",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HDFCNIFTY",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "HDFCSILVER",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "HDFCSML250",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "HEG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HEIDELBERG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HEMIPROP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HERANBA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HERCULES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HERITGFOOD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HEROMOTOCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HEUBACHIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HFCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HGINFRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HGS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HIKAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HIMATSEIDE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HINDALCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HINDCOMPOS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "HINDCOPPER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HINDOILEXP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HINDPETRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HINDUNILVR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HINDWAREAP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HINDZINC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HITECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HITECHGEAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HLEGLAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HLVLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HMVL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "HNDFDS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HNGSNGBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "HOMEFIRST",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HONASA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HONAUT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "HONDAPOWER",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HPAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "HTMEDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "HUHTAMAKI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IBREALEST",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IBULHSGFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ICEMAKE",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ICICIB22",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ICICIBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ICICIGI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ICICIPRULI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ICIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ICRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "IDBI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IDEA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IDEAFORGE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IDFC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IDFCFIRSTB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IFBIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IFGLEXPOR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IGARASHI",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "IGL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IGPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "IIFL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IIFLSEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IKIO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IMAGICAA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IMFA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IMPAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "INDHOTEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDIACEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDIAGLYCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDIAMART",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDIANB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDIANHUME",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "INDIGO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDIGOPNTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDIGRID",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDNIPPON",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "INDOAMIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "INDOBORAX",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "INDOCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDORAMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "INDSWFTLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "INDUSINDBK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INDUSTOWER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INFIBEAM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INFY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INGERRAND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INSECTICID",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "INTELLECT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "INTLCONV",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IOC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IOLCP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IONEXCHANG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IPCALAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IRBINVIT",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "IRCON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IRCTC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IRFC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "IRISDOREME",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "IRMENERGY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ISEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ISGEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ISMTLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ITBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ITC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ITDCEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ITI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ITIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "J&KBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JAGRAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "JAGSNPHARM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "JAMNAAUTO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JAYAGROGN",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "JBCHEPHARM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JBMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "JCHAC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JINDALPHOT",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "JINDALPOLY",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "JINDALSAW",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JINDALSTEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JINDRILL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JINDWORLD",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "JIOFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JISLJALEQS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JKCEMENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JKIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JKLAKSHMI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JKPAPER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JKTYRE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JLHL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JMFINANCIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JPOLYINVST",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "JSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JSWENERGY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JSWHL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JSWSTEEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JTEKTINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "JTLIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JUBLFOOD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JUBLINDS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "JUBLINGREA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JUBLPHARMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JUNIORBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "JUSTDIAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "JYOTHYLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KABRAEXTRU",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KAJARIACER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KALAMANDIR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KALYANKJIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KANSAINER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KARURVYSYA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KAYNES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KCP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KDDL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KECL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KEI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KELLTONTEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KFINTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KICL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KIMS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KINGFA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KIOCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KIRIINDUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KIRLOSBROS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KIRLOSENG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KIRLOSIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KIRLPNU",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KITEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KKCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KNRCON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KOKUYOCMLN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KOLTEPATIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KOPRAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KOTAKBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KOTAKBKETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KOTAKGOLD",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "KOTAKPSUBK",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "KOTHARIPET",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KPIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KPITTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KPRMILL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KRBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KRISHANA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KRITI",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "KRSNAA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KSB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KSCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KSOLVES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KTKBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KUANTUM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "L&TFH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LALPATHLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LANDMARK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LAOPALA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LATENTVIEW",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LAURUSLABS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LAXMIMACH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LEMONTREE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LGBBROSLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LICHSGFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LICI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LIKHITHA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "LINC",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "LINCOLN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LINDEINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LIQUID",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LIQUIDETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LIQUIDIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LLOYDSME",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LODHA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LOKESHMACH",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "LOWVOLIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "LT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LTFOODS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LTGILTBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "LTIM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LTTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LUMAXIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LUMAXTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LUPIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LUXIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "LXCHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "M&M",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "M&MFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAANALU",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MADRASFERT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAFANG",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MAGADSUGAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MAHABANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAHKTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MAHLIFE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAHLOG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAHSCOOTER",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MAHSEAMLES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAITHANALL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MANAKSIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MANALIPETC",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MANAPPURAM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MANGCHEFER",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MANGLMCEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MANINFRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MANORAMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MANYAVAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAPMYINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MARATHON",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MARICO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MARKSANS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MARUTI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MASFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MASPTOP50",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MASTEK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAXESTATES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MAXHEALTH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAYURUNIQ",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MAZDA",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MAZDOCK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MCDOWELL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MCX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MEDANTA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MEDICO",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MEDPLUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MEGASTAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MENONBE",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "METROBRAND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "METROPOLIS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MFSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MGL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MHRIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MID150BEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MIDHANI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MINDACORP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MINDSPACE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MINDTECK",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MMFL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MOIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MOL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MOLDTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MOLDTKPAC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MON100",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MONARCH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MONTECARLO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MOREPENLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MOTHERSON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MOTILALOFS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MPHASIS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MPSLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MRF",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MRPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MSTCLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MSUMI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MTARTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MUKANDLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MUNJALSHOW",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MUTHOOTCAP",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "MUTHOOTFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "MVGJL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NACLIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NAHARINDUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "NAHARSPING",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NAM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NATCOPHARM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NATIONALUM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NAUKRI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NAVA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NAVINFLUOR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NAVKARCORP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NAVNETEDUL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NAZARA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NCC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NCLIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NDTV",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NECLIFE",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "NELCAST",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NELCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NEOGEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NESCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NEULANDLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NFL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NGLFINE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NHIT",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NHPC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NIACL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NIFTYBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NIFTYETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "NIFTYIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "NIITLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NIITMTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NITINSPIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NLCINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NMDC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NOCIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NRBBEARING",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NSIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "NSLNISP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NTPC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NUVAMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NUVOCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NXST",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "NYKAA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "OBEROIRLTY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "OFSS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "OIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "OLECTRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ONGC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ONMOBILE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ONWARDTEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "OPTIEMUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ORCHPHARMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ORIENTCEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ORIENTELEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ORIENTHOT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ORIENTPPR",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ORISSAMINE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PAGEIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PAISALO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PAKKA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PANACEABIO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PANAMAPET",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PARADEEP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PARAGMILK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PARAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PATANJALI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PATELENG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PCBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PDSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PENIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PENINLAND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PERSISTENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PETRONET",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PFC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PFIZER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PFOCUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PGEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PGHH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PGHL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PGINVIT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PHARMABEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "PHOENIXLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PIDILITIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PIIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PILANIINVS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PITTIENG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PIXTRANS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PLASTIBLEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "PNB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PNBGILTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PNBHOUSING",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PNCINFRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "POKARNA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "POLICYBZR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "POLYCAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "POLYMED",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "POLYPLEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "POONAWALLA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "POWERGRID",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "POWERINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "POWERMECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PPLPHARMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PRAJIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PRECAM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PRECWIRE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PREMEXPLN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PRESTIGE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PRICOLLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PRIMESECU",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "PRINCEPIPE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PRIVISCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PRSMJOHNSN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PRUDENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PSPPROJECT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PSUBNKBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PSUBNKIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "PTC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PTCIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PTL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "PUNJABCHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PURVA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PVRINOX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "PVTBANIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "PYRAMID",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "QUESS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "QUICKHEAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RACE",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "RADHIKAJWE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RADIANTCMS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "RADICO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RADIOCITY",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "RAILTEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RAIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RAINBOW",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RAJESHEXPO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RAJRATAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RALLIS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RAMASTEEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RAMCOCEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RAMCOIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RAMCOSYS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "RAMKY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RAMRAT",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RANEHOLDIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RATEGAIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RATNAMANI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RATNAVEER",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "RAYMOND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RBA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "RBLBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RCF",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RECLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "REDINGTON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "REDTAPE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RELAXO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RELIANCE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RELIGARE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RELINFRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RENUKA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "REPCOHOME",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "REPRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RESPONIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RGL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "RHIM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RICOAUTO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RIIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RISHABH",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RITES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RKFORGE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ROHLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ROLEXRINGS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ROSSARI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ROSSELLIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ROTO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ROUTE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RPGLIFE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RPSGVENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RRKABEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RSWM",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "RSYSTEMS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RTNINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RUPA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RUSHIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "RVNL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SADHNANIQ",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SAFARI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SAGCEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SAIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SAKAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SALZERELEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SAMHI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SANDHAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SANGAMIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SANGHVIMOV",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SANOFI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SANSERA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SAPPHIRE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SARDAEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SAREGAMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SASKEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SASTASUNDR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SATIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SATIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SATINDLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SBCL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SBFC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SBGLP",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SBICARD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SBILIFE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SBIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SCHAEFFLER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SCHAND",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SCHNEIDER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SDBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SELAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SENCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SEQUENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SESHAPAPER",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SETFGOLD",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SETFNIF50",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SETFNIFBK",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SFL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHAILY",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SHALBY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHALPAINTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHANKARA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SHANTIGEAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHARDACROP",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SHARDAMOTR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHAREINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHEMAROO",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SHILPAMED",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHIVALIK",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SHK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHOPERSTOP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHREDIGCEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SHREECEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHREEPUSHK",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SHREYAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SHRIPISTON",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHRIRAMFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHRIRAMPPS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SHYAMMETL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SIEMENS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SIGACHI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SIGNATURE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SILVER",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SILVERBEES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SILVERIETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SILVERTUC",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SINDHUTRAD",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SIRCA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SIS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SIYSIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SJS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SJVN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SKFINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SKIPPER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SMCGLOBAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SMLISUZU",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SMSPHARMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SNOWMAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SOBHA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SOLARA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SOLARINDS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SOMANYCERA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SONACOMS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SONATSOFTW",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SOTL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SOUTHBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SPAL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SPANDANA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SPCENET",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SPENCERS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SPIC",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SPLPETRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SPORTKING",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SREEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SRF",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SRHHYPOLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SSWL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "STAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "STARCEMENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "STARHEALTH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "STCINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "STEELCAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "STERTOOLS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "STLTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "STOVEKRAFT",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "STYLAMIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "STYRENIX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUBEXLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUBROS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUDARSCHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SUKHJITS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SULA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUMICHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUMMITSEC",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SUNDARMFIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUNDARMHLD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUNDRMFAST",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUNFLAG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUNPHARMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUNTECK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUNTV",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUPRAJIT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUPREMEIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SUPRIYA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SURYAROSNI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SURYODAY",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SUTLEJTEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SUVENPHAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SWANENERGY",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SWARAJENG",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SWELECTES",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "SYMPHONY",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SYNGENE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "SYRMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TAJGVK",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TANLA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TARSONS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TASTYBITE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TATACHEM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATACOMM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATACONSUM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATAELXSI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATAINVEST",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATAMOTORS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATAMTRDVR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATAPOWER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATASTEEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATATECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TATVA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TBZ",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TCI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TCIEXP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TCNSBRANDS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TCPLPACK",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TCS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TDPOWERSYS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TEAMLEASE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TECHM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TECHNOE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TEGA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TEJASNET",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TEXINFRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TEXRAIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "THEJO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "THEMISMED",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "THERMAX",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "THYROCARE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TIDEWATER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TIIL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TIINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TIMETECHNO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TIMKEN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TIPSINDLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TIRUMALCHM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TITAGARH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TITAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TMB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TNPETRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "TNPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TORNTPHARM",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TORNTPOWER",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TRACXN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TREL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TRENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TRIDENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TRITURBINE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TRIVENI",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TRU",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TTKHLTCARE",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TTKPRESTIG",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TTML",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TVSELECT",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "TVSHLTD",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "TVSMOTOR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TVSSCS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TVSSRICHAK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "TVTODAY",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "UBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UDS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "UFLEX",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "UGARSUGAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "UGROCAP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UJJIVAN",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UJJIVANSFB",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ULTRACEMCO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UNICHEMLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "UNIONBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UNIPARTS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UNIVCABLES",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "UNOMINDA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "USHAMART",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UTIAMC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UTIBANKETF",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "UTINEXT50",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "UTKARSHBNK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UTTAMSUGAR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VADILALIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VAIBHAVGBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VALIANTLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VALIANTORG",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VARROC",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VASCONEQ",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VBL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VEDL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VENKEYS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VENUSPIPES",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VENUSREM",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VERANDA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VESUVIUS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VETO",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "VGUARD",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VIDHIING",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VIJAYA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VIMTALABS",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "VINATIORGA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VINDHYATEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VINYLINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "VIPIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VISAKAIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VISHNU",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VLSFINANCE",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "VMART",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VOLTAMP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VOLTAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VPRPL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VRLLOG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VSSL",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VSTIND",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "VSTTILLERS",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "VTL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WABAG",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WELCORP",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WELENT",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WELSPUNLIV",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WESTLIFE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WHEELS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "WHIRLPOOL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WINDLAS",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "WINDMACHIN",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "WIPRO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WOCKPHARMA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WONDERLA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "WSI",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "WSTCSTPAPR",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "XCHANGING",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "XPROINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "YASHO",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "YATHARTH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "YATRA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "YESBANK",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ZAGGLE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ZEEL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ZEEMEDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ZENSARTECH",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ZFCVINDIA",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ZIMLAB",
+     "exchange": "NSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "ZOMATO",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ZOTA",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ZUARI",
+     "exchange": "NSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "ZYDUSLIFE",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "ZYDUSWELL",
+     "exchange": "NSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "EUREKAFORBE",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "EKI",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RAJNISH",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "STARLENT",
+     "exchange": "BSE",
+     "intraday_multiplier": 1
+    },
+    {
+     "symbol": "LANCER",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "BESTAGRO",
+     "exchange": "BSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "THINKINK",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "PAUSHAKLTD",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "KAMAHOLD",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "MOSCHIP",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "AVANTEL",
+     "exchange": "BSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "UDAICEMENT",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "RACLGEAR",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "JYOTIRES",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "CRESSAN",
+     "exchange": "BSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KENNAMET",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "GRAUWEIL",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "SPICEJET",
+     "exchange": "BSE",
+     "intraday_multiplier": 5
+    },
+    {
+     "symbol": "KIRLFER",
+     "exchange": "BSE",
+     "intraday_multiplier": 4
+    },
+    {
+     "symbol": "FORCEMOT",
+     "exchange": "BSE",
+     "intraday_multiplier": 5
+    }
+   ]
