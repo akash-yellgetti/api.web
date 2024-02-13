@@ -1,0 +1,85 @@
+
+//@version=5
+strategy("api-bridge-test-script", overlay=true, initial_capital = 100000)
+// === INPUT BACKTEST RANGE ===
+i_from = input.time(defval = timestamp("10 FEB 2024 09:00 +0000"), title = "From")
+i_thru = input.time(defval = timestamp("28 FEB 2024 23:30 +0000"), title = "Thru")
+
+// === INPUT SHOW PLOT ===
+i_show = input     (defval = true, title = "Show Date Range")
+// === FUNCTION EXAMPLE ===
+date() => time >= i_from and time <= i_thru  // create date function "within window of time"
+// --------------------------------------------------------------------------
+// Madrid Trend Spotter
+// --------------------------------------------------------------------------
+src = input(close, title="Source")
+fastLen = input.int(5,  title="Fast Length", minval=1)
+slowLen = input.int(10, title="Slow Length", minval=1)
+ema = input.bool(true, title="Exponential Moving Average")
+
+maColor(fma, sma) =>
+    fma > sma and ta.change(fma - sma, 3) > 0 ? color.new(color.lime, 0) : fma < sma and ta.change(fma - sma, 3) < 0 ? color.new(color.red, 0) : color.new(color.yellow, 0)
+
+fastMA = ema ? ta.ema(src, fastLen) : ta.sma(src, fastLen)
+slowMA = ema ? ta.ema(src, slowLen) : ta.sma(src, slowLen)
+
+fastMAP = plot(fastMA, color=maColor(fastMA, slowMA), linewidth=3, title="fastTrend")
+slowMAP = plot(slowMA, color=maColor(fastMA, slowMA), linewidth=3, title="slowTrend")
+fill(fastMAP, slowMAP, color=maColor(fastMA, slowMA), transp=70, title="Area")
+upCrossover = ta.crossover(fastMA, slowMA)
+plotshape(series=upCrossover,  color=#44ce1b, text = 'B', textcolor = #ffffff, style=shape.labelup, size=size.tiny, location=location.belowbar)
+if(upCrossover)
+    alert("Fast crossed above Slow MA 5", alert.freq_once_per_bar_close)
+downCrossunder = ta.crossunder(fastMA, slowMA)
+plotshape(series=downCrossunder,  color=#f30000, text = 'S', textcolor = #ffffff, style=shape.labeldown, size=size.tiny, location=location.abovebar)
+if(downCrossunder)
+    alert("Fast crossed below Slow MA 5", alert.freq_once_per_bar_close)
+
+//-----------------------------------------------------------------------------}
+
+quant=input(title="Trade Quantity",defval=25)
+
+// log.info('syminfo {0}', syminfo)
+
+//setting automated alerts required by apibridge
+lxse="TYPE: LX" + " :SYMBOL: " + syminfo.ticker + " :QTY: " + str.tostring(quant) + " :PRICE: " + str.tostring(close) + " :OT:MIS " + " :TYPE:SE " + " :SYMBOL: " + syminfo.ticker + " :QTY: " + str.tostring(quant) + " :PRICE: " + str.tostring(close) + " :OT:MIS "
+
+sxle="TYPE: SX" + " :SYMBOL: " + syminfo.ticker + " :QTY: " + str.tostring(quant)+ " :PRICE: " + str.tostring(close) + " :OT:MIS " + " :TYPE:LE " + " :SYMBOL: " + syminfo.ticker + " :QTY: " + str.tostring(quant) + " :PRICE: " + str.tostring(close) + " :OT:MIS "
+ 
+// PRICE:0 
+// OT:MARKET|MIS 
+
+le="TYPE:LE " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(quant) + " :PRICE: " + str.tostring(close) + " :OT:MIS "
+
+lx="TYPE:LX " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(quant) + " :PRICE: " + str.tostring(fastMA) + " :OT:MIS "
+
+se="TYPE:SE " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(quant) + " :PRICE: " + str.tostring(close) + " :OT:MIS "
+
+sx="TYPE:SX " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(quant) + " :PRICE: " + str.tostring(fastMA) + " :OT:MIS "
+
+longCondition = ta.crossover(close, close[1])
+shortCondition = ta.crossunder(close, close[1])
+
+// Buy Entry and exit
+if (longCondition) and date()
+    strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+    strategy.entry("LE", strategy.long, quant, alert_message = le)
+    strategy.exit("LX", from_entry="LE", stop=fastMA, alert_message = lx)
+    
+// Sell Entry and exit
+if (shortCondition) and date()
+    strategy.close('Enter New SE', "Close Existing Trade", qty_percent = 100)
+    strategy.entry("SE", strategy.short, quant, alert_message = se)
+    strategy.exit("SX", from_entry="SE", stop=fastMA, alert_message = sx)
+
+
+// if upCrossover and inIntradayTimeRange
+//     strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("LX", from_entry="LE", stop=fastMA, alert_message = lx)
+//     strategy.entry("LE", strategy.long, quant, alert_message = le)
+
+// if downCrossunder and inIntradayTimeRange
+//     strategy.close('Enter New SE', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("SX", from_entry="SE", stop=fastMA, alert_message = sx)
+//     strategy.entry("SE", strategy.short, quant, alert_message = se)
+
