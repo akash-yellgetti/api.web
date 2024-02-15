@@ -1,5 +1,5 @@
 //@version=5
-strategy("algo-trade-indian", shorttitle="algo-trade-indian", overlay=true, initial_capital = 100000, default_qty_value = 10)
+strategy("algo-trade-indian-commodity", shorttitle="algo-trade-indian-commodity", overlay=true, initial_capital = 100000, default_qty_value = 1)
 
 len = 5
 
@@ -66,52 +66,52 @@ plot(vwap, color=color.new(color.blue, 0), title="VWAP", linewidth=3)
 // indicator("Supertrend", overlay = true, format=format.price, precision=2, timeframe="")
 
 // Input variables
-// var int Periods = input.int(10, title="ATR Period")
-// var float Multiplier = input.float(2.0, title="ATR Multiplier", step=0.1)
-// var bool changeATR= input.bool(true, title="Change ATR Calculation Method?")
-// var bool showsignals = input.bool(true, title="Show Buy/Sell Signals?")
-// var bool highlighting = input.bool(true, title="Highlighter On/Off?")
+var int Periods = input.int(10, title="ATR Period")
+var float Multiplier = input.float(2.0, title="ATR Multiplier", step=0.1)
+var bool changeATR= input.bool(true, title="Change ATR Calculation Method?")
+var bool showsignals = input.bool(true, title="Show Buy/Sell Signals?")
+var bool highlighting = input.bool(true, title="Highlighter On/Off?")
 
-// // Calculating ATR
-// atr2 = ta.sma(ta.atr(Periods), Periods)
-// atr= changeATR ? ta.atr(Periods) : atr2
+// Calculating ATR
+atr2 = ta.sma(ta.atr(Periods), Periods)
+atr= changeATR ? ta.atr(Periods) : atr2
 
-// // Calculating Supertrend
-// up= hl2 - (Multiplier * atr)
-// up1 = na(up[1]) ? up : up[1]
-// up := close[1] > up1 ? math.max(up,up1) : up
-// dn= hl2 + (Multiplier * atr)
-// dn1 = na(dn[1]) ? dn : dn[1]
-// dn := close[1] < dn1 ? math.min(dn, dn1) : dn
+// Calculating Supertrend
+up= hl2 - (Multiplier * atr)
+up1 = na(up[1]) ? up : up[1]
+up := close[1] > up1 ? math.max(up,up1) : up
+dn= hl2 + (Multiplier * atr)
+dn1 = na(dn[1]) ? dn : dn[1]
+dn := close[1] < dn1 ? math.min(dn, dn1) : dn
 
-// // Detecting trend direction
-// var int trend = 1
-// trend := na(trend[1]) ? trend : (trend[1] == -1 and close > dn1 ? 1 : trend[1] == 1 and close < up1 ? -1 : trend[1])
+// Detecting trend direction
+var int trend = 1
+trend := na(trend[1]) ? trend : (trend[1] == -1 and close > dn1 ? 1 : trend[1] == 1 and close < up1 ? -1 : trend[1])
 
-// // Plotting Supertrend lines
-// upPlot = plot(trend == 1 ? up : na, title="Up Trend", color=color.green)
-// dnPlot = plot(trend == -1 ? dn : na, title="Down Trend", color=color.red)
+// Plotting Supertrend lines
+upPlot = plot(trend == 1 ? up : na, title="Up Trend", color=color.green)
+dnPlot = plot(trend == -1 ? dn : na, title="Down Trend", color=color.red)
 
-// // Plotting Buy/Sell signals
-// buySignal = trend == 1 and trend[1] == -1
-// plotshape(buySignal ? up : na, title="UpTrend Begins", style=shape.circle, color= color.green, size=size.tiny, location=location.belowbar)
-// plotshape(buySignal and showsignals ? up : na, title="Buy", style=shape.labelup, text="Buy", color=color.green, textcolor=color.white, size=size.tiny, location=location.belowbar)
-// sellSignal = trend == -1 and trend[1] == 1
-// plotshape(sellSignal ? dn : na, title="DownTrend Begins", style=shape.circle, color= color.red, size=size.tiny, location=location.abovebar)
-// plotshape(sellSignal and showsignals ? dn : na, title="Sell", style=shape.labeldown, text="Sell", color=color.red, textcolor=color.white, size=size.tiny, location=location.abovebar)
+// Plotting Buy/Sell signals
+buySignal = trend == 1 and trend[1] == -1
+plotshape(buySignal ? up : na, title="UpTrend Begins", style=shape.circle, color= color.green, size=size.tiny, location=location.belowbar)
+plotshape(buySignal and showsignals ? up : na, title="Buy", style=shape.labelup, text="Buy", color=color.green, textcolor=color.white, size=size.tiny, location=location.belowbar)
+sellSignal = trend == -1 and trend[1] == 1
+plotshape(sellSignal ? dn : na, title="DownTrend Begins", style=shape.circle, color= color.red, size=size.tiny, location=location.abovebar)
+plotshape(sellSignal and showsignals ? dn : na, title="Sell", style=shape.labeldown, text="Sell", color=color.red, textcolor=color.white, size=size.tiny, location=location.abovebar)
 
-// // Highlighting trend regions
-// mPlot = plot(ohlc4, title="", style=plot.style_circles, linewidth=0)
-// longFillColor = highlighting ? (trend == 1 ? color.new(color.green, transp=80) : color.white) : color.white
-// shortFillColor = highlighting ? (trend == -1 ? color.new(color.red, transp=80) : color.white) : color.white
-// fill(mPlot, upPlot, title="UpTrend Highligter", color=longFillColor)
-// fill(mPlot, dnPlot, title="DownTrend Highligter", color=shortFillColor)
+// Highlighting trend regions
+mPlot = plot(ohlc4, title="", style=plot.style_circles, linewidth=0)
+longFillColor = highlighting ? (trend == 1 ? color.new(color.green, transp=80) : color.white) : color.white
+shortFillColor = highlighting ? (trend == -1 ? color.new(color.red, transp=80) : color.white) : color.white
+fill(mPlot, upPlot, title="UpTrend Highligter", color=longFillColor)
+fill(mPlot, dnPlot, title="DownTrend Highligter", color=shortFillColor)
 
-// // Alerts
-// alertcondition(buySignal, title="SuperTrend Buy", message="SuperTrend Buy!")
-// alertcondition(sellSignal, title="SuperTrend Sell", message="SuperTrend Sell!")
-// changeCond = trend != trend[1]
-// alertcondition(changeCond, title="SuperTrend Direction Change", message="SuperTrend has changed direction!")
+// Alerts
+alertcondition(buySignal, title="SuperTrend Buy", message="SuperTrend Buy!")
+alertcondition(sellSignal, title="SuperTrend Sell", message="SuperTrend Sell!")
+changeCond = trend != trend[1]
+alertcondition(changeCond, title="SuperTrend Direction Change", message="SuperTrend has changed direction!")
 
 
 // --------------------------------------------------------------------------
@@ -273,99 +273,108 @@ if dnos > dnos[1]
 //-----------------------------------------------------------------------------}
 // AlgoTrade
 //-----------------------------------------------------------------------------{
-// // Define intraday time range (e.g., 09:30 AM to 03:30 PM)
-// intradayStartTime = timestamp(year, month, dayofmonth, 09, 30)
-// intradayEndTime = timestamp(year, month, dayofmonth, 15, 09)
-// // Define exit time (e.g., 03:15 PM)
-// // exitTime = timestamp(year, month, dayofmonth, 14, 45)
+// Define intraday time range (e.g., 09:30 AM to 03:30 PM)
+intradayStartTime = timestamp(year, month, dayofmonth, 09, 30)
+intradayEndTime = timestamp(year, month, dayofmonth, 23, 09)
+// Define exit time (e.g., 03:15 PM)
+// exitTime = timestamp(year, month, dayofmonth, 14, 45)
+exitTime = timestamp(year, month, dayofmonth, 23, 12)
 // exitTime = timestamp(year, month, dayofmonth, 15, 12)
-// // exitTime = timestamp(year, month, dayofmonth, 15, 12)
-// // Entry conditions within the intraday time range
-// inIntradayTimeRange = (time >= intradayStartTime) and (time <= intradayEndTime)
-// // Exit condition at 03:15 PM
-// exitCondition = time >= exitTime
-// // Quatity
-// positionSize = 100
-// //-----------------------------------------------------------------------------{
+// Entry conditions within the intraday time range
+inIntradayTimeRange = (time >= intradayStartTime) and (time <= intradayEndTime)
+// Exit condition at 03:15 PM
+exitCondition = time >= exitTime
+// Quatity
+positionSize = 1
+//-----------------------------------------------------------------------------{
+// === INPUT BACKTEST RANGE ===
+i_from = input.time(defval = timestamp("14 FEB 2024 09:00 +0000"), title = "From")
+i_thru = input.time(defval = timestamp("28 FEB 2024 23:30 +0000"), title = "Thru")
 
-// le="TYPE:LE " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(positionSize) + " :PRICE: " + str.tostring(close) + " :OT:MIS "
+// === INPUT SHOW PLOT ===
+i_show = input     (defval = true, title = "Show Date Range")
+// === FUNCTION EXAMPLE ===
+date() => time >= i_from and time <= i_thru  // create date function "within window of time"
+//-----------------------------------------------------------------------------{
 
-// lx="TYPE:LX " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(positionSize) + " :PRICE: " + str.tostring(math.abs(fastMA)) + " :OT:MIS "
+le="TYPE:LE " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(positionSize) + " :PRICE: " + str.tostring(close) + " :OT:MIS "
 
-// se="TYPE:SE " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(positionSize) + " :PRICE: " + str.tostring(close) + " :OT:MIS "
+lx="TYPE:LX " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(positionSize) + " :PRICE: " + str.tostring(math.round(fastMA)) + " :OT:MIS "
 
-// sx="TYPE:SX " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(positionSize) + " :PRICE: " + str.tostring(math.abs(fastMA)) + " :OT:MIS "
+se="TYPE:SE " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(positionSize) + " :PRICE: " + str.tostring(open) + " :OT:MIS "
 
-// //-----------------------------------------------------------------------------{
+sx="TYPE:SX " + " :SYMBOL: " + syminfo.ticker + " :INS: " + syminfo.prefix(syminfo.ticker) + " :QTY: " + str.tostring(positionSize) + " :PRICE: " + str.tostring(math.round(fastMA)) + " :OT:MIS "
 
-// // STEP 2:
-// // Determine trail stop loss prices
-// longStopPrice = 0.0
-// shortStopPrice = 0.0
+//-----------------------------------------------------------------------------{
 
-// longStopPrice := if strategy.position_size > 0
-//     stopValue = up
-//     math.max(stopValue, longStopPrice[1])
-// else
-//     0
+// STEP 2:
+// Determine trail stop loss prices
+longStopPrice = 0.0
+shortStopPrice = 0.0
 
-// shortStopPrice := if strategy.position_size < 0
-//     stopValue = dn
-//     math.min(stopValue, shortStopPrice[1])
-// else
-//     999999
+longStopPrice := if strategy.position_size > 0
+    stopValue = fastMA
+    math.max(stopValue, longStopPrice[1])
+else
+    0
+
+shortStopPrice := if strategy.position_size < 0
+    stopValue = fastMA
+    math.min(stopValue, shortStopPrice[1])
+else
+    999999
 
 
-// // IsLong() returns 'true' when the strategy has an open long
-// // position. Returns 'false' when the script is short or flat.
-// IsLong() =>
-//     strategy.position_size > 0
+// IsLong() returns 'true' when the strategy has an open long
+// position. Returns 'false' when the script is short or flat.
+IsLong() =>
+    strategy.position_size > 0
 
-// // IsShort() returns 'true' when the strategy has an open short
-// // position. Returns 'false' when the script is long or flat.
-// IsShort() =>
-//     strategy.position_size < 0
+// IsShort() returns 'true' when the strategy has an open short
+// position. Returns 'false' when the script is long or flat.
+IsShort() =>
+    strategy.position_size < 0
 
-// // Define strategy parameters
-// longSignal = upos > upos[1] and inIntradayTimeRange
-// shortSignal = dnos > dnos[1] and inIntradayTimeRange
+// Define strategy parameters
+longSignal = upos > upos[1] and inIntradayTimeRange and date()
+shortSignal = dnos > dnos[1] and inIntradayTimeRange and date()
 
-// // Buy Entry and exit
-// if longSignal
-//     strategy.close_all('LE CLOSE')
-//     strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
-//     strategy.exit("LX", from_entry="Enter Buy", stop=fastMA)
-//     strategy.entry("LE", strategy.long, positionSize)
+// Buy Entry and exit
+if longSignal 
+    strategy.close_all('ALL CLOSE')
+    strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+    strategy.exit("LX", from_entry="Enter Buy", stop=fastMA, alert_message = lx)
+    strategy.entry("LE", strategy.long, positionSize, alert_message = le)
     
-// // Sell Entry and exit
-// if shortSignal
-//     strategy.close_all('LE CLOSE')
+// Sell Entry and exit
+if shortSignal
+    strategy.close_all('ALL CLOSE')
+    strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
+    strategy.exit("SX", from_entry="Enter Sell", stop=fastMA, alert_message = sx)
+    strategy.entry("SE", strategy.short, positionSize, alert_message = se)
+
+// if upCrossover and inIntradayTimeRange
+//     strategy.close_all('Enter New Buy')
+//     strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("Exit Buy 1", from_entry="Enter Buy 1", stop=fastMA)
+//     strategy.entry("Enter Buy 1", strategy.long, positionSize)
+
+// if downCrossunder and inIntradayTimeRange
+//     strategy.close_all('Enter New Sell')
 //     strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
-//     strategy.exit("SX", from_entry="Enter Sell", stop=fastMA)
-//     strategy.entry("SE", strategy.short, positionSize)
-
-// // if upCrossover and inIntradayTimeRange
-// //     strategy.close_all('Enter New Buy')
-// //     strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
-// //     strategy.exit("Exit Buy 1", from_entry="Enter Buy 1", stop=fastMA)
-// //     strategy.entry("Enter Buy 1", strategy.long, positionSize)
-
-// // if downCrossunder and inIntradayTimeRange
-// //     strategy.close_all('Enter New Sell')
-// //     strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
-// //     strategy.exit("Exit Sell 1", from_entry="Enter Sell 1", stop=fastMA)
-// //     strategy.entry("Enter Sell 1", strategy.short, positionSize)
+//     strategy.exit("Exit Sell 1", from_entry="Enter Sell 1", stop=fastMA)
+//     strategy.entry("Enter Sell 1", strategy.short, positionSize)
 
 
-// // Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
-// if exitCondition
-//     strategy.close_all('Closing All orders')
+// Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
+if exitCondition
+    strategy.close_all('Closing All orders')
 
-// // Submit exit orders for trail stop loss price
-// if strategy.position_size > 0
-//     strategy.exit("LX TRL STP", stop=longStopPrice)
+// Submit exit orders for trail stop loss price
+if strategy.position_size > 0
+    strategy.exit("LX TRL STP", stop=longStopPrice, alert_message = lx)
 
-// if strategy.position_size < 0
-//     strategy.exit("SX TRL STP", stop=shortStopPrice)
+if strategy.position_size < 0
+    strategy.exit("SX TRL STP", stop=shortStopPrice, alert_message = sx)
 
 //-----------------------------------------------------------------------------}

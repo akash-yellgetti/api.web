@@ -1,0 +1,117 @@
+//@version=5
+strategy(title="Super Trend + MACD", shorttitle="ST_MACD", overlay=true)
+
+// Super Trend Function
+superTrend(src, atrLength, multiplier, factor, pd) =>
+    atr = ta.atr(atrLength)
+    upperBand = src + (multiplier * atr)
+    lowerBand = src - (multiplier * atr)
+    isUptrend = ta.crossover(src, lowerBand)
+    isDowntrend = ta.crossunder(src, upperBand)
+    trend = isUptrend ? 1 : isDowntrend ? -1 : isUptrend[1]
+    st = trend == 1 ? lowerBand - (factor * atr) : upperBand + (factor * atr)
+    st_prev = nz(st[1])
+    st := isUptrend ? math.max(st, st_prev) : isDowntrend ? math.min(st, st_prev) : st_prev
+    [st, trend]
+
+// Input parameters for Super Trend
+length = input.int(10, title="ATR Length")
+multiplier = input.float(3.0, title="Multiplier")
+factor = input.float(0.7, title="Factor")
+pd = input.int(20, title="Previous Days")
+
+// MACD Settings
+fastLength = input.int(4, title="MACD Fast Length")
+slowLength = input.int(26, title="MACD Slow Length")
+signalSmoothing = input.int(9, title="MACD Signal Smoothing")
+
+// Calculate Super Trend and MACD
+[superTrendValue, st_trend] = superTrend(close, length, multiplier, factor, pd)
+[macdLine, signalLine, _] = ta.macd(close, fastLength, slowLength, signalSmoothing)
+
+// Plot Super Trend
+plot(series=superTrendValue, title="Super Trend", color=color.blue, linewidth=5)
+
+// Plot MACD
+// plot(macdLine - signalLine, title="MACD Histogram", color=color.red, style=plot.style_histogram)
+// plot(macdLine, title="MACD Line", color=color.green)
+// plot(signalLine, title="Signal Line", color=color.orange)
+
+// Plot buy and sell signals
+buySignal = ta.crossover(macdLine, signalLine)
+sellSignal = ta.crossunder(macdLine, signalLine)
+plotshape(series=buySignal, title="Buy Signal", location=location.belowbar, color=color.green, style=shape.triangleup, size=size.small)
+plotshape(series=sellSignal, title="Sell Signal", location=location.abovebar, color=color.red, style=shape.triangledown, size=size.small)
+
+// Output trend direction
+plotshape(series=st_trend == 1 ? superTrendValue : na, title="Up Trend", location=location.abovebar, color=color.blue, style=shape.triangleup)
+plotshape(series=st_trend == -1 ? superTrendValue : na, title="Down Trend", location=location.belowbar, color=color.red, style=shape.triangledown)
+
+
+//-----------------------------------------------------------------------------}
+// AlgoTrade
+//-----------------------------------------------------------------------------{
+
+// Define intraday time range (e.g., 09:30 AM to 03:30 PM)
+intradayStartTime = timestamp(year, month, dayofmonth, 09, 30)
+intradayEndTime = timestamp(year, month, dayofmonth, 14, 59)
+// Define exit time (e.g., 03:15 PM)
+// exitTime = timestamp(year, month, dayofmonth, 14, 45)
+exitTime = timestamp(year, month, dayofmonth, 15, 12)
+// exitTime = timestamp(year, month, dayofmonth, 15, 12)
+// Entry conditions within the intraday time range
+inIntradayTimeRange = (time >= intradayStartTime) and (time <= intradayEndTime)
+// Exit condition at 03:15 PM
+exitCondition = time >= exitTime
+// Quatity
+positionSize = 75
+
+highestHigh = ta.highest(close, 3)
+lowestLow = ta.lowest(close, 3)
+
+
+// STEP 2:
+// Determine trail stop loss prices
+longStopPrice = 0.0
+shortStopPrice = 0.0
+
+longStopPrice := if strategy.position_size > 0
+    stopValue = lowestLow
+    math.max(stopValue, longStopPrice[1])
+else
+    0
+
+shortStopPrice := if strategy.position_size < 0
+    stopValue = highestHigh
+    math.min(stopValue, shortStopPrice[1])
+else
+    999999
+
+
+// Buy Entry and exit
+if buySignal and inIntradayTimeRange
+    strategy.close_all('Enter New Buy')
+    strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+    strategy.exit("Exit Buy", from_entry="Enter Buy", stop=lowestLow)    
+    strategy.entry("Enter Buy", strategy.long, positionSize)
+    
+// Sell Entry and exit
+if sellSignal and inIntradayTimeRange
+    strategy.close_all('Enter New Sell')
+    strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
+    strategy.exit("Exit Sell", from_entry="Enter Sell", stop=highestHigh)
+    strategy.entry("Enter Sell", strategy.short, positionSize)
+
+// Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
+if exitCondition
+    strategy.close_all('Closing All orders')
+
+
+// Submit exit orders for trail stop loss price
+// if strategy.position_size > 0
+//     strategy.exit("XL TRL STP", stop=longStopPrice)
+
+// if strategy.position_size < 0
+//     strategy.exit("XS TRL STP", stop=shortStopPrice)
+
+//-----------------------------------------------------------------------------}

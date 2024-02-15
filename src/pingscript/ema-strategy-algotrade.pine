@@ -1,0 +1,125 @@
+
+// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © akash5792bts
+
+//@version=5
+strategy("ema-strategy-algotrade", overlay=true)
+
+
+
+// --------------------------------------------------------------------------
+// Madrid Trend Spotter
+// --------------------------------------------------------------------------
+src = input(close, title="Source")
+fastLen = input.int(5,  title="Fast Length", minval=1)
+slowLen = input.int(10, title="Slow Length", minval=1)
+ema = input.bool(true, title="Exponential Moving Average")
+
+maColor(fma, sma) =>
+    fma > sma and ta.change(fma - sma, 3) > 0 ? color.new(color.lime, 0) : fma < sma and ta.change(fma - sma, 3) < 0 ? color.new(color.red, 0) : color.new(color.yellow, 0)
+
+fastMA = ema ? ta.ema(src, fastLen) : ta.sma(src, fastLen)
+slowMA = ema ? ta.ema(src, slowLen) : ta.sma(src, slowLen)
+
+fastMAP = plot(fastMA, color=maColor(fastMA, slowMA), linewidth=3, title="fastTrend")
+slowMAP = plot(slowMA, color=maColor(fastMA, slowMA), linewidth=3, title="slowTrend")
+fill(fastMAP, slowMAP, color=maColor(fastMA, slowMA), transp=70, title="Area")
+upCrossover = ta.crossover(fastMA, slowMA)
+plotshape(series=upCrossover,  color=#44ce1b, text = 'B', textcolor = #ffffff, style=shape.labelup, size=size.tiny, location=location.belowbar)
+// if(upCrossover)
+//     alert("Fast crossed above Slow MA 5", alert.freq_once_per_bar_close)
+downCrossunder = ta.crossunder(fastMA, slowMA)
+plotshape(series=downCrossunder,  color=#f30000, text = 'S', textcolor = #ffffff, style=shape.labeldown, size=size.tiny, location=location.abovebar)
+// if(downCrossunder)
+//     alert("Fast crossed below Slow MA 5", alert.freq_once_per_bar_close)
+
+//-----------------------------------------------------------------------------}
+// AlgoTrade
+//-----------------------------------------------------------------------------{
+
+// Define intraday time range (e.g., 09:30 AM to 03:30 PM)
+intradayStartTime = timestamp(year, month, dayofmonth, 09, 30)
+// Equity Market Time
+// intradayEndTime = timestamp(year, month, dayofmonth, 15, 15)
+// Commodities Market Time
+intradayEndTime = timestamp(year, month, dayofmonth, 23, 30)
+// Define exit time (e.g., 03:15 PM)
+// exitTime = timestamp(year, month, dayofmonth, 14, 45)
+// exitTime = timestamp(year, month, dayofmonth, 15, 12)
+// Commodities Market Exit Time
+exitTime = timestamp(year, month, dayofmonth, 23, 00)
+// exitTime = timestamp(year, month, dayofmonth, 15, 12)
+// Entry conditions within the intraday time range
+inIntradayTimeRange = (time >= intradayStartTime) and (time <= intradayEndTime)
+// Exit condition at 03:15 PM
+exitCondition = time >= exitTime
+// Quatity
+positionSize = 25
+
+// STEP 2:
+// Determine trail stop loss prices
+longStopPrice = 0.0
+shortStopPrice = 0.0
+
+longStopPrice := if strategy.position_size > 0
+    stopValue = fastMA
+    math.max(stopValue, longStopPrice[1])
+else
+    0
+
+shortStopPrice := if strategy.position_size < 0
+    stopValue = fastMA
+    math.min(stopValue, shortStopPrice[1])
+else
+    999999
+
+
+// IsLong() returns 'true' when the strategy has an open long
+// position. Returns 'false' when the script is short or flat.
+IsLong() =>
+    strategy.position_size > 0
+
+// IsShort() returns 'true' when the strategy has an open short
+// position. Returns 'false' when the script is long or flat.
+IsShort() =>
+    strategy.position_size < 0
+
+// Define strategy parameters
+longSignal = upos > upos[1] and inIntradayTimeRange
+shortSignal = dnos > dnos[1] and inIntradayTimeRange
+
+// Buy Entry and exit
+// if longSignal
+//     strategy.close_all('Enter New Buy')
+//     strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("Exit Buy", from_entry="Enter Buy", stop=fastMA)
+//     strategy.entry("Enter Buy", strategy.long, positionSize)
+    
+// // Sell Entry and exit
+// if shortSignal
+//     strategy.close_all('Enter New Sell')
+//     strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
+//     strategy.exit("Exit Sell", from_entry="Enter Sell", stop=fastMA)
+//     strategy.entry("Enter Sell", strategy.short, positionSize)
+
+if upCrossover and inIntradayTimeRange
+    strategy.close_all('ALL Trades')
+    strategy.entry("LE", strategy.long, positionSize, stop=fastMA)
+
+if downCrossunder and inIntradayTimeRange
+    strategy.close_all('ALL Trades')
+    strategy.entry("SE", strategy.short, positionSize, stop=fastMA)
+
+
+// Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
+if exitCondition
+    strategy.close_all('Closing All orders')
+
+// Submit exit orders for trail stop loss price
+if strategy.position_size > 0
+    strategy.exit("XL TRL STP", stop=longStopPrice)
+
+if strategy.position_size < 0
+    strategy.exit("XS TRL STP", stop=shortStopPrice)
+
+//-----------------------------------------------------------------------------}
