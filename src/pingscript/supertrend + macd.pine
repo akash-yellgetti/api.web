@@ -30,7 +30,7 @@ signalSmoothing = input.int(9, title="MACD Signal Smoothing")
 [macdLine, signalLine, _] = ta.macd(close, fastLength, slowLength, signalSmoothing)
 
 // Plot Super Trend
-plot(series=superTrendValue, title="Super Trend", color=color.blue, linewidth=5)
+// plot(series=superTrendValue, title="Super Trend", color=color.blue, linewidth=5)
 
 // Plot MACD
 // plot(macdLine - signalLine, title="MACD Histogram", color=color.red, style=plot.style_histogram)
@@ -74,8 +74,8 @@ exitCondition = time >= exitTime
 // Quatity
 positionSize = 100
 
-highestHigh = ta.highest(close, 3)
-lowestLow = ta.lowest(close, 3)
+highestHigh = ta.highest(close, 5)
+lowestLow = ta.lowest(close, 5)
 
 
 // STEP 2:
