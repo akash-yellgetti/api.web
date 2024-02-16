@@ -21,7 +21,7 @@ factor = input.float(0.7, title="Factor")
 pd = input.int(20, title="Previous Days")
 
 // MACD Settings
-fastLength = input.int(4, title="MACD Fast Length")
+fastLength = input.int(12, title="MACD Fast Length")
 slowLength = input.int(26, title="MACD Slow Length")
 signalSmoothing = input.int(9, title="MACD Signal Smoothing")
 
@@ -51,20 +51,28 @@ plotshape(series=st_trend == -1 ? superTrendValue : na, title="Down Trend", loca
 //-----------------------------------------------------------------------------}
 // AlgoTrade
 //-----------------------------------------------------------------------------{
+// === INPUT BACKTEST RANGE ===
+i_from = input.time(defval = timestamp("15 FEB 2024 09:00 +0000"), title = "From")
+i_thru = input.time(defval = timestamp("28 FEB 2024 23:30 +0000"), title = "Thru")
 
+// === INPUT SHOW PLOT ===
+i_show = input     (defval = true, title = "Show Date Range")
+// === FUNCTION EXAMPLE ===
+date() => time >= i_from and time <= i_thru  // create date function "within window of time"
+//-----------------------------------------------------------------------------{
 // Define intraday time range (e.g., 09:30 AM to 03:30 PM)
 intradayStartTime = timestamp(year, month, dayofmonth, 09, 30)
-intradayEndTime = timestamp(year, month, dayofmonth, 14, 59)
+intradayEndTime = timestamp(year, month, dayofmonth, 23, 30)
 // Define exit time (e.g., 03:15 PM)
 // exitTime = timestamp(year, month, dayofmonth, 14, 45)
-exitTime = timestamp(year, month, dayofmonth, 15, 12)
+exitTime = timestamp(year, month, dayofmonth, 23, 30)
 // exitTime = timestamp(year, month, dayofmonth, 15, 12)
 // Entry conditions within the intraday time range
 inIntradayTimeRange = (time >= intradayStartTime) and (time <= intradayEndTime)
 // Exit condition at 03:15 PM
 exitCondition = time >= exitTime
 // Quatity
-positionSize = 75
+positionSize = 100
 
 highestHigh = ta.highest(close, 3)
 lowestLow = ta.lowest(close, 3)
@@ -89,16 +97,14 @@ else
 
 
 // Buy Entry and exit
-if buySignal and inIntradayTimeRange
+if buySignal and inIntradayTimeRange and date()
     strategy.close_all('Enter New Buy')
-    strategy.close('Enter New Buy', "Close Existing Trade", qty_percent = 100)
     strategy.exit("Exit Buy", from_entry="Enter Buy", stop=lowestLow)    
     strategy.entry("Enter Buy", strategy.long, positionSize)
     
 // Sell Entry and exit
-if sellSignal and inIntradayTimeRange
+if sellSignal and inIntradayTimeRange and date()
     strategy.close_all('Enter New Sell')
-    strategy.close('Enter New Sell', "Close Existing Trade", qty_percent = 100)
     strategy.exit("Exit Sell", from_entry="Enter Sell", stop=highestHigh)
     strategy.entry("Enter Sell", strategy.short, positionSize)
 
@@ -108,10 +114,10 @@ if exitCondition
 
 
 // Submit exit orders for trail stop loss price
-// if strategy.position_size > 0
-//     strategy.exit("XL TRL STP", stop=longStopPrice)
+if strategy.position_size > 0
+    strategy.exit("XL TRL STP", stop=longStopPrice)
 
-// if strategy.position_size < 0
-//     strategy.exit("XS TRL STP", stop=shortStopPrice)
+if strategy.position_size < 0
+    strategy.exit("XS TRL STP", stop=shortStopPrice)
 
 //-----------------------------------------------------------------------------}
