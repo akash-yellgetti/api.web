@@ -71,6 +71,25 @@ class Fyers {
                     .send(Object.assign({}, e));
             }
         });
+        this.getHistoricalData = (request, response) => __awaiter(this, void 0, void 0, function* () {
+            const inputs = Object.assign(Object.assign({}, request.body), request.params);
+            utils_1.log.info('controller.fyers.getHistoricalData');
+            try {
+                const data = yield service_1.fyersService.getHistoricalData(inputs);
+                return new utils_1.Api(response)
+                    .success()
+                    .code(200)
+                    .send({ data, message: 'getHistoricalData fetched Succesfully.' });
+            }
+            catch (e) {
+                const code = e && e.code ? e.code : 400;
+                utils_1.log.error('controller.fyers.getHistoricalData', Object.assign({}, e));
+                return new utils_1.Api(response)
+                    .error()
+                    .code(code)
+                    .send(Object.assign({}, e));
+            }
+        });
         this.getPositions = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             utils_1.log.info('controller.fyers.getPositions');
