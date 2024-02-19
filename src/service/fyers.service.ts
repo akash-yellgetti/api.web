@@ -86,10 +86,40 @@ class FyersService {
         }
     }
 
-    async orders() {
+    async getOrders() {
+        try {
+            this.initialize();
+            const data = await this.fyers.get_orders();
+            return data;
+        } catch (error: any) {
+            console.log(error)
+            throw new Error(`Failed to check funds: ${error.message}`);
+        }
+    }
+
+    async orderPlace(inputs: any) {
         try {
             // Implement logic to check funds
+            const reqBody={
+                "symbol":"MCX:SILVER24MARFUT",
+                "qty":1,
+                "type":2,
+                "side":1,
+                "productType":"INTRADAY",
+                "limitPrice":0,
+                "stopPrice":0,
+                "validity":"DAY",
+                "disclosedQty":0,
+                "offlineOrder":false,
+                "stopLoss":0,
+                "takeProfit":0,
+                "orderTag":"tag1"
+            }
+            this.initialize();
+            const data = await this.fyers.place_order(reqBody);
+            return data;
         } catch (error: any) {
+            console.log(error)
             throw new Error(`Failed to check funds: ${error.message}`);
         }
     }
@@ -161,6 +191,9 @@ class FyersService {
     async getPositions() {
         try {
             // Implement logic to retrieve open positions
+            this.initialize();
+            const data = await this.fyers.get_positions();
+            return data;
         } catch (error: any) {
             throw new Error(`Failed to retrieve positions: ${error.message}`);
         }

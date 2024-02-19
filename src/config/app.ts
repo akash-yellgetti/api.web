@@ -79,6 +79,16 @@ export class App {
       res.sendFile(path.resolve(__dirname,'../views/socket.html'));
     });
 
+
+        // Webhook endpoint
+    this.app.post('/webhook', (req, res) => {
+      const alert = req.body;
+      console.log('Received alert:', alert);
+      // Here you can add your logic to handle the alert
+      res.status(200).send('Alert received');
+    });
+
+
   }
 
   private cors = () => {

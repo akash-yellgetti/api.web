@@ -59,19 +59,57 @@ class Fyers {
         .send({ ...e });
     }
   };
-
-  orders = async (request: express.Request, response: express.Response) => {
+  
+  getPositions = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
-    log.info('controller.fyers.profile');
+    log.info('controller.fyers.getPositions');
     try {
-      const data = await fyersService.orders();
+      const data = await fyersService.getPositions();
       return new Api(response)
         .success()
         .code(200)
-        .send({ data , message: 'profile fetched Succesfully.' });
+        .send({ data , message: 'getPositions fetched Succesfully.' });
     } catch (e: any) {
       const code = e && e.code ? e.code : 400;
-      log.error('controller.fyers.profile', { ...e });
+      log.error('controller.fyers.getPositions', { ...e });
+      return new Api(response)
+        .error()
+        .code(code)
+        .send({ ...e });
+    }
+  };
+
+  getOrders = async (request: express.Request, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    log.info('controller.fyers.getOrders');
+    try {
+      const data = await fyersService.getOrders();
+      return new Api(response)
+        .success()
+        .code(200)
+        .send({ data , message: 'getOrders fetched Succesfully.' });
+    } catch (e: any) {
+      const code = e && e.code ? e.code : 400;
+      log.error('controller.fyers.getOrders', { ...e });
+      return new Api(response)
+        .error()
+        .code(code)
+        .send({ ...e });
+    }
+  };
+
+  orderPlace = async (request: express.Request, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    log.info('controller.fyers.orderPlace');
+    try {
+      const data = await fyersService.orderPlace(inputs);
+      return new Api(response)
+        .success()
+        .code(200)
+        .send({ data , message: 'orderPlace fetched Succesfully.' });
+    } catch (e: any) {
+      const code = e && e.code ? e.code : 400;
+      log.error('controller.fyers.orderPlace', { ...e });
       return new Api(response)
         .error()
         .code(code)
