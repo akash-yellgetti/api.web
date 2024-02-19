@@ -29,7 +29,14 @@ class FyersService {
 
     initialize() {
         this.config();
-  
+        const filePath: string = 'fyers.data.json';
+        // Read file synchronously
+        const jsonString = fs.readFileSync(filePath, 'utf-8');
+        // Parse JSON string
+        const data: any = JSON.parse(jsonString);
+        this.authCode = data.authCode;
+        this.accessToken = data.accessToken;
+        this.refreshToken = data.refreshToken;
         // set access Token
         this.fyers.setAccessToken(this.accessToken)
       } 
@@ -52,16 +59,15 @@ class FyersService {
             const queryParameters = url.parse(str, true).query;
             // set auth-code
             this.authCode = inputs.auth_code || queryParameters.auth_code;
-            // initialize
-            this.initialize()
+            // config
+            this.config()
             // get access token
             const data = await this.fyers.generate_access_token({ "secret_key": this.secretKey, "auth_code": this.authCode })
             // create fyers.data.json   
-            const json = { authCode: this.authCode, access_token: data.access_token, refresh_token: data.refresh_token };
+            const json = { authCode: this.authCode, accessToken: data.access_token, refreshToken: data.refresh_token };
+            fs.writeFileSync("./fyers.data.json", JSON.stringify(json, null, 2))
             this.accessToken = data.access_token;
             this.refreshToken = data.refresh_token;
-            fs.writeFileSync("./fyers.data.json", JSON.stringify(json, null, 2))
-
             return json;
         } catch (error: any) {
             console.log(error)
