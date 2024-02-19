@@ -8,3 +8,7 @@ exports.fyers.get('/auth-code', controller_1.FyersController.getAuthCode);
 exports.fyers.get('/access-token', controller_1.FyersController.getAccessToken);
 exports.fyers.post('/access-token', controller_1.FyersController.getAccessToken);
 exports.fyers.get('/profile', controller_1.FyersController.getProfile);
+exports.fyers.get('/orders', controller_1.FyersController.getOrders);
+exports.fyers.get('/positions', controller_1.FyersController.getPositions);
+exports.fyers.get('/order/place', controller_1.FyersController.orderPlace);
+exports.fyers.post('/order/place', controller_1.FyersController.orderPlace);

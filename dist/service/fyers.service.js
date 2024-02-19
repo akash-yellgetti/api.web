@@ -56,6 +56,14 @@ class FyersService {
     }
     initialize() {
         this.config();
+        const filePath = 'fyers.data.json';
+        // Read file synchronously
+        const jsonString = fs.readFileSync(filePath, 'utf-8');
+        // Parse JSON string
+        const data = JSON.parse(jsonString);
+        this.authCode = data.authCode;
+        this.accessToken = data.accessToken;
+        this.refreshToken = data.refreshToken;
         // set access Token
         this.fyers.setAccessToken(this.accessToken);
     }
@@ -80,15 +88,15 @@ class FyersService {
                 const queryParameters = url.parse(str, true).query;
                 // set auth-code
                 this.authCode = inputs.auth_code || queryParameters.auth_code;
-                // initialize
-                this.initialize();
+                // config
+                this.config();
                 // get access token
                 const data = yield this.fyers.generate_access_token({ "secret_key": this.secretKey, "auth_code": this.authCode });
                 // create fyers.data.json   
-                const json = { authCode: this.authCode, access_token: data.access_token, refresh_token: data.refresh_token };
+                const json = { authCode: this.authCode, accessToken: data.access_token, refreshToken: data.refresh_token };
+                fs.writeFileSync("./fyers.data.json", JSON.stringify(json, null, 2));
                 this.accessToken = data.access_token;
                 this.refreshToken = data.refresh_token;
-                fs.writeFileSync("./fyers.data.json", JSON.stringify(json, null, 2));
                 return json;
             }
             catch (error) {
@@ -110,12 +118,44 @@ class FyersService {
             }
         });
     }
-    orders() {
+    getOrders() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                this.initialize();
+                const data = yield this.fyers.get_orders();
+                return data;
+            }
+            catch (error) {
+                console.log(error);
+                throw new Error(`Failed to check funds: ${error.message}`);
+            }
+        });
+    }
+    orderPlace(inputs) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 // Implement logic to check funds
+                const reqBody = {
+                    "symbol": "MCX:SILVER24MARFUT",
+                    "qty": 1,
+                    "type": 2,
+                    "side": 1,
+                    "productType": "INTRADAY",
+                    "limitPrice": 0,
+                    "stopPrice": 0,
+                    "validity": "DAY",
+                    "disclosedQty": 0,
+                    "offlineOrder": false,
+                    "stopLoss": 0,
+                    "takeProfit": 0,
+                    "orderTag": "tag1"
+                };
+                this.initialize();
+                const data = yield this.fyers.place_order(reqBody);
+                return data;
             }
             catch (error) {
+                console.log(error);
                 throw new Error(`Failed to check funds: ${error.message}`);
             }
         });
@@ -204,6 +244,9 @@ class FyersService {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 // Implement logic to retrieve open positions
+                this.initialize();
+                const data = yield this.fyers.get_positions();
+                return data;
             }
             catch (error) {
                 throw new Error(`Failed to retrieve positions: ${error.message}`);
