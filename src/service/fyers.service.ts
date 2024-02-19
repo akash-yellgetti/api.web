@@ -199,9 +199,19 @@ class FyersService {
         }
     }
 
-    async getHistoricalData(symbol: string, interval: Number, from: any, to: any) {
+    async getHistoricalData(inputs: any) {
         try {
             // Implement logic to retrieve historical market data
+            var inp={
+                "symbol":"NSE:SBIN-EQ",
+                "resolution":"D",
+                "date_format":"0",
+                "range_from":"1690895316",
+                "range_to":"1691068173",
+                "cont_flag":"1"
+            }
+            const data = await this.fyers.getHistory(inp);
+            return data;
         } catch (error: any) {
             throw new Error(`Failed to retrieve historical data: ${error.message}`);
         }

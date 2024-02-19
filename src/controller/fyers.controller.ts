@@ -60,6 +60,26 @@ class Fyers {
     }
   };
   
+  
+  getHistoricalData = async (request: express.Request, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    log.info('controller.fyers.getHistoricalData');
+    try {
+      const data = await fyersService.getHistoricalData(inputs);
+      return new Api(response)
+        .success()
+        .code(200)
+        .send({ data , message: 'getHistoricalData fetched Succesfully.' });
+    } catch (e: any) {
+      const code = e && e.code ? e.code : 400;
+      log.error('controller.fyers.getHistoricalData', { ...e });
+      return new Api(response)
+        .error()
+        .code(code)
+        .send({ ...e });
+    }
+  };
+
   getPositions = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     log.info('controller.fyers.getPositions');
