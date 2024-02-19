@@ -71,19 +71,57 @@ class Fyers {
                     .send(Object.assign({}, e));
             }
         });
-        this.orders = (request, response) => __awaiter(this, void 0, void 0, function* () {
+        this.getPositions = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
-            utils_1.log.info('controller.fyers.profile');
+            utils_1.log.info('controller.fyers.getPositions');
             try {
-                const data = yield service_1.fyersService.orders();
+                const data = yield service_1.fyersService.getPositions();
                 return new utils_1.Api(response)
                     .success()
                     .code(200)
-                    .send({ data, message: 'profile fetched Succesfully.' });
+                    .send({ data, message: 'getPositions fetched Succesfully.' });
             }
             catch (e) {
                 const code = e && e.code ? e.code : 400;
-                utils_1.log.error('controller.fyers.profile', Object.assign({}, e));
+                utils_1.log.error('controller.fyers.getPositions', Object.assign({}, e));
+                return new utils_1.Api(response)
+                    .error()
+                    .code(code)
+                    .send(Object.assign({}, e));
+            }
+        });
+        this.getOrders = (request, response) => __awaiter(this, void 0, void 0, function* () {
+            const inputs = Object.assign(Object.assign({}, request.body), request.params);
+            utils_1.log.info('controller.fyers.getOrders');
+            try {
+                const data = yield service_1.fyersService.getOrders();
+                return new utils_1.Api(response)
+                    .success()
+                    .code(200)
+                    .send({ data, message: 'getOrders fetched Succesfully.' });
+            }
+            catch (e) {
+                const code = e && e.code ? e.code : 400;
+                utils_1.log.error('controller.fyers.getOrders', Object.assign({}, e));
+                return new utils_1.Api(response)
+                    .error()
+                    .code(code)
+                    .send(Object.assign({}, e));
+            }
+        });
+        this.orderPlace = (request, response) => __awaiter(this, void 0, void 0, function* () {
+            const inputs = Object.assign(Object.assign({}, request.body), request.params);
+            utils_1.log.info('controller.fyers.orderPlace');
+            try {
+                const data = yield service_1.fyersService.orderPlace(inputs);
+                return new utils_1.Api(response)
+                    .success()
+                    .code(200)
+                    .send({ data, message: 'orderPlace fetched Succesfully.' });
+            }
+            catch (e) {
+                const code = e && e.code ? e.code : 400;
+                utils_1.log.error('controller.fyers.orderPlace', Object.assign({}, e));
                 return new utils_1.Api(response)
                     .error()
                     .code(code)
