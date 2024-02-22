@@ -6,16 +6,16 @@ class Fyers {
 
   webhook = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
-    log.info('controller.fyers.getAuthCode');
+    log.info('controller.fyers.webhook');
     try {
       const data = await fyersService.handleWebhook(inputs);
       return new Api(response)
         .success()
         .code(200)
-        .send({ data , message: 'authcode fetched Succesfully.' });
+        .send({ data , message: 'webhook fetched Succesfully.' });
     } catch (e: any) {
       const code = e && e.code ? e.code : 400;
-      log.error('controller.fyers.getAuthCode', { ...e });
+      log.error('controller.fyers.webhook', { ...e });
       return new Api(response)
         .error()
         .code(code)
