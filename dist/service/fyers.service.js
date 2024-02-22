@@ -253,10 +253,20 @@ class FyersService {
             }
         });
     }
-    getHistoricalData(symbol, interval, from, to) {
+    getHistoricalData(inputs) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 // Implement logic to retrieve historical market data
+                var inp = {
+                    "symbol": "NSE:SBIN-EQ",
+                    "resolution": "D",
+                    "date_format": "0",
+                    "range_from": "1690895316",
+                    "range_to": "1691068173",
+                    "cont_flag": "1"
+                };
+                const data = yield this.fyers.getHistory(inp);
+                return data;
             }
             catch (error) {
                 throw new Error(`Failed to retrieve historical data: ${error.message}`);
