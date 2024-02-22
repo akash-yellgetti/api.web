@@ -1,7 +1,7 @@
 export const setting = {
   program: 'api',
   mode: 'dev',
-  port: process.env.NODE_PORT || 3001,
+  port: process.env.NODE_PORT || 5001,
   version: '1.0.0',
   host: process.env.NODE_HOST || 'localhost',
   socket: true,
