@@ -42,6 +42,25 @@ class FyersService {
         this.fyers.setAccessToken(this.accessToken)
     }
 
+    webhookLogs() {
+        // Get current date
+        const currentDate = new Date().toISOString().slice(0, 10);
+
+        // Create file path with current date
+        const filePath: string = `tradingview/${currentDate}.data.json`;
+        // const filePath = path.join(, `data_${currentDate}.json`);
+
+        // Check if the file exists
+        let existingData = [];
+        if (fs.existsSync(filePath)) {
+            // If file exists, read its contents
+            existingData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        }
+
+        // console.log(`Data appended to ${filePath}`);
+        return existingData;
+    }
+
     // Function to handle webhook request
     handleWebhook(payload: any) {
         // Get current date

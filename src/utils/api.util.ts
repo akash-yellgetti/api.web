@@ -1,6 +1,7 @@
 import jsonwebtoken from "jsonwebtoken";
 import { extend, omit } from "lodash";
 import { setting } from "../config/setting";
+import * as path from 'path';
 
 const privateKey = setting["privateKey"];
 
@@ -42,5 +43,9 @@ export class Api {
     send = (payload: any) => {
         const r = omit(extend(this.res, payload), 'code');
         return this.response.status(this.res.code).json(r);
+    }
+
+    render = (viewPath: string) => {
+        return this.response.sendFile(path.resolve(__dirname, viewPath));
     }
 }

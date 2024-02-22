@@ -4,6 +4,45 @@ import { Api, api, log } from '../utils';
 
 class Fyers {
 
+  app = async (request: express.Request, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    log.info('controller.fyers.webhook', inputs);
+    try {
+      const data = await fyersService.webhookLogs();
+      return new Api(response)
+        .success()
+        .code(200)
+        .render('../views/fyers/index.html');
+        
+    } catch (e: any) {
+      const code = e && e.code ? e.code : 400;
+      log.error('controller.fyers.webhook', { error: e, inputs });
+      return new Api(response)
+        .error()
+        .code(code)
+        .send({ ...e });
+    }
+  }
+
+  webhookLogs = async (request: express.Request, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    log.info('controller.fyers.webhook', inputs);
+    try {
+      const data = await fyersService.webhookLogs();
+      return new Api(response)
+        .success()
+        .code(200)
+        .send({ data , message: 'webhook fetched Succesfully.' });
+    } catch (e: any) {
+      const code = e && e.code ? e.code : 400;
+      log.error('controller.fyers.webhook', { error: e, inputs });
+      return new Api(response)
+        .error()
+        .code(code)
+        .send({ ...e });
+    }
+  }
+
   webhook = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     log.info('controller.fyers.webhook', inputs);

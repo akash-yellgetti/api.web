@@ -206,4 +206,20 @@ $(document).ready(function () {
   }
 
   let table = $('#example').dataTable(datatableOptions);
+
+  let datatableOptions1 = {...datatableOptions};
+  datatableOptions1.ajax = {
+    method: 'GET',
+    url: 'http://localhost:5001/fyers/webhook/logs'
+  }
+  datatableOptions1.columns = [
+    { title: 'type', data: 'type' },
+    { title: 'orderType', data: 'orderType' },
+    { title: 'instrument', data: 'instrument' },
+    { title: 'symbol', data: 'symbol' },
+    { title: 'price', data: 'price' },
+    { title: 'qty', data: 'qty' },
+    
+  ]
+  let table2 = $('#webhook').dataTable(datatableOptions1);
 });
