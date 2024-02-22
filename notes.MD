@@ -7,3 +7,6 @@ https://web.dev/angular-websockets/
 
 
 https://loopback.io/doc/en/lb3/Realtime-socket-io.html
+
+
+ngrok http http://localhost:5001 --domain=dane-select-properly.ngrok-free.app
