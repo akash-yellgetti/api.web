@@ -31,7 +31,7 @@ class App {
             // for parsing application/xwww-form-urlencoded
             this.app.use(body_parser_1.default.urlencoded({ limit: '50mb', extended: false }));
             // Serving Static Files
-            this.app.use(express_1.default.static(path_1.default.resolve(__dirname, '../views/app')));
+            // this.app.use(express.static(path.resolve(__dirname,'../views/app')));
             this.app.use(express_1.default.static(path_1.default.resolve(__dirname, '../public')));
             // For api setting
             this.app.use((0, cors_1.default)());
