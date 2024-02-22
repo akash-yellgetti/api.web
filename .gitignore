@@ -6,3 +6,6 @@ package-lock.json
 .idea
 src/views/app
 src/public/uploads/profile
+*.log
+tradingview/*
+tradingview/2024-02-22.data.json

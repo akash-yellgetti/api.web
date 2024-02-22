@@ -1,5 +1,6 @@
 const FyersAPI = require("fyers-api-v3")
 import * as fs from 'fs';
+import * as path from 'path';
 import * as url from 'url';
 // const querystring = require('querystring');
 
@@ -39,7 +40,33 @@ class FyersService {
         this.refreshToken = data.refreshToken;
         // set access Token
         this.fyers.setAccessToken(this.accessToken)
-      } 
+    }
+
+    // Function to handle webhook request
+    handleWebhook(payload: any) {
+        // Get current date
+        const currentDate = new Date().toISOString().slice(0, 10);
+
+        // Create file path with current date
+        const filePath: string = `tradingview/${currentDate}.data.json`;
+        // const filePath = path.join(, `data_${currentDate}.json`);
+
+        // Check if the file exists
+        let existingData = [];
+        if (fs.existsSync(filePath)) {
+            // If file exists, read its contents
+            existingData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        }
+
+        // Append received payload to existing data
+        existingData = existingData.concat(payload);
+
+        // Write the updated data back to the file
+        fs.writeFileSync(filePath, JSON.stringify(existingData, null, 2));
+
+        // console.log(`Data appended to ${filePath}`);
+        return existingData;
+    }
 
     async getAuthCode() {
         try {

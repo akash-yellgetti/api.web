@@ -3,6 +3,26 @@ import { fyersService } from "../service";
 import { Api, api, log } from '../utils';
 
 class Fyers {
+
+  webhook = async (request: express.Request, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    log.info('controller.fyers.getAuthCode');
+    try {
+      const data = await fyersService.handleWebhook(inputs);
+      return new Api(response)
+        .success()
+        .code(200)
+        .send({ data , message: 'authcode fetched Succesfully.' });
+    } catch (e: any) {
+      const code = e && e.code ? e.code : 400;
+      log.error('controller.fyers.getAuthCode', { ...e });
+      return new Api(response)
+        .error()
+        .code(code)
+        .send({ ...e });
+    }
+  }
+
   getAuthCode = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     log.info('controller.fyers.getAuthCode');

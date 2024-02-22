@@ -3,7 +3,7 @@ import { FyersController } from '../controller';
 export const fyers = Router();
 
 
-
+fyers.post('/webhook',  FyersController.webhook);
 fyers.get('/auth-code',  FyersController.getAuthCode);
 fyers.get('/access-token',  FyersController.getAccessToken);
 fyers.post('/access-token',  FyersController.getAccessToken);
