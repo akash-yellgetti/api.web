@@ -16,17 +16,17 @@ class Fyers {
     constructor() {
         this.webhook = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
-            utils_1.log.info('controller.fyers.getAuthCode');
+            utils_1.log.info('controller.fyers.webhook', inputs);
             try {
                 const data = yield service_1.fyersService.handleWebhook(inputs);
                 return new utils_1.Api(response)
                     .success()
                     .code(200)
-                    .send({ data, message: 'authcode fetched Succesfully.' });
+                    .send({ data, message: 'webhook fetched Succesfully.' });
             }
             catch (e) {
                 const code = e && e.code ? e.code : 400;
-                utils_1.log.error('controller.fyers.getAuthCode', Object.assign({}, e));
+                utils_1.log.error('controller.fyers.webhook', { error: e, inputs });
                 return new utils_1.Api(response)
                     .error()
                     .code(code)
