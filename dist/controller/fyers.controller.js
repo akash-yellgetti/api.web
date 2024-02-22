@@ -14,6 +14,25 @@ const service_1 = require("../service");
 const utils_1 = require("../utils");
 class Fyers {
     constructor() {
+        this.webhook = (request, response) => __awaiter(this, void 0, void 0, function* () {
+            const inputs = Object.assign(Object.assign({}, request.body), request.params);
+            utils_1.log.info('controller.fyers.getAuthCode');
+            try {
+                const data = yield service_1.fyersService.handleWebhook(inputs);
+                return new utils_1.Api(response)
+                    .success()
+                    .code(200)
+                    .send({ data, message: 'authcode fetched Succesfully.' });
+            }
+            catch (e) {
+                const code = e && e.code ? e.code : 400;
+                utils_1.log.error('controller.fyers.getAuthCode', Object.assign({}, e));
+                return new utils_1.Api(response)
+                    .error()
+                    .code(code)
+                    .send(Object.assign({}, e));
+            }
+        });
         this.getAuthCode = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             utils_1.log.info('controller.fyers.getAuthCode');
