@@ -9,7 +9,9 @@
     "prettier-format": "npx prettier --config .prettierrc . --write",
     "eslint-prettier-format": "npx eslint-config-prettier .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "copy-html": "cp -r src/view dist/.",
+    "build": "tsc && npm run copy-html"
+
   },
   "mdSeed": {
     "seedersFolder": "./src/seeders",
