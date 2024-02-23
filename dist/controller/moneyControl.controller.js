@@ -51,7 +51,7 @@ class MoneyControl {
                 return new utils_1.Api(response)
                     .success()
                     .code(200)
-                    .render('../views/app/index.html');
+                    .render('../views/money-control/index.html');
             }
             catch (e) {
                 return new utils_1.Api(response).error().code(400).send(e);
