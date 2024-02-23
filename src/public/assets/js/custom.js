@@ -215,7 +215,7 @@ $(document).ready(function () {
   datatableOptions1.columns = [
     { title: 'type', data: 'type' },
     { title: 'orderType', data: 'orderType' },
-    { title: 'instrument', data: 'instrument' },
+    { title: 'exchange', data: 'exchange' },
     { title: 'symbol', data: 'symbol' },
     { title: 'price', data: 'price' },
     { title: 'qty', data: 'qty' },
