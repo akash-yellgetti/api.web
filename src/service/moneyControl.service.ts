@@ -119,7 +119,7 @@ class MoneyControlService {
       const vwap = ta.vwap(input);
       const ema5 = ta.ema({period , values : input.close});
       const ema10 = ta.ema({period: period * 2, values : input.close});
-      const emaBuySignal = ta.crossOver({ lineA: ema5, lineB: ema10  });
+      // const emaBuySignal = ta.crossOver({ lineA: ema5, lineB: ema10  });
       
     
 
@@ -133,7 +133,7 @@ class MoneyControlService {
         vwap: vwap[i],
         ema5: ema5[i],
         ema10: ema10[i],
-        emaBuySignal,
+        // emaBuySignal,
 
         // ema2: i >= 5 ? Number(ema2[i-2].toFixed(2)) : 0,
         // ema3: i >= 5 ? Number(ema2[i-3].toFixed(2)) : 0,

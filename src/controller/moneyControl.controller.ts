@@ -17,7 +17,7 @@ class MoneyControl {
       return new Api(response)
         .success()
         .code(200)
-        .render('../views/app/index.html');
+        .render('../views/money-control/index.html');
     } catch (e) {
       return new Api(response).error().code(400).send(e);
     }

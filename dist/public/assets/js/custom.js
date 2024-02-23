@@ -3,7 +3,7 @@ $(document).ready(function () {
   const countback = $('#countback').val();
   const datatableOptions = {
     ajax: {
-      url: '/money-control/candles',
+      url: 'http://localhost:5001/money-control/candles',
       type: 'POST',
       contentType: 'application/json',
       data: function (d) {
@@ -132,7 +132,7 @@ $(document).ready(function () {
   $('#mySelect')
     .select2({
       ajax: {
-        url: '/money-control/search', // Replace with your API endpoint
+        url: 'http://localhost:5001/money-control/search', // Replace with your API endpoint
         dataType: 'json',
         delay: 250,
         method: 'POST',
@@ -168,7 +168,7 @@ $(document).ready(function () {
   function getDetail(code) {
     // Make a POST request
     $.ajax({
-      url: '/money-control/details ',
+      url: 'http://localhost:5001/money-control/details ',
       method: 'POST',
       contentType: 'application/json',
       data: JSON.stringify({ code }),
@@ -210,7 +210,7 @@ $(document).ready(function () {
   let datatableOptions1 = {...datatableOptions};
   datatableOptions1.ajax = {
     method: 'GET',
-    url: '/fyers/webhook/logs'
+    url: 'http://localhost:5001/fyers/webhook/logs'
   }
   datatableOptions1.columns = [
     { title: 'type', data: 'type' },
