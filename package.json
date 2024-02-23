@@ -10,7 +10,8 @@
     "eslint-prettier-format": "npx eslint-config-prettier .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-html": "cp -r src/views dist/.",
-    "build": "tsc && npm run copy-html"
+    "copy-public": "cp -r src/public dist/.",
+    "build": "tsc && npm run copy-public && npm run copy-html"
 
   },
   "mdSeed": {
