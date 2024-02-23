@@ -1,4 +1,4 @@
 rm -rf dist
-tsc
+npm run build
 git add -A
 git commit -m "New Build API"
