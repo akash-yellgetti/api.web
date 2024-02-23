@@ -4,7 +4,7 @@ node_modules
 .vscode
 package-lock.json
 .idea
-src/views/app
+# src/views/app
 src/public/uploads/profile
 *.log
 tradingview/*

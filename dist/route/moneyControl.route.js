@@ -4,6 +4,7 @@ exports.moneyControl = void 0;
 const express_1 = require("express");
 const controller_1 = require("../controller");
 exports.moneyControl = (0, express_1.Router)();
+exports.moneyControl.post('/app', controller_1.MoneyControlController.app);
 exports.moneyControl.post('/option-chain', controller_1.MoneyControlController.optionChain);
 exports.moneyControl.post('/search', controller_1.MoneyControlController.search);
 exports.moneyControl.post('/details', controller_1.MoneyControlController.details);

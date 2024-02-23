@@ -9,6 +9,20 @@ import { moneyControlService } from "../service";
 
 class MoneyControl {
 
+  app = async (request: any, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    const user = request.user;
+    log.info('controller.money-control.app');
+    try {
+      return new Api(response)
+        .success()
+        .code(200)
+        .render('../views/app/index.html');
+    } catch (e) {
+      return new Api(response).error().code(400).send(e);
+    }
+  };
+
   optionChain = async (request: any, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     const user = request.user;
