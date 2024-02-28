@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import { omit } from "lodash";
 import { Model } from "./model.service";
 import { User, UserDocument } from "../model";
@@ -20,8 +21,7 @@ class UserService extends Model {
         return false;
       }
 
-      // const isValid = await user.comparePassword(password);
-      const isValid = await User.findOne({ email, password });
+      const isValid = await bcrypt.compare(password, user.password);
 
       if (!isValid) {
         return false;
