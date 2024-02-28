@@ -21,7 +21,7 @@ class DB {
         };
         this.connect = () => {
             const config = this.getConfig();
-            const uri = `mongodb+srv://${config.user}:${config.password}@${config.host}/?retryWrites=true&w=majority`;
+            const uri = `mongodb+srv://${config.user}:${config.password}@${config.host}/?retryWrites=true&w=majority&appName=Cluster0`;
             // const uri =
             //   config.user && config.password
             //     ? `mongodb://${config.user}:${config.password}@${config.host}/${config.db}?authSource=admin`

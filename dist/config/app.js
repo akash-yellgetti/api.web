@@ -11,6 +11,7 @@ const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
 const morgan_1 = __importDefault(require("morgan"));
 const setting_1 = require("./setting");
+const db_1 = require("./db");
 const utils_1 = require("../utils");
 const route_1 = require("./route");
 const error_handler_util_1 = __importDefault(require("../utils/error-handler.util"));
@@ -111,9 +112,9 @@ class App {
         this.processExceptionHandler();
         this.initialize();
         this.cors();
-        // if(setting && setting.db) {
-        //   db.setConfig(setting.db).connect();
-        // }
+        if (setting_1.setting && setting_1.setting.db) {
+            db_1.db.setConfig(setting_1.setting.db).connect();
+        }
     }
     // tslint:disable-next-line
     static getInstance() {
