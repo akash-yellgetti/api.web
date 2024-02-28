@@ -8,3 +8,4 @@ export { ConversationMember, ConversationMemberDocument } from "./conversationMe
 export { ConversationMessage, ConversationMessageDocument } from "./conversationMessage.model";
 export { Notification, NotificationeDocument } from "./notification.model";
 export { PersoanlTransaction, PersoanlTransactionDocument } from "./persoanlTransaction.model";
+export { Tradingview, TradingviewDocument } from "./tradingview.model";

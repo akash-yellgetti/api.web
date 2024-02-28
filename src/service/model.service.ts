@@ -13,8 +13,6 @@ export class Model {
 
   public create = async (inputs: any) => {
     try {
-      const hashedPassword = await bcrypt.hash(inputs.password, 10);
-      inputs.password = hashedPassword;
       return await this.model.create(inputs);
     } catch (error) {
       this.errorHandler(error)

@@ -7,3 +7,4 @@ export { conversation } from "./conversation.route";
 export { notification } from "./notification.route";
 export { personalTransaction } from "./personalTransaction.route";
 export { fyers } from "./fyers.route";
+export { tradingview } from "./tradingview.route";
