@@ -13,3 +13,4 @@ exports.route.use('/conversation', route_1.conversation);
 exports.route.use('/notification', route_1.notification);
 exports.route.use('/personal/transaction', route_1.personalTransaction);
 exports.route.use('/fyers', route_1.fyers);
+exports.route.use('/tradingview', route_1.tradingview);

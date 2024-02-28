@@ -21,6 +21,16 @@ class UserService extends model_service_1.Model {
     constructor() {
         super(model_1.User);
         this.hidden = ['__v', 'isActive', 'password', 'createdBy', 'updatedBy'];
+        this.create = (inputs) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const hashedPassword = yield bcrypt_1.default.hash(inputs.password, 10);
+                inputs.password = hashedPassword;
+                return yield this.model.create(inputs);
+            }
+            catch (error) {
+                this.errorHandler(error);
+            }
+        });
         this.validatePassword = ({ email, password, }) => __awaiter(this, void 0, void 0, function* () {
             const user = yield model_1.User.findOne({ email });
             if (!user) {
