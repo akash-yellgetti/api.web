@@ -35,9 +35,9 @@ export class App {
     this.processExceptionHandler();
     this.initialize();
     this.cors();
-    // if(setting && setting.db) {
-    //   db.setConfig(setting.db).connect();
-    // }
+    if(setting && setting.db) {
+      db.setConfig(setting.db).connect();
+    }
   }
 
   // tslint:disable-next-line
