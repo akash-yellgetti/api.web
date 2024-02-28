@@ -6,9 +6,9 @@ export const setting = {
   host: process.env.NODE_HOST || 'localhost',
   socket: true,
   db: {
-    host: process.env.NODE_DB_HOST || 'localhost',
-    user: process.env.NODE_DB_USER || '',
-    password: process.env.NODE_DB_PASSWORD || '',
+    host: process.env.NODE_DB_HOST || 'cluster0.flpezxf.mongodb.net',
+    user: process.env.NODE_DB_USER || 'akash5792bts',
+    password: process.env.NODE_DB_PASSWORD || 'ydPCbuP5poz961cV',
     db: process.env.NODE_DB_NAME || 'app'
   },
   saltWorkFactor: 10,

@@ -1,0 +1,22 @@
+{
+    "restartable": "rs",
+    "ignore": [".git", "node_modules/**/node_modules"],
+    "verbose": true,
+    "execMap": {
+      "js": "node dist/config/app.js"
+    },
+    "events": {
+      "restart": "osascript -e 'display notification \"App restarted due to changes\" with title \"nodemon\"'"
+    },
+    "watch": ["src"],
+    "env": {
+      "NODE_ENV": "development",
+      "NODE_PORT": 5001,
+      "NODE_DB_HOST": "cluster0.flpezxf.mongodb.net",
+      "NODE_DB_USER": "akash5792bts",
+      "NODE_DB_PASSWORD": "ydPCbuP5poz961cV"
+    },
+    "ext": "js,json",
+    "legacyWatch": true
+  }
+  

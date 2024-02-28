@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon --config nodemon.json src/config/app.ts",
     "dev": "nodemon --config nodemon.json src/app.ts",
+    "deploy": "nodemon --config deploy.json",
     "prettier-format": "npx prettier --config .prettierrc . --write",
     "eslint-prettier-format": "npx eslint-config-prettier .",
     "test": "echo \"Error: no test specified\" && exit 1",
