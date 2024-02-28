@@ -32,7 +32,7 @@ class Auth {
       const data: any = await otpService.create(createData);
       const message = "Your OTP to register/access ITSLETS is "+createData.no+". Please do not share it with anyone."
 
-      sms([createData.mobileNo], message);
+      // sms([createData.mobileNo], message);
       
       return new Api(response).success().code(200).send({   data, message: 'OTP generated Succesful'});
     } catch (e) {
