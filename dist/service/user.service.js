@@ -8,8 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userService = void 0;
+const bcrypt_1 = __importDefault(require("bcrypt"));
 const lodash_1 = require("lodash");
 const model_service_1 = require("./model.service");
 const model_1 = require("../model");
@@ -22,8 +26,7 @@ class UserService extends model_service_1.Model {
             if (!user) {
                 return false;
             }
-            // const isValid = await user.comparePassword(password);
-            const isValid = yield model_1.User.findOne({ email, password });
+            const isValid = yield bcrypt_1.default.compare(password, user.password);
             if (!isValid) {
                 return false;
             }
