@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.group = void 0;
+const express_1 = require("express");
+const middleware_1 = require("../middleware");
+const middleware_2 = require("../middleware");
+const schema_1 = require("../schema");
+const controller_1 = require("../controller");
+exports.group = (0, express_1.Router)();
+exports.group.post('/create', middleware_1.auth, (0, middleware_2.validateRequest)(schema_1.groupRequest.create), controller_1.GroupController.create);
+exports.group.post('/update', middleware_1.auth, (0, middleware_2.validateRequest)(schema_1.groupRequest.update), controller_1.GroupController.update);
