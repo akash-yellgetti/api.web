@@ -2,7 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.tradingview = void 0;
 const express_1 = require("express");
+const middleware_1 = require("../middleware");
 const controller_1 = require("../controller");
+const schema_1 = require("../schema");
 exports.tradingview = (0, express_1.Router)();
-exports.tradingview.post('/webhook', controller_1.TradingviewController.webhook);
+exports.tradingview.post('/webhook', (0, middleware_1.validateRequest)(schema_1.tradingviewRequest.webhook), controller_1.TradingviewController.webhook);
 exports.tradingview.get('/webhook/logs', controller_1.TradingviewController.webhookLogs);
+exports.tradingview.post('/webhook/logs', controller_1.TradingviewController.webhookLogs);
