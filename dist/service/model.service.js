@@ -15,15 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Model = void 0;
 const lodash_1 = require("lodash");
 const utils_1 = require("../utils");
-const bcrypt_1 = __importDefault(require("bcrypt"));
 const lodash_2 = __importDefault(require("lodash"));
 class Model {
     constructor(model) {
         this.hidden = [];
         this.create = (inputs) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const hashedPassword = yield bcrypt_1.default.hash(inputs.password, 10);
-                inputs.password = hashedPassword;
                 return yield this.model.create(inputs);
             }
             catch (error) {
