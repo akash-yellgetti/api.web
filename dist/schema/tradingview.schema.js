@@ -8,12 +8,12 @@ exports.tradingview = {
             type: (0, yup_1.string)().required(),
             exchange: (0, yup_1.string)().required(),
             symbol: (0, yup_1.string)().required('Symbol is required'),
-            price: (0, yup_1.number)().required('Mobile Number is required'),
-            qty: (0, yup_1.number)().required('Mobile Number is required'),
-            datetime: (0, yup_1.string)().required('TimeStamp is required'),
+            price: (0, yup_1.number)().required('Symbol Price is required'),
+            qty: (0, yup_1.number)().required('Quantity is required'),
+            datetime: (0, yup_1.string)().required('Datetime is required'),
             timestamp: (0, yup_1.string)().required('TimeStamp is required'),
             timeframe: (0, yup_1.string)().required('Timeframe is required'),
-            volume: (0, yup_1.number)().required('TimeStamp is required'),
+            volume: (0, yup_1.number)().required('volume is required'),
         })
     })
 };
