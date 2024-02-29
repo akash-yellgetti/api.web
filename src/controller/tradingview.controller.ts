@@ -8,11 +8,16 @@ class Tradingview {
     const inputs = { ...request.body, ...request.params };
     log.info('controller.tradingview.webhook', inputs);
     try {
-      // const data = await tradingviewService.webhookLogs();
+      const query = inputs && inputs.query ? inputs.query : [ {
+        $match: {
+          isActive: 1
+        }
+      } ];
+      const data = await tradingviewService.aggregate(query);
       return new Api(response)
         .success()
         .code(200)
-        .send({ data: [] , message: 'webhook fetched Succesfully.' });
+        .send({ data , message: 'webhook fetched Succesfully.' });
     } catch (e: any) {
       const code = e && e.code ? e.code : 400;
       log.error('controller.tradingview.webhook', { error: e, inputs });

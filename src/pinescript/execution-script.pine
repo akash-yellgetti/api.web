@@ -294,20 +294,21 @@ inIntradayTimeRange = (time >= intradayStartTime) and (time <= intradayEndTime)
 // Exit condition at 03:15 PM
 exitCondition = time >= exitTime
 
+// Get current date and time
+currentDateTime = timestamp(year, month, dayofmonth, hour, minute, 0)
+// Format date and time
+formattedDateTime = str.tostring(year(currentDateTime)) + "-" + str.tostring(month(currentDateTime)) + "-" + str.tostring(dayofmonth(currentDateTime)) + " " + str.tostring(hour(currentDateTime)) + ":" + str.tostring(minute(currentDateTime))
+
+
+// Function to generate JSON object
+generateJSON(type, orderType, exchange, timestamp, volume, timeframe, symbol, price, qty, datetime) =>
+    '{"type":"' + type + '","orderType":"' + orderType + '","exchange":"' + exchange + '","timestamp":"' + str.tostring(timestamp) +'","volume":"' + str.tostring(volume) + '","timeframe":"' + timeframe + '","symbol":"' + symbol + '","price":' + str.tostring(price) + ',"qty":' + str.tostring(qty) + ',"datetime":"' + str.tostring(datetime) + '"}'
+
 //-----------------------------------------------------------------------------{
 
 
 // Quatity
 positionSize = instrument == 'NSE' ? 100 : 1
-
-// Construct JSON-like string
-le='{"type":"LE", "orderType":"MIS", "instrument":"' + instrument + '","symbol":"' + symbol + '","price":' + str.tostring(price) + ',"qty":' + str.tostring(positionSize) + '}'
-
-lx='{"type":"LX", "orderType":"MIS", "instrument":"' + instrument + '","symbol":"' + symbol + '","price":' + str.tostring(fastMA) + ',"qty":' + str.tostring(positionSize) + '}'
-
-se='{"type":"SE", "orderType":"MIS", "instrument":"' + instrument + '","symbol":"' + symbol + '","price":' + str.tostring(price) + ',"qty":' + str.tostring(positionSize) + '}'
-
-sx='{"type":"SX", "orderType":"MIS", "instrument":"' + instrument + '","symbol":"' + symbol + '","price":' + str.tostring(fastMA) + ',"qty":' + str.tostring(positionSize) + '}'
 
 //-----------------------------------------------------------------------------{
 
@@ -357,13 +358,15 @@ shortSignal = dnos > dnos[1] and inIntradayTimeRange
 
 if upCrossover and inIntradayTimeRange
     strategy.close_all('CLOSE ALL BEFORE NEW')
-    strategy.exit("LX", from_entry="Enter Buy", stop=fastMA, alert_message = lx)
-    strategy.entry("LE", strategy.long, positionSize, alert_message = le)
+    strategy.entry("LE", strategy.long, positionSize, alert_message = generateJSON("LE", "MIS", syminfo.prefix, time, volume, timeframe.period, syminfo.ticker, close, 100, formattedDateTime))
+    strategy.exit("LX", from_entry="LX", stop=fastMA, alert_message = generateJSON("LX", "MIS", syminfo.prefix, time, volume, timeframe.period, syminfo.ticker, fastMA, 100, formattedDateTime))
+    
+
 
 if downCrossunder and inIntradayTimeRange
     strategy.close_all('CLOSE ALL BEFORE NEW')
-    strategy.exit("SX", from_entry="Enter Sell", stop=fastMA, alert_message = sx)
-    strategy.entry("SE", strategy.short, positionSize, alert_message = se)
+    strategy.entry("SE", strategy.short, positionSize, alert_message = generateJSON("SE", "MIS", syminfo.prefix, time, volume, timeframe.period, syminfo.ticker, close, 100, formattedDateTime))
+    strategy.exit("SX", from_entry="SE", stop=fastMA, alert_message = generateJSON("SX", "MIS", syminfo.prefix, time, volume, timeframe.period, syminfo.ticker, fastMA, 100, formattedDateTime))
 
 
 // Exit conditions (simple exit at crossover or crossunder and exit at 03:15 PM)
@@ -372,9 +375,9 @@ if exitCondition
 
 // Submit exit orders for trail stop loss price
 if strategy.position_size > 0
-    strategy.exit("LX TRL STP", stop=longStopPrice)
+    strategy.exit("LX TRL STP", stop=longStopPrice, alert_message = generateJSON("LX TRL STP", "MIS", syminfo.prefix, time, volume, timeframe.period, syminfo.ticker, longStopPrice, 100, formattedDateTime))
 
 if strategy.position_size < 0
-    strategy.exit("SX TRL STP", stop=shortStopPrice)
+    strategy.exit("SX TRL STP", stop=shortStopPrice, alert_message = generateJSON("SX TRL STP", "MIS", syminfo.prefix, time, volume, timeframe.period, syminfo.ticker, shortStopPrice, 100, formattedDateTime))
 
 //-----------------------------------------------------------------------------}
