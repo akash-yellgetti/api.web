@@ -4,6 +4,26 @@ import { Api, api, log } from '../utils';
 
 class Tradingview {
 
+  app = async (request: express.Request, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    log.info('controller.tradingview.app', inputs);
+    try {
+      
+      return new Api(response)
+        .success()
+        .code(200)
+        .render('../views/tradingview/index.html');
+        
+    } catch (e: any) {
+      const code = e && e.code ? e.code : 400;
+      log.error('controller.tradingview.app', { error: e, inputs });
+      return new Api(response)
+        .error()
+        .code(code)
+        .send({ ...e });
+    }
+  }
+
   webhookLogs = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params };
     log.info('controller.tradingview.webhook', inputs);
