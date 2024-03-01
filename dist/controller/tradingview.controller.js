@@ -14,6 +14,24 @@ const service_1 = require("../service");
 const utils_1 = require("../utils");
 class Tradingview {
     constructor() {
+        this.app = (request, response) => __awaiter(this, void 0, void 0, function* () {
+            const inputs = Object.assign(Object.assign({}, request.body), request.params);
+            utils_1.log.info('controller.tradingview.app', inputs);
+            try {
+                return new utils_1.Api(response)
+                    .success()
+                    .code(200)
+                    .render('../views/tradingview/index.html');
+            }
+            catch (e) {
+                const code = e && e.code ? e.code : 400;
+                utils_1.log.error('controller.tradingview.app', { error: e, inputs });
+                return new utils_1.Api(response)
+                    .error()
+                    .code(code)
+                    .send(Object.assign({}, e));
+            }
+        });
         this.webhookLogs = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             utils_1.log.info('controller.tradingview.webhook', inputs);
