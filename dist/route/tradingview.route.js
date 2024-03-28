@@ -6,6 +6,7 @@ const middleware_1 = require("../middleware");
 const controller_1 = require("../controller");
 const schema_1 = require("../schema");
 exports.tradingview = (0, express_1.Router)();
+exports.tradingview.get('/app', controller_1.TradingviewController.app);
 exports.tradingview.post('/webhook', (0, middleware_1.validateRequest)(schema_1.tradingviewRequest.webhook), controller_1.TradingviewController.webhook);
 exports.tradingview.get('/webhook/logs', controller_1.TradingviewController.webhookLogs);
 exports.tradingview.post('/webhook/logs', controller_1.TradingviewController.webhookLogs);
