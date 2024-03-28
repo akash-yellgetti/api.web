@@ -13,7 +13,6 @@
     "copy-html": "cp -r src/views dist/.",
     "copy-public": "cp -r src/public dist/.",
     "build": "tsc && npm run copy-public && npm run copy-html"
-
   },
   "mdSeed": {
     "seedersFolder": "./src/seeders",
@@ -34,7 +33,10 @@
     "cors": "^2.8.5",
     "dayjs": "^1.11.6",
     "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
     "fyers-api-v3": "^1.0.3",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
     "jsonwebtoken": "^8.5.1",
     "kiteconnect": "^4.1.0",
     "lodash": "^4.17.21",

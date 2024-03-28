@@ -2,6 +2,14 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import { setting } from "../config/setting";
 import uniqueValidator from 'mongoose-unique-validator';
+import {
+  GraphQLSchema,
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLList,
+  GraphQLInt,
+  GraphQLNonNull
+} from 'graphql';
 
 export interface UserDocument extends mongoose.Document {
   firstName: string;
@@ -80,5 +88,24 @@ UserSchema.methods.comparePassword = async function (
 
   return bcrypt.compare(candidatePassword, user.password).catch((e) => false);
 };
+
+export const UserGraphQLType = new GraphQLObjectType({
+  name: 'User',
+  description: 'This represents a users',
+  fields: () => ({
+    firstName: { type: new GraphQLNonNull(GraphQLString) },
+    lastName: { type: new GraphQLNonNull(GraphQLString) },
+    // dob: { type: Date, required: true },
+    // gender: { type: String, required: true },
+    // mobileNo: { type: Number, required: true, unique: true },
+    // email: { type: String, required: true, unique: true, trim: true, lowercase: true },
+    // password: { type: String, required: true },
+    // avatar: { type: String, required: false },
+    // avatareBackground: { type: String, required: false },
+    // isActive: { type: Number, default: 1 },
+    // createdBy: { type: Number, default: null },
+    // updatedBy: { type: Number, default: null },
+  })
+})
 
 export const User = mongoose.model<UserDocument>("User", UserSchema);
