@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tradingviewService = exports.fyersService = exports.persoanlTransactionService = exports.conversationMessageService = exports.conversationMemberService = exports.conversationService = exports.moneyControlService = exports.otpService = exports.sessionService = exports.socketService = exports.userService = void 0;
+exports.tradingviewService = exports.fyersService = exports.persoanlTransactionService = exports.conversationMessageService = exports.conversationMemberService = exports.conversationService = exports.moneyControlService = exports.otpService = exports.sessionService = exports.socketService = exports.contactService = exports.userService = void 0;
 var user_service_1 = require("./user.service");
 Object.defineProperty(exports, "userService", { enumerable: true, get: function () { return user_service_1.userService; } });
+var contact_service_1 = require("./contact.service");
+Object.defineProperty(exports, "contactService", { enumerable: true, get: function () { return contact_service_1.contactService; } });
 var socket_service_1 = require("./socket.service");
 Object.defineProperty(exports, "socketService", { enumerable: true, get: function () { return socket_service_1.socketService; } });
 var session_service_1 = require("./session.service");

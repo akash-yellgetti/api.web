@@ -34,7 +34,6 @@ class App {
             // Serving Static Files
             // this.app.use(express.static(path.resolve(__dirname,'../views/app')));
             this.app.use(express_1.default.static(path_1.default.resolve(__dirname, '../public')));
-            // For api setting
             this.app.use((0, cors_1.default)());
             this.app.use(error_handler_util_1.default);
             this.app.use(route_1.route);
