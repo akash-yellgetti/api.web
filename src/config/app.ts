@@ -1,9 +1,5 @@
 import http from "http";
 import express from "express";
-// import expressgraphQL from "express-graphql";
-import { graphqlHTTP } from "express-graphql";
-import { GraphQLSchema } from 'graphql';
-import { RootQueryType } from '../../src/graphql/types';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import fs from 'fs';
@@ -68,24 +64,6 @@ export class App {
     // Serving Static Files
     // this.app.use(express.static(path.resolve(__dirname,'../views/app')));
     this.app.use(express.static(path.resolve(__dirname,'../public')));
-    // For api setting
-    
-
-    const schema = new GraphQLSchema({
-      query: RootQueryType,
-      // mutation: RootMutationType
-    })
-
-    // setup graphql
-    this.app.use(
-      "/graphql",
-      graphqlHTTP({
-        schema: schema,
-        // rootValue: root,
-        graphiql: true,
-      })
-    );
-
     this.app.use(cors());
     this.app.use(ErrorHandler);
     this.app.use(route);

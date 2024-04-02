@@ -8,4 +8,5 @@ export { ConversationController } from './conversation.controller';
 export { NotificationController } from './notification.controller';
 export { PersonalTransactionController } from './personalTransaction.controller';
 export { FyersController } from './fyers.controller';
+export { ContactController } from './contact.controller';
 export { TradingviewController } from './tradingview.controller';

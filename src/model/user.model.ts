@@ -29,11 +29,6 @@ export interface UserDocument extends mongoose.Document {
   deletedAt?: Date;
 }
 
-
-
-// export interface UserDocument extends UserInterface {
-
-
 const UserSchema = new mongoose.Schema(
   {
     firstName: { type: String, required: true },
@@ -48,64 +43,9 @@ const UserSchema = new mongoose.Schema(
     isActive: { type: Number, default: 1 },
     createdBy: { type: Number, default: null },
     updatedBy: { type: Number, default: null },
+    deletedBy: { type: Number, default: null },
   },
   { timestamps: true }
 );
-
-UserSchema.plugin(uniqueValidator);
-
-// UserSchema.pre("save", async function (next: any) {
-//   let user = this as UserDocument;
-
-//   // only hash the password if it has been modified (or is new)
-//   if (!user.isModified("password")) return next();
-
-//   // Random additional data
-//   const salt = await bcrypt.genSalt(setting["saltWorkFactor"]);
-
-//   const hash = await bcrypt.hashSync(user.password, salt);
-
-//   // Replace the password with the hash
-//   user.password = hash;
-
-//   return next();
-// });
-
-
-UserSchema.methods.uniqueMobileNo = async function (
-  candidatePassword: string
-) {
-  const user = this as UserDocument;
-
-  return bcrypt.compare(candidatePassword, user.password).catch((e) => false);
-};
-
-// Used for logging in
-UserSchema.methods.comparePassword = async function (
-  candidatePassword: string
-) {
-  const user = this as UserDocument;
-
-  return bcrypt.compare(candidatePassword, user.password).catch((e) => false);
-};
-
-export const UserGraphQLType = new GraphQLObjectType({
-  name: 'User',
-  description: 'This represents a users',
-  fields: () => ({
-    firstName: { type: new GraphQLNonNull(GraphQLString) },
-    lastName: { type: new GraphQLNonNull(GraphQLString) },
-    // dob: { type: Date, required: true },
-    // gender: { type: String, required: true },
-    // mobileNo: { type: Number, required: true, unique: true },
-    // email: { type: String, required: true, unique: true, trim: true, lowercase: true },
-    // password: { type: String, required: true },
-    // avatar: { type: String, required: false },
-    // avatareBackground: { type: String, required: false },
-    // isActive: { type: Number, default: 1 },
-    // createdBy: { type: Number, default: null },
-    // updatedBy: { type: Number, default: null },
-  })
-})
 
 export const User = mongoose.model<UserDocument>("User", UserSchema);
