@@ -1,0 +1,48 @@
+{
+  getConversations {
+    _id
+    members {
+      _id
+      conversationId
+      userId
+      user {
+        firstName
+      }
+    },
+    messages {
+      _id,
+      userId
+     
+    }
+  }
+}
+
+
+{
+   getConversationMessages {
+    _id,
+    conversationId,
+    conversation {
+      _id,
+      type,
+    },
+    userId,
+    type,
+    message,
+    
+    user {
+      firstName
+    }
+  }
+}
+
+mutation {
+  createConversationMessage(input: {
+    conversationId:"660d2f6094a6fdfd5ee5e3ff",
+    userId: "65df90a9485fd765eee57ca6",
+    type: "text",
+    message: "hi"
+  }) {
+    _id
+  }
+}

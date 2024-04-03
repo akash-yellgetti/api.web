@@ -57,6 +57,7 @@ type Conversation {
   name: String,
   isActive: String!
   members: [ConversationMember],
+  messages: [ConversationMessage],
 }
 
 type ConversationMember {
@@ -72,7 +73,9 @@ type ConversationMessage {
   conversationId: String!,
   userId: String!,
   type: String!,
-  text: String!
+  message: String!
+  user: User,
+  conversation: Conversation,
   isActive: String!
 }
 
@@ -90,7 +93,7 @@ input ConversationMessageInput {
   conversationId: String!,
   userId: String!,
   type: String!,
-  text: String!
+  message: String!
 }
 
 type Query {
@@ -101,6 +104,7 @@ type Query {
   getConversation(id: String!): Conversation,
   getConversations: [Conversation],
   getConversationMembers(id: String!): [ConversationMember],
+  getConversationMessages: [ConversationMessage],
 }
 
 type Mutation {
