@@ -8,14 +8,20 @@
       user {
         firstName
       }
-    },
+    }
     messages {
-      _id,
+      _id
       userId
-     
+      type
+      message
+      user {
+        _id
+        firstName
+      }
     }
   }
 }
+
 
 
 {
