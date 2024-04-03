@@ -112,7 +112,7 @@ class Conversation {
       const conversationMessage = await conversationMessageService.create({
         userId: user._id,
         type: inputs.data.type,
-        text: inputs.data.text,
+        message: inputs.data.message,
         conversationId: inputs.conversationId,
         createdBy: user._id,
         updatedBy: user._id

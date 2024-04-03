@@ -8,7 +8,7 @@ export const converstation = {
       conversationId: string().required('conversation ID is required'),
       data: object({
         type: string().required('Conversation data-type is required'),
-        text: string().required('Conversation text is required')
+        message: string().required('Conversation text is required')
       }).required()
     })
   }),
