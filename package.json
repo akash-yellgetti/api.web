@@ -37,6 +37,7 @@
     "fyers-api-v3": "^1.0.3",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
+    "graphql-tools": "^9.0.1",
     "jsonwebtoken": "^8.5.1",
     "kiteconnect": "^4.1.0",
     "lodash": "^4.17.21",

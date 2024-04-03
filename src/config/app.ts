@@ -13,6 +13,9 @@ import { route } from "./route";
 import ErrorHandler from "../utils/error-handler.util";
 import { processExceptionHandler } from "./processExceptionHandler";
 import { socket } from './socket';
+import { graphqlHTTP } from "express-graphql";
+import { makeExecutableSchema } from 'graphql-tools';
+import { resolvers } from "../graphql/resolvers";
 
 
 export class App {
@@ -34,6 +37,7 @@ export class App {
     this.listen();
     this.processExceptionHandler();
     this.initialize();
+    this.initiateGraphQL();
     this.cors();
     if(setting && setting.db) {
       db.setConfig(setting.db).connect();
@@ -87,6 +91,21 @@ export class App {
     });
 
 
+  }
+
+  initiateGraphQL = () => {
+    // Read the schema file
+    const schemaFile = path.join(__dirname, '../graphql/schema.graphql');
+    const typeDefs = fs.readFileSync(schemaFile, 'utf8');
+
+    // Create executable schema
+    const schema = makeExecutableSchema({ typeDefs });
+
+    this.app.use('/graphql', graphqlHTTP({
+      schema: schema,
+      rootValue: resolvers,
+      graphiql: true // Enable GraphiQL for testing
+    }));
   }
 
   private cors = () => {

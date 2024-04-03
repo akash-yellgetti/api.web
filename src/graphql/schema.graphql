@@ -1,0 +1,33 @@
+type User {
+  firstName: String!,
+  lastName: String!,
+  dob: String!,
+  gender: String!,
+  mobileNo: String!,
+  email: String,
+  password: String!,
+  avatar: String!,
+  avatareBackground: String!,
+  isActive: String!
+}
+
+type Contact {
+  userId: String!,
+  firstName: String!,
+  lastName: String!,
+  dob: String!,
+  gender: String!,
+  mobileNo: String!,
+  email: String,
+  password: String!,
+  avatar: String!,
+  avatareBackground: String!,
+  isActive: String!
+}
+
+type Query {
+  user(id: String!): User,
+  users: [User],
+  contact(id: String!): Contact,
+  contacts: [Contact]
+}
