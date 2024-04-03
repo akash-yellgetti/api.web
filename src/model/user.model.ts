@@ -1,15 +1,7 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-import { setting } from "../config/setting";
-import uniqueValidator from 'mongoose-unique-validator';
-import {
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLString,
-  GraphQLList,
-  GraphQLInt,
-  GraphQLNonNull
-} from 'graphql';
+import { user } from "../route";
+const Schema = mongoose.Schema;
+// const Document = mongoose.Document;
 
 export interface UserDocument extends mongoose.Document {
   firstName: string;
@@ -21,6 +13,7 @@ export interface UserDocument extends mongoose.Document {
   password: string;
   avatar: string,
   avatareBackground?: string,
+  isActive: number;
   createdBy: number;
   updatedBy: number;
   deletedBy?: number;
@@ -29,7 +22,7 @@ export interface UserDocument extends mongoose.Document {
   deletedAt?: Date;
 }
 
-const UserSchema = new mongoose.Schema(
+const UserSchema = new Schema(
   {
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
@@ -47,5 +40,12 @@ const UserSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+UserSchema.virtual("contacts", {
+  ref: "Contact",
+  localField: "_id",
+  foreignField: "userId",
+  justOne: false,
+});
 
 export const User = mongoose.model<UserDocument>("User", UserSchema);

@@ -3,10 +3,22 @@ import { omit } from "lodash";
 import { Model } from "./model.service";
 import { User, UserDocument } from "../model";
 class UserService extends Model {
-    protected hidden: any = ['__v', 'isActive', 'password', 'createdBy', 'updatedBy'];
+    protected hidden: any = ['__v', 'password', 'createdBy', 'updatedBy'];
+    protected populate: any = ['contacts'];
     constructor() {
       super(User);
     }
+
+    // read = async (query: any = {}, limit: number = 25, sort: any = { _id: 1 }) => {
+    //   return await this.model.find(query).populate("contacts").sort(sort).limit(limit).lean();
+    // }
+
+    // readOne = async (query: any) => {
+    //   const hidden = this.hidden || [];
+    //   // console.log(this.model)
+    //   const data = await this.model.findOne(query).populate("contacts").lean();
+    //   return omit(data, hidden);
+    // }
 
     public create = async (inputs: any) => {
       try {
