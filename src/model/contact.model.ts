@@ -36,4 +36,12 @@ const ContactSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+ContactSchema.virtual("user", {
+  ref: "User",
+  localField: "userId",
+  foreignField: "_id",
+  justOne: true,
+});
+
+
 export const Contact = mongoose.model<ContactDocument>("Contact", ContactSchema);

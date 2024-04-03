@@ -17,18 +17,14 @@ export const resolvers = {
           }
 
     },
-    getUsersWithContacts: async () => {
-        try {
-          const users = await userService.read();
-          // Populate contacts for each user
-          const usersWithContacts = await Promise.all(users.map(async (user: any) => {
-            const contacts = await contactService.read({ userId: user._id  });
-            user.contacts = contacts;
-            return user;
-          }));
-          return usersWithContacts;
-        } catch (error) {
-          throw new Error('Failed to fetch users with contacts');
-        }
+    createUser: async (args: any) => {
+      return await userService.create(args);
+    },
+    contacts: async () => {
+      return await contactService.read();
+    },
+    createContact: async (args: any) => {
+      return await contactService.create(args.input);
     }
+    
 };

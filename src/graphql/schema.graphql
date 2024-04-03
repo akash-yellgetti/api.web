@@ -13,6 +13,28 @@ type User {
   contacts: [Contact]
 }
 
+input UserInput {
+  firstName: String!,
+  lastName: String!,
+  dob: String!,
+  gender: String!,
+  mobileNo: String!,
+  email: String,
+  password: String!,
+  avatar: String!,
+  avatareBackground: String!
+}
+
+input ContactInput {
+  userId: String!,
+  firstName: String!,
+  lastName: String,
+  dob: String,
+  gender: String,
+  mobileNo: String!,
+  email: String,
+}
+
 type Contact {
   _id: String!,
   userId: String!,
@@ -32,7 +54,15 @@ type Contact {
 type Query {
   user(id: String!): User,
   users: [User],
-  getUsersWithContacts: [User],
   contact(id: String!): Contact,
   contacts: [Contact]
+}
+
+type Mutation {
+  createUser(input: UserInput!): User,
+  updateUser(id: String!, input: UserInput!): User,
+  deleteUser(id: String!): User,
+  createContact(input: ContactInput!): Contact,
+  updateContact(id: String!, input: ContactInput!): Contact,
+  deleteContact(id: String!): Contact
 }
