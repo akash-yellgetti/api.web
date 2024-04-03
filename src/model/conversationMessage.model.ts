@@ -24,4 +24,19 @@ const ConversationMessageSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+ConversationMessageSchema.virtual("user", {
+  ref: "User",
+  localField: "userId",
+  foreignField: "_id",
+  justOne: true,
+});
+
+ConversationMessageSchema.virtual("conversation", {
+  ref: "Conversation",
+  localField: "conversationId",
+  foreignField: "_id",
+  justOne: true,
+});
+
+
 export const ConversationMessage = mongoose.model<ConversationMessageDocument>("ConversationMessage", ConversationMessageSchema);

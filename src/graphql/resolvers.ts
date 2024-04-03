@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-import { contactService, userService } from "../service";
+import { contactService, conversationMemberService, conversationService, userService } from "../service";
 
 export const resolvers = {
-    users: async () => {
+    getUsers: async () => {
         return await userService.read();
     },
-    user: async (id: string) => {
+    getUser: async (id: string) => {
         try {
             const user: any = await userService.readOne({ _id: new mongoose.Types.ObjectId(id) });
             const contacts: any = await contactService.read({ userId: new mongoose.Types.ObjectId(id) });
@@ -20,11 +20,22 @@ export const resolvers = {
     createUser: async (args: any) => {
       return await userService.create(args);
     },
-    contacts: async () => {
+    getContacts: async () => {
       return await contactService.read();
     },
     createContact: async (args: any) => {
       return await contactService.create(args.input);
-    }
-    
+    },
+    getConversations: async () => {
+      return await conversationService.read();
+    },
+    createConversation: async (args: any) => {
+      return await conversationService.create(args.input);
+    },
+    getConversationMembers: async (id: string) => {
+      return await conversationMemberService.read({ conversationId: new mongoose.Types.ObjectId(id) });
+    },
+    createConversationMember: async (args: any) => {
+      return await conversationMemberService.create(args.input);
+    },
 };

@@ -51,18 +51,77 @@ type Contact {
   user: User
 }
 
+type Conversation {
+  _id: String!,
+  type: String!,
+  name: String,
+  isActive: String!
+  members: [ConversationMember],
+}
+
+type ConversationMember {
+  _id: String!,
+  conversationId: String!,
+  userId: String!
+  isActive: String!
+  user: User,
+}
+
+type ConversationMessage {
+  _id: String!,
+  conversationId: String!,
+  userId: String!,
+  type: String!,
+  text: String!
+  isActive: String!
+}
+
+input ConversationInput {
+  type: String!,
+  name: String,
+}
+
+input ConversationMemberInput {
+  conversationId: String!,
+  userId: String!
+}
+
+input ConversationMessageInput {
+  conversationId: String!,
+  userId: String!,
+  type: String!,
+  text: String!
+}
+
 type Query {
-  user(id: String!): User,
-  users: [User],
-  contact(id: String!): Contact,
-  contacts: [Contact]
+  getUser(id: String!): User,
+  getUsers: [User],
+  getContact(id: String!): Contact,
+  getContacts: [Contact],
+  getConversation(id: String!): Conversation,
+  getConversations: [Conversation],
+  getConversationMembers(id: String!): [ConversationMember],
 }
 
 type Mutation {
+  # User
   createUser(input: UserInput!): User,
   updateUser(id: String!, input: UserInput!): User,
   deleteUser(id: String!): User,
+  # Contact
   createContact(input: ContactInput!): Contact,
   updateContact(id: String!, input: ContactInput!): Contact,
   deleteContact(id: String!): Contact
+  # Conversation
+  createConversation(input: ConversationInput!): Conversation,
+  updateConversation(id: String!, input: ConversationInput!): Conversation,
+  deleteConversation(id: String!): Conversation,
+  # ConversationMembers
+  createConversationMember(input: ConversationMemberInput!): ConversationMember,
+  updateConversationMember(id: String!, input: ConversationMemberInput!): ConversationMember,
+  deleteConversationMember(id: String!): ConversationMember,
+  # ConversationMessages
+  createConversationMessage(input: ConversationMessageInput!): ConversationMessage,
+  updateConversationMessage(id: String!, input: ConversationMessageInput!): ConversationMessage,
+  deleteConversationMessage(id: String!): ConversationMessage
 }

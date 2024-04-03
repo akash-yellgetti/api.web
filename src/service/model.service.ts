@@ -30,7 +30,9 @@ export class Model {
 
   read = async (query: any = {}, limit: number = 25, sort: any = { _id: 1 }) => {
     try {
-      return await this.model.find(query).populate(this.populate).sort(sort).limit(limit).lean();
+      return await this.model.find(query).populate({
+        
+      }).sort(sort).limit(limit).lean();
     } catch (error) {
       this.errorHandler(error)
     }

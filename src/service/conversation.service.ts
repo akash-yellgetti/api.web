@@ -4,6 +4,8 @@ import { Model } from "./model.service";
 import { Conversation } from "../model";
 
 class ConversationService extends Model {
+  protected hidden: any = ['__v', 'password', 'createdBy', 'updatedBy'];
+  protected populate: any = ['members', 'members.user', 'messages'];
   constructor() {
     super(Conversation);
   }

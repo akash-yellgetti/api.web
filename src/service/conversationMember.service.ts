@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import _ from "lodash";
 
 class ConversationMemberService extends Model {
+  protected populate: any = ['user'];
   constructor() {
     super(ConversationMember);
   }

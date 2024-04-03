@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { UserDocument } from "./user.model";
 
 export interface ConversationDocument extends mongoose.Document {
   type: { type: String },
@@ -19,5 +18,19 @@ const ConversationSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+ConversationSchema.virtual("members", {
+  ref: "ConversationMember",
+  localField: "_id",
+  foreignField: "conversationId",
+  justOne: false,
+});
+
+ConversationSchema.virtual("messages", {
+  ref: "ConversationMessage",
+  localField: "_id",
+  foreignField: "conversationId",
+  justOne: false,
+});
 
 export const Conversation = mongoose.model<ConversationDocument>("Conversation", ConversationSchema);

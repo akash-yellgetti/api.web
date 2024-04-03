@@ -12,5 +12,5 @@
       "NODE_DB_USER": "akash5792bts",
       "NODE_DB_PASSWORD": "ydPCbuP5poz961cV"
     },
-    "ext": "js,json,ts"
+    "ext": "js,json,ts,graphql"
   }
