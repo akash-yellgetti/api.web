@@ -1,4 +1,5 @@
 type User {
+  _id: String!,
   firstName: String!,
   lastName: String!,
   dob: String!,
@@ -9,9 +10,11 @@ type User {
   avatar: String!,
   avatareBackground: String!,
   isActive: String!
+  contacts: [Contact]
 }
 
 type Contact {
+  _id: String!,
   userId: String!,
   firstName: String!,
   lastName: String!,
@@ -23,11 +26,13 @@ type Contact {
   avatar: String!,
   avatareBackground: String!,
   isActive: String!
+  user: User
 }
 
 type Query {
   user(id: String!): User,
   users: [User],
+  getUsersWithContacts: [User],
   contact(id: String!): Contact,
   contacts: [Contact]
 }
