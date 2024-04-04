@@ -5,6 +5,19 @@ import _ from 'lodash';
 
 class Contact {
 
+  list = async (request: any, response: express.Response) => {
+    const inputs: any = { ...request.body, ...request.params};
+    const user: any = request.user;
+    log.info('controller.contact.list');
+    try {
+      const data = await contactService.read({ userId: user._id });
+      return new Api(response).success().code(200).send({ data });
+    } catch (e: any) {
+      log.error(e.message, e);
+      return new Api(response).error().code(400).send(e);
+    }
+  }
+
   create = async (request: any, response: express.Response) => {
     const inputs = { ...request.body, ...request.params};
     inputs.userId = request.user._id;
