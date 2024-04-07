@@ -51,6 +51,27 @@ type Contact {
   user: User
 }
 
+type Device {
+  _id: String!,
+  userId: String!
+  device: String!
+  deviceType: String!
+  data: String!
+  os: String!
+  version: String!
+  isActive: String!
+  user: User,
+}
+
+type Socket {
+  _id: String!,
+  userId: String!
+  deviceId: String!
+  isActive: String!
+  user: User,
+  device: Device,
+}
+
 type Conversation {
   _id: String!,
   type: String!,
@@ -99,6 +120,10 @@ input ConversationMessageInput {
 type Query {
   getUser(id: String!): User,
   getUsers: [User],
+  getDevice(id: String!): Device,
+  getDevices: [Device],
+  getSocket(id: String!): Socket,
+  getSockets: [Socket],
   getContact(id: String!): Contact,
   getContacts: [Contact],
   getConversation(id: String!): Conversation,

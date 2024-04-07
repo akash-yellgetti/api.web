@@ -1,4 +1,4 @@
-import { auth, socket, user, contact, moneyControl, group, conversation, notification, personalTransaction, fyers, tradingview } from '../route';
+import { auth, socket, user, contact, moneyControl, group, conversation, notification, personalTransaction, fyers, tradingview, device } from '../route';
 import { Router } from 'express';
 export const route = Router();
 
@@ -13,3 +13,4 @@ route.use('/notification', notification);
 route.use('/personal/transaction', personalTransaction);
 route.use('/fyers', fyers);
 route.use('/tradingview', tradingview);
+route.use('/device', device);

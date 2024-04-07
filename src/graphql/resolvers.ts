@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { contactService, conversationMemberService, conversationMessageService, conversationService, userService } from "../service";
+import { contactService, conversationMemberService, conversationMessageService, conversationService, deviceService, socketService, userService } from "../service";
 
 export const resolvers = {
     getUsers: async () => {
@@ -19,6 +19,18 @@ export const resolvers = {
     },
     createUser: async (args: any) => {
       return await userService.create(args);
+    },
+    getDevices: async () => {
+      return await deviceService.read();
+    },
+    createDevice: async (args: any) => {
+      return await deviceService.create(args.input);
+    },
+    getSockets: async () => {
+      return await socketService.read();
+    },
+    createSocket: async (args: any) => {
+      return await socketService.create(args.input);
     },
     getContacts: async () => {
       return await contactService.read();

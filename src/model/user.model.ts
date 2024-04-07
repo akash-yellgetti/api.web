@@ -13,7 +13,7 @@ export interface UserDocument extends mongoose.Document {
   password: string;
   avatar: string,
   avatareBackground?: string,
-  isActive: number;
+  Active: number;
   createdBy: number;
   updatedBy: number;
   deletedBy?: number;

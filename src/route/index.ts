@@ -9,3 +9,4 @@ export { personalTransaction } from "./personalTransaction.route";
 export { fyers } from "./fyers.route";
 export { tradingview } from "./tradingview.route";
 export { contact } from "./contact.route";
+export { device } from "./device.route";

@@ -4,6 +4,7 @@ import { setting } from '../config/setting';
 import { socketService, userService } from '../service';
 import { Api, api, log } from '../utils';
 import { app } from '../config/app';
+import { socket } from '../config/socket';
 import { notificationService } from '../service/notification.service';
 import mongoose from "mongoose";
 import { notification } from '../route';
@@ -19,7 +20,7 @@ class Notification {
       });
       const userSocket: any = await socketService.readOne({  userId: new mongoose.Types.ObjectId(inputs.recipient), isActive: 1 });
       if(userSocket && userSocket.socketId) {
-        app.getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
+        socket.getIO().getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
       }
       return new Api(response).success().code(200).send({ data: notification });
     } catch (e: any) {

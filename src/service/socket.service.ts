@@ -4,6 +4,8 @@ import _ from 'lodash';
 import mongoose from "mongoose";
 
 class SocketService extends Model {
+  protected hidden: any = ['__v', 'createdBy', 'updatedBy'];
+  protected populate: any = ['user', 'device'];
   constructor() {
     super(Socket);
   }

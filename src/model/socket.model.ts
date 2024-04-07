@@ -23,4 +23,20 @@ const SocketSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+
+SocketSchema.virtual("user", {
+  ref: "User",
+  localField: "userId",
+  foreignField: "_id",
+  justOne: true,
+});
+
+
+SocketSchema.virtual("device", {
+  ref: "Device",
+  localField: "deviceId",
+  foreignField: "_id",
+  justOne: true,
+});
+
 export const Socket = mongoose.model<SocketDocument>("Socket", SocketSchema);

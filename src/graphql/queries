@@ -23,6 +23,22 @@
 }
 
 
+{
+  getDevices {
+    _id,
+    userId,
+    device,
+    deviceType,
+    
+    user {
+      _id,
+      firstName,
+      lastName,
+      email
+    }
+  }
+}
+
 
 {
    getConversationMessages {

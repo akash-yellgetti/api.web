@@ -31,7 +31,7 @@ export class App {
     const server = http.createServer(app);
     
     if(setting && setting.socket) {
-      socket.initiate(server);
+      socket.getIO().attach(server);
     }
     this.server = server;
     this.listen();
@@ -157,10 +157,6 @@ export class App {
     //     }),
     //     log.error(infoObject);
     //   });
-  }
-
-  getSocketIO = () => {
-    return socket.getIo();
   }
 }
 
