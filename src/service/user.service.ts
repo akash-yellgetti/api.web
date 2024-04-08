@@ -2,9 +2,16 @@ import bcrypt from "bcrypt";
 import { omit } from "lodash";
 import { Model } from "./model.service";
 import { User, UserDocument } from "../model";
+import path from "path";
+import { match } from "assert";
 class UserService extends Model {
     protected hidden: any = ['__v', 'password', 'createdBy', 'updatedBy'];
-    protected populate: any = ['contacts'];
+    protected populate: any = ['contacts', 
+      {
+        path: 'sockets',
+        match: { isActive: 1 },
+      }
+    ];
     constructor() {
       super(User);
     }

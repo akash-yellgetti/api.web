@@ -2,6 +2,7 @@ import { omit } from "lodash";
 import { log } from "../utils";
 import bcrypt from "bcrypt";
 import _ from "lodash";
+import { query } from "express";
 
 export class Model {
   protected model: any;

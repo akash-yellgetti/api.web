@@ -1,4 +1,21 @@
 {
+  getUsers {
+    _id
+    firstName
+    contacts {
+      firstName
+      mobileNo
+    }
+    sockets {
+      _id,
+      socketId
+    }
+  }
+}
+
+
+
+{
   getConversations {
     _id
     members {

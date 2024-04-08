@@ -9,8 +9,9 @@ type User {
   password: String!,
   avatar: String!,
   avatareBackground: String!,
-  isActive: String!
-  contacts: [Contact]
+  isActive: String!,
+  contacts: [Contact],
+  sockets: [Socket]
 }
 
 input UserInput {
@@ -74,10 +75,18 @@ type Device {
 type Socket {
   _id: String!,
   userId: String!
+  socketId: String!
   deviceId: String!
   isActive: String!
   user: User,
   device: Device,
+}
+
+input SocketInput {
+  userId: String,
+  socketId: String,
+  deviceId: String,
+  isActive: String!
 }
 
 type Conversation {
@@ -131,7 +140,7 @@ type Query {
   getDevice(id: String!): Device,
   getDevices: [Device],
   getSocket(id: String!): Socket,
-  getSockets: [Socket],
+  getSockets(input: SocketInput): [Socket],
   getContact(id: String!): Contact,
   getContacts: [Contact],
   getConversation(id: String!): Conversation,

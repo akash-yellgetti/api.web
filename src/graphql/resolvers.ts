@@ -26,8 +26,8 @@ export const resolvers = {
     createDevice: async (args: any) => {
       return await deviceService.create(args.input);
     },
-    getSockets: async () => {
-      return await socketService.read();
+    getSockets: async (args: any) => {
+      return await socketService.read(args.input);
     },
     createSocket: async (args: any) => {
       return await socketService.create(args.input);

@@ -48,4 +48,11 @@ UserSchema.virtual("contacts", {
   justOne: false,
 });
 
+UserSchema.virtual("sockets", {
+  ref: "Socket",
+  localField: "_id",
+  foreignField: "userId",
+  justOne: false,
+});
+
 export const User = mongoose.model<UserDocument>("User", UserSchema);

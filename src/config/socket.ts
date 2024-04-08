@@ -54,7 +54,7 @@ class Socket {
     socket.on('join', this.join);
     socket.on('leave', this.leave);
     socket.on('send', this.send);
-    socket.on('disconnect', this.disconnect);
+    socket.on('disconnect', () => this.disconnect(socket.id));
   }
 
   send = async (data: any) => {
@@ -78,8 +78,11 @@ class Socket {
     console.log('user leave', data);
   }
 
-  disconnect = async () => {
-    console.log('user disconnected');
+  disconnect = async (socketId: string) => {
+    // console.log('user disconnected', socketId);
+    // await socketService.hardDelete({ socketId: socketId });
+    await socketService.softDelete({ socketId: socketId }, { isActive: 0 });
+    
   }
 
   emitToOne = (id: string, eventName: string, eventData: any) => {
