@@ -51,12 +51,20 @@ type Contact {
   user: User
 }
 
+type deviceData {
+  device: String!,
+  deviceType: String!,
+  os: String!,
+  version: String!,
+  userAgent: String!,
+}
+
 type Device {
   _id: String!,
   userId: String!
   device: String!
   deviceType: String!
-  data: String!
+  data: deviceData
   os: String!
   version: String!
   isActive: String!
