@@ -20,7 +20,22 @@ const model_1 = require("../model");
 class UserService extends model_service_1.Model {
     constructor() {
         super(model_1.User);
-        this.hidden = ['__v', 'isActive', 'password', 'createdBy', 'updatedBy'];
+        this.hidden = ['__v', 'password', 'createdBy', 'updatedBy'];
+        this.populate = [
+            {
+                path: 'contacts',
+                model: 'Contact',
+                strictPopulate: true,
+                populate: [
+                    { path: 'user', model: 'User' },
+                    { path: 'refUser', model: 'User' }
+                ]
+            },
+            {
+                path: 'sockets',
+                match: { isActive: 1 }
+            }
+        ];
         this.create = (inputs) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const hashedPassword = yield bcrypt_1.default.hash(inputs.password, 10);
@@ -31,7 +46,7 @@ class UserService extends model_service_1.Model {
                 this.errorHandler(error);
             }
         });
-        this.validatePassword = ({ email, password, }) => __awaiter(this, void 0, void 0, function* () {
+        this.validatePassword = ({ email, password }) => __awaiter(this, void 0, void 0, function* () {
             const user = yield model_1.User.findOne({ email });
             if (!user) {
                 return false;
@@ -40,7 +55,7 @@ class UserService extends model_service_1.Model {
             if (!isValid) {
                 return false;
             }
-            return (0, lodash_1.omit)(user.toJSON(), "password");
+            return (0, lodash_1.omit)(user.toJSON(), 'password');
         });
     }
 }

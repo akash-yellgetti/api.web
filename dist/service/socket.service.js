@@ -19,6 +19,8 @@ const mongoose_1 = __importDefault(require("mongoose"));
 class SocketService extends model_service_1.Model {
     constructor() {
         super(model_1.Socket);
+        this.hidden = ['__v', 'createdBy', 'updatedBy'];
+        this.populate = ['user', 'device'];
         this.updateSocketRecord = (data) => __awaiter(this, void 0, void 0, function* () {
             const user = data.user;
             const where = { userId: new mongoose_1.default.Types.ObjectId(user._id), deviceId: user.deviceId };

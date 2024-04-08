@@ -7,3 +7,5 @@ const middleware_1 = require("../middleware");
 exports.contact = (0, express_1.Router)();
 exports.contact.post('/create', middleware_1.auth, controller_1.ContactController.create);
 exports.contact.get('/detail', middleware_1.auth, controller_1.ContactController.detail);
+exports.contact.get('/list', middleware_1.auth, controller_1.ContactController.list);
+exports.contact.get('/refresh', middleware_1.auth, controller_1.ContactController.refresh);

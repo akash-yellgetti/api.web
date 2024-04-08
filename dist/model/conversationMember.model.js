@@ -12,4 +12,16 @@ const ConversationMemberSchema = new mongoose_1.default.Schema({
     createdBy: { type: String, default: null },
     updatedBy: { type: String, default: null },
 }, { timestamps: true });
+ConversationMemberSchema.virtual("user", {
+    ref: "User",
+    localField: "userId",
+    foreignField: "_id",
+    justOne: true,
+});
+ConversationMemberSchema.virtual("conversation", {
+    ref: "Conversation",
+    localField: "conversationId",
+    foreignField: "_id",
+    justOne: true,
+});
 exports.ConversationMember = mongoose_1.default.model("ConversationMember", ConversationMemberSchema);

@@ -20,6 +20,11 @@ const model_1 = require("../model");
 class ConversationService extends model_service_1.Model {
     constructor() {
         super(model_1.Conversation);
+        this.hidden = ['__v', 'password', 'createdBy', 'updatedBy'];
+        this.populate = [
+            { path: 'members', model: 'ConversationMember', strictPopulate: true, populate: { path: 'user', model: 'User' } },
+            { path: 'messages', model: 'ConversationMessage', strictPopulate: true, populate: { path: 'user', model: 'User' } },
+        ];
         this.getConversations = (inputs, user) => __awaiter(this, void 0, void 0, function* () {
             const userIds = [user._id];
             const ids = lodash_1.default.map(userIds, (r) => {
@@ -73,6 +78,13 @@ class ConversationService extends model_service_1.Model {
             ];
             // console.log(query)
             return yield this.aggregate(query);
+        });
+        this.getConversation = (inputs) => __awaiter(this, void 0, void 0, function* () {
+            const user = inputs.user;
+            return this.model.findOne({ type: inputs.type }).populate({
+                path: 'members', model: 'ConversationMember', strictPopulate: false,
+                match: { userId: { $in: [user._id, inputs.refUser._id] } },
+            }).lean();
         });
     }
 }

@@ -33,7 +33,7 @@ exports.converstation = {
             conversationId: (0, yup_1.string)().required('conversation ID is required'),
             data: (0, yup_1.object)({
                 type: (0, yup_1.string)().required('Conversation data-type is required'),
-                text: (0, yup_1.string)().required('Conversation text is required')
+                message: (0, yup_1.string)().required('Conversation text is required')
             }).required()
         })
     }),

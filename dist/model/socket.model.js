@@ -14,4 +14,16 @@ const SocketSchema = new mongoose_1.default.Schema({
     createdBy: { type: String, default: null },
     updatedBy: { type: String, default: null },
 }, { timestamps: true });
+SocketSchema.virtual("user", {
+    ref: "User",
+    localField: "userId",
+    foreignField: "_id",
+    justOne: true,
+});
+SocketSchema.virtual("device", {
+    ref: "Device",
+    localField: "deviceId",
+    foreignField: "_id",
+    justOne: true,
+});
 exports.Socket = mongoose_1.default.model("Socket", SocketSchema);

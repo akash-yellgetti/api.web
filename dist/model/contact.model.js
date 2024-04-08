@@ -7,12 +7,13 @@ exports.Contact = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const ContactSchema = new mongoose_1.default.Schema({
     userId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "User", required: true },
+    conversationId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Conversation" },
     firstName: { type: String, required: true },
     lastName: { type: String, required: false },
     dob: { type: Date, required: false },
     gender: { type: String, required: false },
-    mobileNo: { type: Number, required: true, unique: true },
-    email: { type: String, required: false, unique: false, trim: true, lowercase: true },
+    mobileNo: { type: Number, ref: "User", required: true },
+    email: { type: String, required: false, trim: true, lowercase: true },
     avatar: { type: String, required: false },
     avatareBackground: { type: String, required: false },
     isActive: { type: Number, default: 1 },
@@ -20,4 +21,16 @@ const ContactSchema = new mongoose_1.default.Schema({
     updatedBy: { type: Number, default: null },
     deletedBy: { type: Number, default: null },
 }, { timestamps: true });
+ContactSchema.virtual("user", {
+    ref: "User",
+    localField: "userId",
+    foreignField: "_id",
+    justOne: true,
+});
+ContactSchema.virtual("refUser", {
+    ref: "User",
+    localField: "mobileNo",
+    foreignField: "mobileNo",
+    justOne: true,
+});
 exports.Contact = mongoose_1.default.model("Contact", ContactSchema);

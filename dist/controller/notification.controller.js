@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationController = void 0;
 const service_1 = require("../service");
 const utils_1 = require("../utils");
-const app_1 = require("../config/app");
+const socket_1 = require("../config/socket");
 const notification_service_1 = require("../service/notification.service");
 const mongoose_1 = __importDefault(require("mongoose"));
 class Notification {
@@ -31,7 +31,7 @@ class Notification {
                 });
                 const userSocket = yield service_1.socketService.readOne({ userId: new mongoose_1.default.Types.ObjectId(inputs.recipient), isActive: 1 });
                 if (userSocket && userSocket.socketId) {
-                    app_1.app.getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
+                    socket_1.socket.getIO().getSocketIO().to(userSocket.socketId).emit("notification", { eventName: 'notification', eventTo: userSocket.socketId, data: notification });
                 }
                 return new utils_1.Api(response).success().code(200).send({ data: notification });
             }

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.device = void 0;
+const express_1 = require("express");
+const controller_1 = require("../controller");
+const middleware_1 = require("../middleware");
+exports.device = (0, express_1.Router)();
+exports.device.get('/detail', middleware_1.auth, controller_1.DeviceController.detail);
+exports.device.post('/create', middleware_1.auth, controller_1.DeviceController.create);
+exports.device.get('/list', middleware_1.auth, controller_1.DeviceController.list);

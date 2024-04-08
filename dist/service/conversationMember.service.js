@@ -20,6 +20,7 @@ const lodash_1 = __importDefault(require("lodash"));
 class ConversationMemberService extends model_service_1.Model {
     constructor() {
         super(model_1.ConversationMember);
+        this.populate = ['user'];
         this.addUsers = (userIds, conversationId, userId) => __awaiter(this, void 0, void 0, function* () {
             const data = [];
             const users = [...userIds, userId];

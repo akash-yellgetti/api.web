@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TradingviewController = exports.ContactController = exports.FyersController = exports.PersonalTransactionController = exports.NotificationController = exports.ConversationController = exports.GroupController = exports.MoneyControlController = exports.UserController = exports.SocketController = exports.SessionController = exports.AuthController = void 0;
+exports.TradingviewController = exports.DeviceController = exports.ContactController = exports.FyersController = exports.PersonalTransactionController = exports.NotificationController = exports.ConversationController = exports.GroupController = exports.MoneyControlController = exports.UserController = exports.SocketController = exports.SessionController = exports.AuthController = void 0;
 var auth_controller_1 = require("./auth.controller");
 Object.defineProperty(exports, "AuthController", { enumerable: true, get: function () { return auth_controller_1.AuthController; } });
 var session_controller_1 = require("./session.controller");
@@ -23,5 +23,7 @@ var fyers_controller_1 = require("./fyers.controller");
 Object.defineProperty(exports, "FyersController", { enumerable: true, get: function () { return fyers_controller_1.FyersController; } });
 var contact_controller_1 = require("./contact.controller");
 Object.defineProperty(exports, "ContactController", { enumerable: true, get: function () { return contact_controller_1.ContactController; } });
+var device_controller_1 = require("./device.controller");
+Object.defineProperty(exports, "DeviceController", { enumerable: true, get: function () { return device_controller_1.DeviceController; } });
 var tradingview_controller_1 = require("./tradingview.controller");
 Object.defineProperty(exports, "TradingviewController", { enumerable: true, get: function () { return tradingview_controller_1.TradingviewController; } });

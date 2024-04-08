@@ -8,6 +8,7 @@ const http_1 = __importDefault(require("http"));
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
+const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const morgan_1 = __importDefault(require("morgan"));
 const setting_1 = require("./setting");
@@ -17,6 +18,9 @@ const route_1 = require("./route");
 const error_handler_util_1 = __importDefault(require("../utils/error-handler.util"));
 const processExceptionHandler_1 = require("./processExceptionHandler");
 const socket_1 = require("./socket");
+const express_graphql_1 = require("express-graphql");
+const graphql_tools_1 = require("graphql-tools");
+const resolvers_1 = require("../graphql/resolvers");
 class App {
     constructor() {
         /**
@@ -52,6 +56,18 @@ class App {
                 // Here you can add your logic to handle the alert
                 res.status(200).send('Alert received');
             });
+        };
+        this.initiateGraphQL = () => {
+            // Read the schema file
+            const schemaFile = path_1.default.join(__dirname, '../graphql/schema.graphql');
+            const typeDefs = fs_1.default.readFileSync(schemaFile, 'utf8');
+            // Create executable schema
+            const schema = (0, graphql_tools_1.makeExecutableSchema)({ typeDefs });
+            this.app.use('/graphql', (0, express_graphql_1.graphqlHTTP)({
+                schema: schema,
+                rootValue: resolvers_1.resolvers,
+                graphiql: true // Enable GraphiQL for testing
+            }));
         };
         this.cors = () => {
         };
@@ -97,19 +113,17 @@ class App {
             //     log.error(infoObject);
             //   });
         };
-        this.getSocketIO = () => {
-            return socket_1.socket.getIo();
-        };
         const app = (0, express_1.default)();
         this.app = app;
         const server = http_1.default.createServer(app);
         if (setting_1.setting && setting_1.setting.socket) {
-            socket_1.socket.initiate(server);
+            socket_1.socket.getIO().attach(server);
         }
         this.server = server;
         this.listen();
         this.processExceptionHandler();
         this.initialize();
+        this.initiateGraphQL();
         this.cors();
         if (setting_1.setting && setting_1.setting.db) {
             db_1.db.setConfig(setting_1.setting.db).connect();

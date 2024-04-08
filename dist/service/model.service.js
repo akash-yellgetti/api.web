@@ -19,6 +19,7 @@ const lodash_2 = __importDefault(require("lodash"));
 class Model {
     constructor(model) {
         this.hidden = [];
+        this.populate = [];
         this.create = (inputs) => __awaiter(this, void 0, void 0, function* () {
             try {
                 return yield this.model.create(inputs);
@@ -37,7 +38,7 @@ class Model {
         });
         this.read = (query = {}, limit = 25, sort = { _id: 1 }) => __awaiter(this, void 0, void 0, function* () {
             try {
-                return yield this.model.find(query).sort(sort).limit(limit).lean();
+                return yield this.model.find(query).populate(this.populate).sort(sort).limit(limit).lean();
             }
             catch (error) {
                 this.errorHandler(error);
@@ -46,7 +47,7 @@ class Model {
         this.readOne = (query) => __awaiter(this, void 0, void 0, function* () {
             const hidden = this.hidden || [];
             // console.log(this.model)
-            const data = yield this.model.findOne(query).lean();
+            const data = yield this.model.findOne(query).populate(this.populate).lean();
             return (0, lodash_1.omit)(data, hidden);
         });
         this.update = (where, updateData) => __awaiter(this, void 0, void 0, function* () {

@@ -109,7 +109,7 @@ class Conversation {
                 const conversationMessage = yield service_1.conversationMessageService.create({
                     userId: user._id,
                     type: inputs.data.type,
-                    text: inputs.data.text,
+                    message: inputs.data.message,
                     conversationId: inputs.conversationId,
                     createdBy: user._id,
                     updatedBy: user._id
