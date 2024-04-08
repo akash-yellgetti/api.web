@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 export interface ContactDocument extends mongoose.Document {
   userId: string;
+  conversationId: string;
   firstName: string;
   lastName: string;
   dob: Date;
@@ -25,7 +26,7 @@ const ContactSchema = new mongoose.Schema(
     lastName: { type: String, required: false },
     dob: { type: Date, required: false },
     gender: { type: String, required: false },
-    mobileNo: { type: Number, required: true },
+    mobileNo: { type: Number, ref: "User", required: true },
     email: { type: String, required: false, trim: true, lowercase: true },
     avatar: { type: String, required: false },
     avatareBackground: { type: String, required: false },

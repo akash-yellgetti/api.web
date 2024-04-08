@@ -3,7 +3,7 @@ import { Contact } from "../model";
 
 class ContactService extends Model {
   protected hidden: any = ['__v', 'password', 'createdBy', 'updatedBy'];
-  protected populate: any = ['user', 'refUser'];
+  protected populate: any = [ 'refUser'];
   constructor() {
     super(Contact);
   } 

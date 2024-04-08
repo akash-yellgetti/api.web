@@ -57,16 +57,24 @@ class Contact {
     log.info('controller.contact.refresh');
     try {
       const userContacts: any = await contactService.read({ userId: new mongoose.Types.ObjectId(user._id) });
-      for (const contact of userContacts) {
-        const conversation = await conversationService.readOne({ type: 'individual', "members._Id": [new mongoose.Types.ObjectId(user._id), new mongoose.Types.ObjectId(contact._id)] });
-        console.log('conversation', conversation);
-      //   const conversationMembersInput = [ new mongoose.Types.ObjectId(user._id), new mongoose.Types.ObjectId(contact._id) ];
-      //   const conversation = await conversationMemberService.read({ user: user._id, contactId: contact._id });
+      for(let i in userContacts) {
+        const contact = userContacts[i];
+        console.log('refUser', contact.refUser);
+        if(contact && contact.refUser) {
+          const conversation = await conversationService.getConversation({ type: 'individual', user, refUser: contact.refUser });
+          console.log('conversation', conversation);
+          if(conversation) {
+            const conversation = await conversationService.create({ type: 'individual'  });
+            const conversationMember = await conversationMemberService.bulkCreate([
+              { conversationId: conversation._id, userId: user._id },
+              { conversationId: conversation._id, userId: contact.refUser._id }
+            ]);
+            contact.conversationId = conversation._id;
+            contactService.updateOne({ _id: contact._id, userId: new mongoose.Types.ObjectId(user._id) }, { conversationId: conversation._id});
+          }
+        }
 
-
-      //   // await contactService.update({ _id: contact._id }, { conversationId: conversation._id });
       }
-      // console.log('refresh', refresh);
       const payload = { code: 200, data: userContacts, message: 'contact refresh' };
       return new Api(response).success().code(200).send(payload);
     } catch (e) {

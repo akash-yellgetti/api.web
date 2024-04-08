@@ -10,7 +10,7 @@ class UserService extends Model {
     {
       path: 'contacts',
       model: 'Contact',
-      strictPopulate: false,
+      strictPopulate: true,
       populate: [
         { path: 'user', model: 'User' },
         { path: 'refUser', model: 'User' }

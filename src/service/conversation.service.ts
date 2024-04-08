@@ -2,6 +2,7 @@ import _ from 'lodash';
 import mongoose from "mongoose";
 import { Model } from "./model.service";
 import { Conversation } from "../model";
+import { match } from 'assert';
 
 class ConversationService extends Model {
   protected hidden: any = ['__v', 'password', 'createdBy', 'updatedBy'];
@@ -67,6 +68,15 @@ class ConversationService extends Model {
     ];
     // console.log(query)
     return await this.aggregate(query);
+  }
+
+  getConversation = async (inputs: any) => {
+    const user = inputs.user;
+    return this.model.find({ type: inputs.type }).populate({ 
+        path: 'members', model: 'ConversationMember', strictPopulate: false, 
+        match: { userId: { $in: [user._id, inputs.refUser._id] } },
+      }).lean();
+
   }
   
 }

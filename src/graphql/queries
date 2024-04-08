@@ -15,6 +15,22 @@
   }
 }
 
+{
+  getUsers {
+    _id
+    firstName
+    lastName
+    mobileNo
+    contacts {
+      firstName
+      mobileNo
+      refUser {
+        firstName
+      }
+    }
+  }
+}
+
 
 {
   getContacts {
