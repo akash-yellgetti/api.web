@@ -60,18 +60,18 @@ class Contact {
       for(let i in userContacts) {
         const contact = userContacts[i];
         console.log('refUser', contact.refUser);
-        if(contact && contact.refUser) {
-          const conversation = await conversationService.getConversation({ type: 'individual', user, refUser: contact.refUser });
+        if(contact && contact.refUser && !contact.conversationId) {
+          let conversation = await conversationService.getConversation({ type: 'individual', user, refUser: contact.refUser });
           console.log('conversation', conversation);
-          if(conversation) {
-            const conversation = await conversationService.create({ type: 'individual'  });
+          if(!conversation || (conversation && conversation.members && conversation.members.length !== 2)) {
+            conversation = await conversationService.create({ type: 'individual'  });
             const conversationMember = await conversationMemberService.bulkCreate([
               { conversationId: conversation._id, userId: user._id },
               { conversationId: conversation._id, userId: contact.refUser._id }
             ]);
-            contact.conversationId = conversation._id;
-            contactService.updateOne({ _id: contact._id, userId: new mongoose.Types.ObjectId(user._id) }, { conversationId: conversation._id});
           }
+          contact.conversationId = conversation._id;
+          contactService.updateOne({ _id: contact._id, userId: new mongoose.Types.ObjectId(user._id) }, { conversationId: conversation._id});
         }
 
       }

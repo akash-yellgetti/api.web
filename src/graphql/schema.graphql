@@ -39,6 +39,7 @@ input ContactInput {
 type Contact {
   _id: String!,
   userId: String!,
+  conversationId: String,
   firstName: String!,
   lastName: String!,
   dob: String!,

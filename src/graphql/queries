@@ -23,7 +23,8 @@
     mobileNo
     contacts {
       firstName
-      mobileNo
+      mobileNo,
+      conversationId,
       refUser {
         firstName
       }

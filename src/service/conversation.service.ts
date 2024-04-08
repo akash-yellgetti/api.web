@@ -72,7 +72,7 @@ class ConversationService extends Model {
 
   getConversation = async (inputs: any) => {
     const user = inputs.user;
-    return this.model.find({ type: inputs.type }).populate({ 
+    return this.model.findOne({ type: inputs.type }).populate({ 
         path: 'members', model: 'ConversationMember', strictPopulate: false, 
         match: { userId: { $in: [user._id, inputs.refUser._id] } },
       }).lean();
