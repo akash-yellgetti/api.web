@@ -50,24 +50,25 @@ class Socket {
   connection = async (socket: any) => {
     // socket.emit('connected', 'connected');
     this.emitToOne(socket.id, 'getUserDetails', { socketId: socket.id });
-    socket.on('online', this.online);
+    socket.on('userStatusChange', this.userStatusChange);
     socket.on('join', this.join);
     socket.on('leave', this.leave);
     socket.on('send', this.send);
     socket.on('disconnect', () => this.disconnect(socket.id));
+    // Listen for user online status changes
+    // socket.on('userStatusChange', ({ userId, online }) => {
+    //   socket.broadcast.emit('userStatusChange', { userId, online });
+    // });
   }
 
   send = async (data: any) => {
     console.log('user send', data);
   }
   
-  online = async (data: any) => {
-    console.log('user online', data);
+  userStatusChange = async (data: any) => {
+    console.log('userStatusChange', data);
     await socketService.create({ userId: data.user._id, socketId: data.socketId, deviceId: data.deviceId });
-  }
-
-  offline = async (data: any) => {
-    console.log('user offline', data);
+    this.getIO().emit('userStatusChange', { userId: data.user._id, online: true });
   }
 
   join = async (data: any) => {
@@ -79,10 +80,11 @@ class Socket {
   }
 
   disconnect = async (socketId: string) => {
-    // console.log('user disconnected', socketId);
+    console.log('user disconnected', socketId);
     // await socketService.hardDelete({ socketId: socketId });
+    const user: any = await socketService.readOne({ socketId: socketId, isActive: 1});
+    this.getIO().emit('userStatusChange', { userId: user.userId, online: false });
     await socketService.softDelete({ socketId: socketId }, { isActive: 0 });
-    
   }
 
   emitToOne = (id: string, eventName: string, eventData: any) => {
