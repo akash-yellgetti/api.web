@@ -1,7 +1,10 @@
 import * as express from 'express';
-import { contactService } from '../service';
+import { contactService, conversationMemberService, conversationService } from '../service';
 import { Api, api, log } from '../utils';
 import _ from 'lodash';
+import c from 'config';
+import { conversation } from '../route';
+import mongoose from 'mongoose';
 
 class Contact {
 
@@ -46,6 +49,31 @@ class Contact {
       return new Api(response).error().code(200).send(e);
     }
   };
+
+
+  refresh = async (request: any, response: express.Response) => {
+    const inputs = { ...request.body, ...request.params };
+    const user = request.user;
+    log.info('controller.contact.refresh');
+    try {
+      const userContacts: any = await contactService.read({ userId: new mongoose.Types.ObjectId(user._id) });
+      for (const contact of userContacts) {
+        const conversation = await conversationService.readOne({ type: 'individual', "members._Id": [new mongoose.Types.ObjectId(user._id), new mongoose.Types.ObjectId(contact._id)] });
+        console.log('conversation', conversation);
+      //   const conversationMembersInput = [ new mongoose.Types.ObjectId(user._id), new mongoose.Types.ObjectId(contact._id) ];
+      //   const conversation = await conversationMemberService.read({ user: user._id, contactId: contact._id });
+
+
+      //   // await contactService.update({ _id: contact._id }, { conversationId: conversation._id });
+      }
+      // console.log('refresh', refresh);
+      const payload = { code: 200, data: userContacts, message: 'contact refresh' };
+      return new Api(response).success().code(200).send(payload);
+    } catch (e) {
+      log.error(e);
+      return new Api(response).error().code(200).send(e);
+    }
+  }
 }
 
 export const ContactController = new Contact();

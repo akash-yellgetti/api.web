@@ -1,9 +1,11 @@
 {
   getUsers {
     _id
-    firstName
+    firstName,
+    lastName,
+    mobileNo,
     contacts {
-      firstName
+      firstName,
       mobileNo
     }
     sockets {
@@ -13,6 +15,40 @@
   }
 }
 
+
+{
+  getContacts {
+    _id,
+    firstName,
+    refUser {
+      _id,
+      firstName
+    },
+    user {
+      _id,
+      firstName
+    }
+  }
+}
+
+
+mutation {
+  createConversation(input:{ type: "Individual" }) {
+    _id
+  }
+}
+
+mutation {
+  createConversationMember(input:{ conversationId: "6613d6fd9101ac6cc1024c9b", userId: "65df90a9485fd765eee57ca6" }) {
+    _id
+  }
+}
+
+mutation {
+  createConversationMember(input:{ conversationId: "6613d6fd9101ac6cc1024c9b", userId: "6613d0925170c9239a9a234d" }) {
+    _id
+  }
+}
 
 
 {
@@ -33,6 +69,22 @@
       message
       user {
         _id
+        firstName
+      }
+    }
+  }
+}
+
+
+{
+  getConversations {
+    _id,
+    type,
+    members {
+      _id
+      conversationId
+      userId
+      user {
         firstName
       }
     }

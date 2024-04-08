@@ -5,59 +5,57 @@ import { User, UserDocument } from "../model";
 import path from "path";
 import { match } from "assert";
 class UserService extends Model {
-    protected hidden: any = ['__v', 'password', 'createdBy', 'updatedBy'];
-    protected populate: any = ['contacts', 
-      {
-        path: 'sockets',
-        match: { isActive: 1 },
-      }
-    ];
-    constructor() {
-      super(User);
+  protected hidden: any = ['__v', 'password', 'createdBy', 'updatedBy'];
+  protected populate: any = [
+    {
+      path: 'contacts',
+      model: 'Contact',
+      strictPopulate: false,
+      populate: [
+        { path: 'user', model: 'User' },
+        { path: 'refUser', model: 'User' }
+      ]
+    },
+    {
+      path: 'sockets',
+      match: { isActive: 1 }
+    }
+  ];
+  constructor() {
+    super(User);
+  }
+
+  public create = async (inputs: any) => {
+    try {
+      const hashedPassword = await bcrypt.hash(inputs.password, 10);
+      inputs.password = hashedPassword;
+      return await this.model.create(inputs);
+    } catch (error) {
+      this.errorHandler(error);
+    }
+  };
+
+  validatePassword = async ({
+    email,
+    password
+  }: {
+    email: UserDocument['email'];
+    password: string;
+  }) => {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return false;
     }
 
-    // read = async (query: any = {}, limit: number = 25, sort: any = { _id: 1 }) => {
-    //   return await this.model.find(query).populate("contacts").sort(sort).limit(limit).lean();
-    // }
+    const isValid = await bcrypt.compare(password, user.password);
 
-    // readOne = async (query: any) => {
-    //   const hidden = this.hidden || [];
-    //   // console.log(this.model)
-    //   const data = await this.model.findOne(query).populate("contacts").lean();
-    //   return omit(data, hidden);
-    // }
-
-    public create = async (inputs: any) => {
-      try {
-        const hashedPassword = await bcrypt.hash(inputs.password, 10);
-        inputs.password = hashedPassword;
-        return await this.model.create(inputs);
-      } catch (error) {
-        this.errorHandler(error)
-      }
+    if (!isValid) {
+      return false;
     }
-    
-    validatePassword = async ({
-      email,
-      password,
-    }: {
-      email: UserDocument["email"];
-      password: string;
-    }) => {
-      const user = await User.findOne({ email });
 
-      if (!user) {
-        return false;
-      }
-
-      const isValid = await bcrypt.compare(password, user.password);
-
-      if (!isValid) {
-        return false;
-      }
-
-      return omit(user.toJSON(), "password");
-    }
+    return omit(user.toJSON(), 'password');
+  };
 }
 
 

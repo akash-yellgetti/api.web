@@ -44,8 +44,12 @@ export const resolvers = {
     createConversation: async (args: any) => {
       return await conversationService.create(args.input);
     },
-    getConversationMembers: async (id: string) => {
-      return await conversationMemberService.read({ conversationId: new mongoose.Types.ObjectId(id) });
+    
+    getUserConversations: async (id: string) => {
+      return await conversationMemberService.read({ userId: new mongoose.Types.ObjectId(id) });
+    },
+    getConversationMembers: async () => {
+      return await conversationMemberService.read();
     },
     createConversationMember: async (args: any) => {
       return await conversationMemberService.create(args.input);

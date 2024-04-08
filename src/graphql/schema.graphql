@@ -50,6 +50,7 @@ type Contact {
   avatareBackground: String!,
   isActive: String!
   user: User
+  refUser: User
 }
 
 type deviceData {
@@ -104,6 +105,7 @@ type ConversationMember {
   userId: String!
   isActive: String!
   user: User,
+  conversation: Conversation,
 }
 
 type ConversationMessage {
@@ -143,9 +145,10 @@ type Query {
   getSockets(input: SocketInput): [Socket],
   getContact(id: String!): Contact,
   getContacts: [Contact],
+  getUserConversations(id: String!): [ConversationMember],
   getConversation(id: String!): Conversation,
   getConversations: [Conversation],
-  getConversationMembers(id: String!): [ConversationMember],
+  getConversationMembers: [ConversationMember],
   getConversationMessages: [ConversationMessage],
 }
 
