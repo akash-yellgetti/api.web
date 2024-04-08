@@ -51,6 +51,9 @@ class Socket {
     // socket.emit('connected', 'connected');
     this.emitToOne(socket.id, 'getUserDetails', { socketId: socket.id });
     socket.on('userStatusChange', this.userStatusChange);
+    socket.on('getUserStatus', (data: any) => { 
+      this.getUserStatus(data, socket)
+    });
     socket.on('join', this.join);
     socket.on('leave', this.leave);
     socket.on('send', this.send);
@@ -69,6 +72,13 @@ class Socket {
     console.log('userStatusChange', data);
     await socketService.create({ userId: data.user._id, socketId: data.socketId, deviceId: data.deviceId });
     this.getIO().emit('userStatusChange', { userId: data.user._id, online: true });
+  }
+
+  getUserStatus = async (data: any, socket: any) => {
+    console.log('getUserStatus', data);
+    const user: any = await socketService.readOne({ userId: data.userId, isActive: 1});
+    const online = user ? true : false;
+    socket.emit('userStatusChange', { userId: data.userId, online });
   }
 
   join = async (data: any) => {
