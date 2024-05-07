@@ -1,16 +1,16 @@
 {
-    "restartable": "rs",
-    "ignore": [".git", "node_modules/", "dist/", "coverage/"],
-    "watch": ["src/"],
-    "execMap": {
-      "ts": "node -r ts-node/register"
-    },
-    "env": {
-      "NODE_ENV": "development",
-      "NODE_PORT": 5001,
-      "NODE_DB_HOST": "cluster0.flpezxf.mongodb.net",
-      "NODE_DB_USER": "akash5792bts",
-      "NODE_DB_PASSWORD": "ydPCbuP5poz961cV"
-    },
-    "ext": "js,json,ts,graphql"
-  }
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/", "dist/", "coverage/"],
+  "watch": ["src/"],
+  "execMap": {
+    "ts": "node -r ts-node/register"
+  },
+  "env": {
+    "NODE_ENV": "development",
+    "NODE_PORT": 5001,
+    "NODE_DB_HOST": "cluster0.flpezxf.mongodb.net",
+    "NODE_DB_USER": "akash5792bts",
+    "NODE_DB_PASSWORD": "ydPCbuP5poz961cV"
+  },
+  "ext": "js,json,ts,graphql"
+}

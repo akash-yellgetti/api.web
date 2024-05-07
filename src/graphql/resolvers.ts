@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { constantService, contactService, conversationMemberService, conversationMessageService, conversationService, deviceService, socketService, userService } from "../service";
+import { budgetService } from "../service/budget.service";
 
 export const resolvers = {
     getUsers: async () => {
@@ -20,10 +21,16 @@ export const resolvers = {
       return await userService.create(args);
     },
     getConstants: async (args: any) => {
-      return await constantService.read( args.input);
+      return await constantService.read(args.input);
     },
     createConstant: async (args: any) => {
       return await constantService.create(args.input);
+    },
+    getBudget: async (args: any) => {
+      return await budgetService.read(args.input);
+    },
+    createBudget: async (args: any) => {
+      return await budgetService.create(args.input);
     },
     getDevices: async () => {
       return await deviceService.read();

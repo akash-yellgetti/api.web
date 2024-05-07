@@ -1,16 +1,16 @@
 import { Model } from "./model.service";
-import { Constant } from "../model";
+import { Budget } from "../model";
 
-class ConstantService extends Model {
+class BudgetService extends Model {
   protected populate: any = [
     { 
-      path: 'subdata', model: 'constant', strictPopulate: false, 
-      
-    }];
+      path: 'subdata', model: 'Budget', strictPopulate: false,     
+    }
+  ];
   constructor() {
-    super(Constant);
+    super(Budget);
   } 
 }
 
 
-export const constantService = new ConstantService();
+export const budgetService = new BudgetService();

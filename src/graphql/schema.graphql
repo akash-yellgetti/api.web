@@ -101,6 +101,29 @@ input ConstantQueryInput {
 }
 
 
+type Budget {
+  _id: String!,
+  userId: String!
+  category: String!
+  subcategory: String!
+  title: String!
+  description: String!
+  amount: String!
+  isActive: String!
+}
+
+input BudgetInput {
+  userId: String!
+  category: String!
+  subcategory: String!
+  title: String!
+  description: String!
+  amount: String!
+  isActive: String!
+}
+
+
+
 type Socket {
   _id: String!,
   userId: String!
@@ -170,6 +193,7 @@ type Query {
   getConstants(input: ConstantQueryInput): [Constant],
   getDevice(id: String!): Device,
   getDevices: [Device],
+  getBudget: [Budget],
   getSocket(id: String!): Socket,
   getSockets(input: SocketInput): [Socket],
   getContact(id: String!): Contact,
@@ -192,8 +216,9 @@ type Mutation {
   deleteContact(id: String!): Contact
   # Constant
   createConstant(input: ConstantInput!): Constant,
-  # updateContact(id: String!, input: ConstantInput!): Constant,
-  # deleteContact(id: String!): Constant
+  # Budget
+  createBudget(input: BudgetInput!): Budget,
+  
   # Conversation
   createConversation(input: ConversationInput!): Conversation,
   updateConversation(id: String!, input: ConversationInput!): Conversation,

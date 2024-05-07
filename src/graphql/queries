@@ -68,6 +68,30 @@ mutation {
 
 
 {
+  getBudget {
+    _id,
+    category,
+    subcategory,
+    title,
+    description,
+    amount
+  }
+}
+
+mutation {
+  createBudget(input: {
+    userId: "65df90a9485fd765eee57ca6"
+    category: "income",
+    subcategory: "salary",
+    title: "Akash BTS Salary ",
+    amount: 150000
+          }) 
+  {
+    _id
+  }
+}
+
+{
   getContacts {
     _id,
     firstName,
