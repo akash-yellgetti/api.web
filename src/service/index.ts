@@ -1,5 +1,6 @@
 export { userService } from "./user.service";
 export { contactService } from "./contact.service";
+export { constantService } from "./constant.service";
 export { socketService } from "./socket.service";
 export { sessionService } from "./session.service";
 export { otpService } from "./otp.service";

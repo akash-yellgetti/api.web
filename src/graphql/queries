@@ -32,6 +32,40 @@
   }
 }
 
+{
+  getConstants(input: {column: "category"}) {
+    _id
+    column
+    code
+    value
+    subdata {
+      _id
+      column
+      code
+      value
+      subdata {
+        _id
+        column
+        code
+        value
+      }
+    }
+  }
+}
+
+
+
+mutation {
+  createConstant(input: {
+            column: "expense",
+            code: "transport",
+            value: "Transport"
+          }) 
+  {
+    _id
+  }
+}
+
 
 {
   getContacts {

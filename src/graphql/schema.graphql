@@ -74,6 +74,33 @@ type Device {
   user: User,
 }
 
+type Constant {
+  _id: String!,
+  column: String!
+  code: String!
+  value: String!
+  description: String!
+  isActive: String!,
+  subdata: [Constant],
+}
+
+input ConstantInput {
+  column: String!
+  code: String!
+  value: String!
+  description: String
+  isActive: String
+}
+
+input ConstantQueryInput {
+  column: String
+  code: String
+  value: String
+  description: String
+  isActive: String
+}
+
+
 type Socket {
   _id: String!,
   userId: String!
@@ -140,6 +167,7 @@ input ConversationMessageInput {
 type Query {
   getUser(id: String!): User,
   getUsers: [User],
+  getConstants(input: ConstantQueryInput): [Constant],
   getDevice(id: String!): Device,
   getDevices: [Device],
   getSocket(id: String!): Socket,
@@ -162,6 +190,10 @@ type Mutation {
   createContact(input: ContactInput!): Contact,
   updateContact(id: String!, input: ContactInput!): Contact,
   deleteContact(id: String!): Contact
+  # Constant
+  createConstant(input: ConstantInput!): Constant,
+  # updateContact(id: String!, input: ConstantInput!): Constant,
+  # deleteContact(id: String!): Constant
   # Conversation
   createConversation(input: ConversationInput!): Conversation,
   updateConversation(id: String!, input: ConversationInput!): Conversation,

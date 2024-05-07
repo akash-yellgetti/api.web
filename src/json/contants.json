@@ -1,0 +1,33 @@
+[
+  {
+    "column": "active",
+    "code": 1,
+    "value": "Yes"
+  },
+  {
+    "column": "active",
+    "code": 0,
+    "value": "No"
+  },
+  {
+    "column": "category",
+    "code": "income",
+    "value": "Income"
+  },
+  {
+    "column": "category",
+    "code": "expense",
+    "value": "Expense"
+  },
+  {
+    "column": "category",
+    "code": "investment",
+    "value": "Investment"
+  },
+  {
+    "column": "category",
+    "code": "want",
+    "value": "Want"
+  }
+    
+]

@@ -1,5 +1,6 @@
 export { User, UserDocument } from "./user.model";
 export { Contact, ContactDocument } from "./contact.model";
+export { Constant, ConstantDocument } from "./constant.model";
 export { Socket, SocketDocument } from "./socket.model";
 export { Session, SessionDocument } from "./session.model";
 export { Device, DeviceDocument } from "./device.model";
