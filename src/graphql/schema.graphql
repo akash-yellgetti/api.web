@@ -100,6 +100,10 @@ input ConstantQueryInput {
   isActive: String
 }
 
+type hardDeleteOne {
+  acknowledged: String!,
+  deletedCount: String!,
+}
 
 type Budget {
   _id: String!,
@@ -119,6 +123,24 @@ input BudgetInput {
   title: String!
   description: String!
   amount: String!
+  isActive: String!
+}
+
+
+type Planner {
+  _id: String!,
+  userId: String!
+  title: String!
+  description: String!
+  data: String!
+  isActive: String!
+}
+
+input PlannerInput {
+  userId: String!
+  title: String!
+  description: String!
+  data: String!
   isActive: String!
 }
 
@@ -216,8 +238,15 @@ type Mutation {
   deleteContact(id: String!): Contact
   # Constant
   createConstant(input: ConstantInput!): Constant,
+  deleteConstant(id: String!): Contact
   # Budget
   createBudget(input: BudgetInput!): Budget,
+  updateBudget(id: String!): Budget
+  deleteBudget(id: String!): hardDeleteOne!
+  # Budget
+  createPlanner(input: PlannerInput!): Planner,
+  updatePlanner(id: String!): Planner
+  deletePlanner(id: String!): hardDeleteOne!
   
   # Conversation
   createConversation(input: ConversationInput!): Conversation,

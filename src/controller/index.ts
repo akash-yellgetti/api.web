@@ -10,4 +10,6 @@ export { PersonalTransactionController } from './personalTransaction.controller'
 export { FyersController } from './fyers.controller';
 export { ContactController } from './contact.controller';
 export { DeviceController } from './device.controller';
+export { BudgetController } from './budget.controller';
+export { PlannerController } from './planner.controller';
 export { TradingviewController } from './tradingview.controller';

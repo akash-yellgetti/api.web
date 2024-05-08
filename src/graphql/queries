@@ -78,13 +78,23 @@ mutation {
   }
 }
 
+
+mutation {
+  deleteBudget(id: "663b4ecaec59bb99e2c8a7b7") {
+    deletedCount
+  }
+}
+
+
 mutation {
   createBudget(input: {
     userId: "65df90a9485fd765eee57ca6"
     category: "income",
-    subcategory: "salary",
-    title: "Akash BTS Salary ",
-    amount: 150000
+    subcategory: "rental",
+    title: "A-704 Manali",
+    description: "rental",
+    amount: "13000",
+    isActive:"1"
           }) 
   {
     _id

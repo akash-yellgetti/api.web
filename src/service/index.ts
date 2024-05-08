@@ -1,6 +1,8 @@
 export { userService } from "./user.service";
 export { contactService } from "./contact.service";
 export { constantService } from "./constant.service";
+export { budgetService } from "./budget.service";
+export { plannerService } from "./planner.service";
 export { socketService } from "./socket.service";
 export { sessionService } from "./session.service";
 export { otpService } from "./otp.service";

@@ -58,9 +58,14 @@ export class Model {
     });
   }
 
+  // Soft Delete One
+  hardDeleteOne = async (where: any) => {
+    return await this.model.deleteOne(where);
+  }
+
   // Soft Delete
-  hardDelete = async (where: any) => {
-    return await this.model.remove(where);
+  hardDeleteMany = async (where: any) => {
+    return await this.model.deleteMany(where);
   }
 
   // Soft Delete

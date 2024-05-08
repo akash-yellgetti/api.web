@@ -1,6 +1,17 @@
 import mongoose from "mongoose";
-import { constantService, contactService, conversationMemberService, conversationMessageService, conversationService, deviceService, socketService, userService } from "../service";
-import { budgetService } from "../service/budget.service";
+import {
+  constantService,
+  contactService,
+  conversationMemberService,
+  conversationMessageService,
+  conversationService,
+  deviceService,
+  socketService,
+  userService,
+  budgetService,
+  plannerService
+} from '../service';
+
 
 export const resolvers = {
     getUsers: async () => {
@@ -32,6 +43,19 @@ export const resolvers = {
     createBudget: async (args: any) => {
       return await budgetService.create(args.input);
     },
+    deleteBudget: async (id: string) => {
+      return await plannerService.hardDeleteOne({ _id: new mongoose.Types.ObjectId(id) });
+    },
+    getPlanner: async (args: any) => {
+      return await plannerService.read(args.input);
+    },
+    createPlanner: async (args: any) => {
+      return await plannerService.create(args.input);
+    },
+    deletePlanner: async (args: any) => {
+      return await plannerService.hardDeleteOne(args.input);
+    },
+    
     getDevices: async () => {
       return await deviceService.read();
     },
