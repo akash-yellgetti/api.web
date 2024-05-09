@@ -5,6 +5,9 @@ export interface PlannerDocument extends mongoose.Document {
   type: string;
   title: string;
   description: string;
+  amount: number;
+  rate: number;
+  tenure: number;
   data: object;
   isActive: number;
   createdBy: number;
@@ -21,6 +24,9 @@ const PlannerSchema = new mongoose.Schema(
     type: { type: String, required: true},
     title: { type: String, required: true},
     description: { type: String },
+    amount: { type: Number, required: true},
+    rate: { type: Number, required: true},
+    tenure: { type: Number, required: true},
     data: { type: Object },
     isActive: { type: Number, default: 1 },
     createdBy: { type: Number, default: null },

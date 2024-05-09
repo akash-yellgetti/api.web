@@ -241,11 +241,13 @@ type Mutation {
   deleteConstant(id: String!): Contact
   # Budget
   createBudget(input: BudgetInput!): Budget,
-  updateBudget(id: String!): Budget
+  bulkCreateBudget(input: [BudgetInput!]): [Budget],
+  updateBudget(id: String!, input: BudgetInput!): Budget
   deleteBudget(id: String!): hardDeleteOne!
-  # Budget
+  # Planner
   createPlanner(input: PlannerInput!): Planner,
-  updatePlanner(id: String!): Planner
+  bulkCreatePlanner(input: [PlannerInput!]): [Planner],
+  updatePlanner(id: String!, input: PlannerInput!): Planner
   deletePlanner(id: String!): hardDeleteOne!
   
   # Conversation

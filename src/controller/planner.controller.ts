@@ -1,5 +1,7 @@
 import * as express from 'express';
-import { plannerService } from '../service';
+import {
+  plannerService
+} from '../service';
 import { Api, api, log } from '../utils';
 import _ from 'lodash';
 
@@ -17,13 +19,41 @@ class Planner {
     }
   };
 
+  create = async (request: any, response: express.Response) => {
+    const inputs: any = { ...request.body, ...request.params };
+    const user = request.user;
+    log.info('controller.planner.create');
+    try {
+      const data: any = await plannerService.create(inputs);
+      const payload = { code: 200, data, message: 'Planner create.' };
+      return new Api(response).success().code(200).send(payload);
+    } catch (e) {
+      log.error(e);
+      return new Api(response).error().code(200).send(e);
+    }
+  };
+
+  bulkCreate = async (request: any, response: express.Response) => {
+    const inputs: any = { ...request.body, ...request.params };
+    const user = request.user;
+    log.info('controller.planner.bulkCreate');
+    try {
+      const data: any = await plannerService.bulkCreate(inputs.data);
+      const payload = { code: 200, data, message: 'Planner bulk create.' };
+      return new Api(response).success().code(200).send(payload);
+    } catch (e) {
+      log.error(e);
+      return new Api(response).error().code(200).send(e);
+    }
+  };
+
   delete = async (request: any, response: express.Response) => {
     const inputs: any = { ...request.body, ...request.params };
     const user = request.user;
     log.info('controller.planner.delete');
     try {
       const data: any = await plannerService.hardDeleteOne({ _id: inputs.id });
-      const payload = { code: 200, data, message: 'Budget deleted.' };
+      const payload = { code: 200, data, message: 'Planner deleted.' };
       return new Api(response).success().code(200).send(payload);
     } catch (e) {
       log.error(e);

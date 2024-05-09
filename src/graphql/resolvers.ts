@@ -43,6 +43,9 @@ export const resolvers = {
     createBudget: async (args: any) => {
       return await budgetService.create(args.input);
     },
+    bulkCreateBudget: async (args: any) => {
+      return await budgetService.bulkCreate(args.input);
+    },
     deleteBudget: async (id: string) => {
       return await plannerService.hardDeleteOne({ _id: new mongoose.Types.ObjectId(id) });
     },
