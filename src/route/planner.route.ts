@@ -8,3 +8,4 @@ planner.post('/create', auth, PlannerController.create);
 planner.post('/bulk/create', auth, PlannerController.bulkCreate);
 planner.post('/delete', auth, PlannerController.delete);
 planner.get('/list', auth, PlannerController.list);
+planner.get('/detail', auth, PlannerController.list);
