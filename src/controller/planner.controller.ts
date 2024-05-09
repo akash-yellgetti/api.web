@@ -22,6 +22,7 @@ class Planner {
   create = async (request: any, response: express.Response) => {
     const inputs: any = { ...request.body, ...request.params };
     const user = request.user;
+    inputs.userId = user._id;
     log.info('controller.planner.create');
     try {
       const data: any = await plannerService.create(inputs);
