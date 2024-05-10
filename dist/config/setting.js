@@ -7,7 +7,7 @@ exports.setting = {
     port: process.env.NODE_PORT || 5001,
     version: '1.0.0',
     host: process.env.NODE_HOST || 'localhost',
-    socket: true,
+    socket: false,
     db: {
         host: process.env.NODE_DB_HOST || 'cluster0.flpezxf.mongodb.net',
         user: process.env.NODE_DB_USER || 'akash5792bts',
