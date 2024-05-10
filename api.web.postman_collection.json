@@ -1,0 +1,1934 @@
+{
+	"info": {
+		"_postman_id": "38c0be77-2679-4eb1-aad4-3db24944d9f3",
+		"name": "api.web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "416162"
+	},
+	"item": [
+		{
+			"name": "Moneycontrol",
+			"item": [
+				{
+					"name": "search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"ITC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/money-control/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"money-control",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"IPL01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/money-control/details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"money-control",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "candles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"symbol\": \"ICICIBANK\",\r\n    // \"symbol\": \"HDFCBANK\",\r\n    // \"symbol\": \"INDUSINDBK\",\r\n    // \"symbol\": \"GAIL\",\r\n    \"duration\": 3,\r\n    \"countback\": 2393\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/money-control/candles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"money-control",
+								"candles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "candles - 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/javascript, */*; q=0.01"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "remMe=U2FsdGVkX189E313tlc1XCyIQQFmMVqSNFt%2FZ0WzFZ8VqYtTA58Jiinw76kBjrTVmMzj379pqL7Q7iSM1RnvcFUfqWotJkHo%2BV0tStP3xlsDSnczVuZtZDzNRAXIQbpvoMJlp35SZmIm1ZGylaujUC8S%2BjpJLgKn973ErM6Tzz1EmO8K7TDMeRnMdzSE5UBI7DoR1qm%2Bck21fD93gh4f5Q%3D%3D; _ga=GA1.1.2074146082.1706259556; _ga_PPNVBH881Z=GS1.1.1706259555.1.1.1706259603.12.0.0"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:5001"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:5001/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"symbol\": \"SBIN\",\r\n    \"duration\": \"3\",\r\n    \"countback\": \"378\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5001/money-control/candles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"money-control",
+								"candles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "option-chain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"symbol\": \"NIFTY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/money-control/option-chain",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"money-control",
+								"option-chain"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "zerodha - main",
+			"item": [
+				{
+					"name": "positions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authority",
+								"value": "kite.zerodha.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "enctoken E3JRLMxI+HOggVvXndQqU7/y7HD31JgIXTK5DZ2K5SWpsyXSmaiM1a+/+VmQrwhkdSUPXfv4BWOguDwxzkWgRM1Wzik7hLPGSWjvbVhHOJWBBjL4T3JDDQ=="
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "cookie",
+								"value": "_cfuvid=SCxrWlX6O8K5rQsp9LTGlkCzOVEIaSY4X8X4r_Ne6SM-1707542722868-0-604800000; public_token=ZK4MtE2ATrmMPMCiciXV9mm6MeUF3EaB; kf_session=jMqcFoV3nCjaEcME7bEIvEi9wDOFy25I; __cf_bm=dM1p1HDM4pWP4Ctq6Fh52BXZLZHVfp4mFLdunJYTYPE-1707544550-1-AdGjmiZB3MDHa21fpZDWpK3GjZJqWAqmxuue4u6EE5zxQHudXowGiXqdQkpJ0jVaxKj1GlEivs6NaLFLNXkLJyY=; user_id=DA8969; enctoken=E3JRLMxI+HOggVvXndQqU7/y7HD31JgIXTK5DZ2K5SWpsyXSmaiM1a+/+VmQrwhkdSUPXfv4BWOguDwxzkWgRM1Wzik7hLPGSWjvbVhHOJWBBjL4T3JDDQ=="
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://kite.zerodha.com/dashboard"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-kite-app-uuid",
+								"value": "1bcf72d3-4ae1-425d-ac6a-26f1adc6888d"
+							},
+							{
+								"key": "x-kite-userid",
+								"value": "DA8969"
+							},
+							{
+								"key": "x-kite-version",
+								"value": "3.0.0"
+							}
+						],
+						"url": {
+							"raw": "https://kite.zerodha.com/oms/portfolio/positions",
+							"protocol": "https",
+							"host": [
+								"kite",
+								"zerodha",
+								"com"
+							],
+							"path": [
+								"oms",
+								"portfolio",
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "holdings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authority",
+								"value": "kite.zerodha.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "enctoken E3JRLMxI+HOggVvXndQqU7/y7HD31JgIXTK5DZ2K5SWpsyXSmaiM1a+/+VmQrwhkdSUPXfv4BWOguDwxzkWgRM1Wzik7hLPGSWjvbVhHOJWBBjL4T3JDDQ=="
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "cookie",
+								"value": "_cfuvid=SCxrWlX6O8K5rQsp9LTGlkCzOVEIaSY4X8X4r_Ne6SM-1707542722868-0-604800000; public_token=ZK4MtE2ATrmMPMCiciXV9mm6MeUF3EaB; kf_session=jMqcFoV3nCjaEcME7bEIvEi9wDOFy25I; __cf_bm=dM1p1HDM4pWP4Ctq6Fh52BXZLZHVfp4mFLdunJYTYPE-1707544550-1-AdGjmiZB3MDHa21fpZDWpK3GjZJqWAqmxuue4u6EE5zxQHudXowGiXqdQkpJ0jVaxKj1GlEivs6NaLFLNXkLJyY=; user_id=DA8969; enctoken=E3JRLMxI+HOggVvXndQqU7/y7HD31JgIXTK5DZ2K5SWpsyXSmaiM1a+/+VmQrwhkdSUPXfv4BWOguDwxzkWgRM1Wzik7hLPGSWjvbVhHOJWBBjL4T3JDDQ=="
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://kite.zerodha.com/holdings"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-kite-app-uuid",
+								"value": "1bcf72d3-4ae1-425d-ac6a-26f1adc6888d"
+							},
+							{
+								"key": "x-kite-userid",
+								"value": "DA8969"
+							},
+							{
+								"key": "x-kite-version",
+								"value": "3.0.0"
+							}
+						],
+						"url": {
+							"raw": "https://kite.zerodha.com/oms/portfolio/holdings",
+							"protocol": "https",
+							"host": [
+								"kite",
+								"zerodha",
+								"com"
+							],
+							"path": [
+								"oms",
+								"portfolio",
+								"holdings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authority",
+								"value": "kite.zerodha.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "enctoken E3JRLMxI+HOggVvXndQqU7/y7HD31JgIXTK5DZ2K5SWpsyXSmaiM1a+/+VmQrwhkdSUPXfv4BWOguDwxzkWgRM1Wzik7hLPGSWjvbVhHOJWBBjL4T3JDDQ=="
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "cookie",
+								"value": "_cfuvid=SCxrWlX6O8K5rQsp9LTGlkCzOVEIaSY4X8X4r_Ne6SM-1707542722868-0-604800000; public_token=ZK4MtE2ATrmMPMCiciXV9mm6MeUF3EaB; kf_session=jMqcFoV3nCjaEcME7bEIvEi9wDOFy25I; __cf_bm=dM1p1HDM4pWP4Ctq6Fh52BXZLZHVfp4mFLdunJYTYPE-1707544550-1-AdGjmiZB3MDHa21fpZDWpK3GjZJqWAqmxuue4u6EE5zxQHudXowGiXqdQkpJ0jVaxKj1GlEivs6NaLFLNXkLJyY=; user_id=DA8969; enctoken=E3JRLMxI+HOggVvXndQqU7/y7HD31JgIXTK5DZ2K5SWpsyXSmaiM1a+/+VmQrwhkdSUPXfv4BWOguDwxzkWgRM1Wzik7hLPGSWjvbVhHOJWBBjL4T3JDDQ=="
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://kite.zerodha.com/orders"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-kite-app-uuid",
+								"value": "1bcf72d3-4ae1-425d-ac6a-26f1adc6888d"
+							},
+							{
+								"key": "x-kite-userid",
+								"value": "DA8969"
+							},
+							{
+								"key": "x-kite-version",
+								"value": "3.0.0"
+							}
+						],
+						"url": {
+							"raw": "https://kite.zerodha.com/oms/orders",
+							"protocol": "https",
+							"host": [
+								"kite",
+								"zerodha",
+								"com"
+							],
+							"path": [
+								"oms",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "margins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authority",
+								"value": "kite.zerodha.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "enctoken E3JRLMxI+HOggVvXndQqU7/y7HD31JgIXTK5DZ2K5SWpsyXSmaiM1a+/+VmQrwhkdSUPXfv4BWOguDwxzkWgRM1Wzik7hLPGSWjvbVhHOJWBBjL4T3JDDQ=="
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "cookie",
+								"value": "_cfuvid=SCxrWlX6O8K5rQsp9LTGlkCzOVEIaSY4X8X4r_Ne6SM-1707542722868-0-604800000; public_token=ZK4MtE2ATrmMPMCiciXV9mm6MeUF3EaB; kf_session=jMqcFoV3nCjaEcME7bEIvEi9wDOFy25I; __cf_bm=dM1p1HDM4pWP4Ctq6Fh52BXZLZHVfp4mFLdunJYTYPE-1707544550-1-AdGjmiZB3MDHa21fpZDWpK3GjZJqWAqmxuue4u6EE5zxQHudXowGiXqdQkpJ0jVaxKj1GlEivs6NaLFLNXkLJyY=; user_id=DA8969; enctoken=E3JRLMxI+HOggVvXndQqU7/y7HD31JgIXTK5DZ2K5SWpsyXSmaiM1a+/+VmQrwhkdSUPXfv4BWOguDwxzkWgRM1Wzik7hLPGSWjvbVhHOJWBBjL4T3JDDQ=="
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://kite.zerodha.com/funds"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-kite-app-uuid",
+								"value": "1bcf72d3-4ae1-425d-ac6a-26f1adc6888d"
+							},
+							{
+								"key": "x-kite-userid",
+								"value": "DA8969"
+							},
+							{
+								"key": "x-kite-version",
+								"value": "3.0.0"
+							}
+						],
+						"url": {
+							"raw": "https://kite.zerodha.com/oms/user/margins",
+							"protocol": "https",
+							"host": [
+								"kite",
+								"zerodha",
+								"com"
+							],
+							"path": [
+								"oms",
+								"user",
+								"margins"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Zerrodha - MyAPI",
+			"item": []
+		},
+		{
+			"name": "fyers",
+			"item": [
+				{
+					"name": "order",
+					"item": [
+						{
+							"name": "orders",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"symbol\": \"CRUDEOILH2024\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://api.fyers.uat/fyers/orders",
+									"protocol": "http",
+									"host": [
+										"api",
+										"fyers",
+										"uat"
+									],
+									"path": [
+										"fyers",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Positions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"symbol\": \"CRUDEOILH2024\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://api.fyers.uat/fyers/positions",
+									"protocol": "http",
+									"host": [
+										"api",
+										"fyers",
+										"uat"
+									],
+									"path": [
+										"fyers",
+										"positions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "history",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"symbol\": \"CRUDEOILH2024\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://api.fyers.uat/fyers/history",
+									"protocol": "http",
+									"host": [
+										"api",
+										"fyers",
+										"uat"
+									],
+									"path": [
+										"fyers",
+										"history"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "webhook",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"symbol\": \"CRUDEOILH2024\",\r\n    \"price\": 654\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5001/fyers/webhook",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"fyers",
+										"webhook"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Generate Otp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Akash\",\r\n    \"lastName\": \"Yellgetti\",\r\n    \"gender\": \"m\",\r\n    \"dob\": \"2024-02-27T18:30:00.000Z\",\r\n    \"mobileNo\": \"9920021073\",\r\n    \"no\": null,\r\n    \"email\": null,\r\n    \"password\": null,\r\n    \"confirmPassword\": null,\r\n    \"type\": \"requestRegister\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5001/auth/otp/generate",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"auth",
+								"otp",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "api-web-bxum.onrender.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://ng-web-6xhi.onrender.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://ng-web-6xhi.onrender.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "cross-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pranita\",\r\n    \"lastName\": \"Yellgetti\",\r\n    \"gender\": \"f\",\r\n    \"dob\": \"1992-03-27T18:30:00.000Z\",\r\n    \"mobileNo\": \"9987654047\",\r\n    \"no\": \"4449\",\r\n    \"email\": null,\r\n    \"password\": null,\r\n    \"confirmPassword\": null,\r\n    \"type\": \"requestRegister\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api-web-bxum.onrender.com/auth/otp/verify",
+							"protocol": "https",
+							"host": [
+								"api-web-bxum",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"otp",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register Akash",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "api-web-bxum.onrender.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://ng-web-6xhi.onrender.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://ng-web-6xhi.onrender.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "cross-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Akash\",\r\n    \"lastName\": \"Yellgetti\",\r\n    \"gender\": \"f\",\r\n    \"dob\": \"1992-07-05T18:30:00.000Z\",\r\n    \"mobileNo\": \"9920021073\",\r\n    \"no\": \"4449\",\r\n    \"email\": \"aakash5792@gmail.com\",\r\n    \"password\": \"Suvarna@5792\",\r\n    \"confirmPassword\": \"Suvarna@5792\",\r\n    \"type\": \"requestRegister\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api-web-bxum.onrender.com/auth/register",
+							"protocol": "https",
+							"host": [
+								"api-web-bxum",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register Panu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "api-web-bxum.onrender.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://ng-web-6xhi.onrender.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://ng-web-6xhi.onrender.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "cross-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pranita\",\r\n    \"lastName\": \"Yellgetti\",\r\n    \"gender\": \"f\",\r\n    \"dob\": \"1992-03-28T18:30:00.000Z\",\r\n    \"mobileNo\": \"9987654047\",\r\n    \"no\": \"4449\",\r\n    \"email\": \"panunaik66@gmail.com\",\r\n    \"password\": \"Panu@5792\",\r\n    \"confirmPassword\": \"Panu@5792\",\r\n    \"type\": \"requestRegister\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5001/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login Akash",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.globals.set(\"token\", \"JWT \"+jsonData.data.tokens.accessToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "momentaglobaldev.btsmomenta.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "api-build-version",
+								"value": "1.1.96"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://ng-web-6xhi.onrender.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://ng-web-6xhi.onrender.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "cross-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aakash5792@gmail.com\",\r\n    \"password\": \"Suvarna@5792\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5001/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login Panu",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.globals.set(\"token\", \"JWT \"+jsonData.data.tokens.accessToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "momentaglobaldev.btsmomenta.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "api-build-version",
+								"value": "1.1.96"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://ng-web-6xhi.onrender.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://ng-web-6xhi.onrender.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "cross-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"panunaik66@gmail.com\",\r\n    \"password\": \"Suvarna@5792\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5001/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login Prem",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.globals.set(\"token\", \"JWT \"+jsonData.data.tokens.accessToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "momentaglobaldev.btsmomenta.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "api-build-version",
+								"value": "1.1.96"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://ng-web-6xhi.onrender.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://ng-web-6xhi.onrender.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "cross-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"thummaprem1@gmail.com\",\r\n    \"password\": \"Suvarna@5792\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5001/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register chirag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "api-web-bxum.onrender.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://ng-web-6xhi.onrender.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "referer",
+								"value": "https://ng-web-6xhi.onrender.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "cross-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Akash\",\r\n    \"lastName\": \"Yellgetti\",\r\n    \"gender\": \"f\",\r\n    \"dob\": \"1992-07-05T18:30:00.000Z\",\r\n    \"mobileNo\": \"9920021073\",\r\n    \"no\": \"4449\",\r\n    \"email\": \"chirag.vartak@gmail.com\",\r\n    \"password\": \"chirag@123\",\r\n    \"confirmPassword\": \"chirag@123\",\r\n    \"type\": \"requestRegister\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api-web-bxum.onrender.com/auth/register",
+							"protocol": "https",
+							"host": [
+								"api-web-bxum",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tradingview",
+			"item": [
+				{
+					"name": "webhook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderType\": \"MIS\",\r\n    \"type\": \"LE\",\r\n    \"exchange\": \"OANDA\",\r\n    \"symbol\": \"GBPUSD\",\r\n    \"qty\": 1,\r\n    \"price\": 1.265495,\r\n    \"timestamp\": \"1709154020537\",\r\n    \"volume\": \"47\",\r\n    \"timeframe\": \"1\",\r\n    \"datetime\": \"2024-2-28 15:11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/tradingview/webhook",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"tradingview",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "webhook logs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": [\r\n        {\r\n            \"$match\": {\r\n                \"isActive\": 1\r\n            }\r\n        },\r\n        {\r\n            \"$match\": {\r\n                \"symbol\": \"BAJAJ_AUTO\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/tradingview/webhook/logs",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"tradingview",
+								"webhook",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZWxldGVkQnkiOm51bGwsIl9pZCI6IjY1ZGY5MGE5NDg1ZmQ3NjVlZWU1N2NhNiIsImZpcnN0TmFtZSI6IkFrYXNoIiwibGFzdE5hbWUiOiJZZWxsZ2V0dGlpaWkiLCJkb2IiOiIxOTkyLTA3LTA1VDE4OjMwOjAwLjAwMFoiLCJnZW5kZXIiOiJtIiwibW9iaWxlTm8iOjk5MjAwMjEwNzMsImVtYWlsIjoiYWFrYXNoNTc5MkBnbWFpbC5jb20iLCJpc0FjdGl2ZSI6MSwiY3JlYXRlZEJ5IjpudWxsLCJ1cGRhdGVkQnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjQtMDItMjhUMTk6NTk6MzcuOTQxWiIsInVwZGF0ZWRBdCI6IjIwMjQtMDItMjlUMTk6NDA6MTMuNzMyWiIsIl9fdiI6MCwic2Vzc2lvbiI6IjY2MGQwZDkzY2FhNTgwY2FhMjk3OTBiYyIsImlhdCI6MTcxMjEzMTQ3NSwiZXhwIjoxNzEyMTQyMjc1fQ.cucjJRxgxYEjT9pvTod9b-z5dABcEjnIam2YEVKD1Wk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5001/user/detail",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"user",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user devices",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZWxldGVkQnkiOm51bGwsIl9pZCI6IjY2MGMwNzQxNjEyNmUwOGE1ZjQ0OTJlOCIsImZpcnN0TmFtZSI6IlByYW5pdGEiLCJsYXN0TmFtZSI6Ik5haWsiLCJkb2IiOiIxOTkyLTAzLTI4VDAwOjAwOjAwLjAwMFoiLCJnZW5kZXIiOiJGIiwibW9iaWxlTm8iOjk5ODc2NTQwNDcsImVtYWlsIjoicGFudW5haWs2NkBnbWFpbC5jb20iLCJhdmF0YXIiOiJhc2RzYSIsImF2YXRhcmVCYWNrZ3JvdW5kIjoic2FkYXMiLCJpc0FjdGl2ZSI6MSwiY3JlYXRlZEJ5IjoxLCJ1cGRhdGVkQnkiOjEsImNyZWF0ZWRBdCI6IjIwMjQtMDQtMDJUMTM6MjU6MjEuOTYzWiIsInVwZGF0ZWRBdCI6IjIwMjQtMDQtMDZUMTE6NDk6MDkuNDM0WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjY2MTI1OWYyMWYxOTkxNzIyNjI5MWQ3ZSIsImlhdCI6MTcxMjQ3ODcwNywiZXhwIjoxNzEyNDg5NTA3fQ.OHuFsZMB3zaBYDTG7wCsqtGClUu3pi-CXbrDkBasFCY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36\",\r\n    \"os\": \"Windows\",\r\n    \"browser\": \"Chrome\",\r\n    \"device\": \"Unknown\",\r\n    \"os_version\": \"windows-10\",\r\n    \"browser_version\": \"123.0.0.0\",\r\n    \"deviceType\": \"desktop\",\r\n    \"orientation\": \"landscape\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/device/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"device",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZWxldGVkQnkiOm51bGwsIl9pZCI6IjY2MGMwNzQxNjEyNmUwOGE1ZjQ0OTJlOCIsImZpcnN0TmFtZSI6IlByYW5pdGEiLCJsYXN0TmFtZSI6Ik5haWsiLCJkb2IiOiIxOTkyLTAzLTI4VDAwOjAwOjAwLjAwMFoiLCJnZW5kZXIiOiJGIiwibW9iaWxlTm8iOjk5ODc2NTQwNDcsImVtYWlsIjoicGFudW5haWs2NkBnbWFpbC5jb20iLCJhdmF0YXIiOiJhc2RzYSIsImF2YXRhcmVCYWNrZ3JvdW5kIjoic2FkYXMiLCJpc0FjdGl2ZSI6MSwiY3JlYXRlZEJ5IjoxLCJ1cGRhdGVkQnkiOjEsImNyZWF0ZWRBdCI6IjIwMjQtMDQtMDJUMTM6MjU6MjEuOTYzWiIsInVwZGF0ZWRBdCI6IjIwMjQtMDQtMDZUMTE6NDk6MDkuNDM0WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjY2MTI1OWYyMWYxOTkxNzIyNjI5MWQ3ZSIsImlhdCI6MTcxMjQ3ODcwNywiZXhwIjoxNzEyNDg5NTA3fQ.OHuFsZMB3zaBYDTG7wCsqtGClUu3pi-CXbrDkBasFCY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36\",\r\n    \"os\": \"Windows\",\r\n    \"browser\": \"Chrome\",\r\n    \"device\": \"Unknown\",\r\n    \"os_version\": \"windows-10\",\r\n    \"browser_version\": \"123.0.0.0\",\r\n    \"deviceType\": \"desktop\",\r\n    \"orientation\": \"landscape\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/device/detail",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"device",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZWxldGVkQnkiOm51bGwsIl9pZCI6IjY2MGMwNzQxNjEyNmUwOGE1ZjQ0OTJlOCIsImZpcnN0TmFtZSI6IlByYW5pdGEiLCJsYXN0TmFtZSI6Ik5haWsiLCJkb2IiOiIxOTkyLTAzLTI4VDAwOjAwOjAwLjAwMFoiLCJnZW5kZXIiOiJGIiwibW9iaWxlTm8iOjk5ODc2NTQwNDcsImVtYWlsIjoicGFudW5haWs2NkBnbWFpbC5jb20iLCJhdmF0YXIiOiJhc2RzYSIsImF2YXRhcmVCYWNrZ3JvdW5kIjoic2FkYXMiLCJpc0FjdGl2ZSI6MSwiY3JlYXRlZEJ5IjoxLCJ1cGRhdGVkQnkiOjEsImNyZWF0ZWRBdCI6IjIwMjQtMDQtMDJUMTM6MjU6MjEuOTYzWiIsInVwZGF0ZWRBdCI6IjIwMjQtMDQtMDZUMTE6NDk6MDkuNDM0WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjY2MTI1OWYyMWYxOTkxNzIyNjI5MWQ3ZSIsImlhdCI6MTcxMjQ3ODcwNywiZXhwIjoxNzEyNDg5NTA3fQ.OHuFsZMB3zaBYDTG7wCsqtGClUu3pi-CXbrDkBasFCY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36\",\r\n    \"os\": \"Windows\",\r\n    \"browser\": \"Chrome\",\r\n    \"device\": \"Unknown\",\r\n    \"os_version\": \"windows-10\",\r\n    \"browser_version\": \"123.0.0.0\",\r\n    \"deviceType\": \"desktop\",\r\n    \"orientation\": \"landscape\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/device/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"device",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contact",
+			"item": [
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5001/contact/refresh",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"contact",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Budget",
+			"item": [
+				{
+					"name": "get Budget",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5001/budget/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"budget",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Budget",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"663b4ecaec59bb99e2c8a7b7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/budget/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"budget",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create bulk Budget",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"income\",\r\n            \"subcategory\": \"salary\",\r\n            \"title\": \"Salary\",\r\n            \"description\": \"Job\",\r\n            \"amount\": 140000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"income\",\r\n            \"subcategory\": \"rental\",\r\n            \"title\": \"H-102\",\r\n            \"description\": \"House rental\",\r\n            \"amount\": 22000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"income\",\r\n            \"subcategory\": \"rental\",\r\n            \"title\": \"A-704\",\r\n            \"description\": \"House rental\",\r\n            \"amount\": 13000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"bill\",\r\n            \"title\": \"Amma\",\r\n            \"description\": \"Daily Expense\",\r\n            \"amount\": 10000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"bill\",\r\n            \"title\": \"Dmart\",\r\n            \"description\": \"Daily Expense\",\r\n            \"amount\": 5000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"Self\",\r\n            \"title\": \"Akash\",\r\n            \"description\": \"Daily Expense\",\r\n            \"amount\": 5000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"policy\",\r\n            \"title\": \"Term Plan\",\r\n            \"description\": \"Max Life\",\r\n            \"amount\": 1700\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"bill\",\r\n            \"title\": \"Mobile\",\r\n            \"description\": \"Akash Panu and Amma\",\r\n            \"amount\": 1300\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"bill\",\r\n            \"title\": \"Fibre\",\r\n            \"description\": \"704 Kashigoan\",\r\n            \"amount\": 1200\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"bill\",\r\n            \"title\": \"maintenance\",\r\n            \"description\": \"Society maintenance 704 Kashigoan\",\r\n            \"amount\": 2700\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"bill\",\r\n            \"title\": \"maintenance\",\r\n            \"description\": \"Society maintenance 102 Borivali\",\r\n            \"amount\": 2700\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"expense\",\r\n            \"title\": \"Bishi\",\r\n            \"description\": \"\",\r\n            \"amount\": 10000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"loan\",\r\n            \"title\": \"Home\",\r\n            \"description\": \"A-704 - Kashigoan\",\r\n            \"amount\": 50000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"loan\",\r\n            \"title\": \"Scaler\",\r\n            \"description\": \"Master's\",\r\n            \"amount\": 11500\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"loan\",\r\n            \"title\": \"Home\",\r\n            \"description\": \"H-102 - Borivali\",\r\n            \"amount\": 59000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"expense\",\r\n            \"subcategory\": \"loan\",\r\n            \"title\": \"Gold\",\r\n            \"description\": \"Panu\",\r\n            \"amount\": 4000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"want\",\r\n            \"subcategory\": \"invest\",\r\n            \"title\": \"PPF\",\r\n            \"description\": \"Child Education\",\r\n            \"amount\": 5000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"investment\",\r\n            \"subcategory\": \"invest\",\r\n            \"title\": \"PPF\",\r\n            \"description\": \"Child Education\",\r\n            \"amount\": 5000\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"category\": \"investment\",\r\n            \"subcategory\": \"invest\",\r\n            \"title\": \"NPS\",\r\n            \"description\": \"Retirement\",\r\n            \"amount\": 5000\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/budget/bulk/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"budget",
+								"bulk",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Budget",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"65df90a9485fd765eee57ca6\",\r\n    \"category\": \"want\",\r\n    \"subcategory\": \"clothes\",\r\n    \"title\": \"Zudio\",\r\n    \"description\": \"#want\",\r\n    \"amount\": 5000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/budget/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"budget",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "planner",
+			"item": [
+				{
+					"name": "get Planner",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5001/planner/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"planner",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create bulk Planner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"loan\",\r\n            \"title\": \"H-102 Vrushali\",\r\n            \"description\": \"Home Loan\",\r\n            \"amount\": 7500000,\r\n            \"rate\": 8.6,\r\n            \"tenure\": 19,\r\n            \"data\": \"\"\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"loan\",\r\n            \"title\": \"Down Payment\",\r\n            \"description\": \"Gold Loan\",\r\n            \"amount\": 520000,\r\n            \"rate\": 9.6,\r\n            \"tenure\": 1,\r\n            \"data\": \"\"\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"loan\",\r\n            \"title\": \"Overdraft Loan\",\r\n            \"description\": \"Overdraft against property\",\r\n            \"amount\": 2400000,\r\n            \"rate\": 9.6,\r\n            \"tenure\": 1,\r\n            \"data\": \"\"\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"investment\",\r\n            \"title\": \"PPF\",\r\n            \"description\": \"#safeinvestment\",\r\n            \"amount\": 5000000,\r\n            \"rate\": 8.1,\r\n            \"tenure\": 15,\r\n            \"data\": \"\"\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"investment\",\r\n            \"title\": \"NPS\",\r\n            \"description\": \"#safeinvestment\",\r\n            \"amount\": 5000000,\r\n            \"rate\": 14,\r\n            \"tenure\": 15,\r\n            \"data\": \"\"\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"investment\",\r\n            \"title\": \"EPF\",\r\n            \"description\": \"#safeinvestment\",\r\n            \"amount\": 5000000,\r\n            \"rate\": 8.1,\r\n            \"tenure\": 15,\r\n            \"data\": \"\"\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"goal\",\r\n            \"title\": \"Emergency Fund\",\r\n            \"description\": \"\",\r\n            \"amount\": 5000000,\r\n            \"rate\": 8,\r\n            \"tenure\": 10,\r\n            \"data\": \"\"\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"goal\",\r\n            \"title\": \"Retirement\",\r\n            \"description\": \"\",\r\n            \"amount\": 35000000,\r\n            \"rate\": 12,\r\n            \"tenure\": 15,\r\n            \"data\": \"\"\r\n        },\r\n        {\r\n            \"userId\": \"65df90a9485fd765eee57ca6\",\r\n            \"type\": \"goal\",\r\n            \"title\": \"Short Term\",\r\n            \"description\": \"\",\r\n            \"amount\": 1000000,\r\n            \"rate\": 12,\r\n            \"tenure\": 5,\r\n            \"data\": \"\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/planner/bulk/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"planner",
+								"bulk",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Planner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"65df90a9485fd765eee57ca6\",\r\n    \"type\": \"goal\",\r\n    \"title\": \"Short Term #1\",\r\n    \"description\": \"\",\r\n    \"amount\": 1000000,\r\n    \"rate\": 12,\r\n    \"tenure\": 5,\r\n    \"data\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/planner/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"planner",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Planner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"663c87848f51dd83ca4aea20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/planner/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"planner",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.device = exports.contact = exports.tradingview = exports.fyers = exports.personalTransaction = exports.notification = exports.conversation = exports.group = exports.moneyControl = exports.user = exports.socket = exports.auth = void 0;
+exports.planner = exports.budget = exports.device = exports.contact = exports.tradingview = exports.fyers = exports.personalTransaction = exports.notification = exports.conversation = exports.group = exports.moneyControl = exports.user = exports.socket = exports.auth = void 0;
 var auth_route_1 = require("./auth.route");
 Object.defineProperty(exports, "auth", { enumerable: true, get: function () { return auth_route_1.auth; } });
 var socket_route_1 = require("./socket.route");
@@ -25,3 +25,7 @@ var contact_route_1 = require("./contact.route");
 Object.defineProperty(exports, "contact", { enumerable: true, get: function () { return contact_route_1.contact; } });
 var device_route_1 = require("./device.route");
 Object.defineProperty(exports, "device", { enumerable: true, get: function () { return device_route_1.device; } });
+var budget_route_1 = require("./budget.route");
+Object.defineProperty(exports, "budget", { enumerable: true, get: function () { return budget_route_1.budget; } });
+var planner_route_1 = require("./planner.route");
+Object.defineProperty(exports, "planner", { enumerable: true, get: function () { return planner_route_1.planner; } });

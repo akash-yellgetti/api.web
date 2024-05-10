@@ -16,3 +16,5 @@ exports.route.use('/personal/transaction', route_1.personalTransaction);
 exports.route.use('/fyers', route_1.fyers);
 exports.route.use('/tradingview', route_1.tradingview);
 exports.route.use('/device', route_1.device);
+exports.route.use('/budget', route_1.budget);
+exports.route.use('/planner', route_1.planner);

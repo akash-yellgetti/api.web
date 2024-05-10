@@ -33,6 +33,33 @@ exports.resolvers = {
     createUser: (args) => __awaiter(void 0, void 0, void 0, function* () {
         return yield service_1.userService.create(args);
     }),
+    getConstants: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.constantService.read(args.input);
+    }),
+    createConstant: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.constantService.create(args.input);
+    }),
+    getBudget: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.budgetService.read(args.input);
+    }),
+    createBudget: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.budgetService.create(args.input);
+    }),
+    bulkCreateBudget: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.budgetService.bulkCreate(args.input);
+    }),
+    deleteBudget: (id) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.plannerService.hardDeleteOne({ _id: new mongoose_1.default.Types.ObjectId(id) });
+    }),
+    getPlanner: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.plannerService.read(args.input);
+    }),
+    createPlanner: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.plannerService.create(args.input);
+    }),
+    deletePlanner: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.plannerService.hardDeleteOne(args.input);
+    }),
     getDevices: () => __awaiter(void 0, void 0, void 0, function* () {
         return yield service_1.deviceService.read();
     }),

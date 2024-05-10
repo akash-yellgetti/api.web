@@ -62,9 +62,13 @@ class Model {
                 upsert: true // Make this update into an upsert
             });
         });
+        // Soft Delete One
+        this.hardDeleteOne = (where) => __awaiter(this, void 0, void 0, function* () {
+            return yield this.model.deleteOne(where);
+        });
         // Soft Delete
-        this.hardDelete = (where) => __awaiter(this, void 0, void 0, function* () {
-            return yield this.model.remove(where);
+        this.hardDeleteMany = (where) => __awaiter(this, void 0, void 0, function* () {
+            return yield this.model.deleteMany(where);
         });
         // Soft Delete
         this.softDelete = (where, updateData) => __awaiter(this, void 0, void 0, function* () {
