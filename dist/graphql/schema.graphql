@@ -1,0 +1,265 @@
+type User {
+  _id: String!,
+  firstName: String!,
+  lastName: String!,
+  dob: String!,
+  gender: String!,
+  mobileNo: String!,
+  email: String,
+  password: String!,
+  avatar: String!,
+  avatareBackground: String!,
+  isActive: String!,
+  contacts: [Contact],
+  sockets: [Socket]
+}
+
+input UserInput {
+  firstName: String!,
+  lastName: String!,
+  dob: String!,
+  gender: String!,
+  mobileNo: String!,
+  email: String,
+  password: String!,
+  avatar: String!,
+  avatareBackground: String!
+}
+
+input ContactInput {
+  userId: String!,
+  firstName: String!,
+  lastName: String,
+  dob: String,
+  gender: String,
+  mobileNo: String!,
+  email: String,
+}
+
+type Contact {
+  _id: String!,
+  userId: String!,
+  conversationId: String,
+  firstName: String!,
+  lastName: String!,
+  dob: String!,
+  gender: String!,
+  mobileNo: String!,
+  email: String,
+  password: String!,
+  avatar: String!,
+  avatareBackground: String!,
+  isActive: String!
+  user: User
+  refUser: User
+}
+
+type deviceData {
+  device: String!,
+  deviceType: String!,
+  os: String!,
+  version: String!,
+  userAgent: String!,
+}
+
+type Device {
+  _id: String!,
+  userId: String!
+  device: String!
+  deviceType: String!
+  data: deviceData
+  os: String!
+  version: String!
+  isActive: String!
+  user: User,
+}
+
+type Constant {
+  _id: String!,
+  column: String!
+  code: String!
+  value: String!
+  description: String!
+  isActive: String!,
+  subdata: [Constant],
+}
+
+input ConstantInput {
+  column: String!
+  code: String!
+  value: String!
+  description: String
+  isActive: String
+}
+
+input ConstantQueryInput {
+  column: String
+  code: String
+  value: String
+  description: String
+  isActive: String
+}
+
+type hardDeleteOne {
+  acknowledged: String!,
+  deletedCount: String!,
+}
+
+type Budget {
+  _id: String!,
+  userId: String!
+  category: String!
+  subcategory: String!
+  title: String!
+  description: String!
+  amount: String!
+  isActive: String!
+}
+
+input BudgetInput {
+  userId: String!
+  category: String!
+  subcategory: String!
+  title: String!
+  description: String!
+  amount: String!
+  isActive: String!
+}
+
+
+type Planner {
+  _id: String!,
+  userId: String!
+  title: String!
+  description: String!
+  data: String!
+  isActive: String!
+}
+
+input PlannerInput {
+  userId: String!
+  title: String!
+  description: String!
+  data: String!
+  isActive: String!
+}
+
+
+
+type Socket {
+  _id: String!,
+  userId: String!
+  socketId: String!
+  deviceId: String!
+  isActive: String!
+  user: User,
+  device: Device,
+}
+
+input SocketInput {
+  userId: String,
+  socketId: String,
+  deviceId: String,
+  isActive: String!
+}
+
+type Conversation {
+  _id: String!,
+  type: String!,
+  name: String,
+  isActive: String!
+  members: [ConversationMember],
+  messages: [ConversationMessage],
+}
+
+type ConversationMember {
+  _id: String!,
+  conversationId: String!,
+  userId: String!
+  isActive: String!
+  user: User,
+  conversation: Conversation,
+}
+
+type ConversationMessage {
+  _id: String!,
+  conversationId: String!,
+  userId: String!,
+  type: String!,
+  message: String!
+  user: User,
+  conversation: Conversation,
+  isActive: String!
+}
+
+input ConversationInput {
+  type: String!,
+  name: String,
+}
+
+input ConversationMemberInput {
+  conversationId: String!,
+  userId: String!
+}
+
+input ConversationMessageInput {
+  conversationId: String!,
+  userId: String!,
+  type: String!,
+  message: String!
+}
+
+type Query {
+  getUser(id: String!): User,
+  getUsers: [User],
+  getConstants(input: ConstantQueryInput): [Constant],
+  getDevice(id: String!): Device,
+  getDevices: [Device],
+  getBudget: [Budget],
+  getSocket(id: String!): Socket,
+  getSockets(input: SocketInput): [Socket],
+  getContact(id: String!): Contact,
+  getContacts: [Contact],
+  getUserConversations(id: String!): [ConversationMember],
+  getConversation(id: String!): Conversation,
+  getConversations: [Conversation],
+  getConversationMembers: [ConversationMember],
+  getConversationMessages: [ConversationMessage],
+}
+
+type Mutation {
+  # User
+  createUser(input: UserInput!): User,
+  updateUser(id: String!, input: UserInput!): User,
+  deleteUser(id: String!): User,
+  # Contact
+  createContact(input: ContactInput!): Contact,
+  updateContact(id: String!, input: ContactInput!): Contact,
+  deleteContact(id: String!): Contact
+  # Constant
+  createConstant(input: ConstantInput!): Constant,
+  deleteConstant(id: String!): Contact
+  # Budget
+  createBudget(input: BudgetInput!): Budget,
+  bulkCreateBudget(input: [BudgetInput!]): [Budget],
+  updateBudget(id: String!, input: BudgetInput!): Budget
+  deleteBudget(id: String!): hardDeleteOne!
+  # Planner
+  createPlanner(input: PlannerInput!): Planner,
+  bulkCreatePlanner(input: [PlannerInput!]): [Planner],
+  updatePlanner(id: String!, input: PlannerInput!): Planner
+  deletePlanner(id: String!): hardDeleteOne!
+  
+  # Conversation
+  createConversation(input: ConversationInput!): Conversation,
+  updateConversation(id: String!, input: ConversationInput!): Conversation,
+  deleteConversation(id: String!): Conversation,
+  # ConversationMembers
+  createConversationMember(input: ConversationMemberInput!): ConversationMember,
+  updateConversationMember(id: String!, input: ConversationMemberInput!): ConversationMember,
+  deleteConversationMember(id: String!): ConversationMember,
+  # ConversationMessages
+  createConversationMessage(input: ConversationMessageInput!): ConversationMessage,
+  updateConversationMessage(id: String!, input: ConversationMessageInput!): ConversationMessage,
+  deleteConversationMessage(id: String!): ConversationMessage
+}

@@ -12,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-html": "cp -r src/views dist/.",
     "copy-public": "cp -r src/public dist/.",
-    "build": "tsc && npm run copy-public && npm run copy-html"
+    "copy-graphql": "cp -r src/graphql dist/.",
+    "build": "tsc && npm run copy-public && npm run copy-html && npm run copy-graphql"
   },
   "mdSeed": {
     "seedersFolder": "./src/seeders",

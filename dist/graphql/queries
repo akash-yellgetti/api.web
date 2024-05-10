@@ -1,0 +1,224 @@
+{
+  getUsers {
+    _id
+    firstName,
+    lastName,
+    mobileNo,
+    contacts {
+      firstName,
+      mobileNo
+    }
+    sockets {
+      _id,
+      socketId
+    }
+  }
+}
+
+{
+  getUsers {
+    _id
+    firstName
+    lastName
+    mobileNo
+    contacts {
+      firstName
+      mobileNo,
+      conversationId,
+      refUser {
+        firstName
+      }
+    }
+  }
+}
+
+{
+  getConstants(input: {column: "category"}) {
+    _id
+    column
+    code
+    value
+    subdata {
+      _id
+      column
+      code
+      value
+      subdata {
+        _id
+        column
+        code
+        value
+      }
+    }
+  }
+}
+
+
+
+mutation {
+  createConstant(input: {
+            column: "expense",
+            code: "transport",
+            value: "Transport"
+          }) 
+  {
+    _id
+  }
+}
+
+
+{
+  getBudget {
+    _id,
+    category,
+    subcategory,
+    title,
+    description,
+    amount
+  }
+}
+
+
+mutation {
+  deleteBudget(id: "663b4ecaec59bb99e2c8a7b7") {
+    deletedCount
+  }
+}
+
+
+mutation {
+  createBudget(input: {
+    userId: "65df90a9485fd765eee57ca6"
+    category: "income",
+    subcategory: "rental",
+    title: "A-704 Manali",
+    description: "rental",
+    amount: "13000",
+    isActive:"1"
+          }) 
+  {
+    _id
+  }
+}
+
+{
+  getContacts {
+    _id,
+    firstName,
+    refUser {
+      _id,
+      firstName
+    },
+    user {
+      _id,
+      firstName
+    }
+  }
+}
+
+
+mutation {
+  createConversation(input:{ type: "Individual" }) {
+    _id
+  }
+}
+
+mutation {
+  createConversationMember(input:{ conversationId: "6613d6fd9101ac6cc1024c9b", userId: "65df90a9485fd765eee57ca6" }) {
+    _id
+  }
+}
+
+mutation {
+  createConversationMember(input:{ conversationId: "6613d6fd9101ac6cc1024c9b", userId: "6613d0925170c9239a9a234d" }) {
+    _id
+  }
+}
+
+
+{
+  getConversations {
+    _id
+    members {
+      _id
+      conversationId
+      userId
+      user {
+        firstName
+      }
+    }
+    messages {
+      _id
+      userId
+      type
+      message
+      user {
+        _id
+        firstName
+      }
+    }
+  }
+}
+
+
+{
+  getConversations {
+    _id,
+    type,
+    members {
+      _id
+      conversationId
+      userId
+      user {
+        firstName
+      }
+    }
+  }
+}
+
+
+{
+  getDevices {
+    _id,
+    userId,
+    device,
+    deviceType,
+    
+    user {
+      _id,
+      firstName,
+      lastName,
+      email
+    }
+  }
+}
+
+
+{
+   getConversationMessages {
+    _id,
+    conversationId,
+    conversation {
+      _id,
+      type,
+    },
+    userId,
+    type,
+    message,
+    
+    user {
+      firstName
+    }
+  }
+}
+
+mutation {
+  createConversationMessage(input: {
+    conversationId:"660d2f6094a6fdfd5ee5e3ff",
+    userId: "65df90a9485fd765eee57ca6",
+    type: "text",
+    message: "hi"
+  }) {
+    _id
+  }
+}
