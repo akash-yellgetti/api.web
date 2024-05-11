@@ -11,7 +11,7 @@ class Budget {
     const user: any = request.user;
     log.info('controller.budget.list');
     try {
-      const data = await budgetService.read({ userId: user._id });
+      const data = await budgetService.read({ userId: user._id }, 0);
       return new Api(response).success().code(200).send({ data });
     } catch (e: any) {
       log.error(e.message, e);
