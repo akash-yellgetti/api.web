@@ -6,6 +6,7 @@ export { Planner, PlannerDocument } from "./planner.model";
 export { Socket, SocketDocument } from "./socket.model";
 export { Session, SessionDocument } from "./session.model";
 export { Device, DeviceDocument } from "./device.model";
+export { Categories, CategoriesDocument } from "./categories.model";
 export { Otp, OtpDocument } from "./otp.model";
 export { Conversation, ConversationDocument } from "./conversation.model";
 export { ConversationMember, ConversationMemberDocument } from "./conversationMember.model";

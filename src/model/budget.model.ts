@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 export interface BudgetDocument extends mongoose.Document {
   userId: string;
+  type: string;
   category: string;
   subcategory: string;
   title: string;
@@ -19,6 +20,7 @@ export interface BudgetDocument extends mongoose.Document {
 const BudgetSchema = new mongoose.Schema(
   {
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    type: { type: String, required: true},
     category: { type: String, required: true},
     subcategory: { type: String, required: true},
     title: { type: String, required: true},
