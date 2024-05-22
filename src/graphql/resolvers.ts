@@ -9,7 +9,8 @@ import {
   socketService,
   userService,
   budgetService,
-  plannerService
+  plannerService,
+  categoriesService
 } from '../service';
 
 
@@ -36,6 +37,18 @@ export const resolvers = {
     },
     createConstant: async (args: any) => {
       return await constantService.create(args.input);
+    },
+    getCategories: async (args: any) => {
+      return await categoriesService.read({  });
+    },
+    createCategory: async (args: any) => {
+      return await categoriesService.create(args.input);
+    },
+    bulkCreateCategory: async (args: any) => {
+      return await categoriesService.bulkCreate(args.input);
+    },
+    deleteCategory: async (id: string) => {
+      return await categoriesService.hardDeleteOne({ _id: new mongoose.Types.ObjectId(id) });
     },
     getBudget: async (args: any) => {
       return await budgetService.read(args.input);

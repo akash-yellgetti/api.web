@@ -12,7 +12,8 @@ import {
   tradingview,
   device,
   budget,
-  planner
+  planner,
+  categories
 } from '../route';
 import { Router } from 'express';
 export const route = Router();
@@ -31,3 +32,4 @@ route.use('/tradingview', tradingview);
 route.use('/device', device);
 route.use('/budget', budget);
 route.use('/planner', planner);
+route.use('/categories', categories);

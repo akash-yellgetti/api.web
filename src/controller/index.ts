@@ -11,5 +11,6 @@ export { FyersController } from './fyers.controller';
 export { ContactController } from './contact.controller';
 export { DeviceController } from './device.controller';
 export { BudgetController } from './budget.controller';
+export { CategoriesController } from './categories.controller';
 export { PlannerController } from './planner.controller';
 export { TradingviewController } from './tradingview.controller';

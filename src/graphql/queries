@@ -85,6 +85,66 @@ mutation {
   }
 }
 
+{
+  getCategories {
+    _id,
+    parentId,
+    code,
+    title
+  }
+}
+
+mutation { 
+  createCategory (input:{ code: "income", color: "green", icon:"fa fa-sm fa-plus", title:"Income", description:"#" }) {
+    _id
+  }
+}
+
+mutation { 
+  createCategory (input:{ 
+    parentCode:"income", 
+    code: "job", 
+    color: "green", 
+    icon:"fa fa-sm fa-plus", 
+    title:"Job", 
+    description:"#" }) {
+    _id
+  }
+}
+
+mutation { 
+  createCategory (input:{ code: "expense", color: "green", icon:"fa fa-sm fa-plus", title:"Expense", description:"#" }) {
+    _id
+  }
+}
+
+mutation { 
+  createCategory (input:{ parentId: "664d935aa100778dcf895497", code: "housing", color: "yellow", icon:"fa fa-sm fa-plus", title:"housing", description:"#" }) {
+    _id
+  }
+}
+
+mutation { 
+  createCategory (input:{ parentId: "664d935aa100778dcf895497", code: "loan", color: "yellow", icon:"fa fa-sm fa-plus", title:"Loan", description:"#" }) {
+    _id
+  }
+}
+
+mutation { 
+  createCategory (input:{ code: "goal", color: "yellow", icon:"fa fa-sm fa-plus", title:"Goal", description:"#" }) {
+    _id
+  }
+}
+
+
+
+mutation { 
+  createCategory (input:{ code: "investment", color: "blue", icon:"fa fa-sm fa-plus", title:"Investment", description:"#" }) {
+    _id
+  }
+}
+
+
 
 mutation {
   createBudget(input: {

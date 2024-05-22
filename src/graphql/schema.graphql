@@ -145,6 +145,38 @@ input PlannerInput {
 }
 
 
+type Category {
+  _id: String!,
+  parentCode: String,
+  code: String!,
+  color: String!,
+  icon: String!,
+  title: String!,
+  description: String!,
+  isActive: String!,
+  parent: Category,
+  subcategories: [Category],
+}
+
+input CategoryInput {
+  parentCode: String,
+  code: String!,
+  title: String!,
+  description: String!,
+  icon: String!,
+  color: String!,
+  isActive: String,
+}
+
+input QueryCategoryInput {
+  parentCode: String,
+  code: String,
+  title: String,
+  description: String,
+  icon: String,
+  color: String,
+  isActive: String,
+}
 
 type Socket {
   _id: String!,
@@ -216,6 +248,7 @@ type Query {
   getDevice(id: String!): Device,
   getDevices: [Device],
   getBudget: [Budget],
+  getCategories(input: QueryCategoryInput): [Category],
   getSocket(id: String!): Socket,
   getSockets(input: SocketInput): [Socket],
   getContact(id: String!): Contact,
@@ -239,6 +272,11 @@ type Mutation {
   # Constant
   createConstant(input: ConstantInput!): Constant,
   deleteConstant(id: String!): Contact
+  # Category
+  createCategory(input: CategoryInput!): Category,
+  bulkCreateCategory(input: [CategoryInput!]): [Category],
+  updateCategory(id: String!, input: CategoryInput!): Category
+  deleteCategory(id: String!): hardDeleteOne!
   # Budget
   createBudget(input: BudgetInput!): Budget,
   bulkCreateBudget(input: [BudgetInput!]): [Budget],

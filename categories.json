@@ -1,0 +1,894 @@
+[
+  {
+    "code": "income",
+    "color": "green",
+    "icon": "fa fa-address-book-o",
+    "title": "Income",
+    "description": "#"
+  },
+  {
+    "code": "expense",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Expense",
+    "description": "#"
+  },
+  {
+    "code": "goal",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Goal",
+    "description": "#"
+  },
+  {
+    "code": "investment",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Investment",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "loan",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Loan",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "housing",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Housing",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "transportation",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Transportation",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "childcare",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Childcare",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "insurance",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Insurance",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "food",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Food",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "health",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Health",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "entertainment",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Entertainment",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "pets",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Pets",
+    "description": "#"
+  },
+  {
+    "parentCode": "expense",
+    "code": "personal",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Personal",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal",
+    "code": "goal-short-term",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Short Term",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal",
+    "code": "goal-mid-term",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Mid Term",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal",
+    "code": "goal-long-term",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Long Term",
+    "description": "#"
+  },
+  {
+    "parentCode": "Investment",
+    "code": "investment-short-term",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Short Term",
+    "description": "#"
+  },
+  {
+    "parentCode": "Investment",
+    "code": "investment-mid-term",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Mid Term",
+    "description": "#"
+  },
+  {
+    "parentCode": "Investment",
+    "code": "investment-long-term",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Long Term",
+    "description": "#"
+  },
+  {
+    "parentCode": "housing",
+    "code": "rent",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Rent or mortgage and property tax",
+    "description": "#"
+  },
+  {
+    "parentCode": "housing",
+    "code": "utilities",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Utilities",
+    "description": "#"
+  },
+  {
+    "parentCode": "housing",
+    "code": "maintenance",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Maintenance",
+    "description": "#"
+  },
+  {
+    "parentCode": "housing",
+    "code": "insurance",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Insurance",
+    "description": "#"
+  },
+  {
+    "parentCode": "loan",
+    "code": "hl",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Housing Loan",
+    "description": "#"
+  },
+  {
+    "parentCode": "loan",
+    "code": "sl",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Student Loan",
+    "description": "#"
+  },
+  {
+    "parentCode": "loan",
+    "code": "gl",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Gold Loan",
+    "description": "#"
+  },
+  {
+    "parentCode": "loan",
+    "code": "pl",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Personal Loan",
+    "description": "#"
+  },
+  {
+    "parentCode": "loan",
+    "code": "bk",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Bike Loan",
+    "description": "#"
+  },
+  {
+    "parentCode": "loan",
+    "code": "cl",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Car Loan",
+    "description": "#"
+  },
+  {
+    "parentCode": "loan",
+    "code": "lap",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Loan Against Property (LAP)",
+    "description": "#"
+  },
+  {
+    "parentCode": "loan",
+    "code": "lafd",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Loan Against Fixed Deposit",
+    "description": "#"
+  },
+  {
+    "parentCode": "transportation",
+    "code": "car",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Car payments",
+    "description": "#"
+  },
+  {
+    "parentCode": "transportation",
+    "code": "maintenance",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Maintenance",
+    "description": "#"
+  },
+  {
+    "parentCode": "transportation",
+    "code": "gas",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Gas and tolls",
+    "description": "#"
+  },
+  {
+    "parentCode": "transportation",
+    "code": "parking",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Parking",
+    "description": "#"
+  },
+  {
+    "parentCode": "transportation",
+    "code": "public",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Public transportation costs",
+    "description": "#"
+  },
+  {
+    "parentCode": "transportation",
+    "code": "travel",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Travel",
+    "description": "#"
+  },
+  {
+    "parentCode": "transportation",
+    "code": "taxis",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Taxis and ride shares",
+    "description": "#"
+  },
+  {
+    "parentCode": "transportation",
+    "code": "auto",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Auto insurance",
+    "description": "#"
+  },
+  {
+    "parentCode": "childcare",
+    "code": "day",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Day care",
+    "description": "#"
+  },
+  {
+    "parentCode": "childcare",
+    "code": "after",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "After-school programs",
+    "description": "#"
+  },
+  {
+    "parentCode": "childcare",
+    "code": "tuition",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Tuition",
+    "description": "#"
+  },
+  {
+    "parentCode": "childcare",
+    "code": "babysitting",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Babysitting",
+    "description": "#"
+  },
+  {
+    "parentCode": "childcare",
+    "code": "clothes",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Clothes, personal care, and related expenses",
+    "description": "#"
+  },
+  {
+    "parentCode": "insurance",
+    "code": "health",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Health insurance premiums (if not deducted from your paycheck)",
+    "description": "#"
+  },
+  {
+    "parentCode": "insurance",
+    "code": "auto",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Auto and home insurance premiums",
+    "description": "#"
+  },
+  {
+    "parentCode": "insurance",
+    "code": "life",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Life insurance premiums",
+    "description": "#"
+  },
+  {
+    "parentCode": "insurance",
+    "code": "disability",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Disability income insurance premiums",
+    "description": "#"
+  },
+  {
+    "parentCode": "food",
+    "code": "groceries",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Groceries",
+    "description": "#"
+  },
+  {
+    "parentCode": "food",
+    "code": "takeout",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Takeout and restaurants",
+    "description": "#"
+  },
+  {
+    "parentCode": "health",
+    "code": "deductibles",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Deductibles, copays, and coinsurance",
+    "description": "#"
+  },
+  {
+    "parentCode": "health",
+    "code": "medical",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Medical and dental appointment costs not covered by insurance",
+    "description": "#"
+  },
+  {
+    "parentCode": "health",
+    "code": "prescriptions",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Prescriptions and over-the-counter drugs",
+    "description": "#"
+  },
+  {
+    "parentCode": "health",
+    "code": "eyeglasses",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Eyeglasses and contacts",
+    "description": "#"
+  },
+  {
+    "parentCode": "entertainment",
+    "code": "concert",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Concert, theater, and movie tickets",
+    "description": "#"
+  },
+  {
+    "parentCode": "entertainment",
+    "code": "paid",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Paid streaming and podcast services",
+    "description": "#"
+  },
+  {
+    "parentCode": "entertainment",
+    "code": "books",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Books",
+    "description": "#"
+  },
+  {
+    "parentCode": "entertainment",
+    "code": "travel",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Travel",
+    "description": "#"
+  },
+  {
+    "parentCode": "pets",
+    "code": "food",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Food, equipment and accessories, and toys",
+    "description": "#"
+  },
+  {
+    "parentCode": "pets",
+    "code": "medical",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Flea and tick prevention/other medications",
+    "description": "#"
+  },
+  {
+    "parentCode": "pets",
+    "code": "vet",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Vet bills",
+    "description": "#"
+  },
+  {
+    "parentCode": "pets",
+    "code": "pet",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Pet insurance",
+    "description": "#"
+  },
+  {
+    "parentCode": "personal",
+    "code": "accessories",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Clothing/shoes/accessories",
+    "description": "#"
+  },
+  {
+    "parentCode": "personal",
+    "code": "hair",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Hair care and other grooming",
+    "description": "#"
+  },
+  {
+    "parentCode": "personal",
+    "code": "toiletries",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Toiletries/cosmetics",
+    "description": "#"
+  },
+  {
+    "parentCode": "personal",
+    "code": "utilities",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Utilities: Phone Bill",
+    "description": "#"
+  },
+  {
+    "parentCode": "personal",
+    "code": "gym",
+    "color": "red",
+    "icon": "fa fa-address-book-o",
+    "title": "Gym membership",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-short-term",
+    "code": "saving",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Savings Accounts",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-short-term",
+    "code": "cd",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Certificates of Deposit (CDs)",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-short-term",
+    "code": "mmf",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Money Market Funds",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-short-term",
+    "code": "tb",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Treasury Bills (T-Bills)",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-short-term",
+    "code": "stbonds",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Short-Term Bond Funds",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-mid-term",
+    "code": "itbond",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Intermediate-Term Bonds",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-mid-term",
+    "code": "bmf",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Balanced Mutual Funds",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-mid-term",
+    "code": "dmf",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Dividend-Paying Stocks",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-mid-term",
+    "code": "reit",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Real Estate Investment Trusts (REITs)",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-mid-term",
+    "code": "lending",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Peer-to-Peer Lending",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-long-term",
+    "code": "stocks",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Stocks/Equities",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-long-term",
+    "code": "real-estate",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Real Estate",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-long-term",
+    "code": "retirement",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Retirement Accounts (401(k), IRA)",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-long-term",
+    "code": "indexfund",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Index Funds and ETFs",
+    "description": "#"
+  },
+  {
+    "parentCode": "investment-long-term",
+    "code": "gmf",
+    "color": "blue",
+    "icon": "fa fa-address-book-o",
+    "title": "Growth Mutual Funds",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "emergencyfund",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Build an Emergency Fund",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "payoffdebt",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Pay Off High-Interest Debt",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "downpaymenthome",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Save for a Down Payment on a Home",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "majorpurchase",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Save for a Major Purchase (e.g., New Gadget, Vacation)",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "start ",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Start or Increase Contributions to Retirement Accounts",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "save f",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Save for Minor Home Renovations",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "build ",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Build a Small Travel or Vacation Fund",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "establ",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Establish a Maintenance and Repair Fund for Car",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-short-term",
+    "code": "open a",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Open a 529 College Savings Plan",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "save f",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Save for a Larger Down Payment on a Home",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "pay of",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Pay Off All Consumer Debt (e.g., Student Loans, Credit Cards)",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "maximi",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Maximize Contributions to Retirement Accounts",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "save f",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Save for Major Home Renovations or Upgrades",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "invest",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Invest in a Diversified Portfolio",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "save f",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Save for Children’s Education",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "plan f",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Plan for Major Life Events (e.g., Weddings, Milestone Celebrations)",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "build ",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Build a Substantial Emergency Fund (6-12 months of living expenses)",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "save f",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Save for a New Car Purchase",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-mid-term",
+    "code": "establ",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Establish Multiple Streams of Income",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "achiev",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Achieve Complete Financial Independence",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "pay of",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Pay Off Mortgage Completely",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "ensure",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Ensure Full Funding of College Savings Accounts",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "plan f",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Plan for Early Retirement",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "develo",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Develop a Detailed Retirement Spending Plan",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "invest",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Invest in Real Estate or Vacation Home",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "build ",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Build a Legacy and Estate Plan",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "fund c",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Fund Charitable Giving or Set Up a Family Foundation",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "plan f",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Plan for Healthcare Costs in Retirement",
+    "description": "#"
+  },
+  {
+    "parentCode": "goal-long-term",
+    "code": "invest",
+    "color": "yellow",
+    "icon": "fa fa-address-book-o",
+    "title": "Invest in Personal Development and Continuing Education",
+    "description": "#"
+  }
+]
