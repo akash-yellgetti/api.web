@@ -14,6 +14,7 @@ const jwt_utils_1 = require("../utils/jwt.utils");
 const setting_1 = require("../config/setting");
 const service_1 = require("../service");
 const utils_1 = require("../utils");
+const email_util_1 = require("../utils/email.util");
 class Auth {
     constructor() {
         this.generateOTP = (request, response) => __awaiter(this, void 0, void 0, function* () {
@@ -37,7 +38,16 @@ class Auth {
                     "no": no
                 };
                 const data = yield service_1.otpService.create(createData);
-                const message = "Your OTP to register/access ITSLETS is " + createData.no + ". Please do not share it with anyone.";
+                const message = "Your OTP to register/access " + setting_1.setting.appName + " is " + createData.no + ". Please do not share it with anyone.";
+                // Email message options
+                const mailOptions = {
+                    from: 'jhammansharma23@gmail.com',
+                    to: inputs.email,
+                    subject: 'OTP Email',
+                    text: message
+                    // You can also use html key for HTML formatted emails
+                };
+                email_util_1.mailer.sendMail(mailOptions);
                 // sms([createData.mobileNo], message);
                 return new utils_1.Api(response).success().code(200).send({ data, message: 'OTP generated Succesful' });
             }

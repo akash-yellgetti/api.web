@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tradingviewService = exports.deviceService = exports.fyersService = exports.persoanlTransactionService = exports.conversationMessageService = exports.conversationMemberService = exports.conversationService = exports.moneyControlService = exports.otpService = exports.sessionService = exports.socketService = exports.plannerService = exports.budgetService = exports.constantService = exports.contactService = exports.userService = void 0;
+exports.tradingviewService = exports.deviceService = exports.fyersService = exports.persoanlTransactionService = exports.conversationMessageService = exports.conversationMemberService = exports.conversationService = exports.moneyControlService = exports.otpService = exports.sessionService = exports.socketService = exports.plannerService = exports.categoriesService = exports.budgetService = exports.constantService = exports.contactService = exports.userService = void 0;
 var user_service_1 = require("./user.service");
 Object.defineProperty(exports, "userService", { enumerable: true, get: function () { return user_service_1.userService; } });
 var contact_service_1 = require("./contact.service");
@@ -9,6 +9,8 @@ var constant_service_1 = require("./constant.service");
 Object.defineProperty(exports, "constantService", { enumerable: true, get: function () { return constant_service_1.constantService; } });
 var budget_service_1 = require("./budget.service");
 Object.defineProperty(exports, "budgetService", { enumerable: true, get: function () { return budget_service_1.budgetService; } });
+var categories_service_1 = require("./categories.service");
+Object.defineProperty(exports, "categoriesService", { enumerable: true, get: function () { return categories_service_1.categoriesService; } });
 var planner_service_1 = require("./planner.service");
 Object.defineProperty(exports, "plannerService", { enumerable: true, get: function () { return planner_service_1.plannerService; } });
 var socket_service_1 = require("./socket.service");

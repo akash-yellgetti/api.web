@@ -7,6 +7,7 @@ exports.Budget = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const BudgetSchema = new mongoose_1.default.Schema({
     userId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "User", required: true },
+    type: { type: String, required: true },
     category: { type: String, required: true },
     subcategory: { type: String, required: true },
     title: { type: String, required: true },

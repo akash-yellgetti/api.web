@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Tradingview = exports.PersoanlTransaction = exports.Notification = exports.ConversationMessage = exports.ConversationMember = exports.Conversation = exports.Otp = exports.Device = exports.Session = exports.Socket = exports.Planner = exports.Budget = exports.Constant = exports.Contact = exports.User = void 0;
+exports.Tradingview = exports.PersoanlTransaction = exports.Notification = exports.ConversationMessage = exports.ConversationMember = exports.Conversation = exports.Otp = exports.Categories = exports.Device = exports.Session = exports.Socket = exports.Planner = exports.Budget = exports.Constant = exports.Contact = exports.User = void 0;
 var user_model_1 = require("./user.model");
 Object.defineProperty(exports, "User", { enumerable: true, get: function () { return user_model_1.User; } });
 var contact_model_1 = require("./contact.model");
@@ -17,6 +17,8 @@ var session_model_1 = require("./session.model");
 Object.defineProperty(exports, "Session", { enumerable: true, get: function () { return session_model_1.Session; } });
 var device_model_1 = require("./device.model");
 Object.defineProperty(exports, "Device", { enumerable: true, get: function () { return device_model_1.Device; } });
+var categories_model_1 = require("./categories.model");
+Object.defineProperty(exports, "Categories", { enumerable: true, get: function () { return categories_model_1.Categories; } });
 var otp_model_1 = require("./otp.model");
 Object.defineProperty(exports, "Otp", { enumerable: true, get: function () { return otp_model_1.Otp; } });
 var conversation_model_1 = require("./conversation.model");

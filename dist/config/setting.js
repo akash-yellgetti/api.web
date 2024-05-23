@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.setting = void 0;
 exports.setting = {
+    appName: 'Financial Planner',
     program: 'api',
     mode: 'dev',
     port: process.env.NODE_PORT || 5001,
@@ -17,5 +18,12 @@ exports.setting = {
     saltWorkFactor: 10,
     accessTokenTtl: '180m',
     refreshTokenTtl: '1y',
-    privateKey: `samplePrivateKey`
+    privateKey: `samplePrivateKey`,
+    emailConfig: {
+        service: 'Gmail',
+        auth: {
+            user: 'jlsharma0119@gmail.com',
+            pass: 'ashczqbngufokkem' // ashc zqbn gufo kkem
+        }
+    }
 };

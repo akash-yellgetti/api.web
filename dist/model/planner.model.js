@@ -10,6 +10,7 @@ const PlannerSchema = new mongoose_1.default.Schema({
     type: { type: String, required: true },
     title: { type: String, required: true },
     description: { type: String },
+    principalAmount: { type: Number, required: true },
     amount: { type: Number, required: true },
     rate: { type: Number, required: true },
     tenure: { type: Number, required: true },

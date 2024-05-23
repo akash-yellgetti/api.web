@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.categories = void 0;
+const express_1 = require("express");
+const controller_1 = require("../controller");
+const middleware_1 = require("../middleware");
+exports.categories = (0, express_1.Router)();
+exports.categories.post('/create', middleware_1.auth, controller_1.CategoriesController.create);
+exports.categories.post('/bulk/create', middleware_1.auth, controller_1.CategoriesController.bulkCreate);
+// categories.post('/delete', auth, CategoriesController.delete);
+exports.categories.get('/list', middleware_1.auth, controller_1.CategoriesController.list);
+exports.categories.post('/list', middleware_1.auth, controller_1.CategoriesController.list);
+exports.categories.post('/detail', middleware_1.auth, controller_1.CategoriesController.detail);

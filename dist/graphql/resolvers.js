@@ -39,6 +39,18 @@ exports.resolvers = {
     createConstant: (args) => __awaiter(void 0, void 0, void 0, function* () {
         return yield service_1.constantService.create(args.input);
     }),
+    getCategories: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.categoriesService.read({});
+    }),
+    createCategory: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.categoriesService.create(args.input);
+    }),
+    bulkCreateCategory: (args) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.categoriesService.bulkCreate(args.input);
+    }),
+    deleteCategory: (id) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield service_1.categoriesService.hardDeleteOne({ _id: new mongoose_1.default.Types.ObjectId(id) });
+    }),
     getBudget: (args) => __awaiter(void 0, void 0, void 0, function* () {
         return yield service_1.budgetService.read(args.input);
     }),

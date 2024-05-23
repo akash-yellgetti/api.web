@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TradingviewController = exports.PlannerController = exports.BudgetController = exports.DeviceController = exports.ContactController = exports.FyersController = exports.PersonalTransactionController = exports.NotificationController = exports.ConversationController = exports.GroupController = exports.MoneyControlController = exports.UserController = exports.SocketController = exports.SessionController = exports.AuthController = void 0;
+exports.TradingviewController = exports.PlannerController = exports.CategoriesController = exports.BudgetController = exports.DeviceController = exports.ContactController = exports.FyersController = exports.PersonalTransactionController = exports.NotificationController = exports.ConversationController = exports.GroupController = exports.MoneyControlController = exports.UserController = exports.SocketController = exports.SessionController = exports.AuthController = void 0;
 var auth_controller_1 = require("./auth.controller");
 Object.defineProperty(exports, "AuthController", { enumerable: true, get: function () { return auth_controller_1.AuthController; } });
 var session_controller_1 = require("./session.controller");
@@ -27,6 +27,8 @@ var device_controller_1 = require("./device.controller");
 Object.defineProperty(exports, "DeviceController", { enumerable: true, get: function () { return device_controller_1.DeviceController; } });
 var budget_controller_1 = require("./budget.controller");
 Object.defineProperty(exports, "BudgetController", { enumerable: true, get: function () { return budget_controller_1.BudgetController; } });
+var categories_controller_1 = require("./categories.controller");
+Object.defineProperty(exports, "CategoriesController", { enumerable: true, get: function () { return categories_controller_1.CategoriesController; } });
 var planner_controller_1 = require("./planner.controller");
 Object.defineProperty(exports, "PlannerController", { enumerable: true, get: function () { return planner_controller_1.PlannerController; } });
 var tradingview_controller_1 = require("./tradingview.controller");

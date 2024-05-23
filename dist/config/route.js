@@ -18,3 +18,4 @@ exports.route.use('/tradingview', route_1.tradingview);
 exports.route.use('/device', route_1.device);
 exports.route.use('/budget', route_1.budget);
 exports.route.use('/planner', route_1.planner);
+exports.route.use('/categories', route_1.categories);
