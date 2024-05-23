@@ -5,6 +5,7 @@ import { userService, sessionService, otpService } from "../service";
 import { Api, api, log } from '../utils';
 import { sms } from '../utils/sms.util';
 import { HttpStatusCode } from '../config/constant';
+import { mailer } from '../utils/email.util';
 
 class Auth {
 
@@ -30,7 +31,17 @@ class Auth {
         "no": no
       };
       const data: any = await otpService.create(createData);
-      const message = "Your OTP to register/access ITSLETS is "+createData.no+". Please do not share it with anyone."
+      const message = "Your OTP to register/access "+setting.appName+" is "+createData.no+". Please do not share it with anyone."
+      // Email message options
+      const mailOptions = {
+        from: 'jhammansharma23@gmail.com', // Sender address
+        to: inputs.email, // Recipient address
+        subject: 'OTP Email', // Subject line
+        text: message
+        // You can also use html key for HTML formatted emails
+      };
+
+      mailer.sendMail(mailOptions);
 
       // sms([createData.mobileNo], message);
       

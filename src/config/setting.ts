@@ -1,4 +1,5 @@
 export const setting = {
+  appName: 'Financial Planner',
   program: 'api',
   mode: 'dev',
   port: process.env.NODE_PORT || 5001,
@@ -14,5 +15,12 @@ export const setting = {
   saltWorkFactor: 10,
   accessTokenTtl: '180m',
   refreshTokenTtl: '1y',
-  privateKey: `samplePrivateKey`
+  privateKey: `samplePrivateKey`,
+  emailConfig: {
+    service: 'Gmail',
+    auth: {
+        user: 'jlsharma0119@gmail.com',
+        pass: 'ashczqbngufokkem' // ashc zqbn gufo kkem
+    }
+  }
 };

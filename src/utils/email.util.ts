@@ -1,24 +1,43 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
+import { setting } from '../config/setting';
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
+interface EmailConfig {
+  service: string;
   auth: {
-    user: 'youremail@gmail.com',
-    pass: 'yourpassword'
-  }
-});
+    user: string;
+    pass: string;
+  };
+}
 
-const mailOptions = {
-  from: 'youremail@gmail.com',
-  to: 'myfriend@yahoo.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
+interface MailOptions {
+  from: string;
+  to: string;
+  subject: string;
+  text?: string;
+  html?: string;
+}
 
-transporter.sendMail(mailOptions, function(error: any, info: any){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
+class Mailer {
+  private transporter: nodemailer.Transporter;
+
+  constructor(private emailConfig: EmailConfig) {
+    this.transporter = nodemailer.createTransport(emailConfig);
   }
-});
+
+  public async sendMail(
+    mailOptions: MailOptions
+  ): Promise<nodemailer.SentMessageInfo> {
+    return new Promise((resolve, reject) => {
+      this.transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(info);
+        }
+      });
+    });
+  }
+}
+
+// Create a new Mailer instance
+export const mailer = new Mailer(setting.emailConfig);
