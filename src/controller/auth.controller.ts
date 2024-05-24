@@ -6,12 +6,29 @@ import { Api, api, log } from '../utils';
 import { sms } from '../utils/sms.util';
 import { HttpStatusCode } from '../config/constant';
 import { mailer } from '../utils/email.util';
+import { ema } from 'technicalindicators';
 
 class Auth {
 
   generateOTP = async (request: express.Request, response: express.Response) => {
     const inputs = { ...request.body, ...request.params};
     try {
+
+      const condition = { $or: [ 
+        {
+          email: inputs.email
+        },
+        {
+          mobileNo: inputs.mobileNo
+        }
+      ] };
+
+      const user = await userService.read(condition);
+
+      if (user.length > 0) {
+        return new Api(response).error().code(409).send({ data:  user, message: "User Already Exist" });
+      }
+
       const query = {
         where: {
           mobileNo: inputs.mobileNo,
@@ -68,19 +85,19 @@ class Auth {
       const temp: any = await otpService.readOne(query.where);
 
       if (temp && temp.try == 3) {
-        const err = { code: 200, data:  temp, message: "Max try reached please regenerate the otp" };
+        const err = { code: 200, data:  temp, message: "Max try reached please regenerate the OTP" };
         return new Api(response).error().code(402).send(err);
       }
 
       if (temp && temp.no === parseInt(inputs.no)) {
-        return new Api(response).success().code(200).send({  data:  temp, message: "Otp Verified Successfully" });
+        return new Api(response).success().code(200).send({  data:  temp, message: "OTP Verified Successfully" });
       }
 
       const noTry: any =  parseInt(temp.try) + 1;
       
       const updateData = await otpService.update(query.where, { try: noTry });
 
-      return new Api(response).error().code(211).send({  data:  updateData, message: "Otp Doesn't match" });
+      return new Api(response).error().code(211).send({  data:  updateData, message: "OTP Doesn't Match" });
     } catch (e) {
       return new Api(response).error().code(200).send(e);
     }

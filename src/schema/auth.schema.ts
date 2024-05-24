@@ -13,6 +13,9 @@ export const auth: any = {
         .required('Last Name is required'),
       dob: date().required('Date of birth is required'),
       gender: string().required('Gender is required'),
+      email: string()
+        .email('Must be a valid email')
+        .required('Email is required'),
       mobileNo: number()
         .required('Mobile Number is required')
         .min(1000000000)
