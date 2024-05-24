@@ -107,7 +107,22 @@ class Auth {
     const inputs = { ...request.body, ...request.params};
     log.info('controller.auth.register');
     try {
-      const user = await userService.create(inputs);
+      const condition = { $or: [ 
+        {
+          email: inputs.email
+        },
+        {
+          mobileNo: inputs.mobileNo
+        }
+      ] };
+
+      let user = await userService.read(condition);
+
+      if (user.length > 0) {
+        return new Api(response).error().code(409).send({ data:  user, message: "User Already Exist" });
+      }
+
+      user = await userService.create(inputs);
       return new Api(response).success().code(200).send({  data:  user, message: "Registered Succesful" });
     } catch (e: any) {
       const code = e && e.code ? e.code : 400;

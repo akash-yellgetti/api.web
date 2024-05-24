@@ -54,7 +54,9 @@ export const auth: any = {
       password: string()
         .required('Password is required')
         .min(6, 'Password is too short - should be 6 chars minimum.'),
-      passwordConfirmation: string().oneOf(
+      confirmPassword: string()
+        .required('Confirm Password is required')
+        .oneOf(
         [ref('password'), null],
         'Passwords must match'
       )
