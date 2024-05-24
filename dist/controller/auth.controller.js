@@ -20,6 +20,18 @@ class Auth {
         this.generateOTP = (request, response) => __awaiter(this, void 0, void 0, function* () {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             try {
+                const condition = { $or: [
+                        {
+                            email: inputs.email
+                        },
+                        {
+                            mobileNo: inputs.mobileNo
+                        }
+                    ] };
+                const user = yield service_1.userService.read(condition);
+                if (user.length > 0) {
+                    return new utils_1.Api(response).error().code(409).send({ data: user, message: "User Already Exist" });
+                }
                 const query = {
                     where: {
                         mobileNo: inputs.mobileNo,
@@ -69,15 +81,15 @@ class Auth {
                 };
                 const temp = yield service_1.otpService.readOne(query.where);
                 if (temp && temp.try == 3) {
-                    const err = { code: 200, data: temp, message: "Max try reached please regenerate the otp" };
+                    const err = { code: 200, data: temp, message: "Max try reached please regenerate the OTP" };
                     return new utils_1.Api(response).error().code(402).send(err);
                 }
                 if (temp && temp.no === parseInt(inputs.no)) {
-                    return new utils_1.Api(response).success().code(200).send({ data: temp, message: "Otp Verified Successfully" });
+                    return new utils_1.Api(response).success().code(200).send({ data: temp, message: "OTP Verified Successfully" });
                 }
                 const noTry = parseInt(temp.try) + 1;
                 const updateData = yield service_1.otpService.update(query.where, { try: noTry });
-                return new utils_1.Api(response).error().code(211).send({ data: updateData, message: "Otp Doesn't match" });
+                return new utils_1.Api(response).error().code(211).send({ data: updateData, message: "OTP Doesn't Match" });
             }
             catch (e) {
                 return new utils_1.Api(response).error().code(200).send(e);
@@ -87,7 +99,19 @@ class Auth {
             const inputs = Object.assign(Object.assign({}, request.body), request.params);
             utils_1.log.info('controller.auth.register');
             try {
-                const user = yield service_1.userService.create(inputs);
+                const condition = { $or: [
+                        {
+                            email: inputs.email
+                        },
+                        {
+                            mobileNo: inputs.mobileNo
+                        }
+                    ] };
+                let user = yield service_1.userService.read(condition);
+                if (user.length > 0) {
+                    return new utils_1.Api(response).error().code(409).send({ data: user, message: "User Already Exist" });
+                }
+                user = yield service_1.userService.create(inputs);
                 return new utils_1.Api(response).success().code(200).send({ data: user, message: "Registered Succesful" });
             }
             catch (e) {

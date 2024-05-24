@@ -15,6 +15,9 @@ exports.auth = {
                 .required('Last Name is required'),
             dob: (0, yup_1.date)().required('Date of birth is required'),
             gender: (0, yup_1.string)().required('Gender is required'),
+            email: (0, yup_1.string)()
+                .email('Must be a valid email')
+                .required('Email is required'),
             mobileNo: (0, yup_1.number)()
                 .required('Mobile Number is required')
                 .min(1000000000)
@@ -53,7 +56,9 @@ exports.auth = {
             password: (0, yup_1.string)()
                 .required('Password is required')
                 .min(6, 'Password is too short - should be 6 chars minimum.'),
-            passwordConfirmation: (0, yup_1.string)().oneOf([(0, yup_1.ref)('password'), null], 'Passwords must match')
+            confirmPassword: (0, yup_1.string)()
+                .required('Confirm Password is required')
+                .oneOf([(0, yup_1.ref)('password'), null], 'Passwords must match')
         })
     }),
     login: (0, yup_1.object)({
