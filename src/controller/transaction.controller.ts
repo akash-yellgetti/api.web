@@ -37,13 +37,29 @@ class Transaction {
       // const self: any = this;
       // const file: any = _.find(files, { fieldname: 'file' });
     const fileData: any = Excel.CONVERT_TO_JSON(file.buffer);
+    const keyToReplace: any = { 
+      'Date': 'date', 
+      'Description': 'description', 
+      'Credit': 'credit', 
+      'Debit': 'debit',
+      'Balance': 'balance' 
+    };
+    let data = Excel.transform(fileData, keyToReplace);
+    data = _.map(data, (item: any) => {
+      return {
+        transactionDate: Excel.date2ms(item.date),
+        ...item
+      };
+    })
 
     const user = request.user;
     log.info('controller.User.detail');
     try {
       const Transaction: any = await transactionService.create({
         userId: user._id,
-        ...inputs
+        title: inputs.title,
+        description: inputs.description || '#',
+        data: data
       });
       const payload = {
         code: 200,
