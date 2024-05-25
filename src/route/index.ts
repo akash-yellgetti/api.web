@@ -5,7 +5,7 @@ export { moneyControl } from "./moneyControl.route";
 export { group } from "./group.route";
 export { conversation } from "./conversation.route";
 export { notification } from "./notification.route";
-export { personalTransaction } from "./personalTransaction.route";
+export { transaction } from "./transaction.route";
 export { fyers } from "./fyers.route";
 export { tradingview } from "./tradingview.route";
 export { contact } from "./contact.route";

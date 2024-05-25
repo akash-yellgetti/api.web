@@ -2,7 +2,13 @@ import * as XLSX from 'xlsx';
 import * as _ from 'lodash';
 export class Excel {
   public static CONVERT_TO_JSON(excelBuffer: any): any {
-    const workbook = XLSX.read(excelBuffer);
+    const workbook = XLSX.read(excelBuffer, {
+      raw: false,
+      // type: 'binary',
+      // cellDates: true,
+      // cellNF: false,
+      // cellText: false
+    });
     const sheetNameList = workbook.SheetNames;
     const json = XLSX.utils.sheet_to_json(workbook.Sheets[sheetNameList[0]], { defval: null });
     return json;

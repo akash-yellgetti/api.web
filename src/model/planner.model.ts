@@ -2,14 +2,15 @@ import mongoose from "mongoose";
 
 export interface PlannerDocument extends mongoose.Document {
   userId: string;
+  budgetId: string;
   type: string;
   title: string;
   description: string;
   principalAmount: number;
-  amount: number;
-  rate: number;
-  tenure: number;
-  data: object;
+  amount: number; //LOAN AMOUNT REMAINING
+  rate: number; //CURRENT INTEREST RATE
+  tenure: number; //TENURE REMAINING
+  data: object; // save all the data in object format
   isActive: number;
   createdBy: number;
   updatedBy: number;
@@ -22,6 +23,7 @@ export interface PlannerDocument extends mongoose.Document {
 const PlannerSchema = new mongoose.Schema(
   {
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    budgetId: { type: mongoose.Schema.Types.ObjectId, ref: "Budget", required: true },
     type: { type: String, required: true},
     title: { type: String, required: true},
     description: { type: String },

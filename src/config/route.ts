@@ -7,7 +7,7 @@ import {
   group,
   conversation,
   notification,
-  personalTransaction,
+  transaction,
   fyers,
   tradingview,
   device,
@@ -26,7 +26,7 @@ route.use('/money-control', moneyControl);
 route.use('/group', group);
 route.use('/conversation', conversation);
 route.use('/notification', notification);
-route.use('/personal/transaction', personalTransaction);
+route.use('/transaction', transaction);
 route.use('/fyers', fyers);
 route.use('/tradingview', tradingview);
 route.use('/device', device);

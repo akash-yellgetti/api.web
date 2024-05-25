@@ -2,27 +2,23 @@ import mongoose from 'mongoose';
 import { UserDocument } from './user.model';
 import { DeviceDocument } from './device.model';
 
-export interface PersoanlTransactionDocument extends mongoose.Document {
+export interface TransactionDocument extends mongoose.Document {
   userId: UserDocument['_id'];
-  
   title: string;
   description: string;
-  type: string;
-  amount: Number;
-  totalAmount: Number;
+  data: [Object];
   isActive: Number;
   createdAt: Date;
   updatedAt: Date;
 }
 
-const PersoanlTransactionSchema = new mongoose.Schema(
+const TransactionSchema = new mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
     },
-    date: { type: Date, required: true },
     title: {
       type: String,
       required: true
@@ -31,9 +27,7 @@ const PersoanlTransactionSchema = new mongoose.Schema(
       type: String,
       required: false
     },
-    type: { type: String, required: true },
-    amount: { type: Number, required: true },
-    totalAmount: { type: Number, required: false },
+    data: { type: [Object], required: true },
     isActive: { type: Number, default: 1 },
     createdBy: { type: String, default: null },
     updatedBy: { type: String, default: null }
@@ -41,7 +35,7 @@ const PersoanlTransactionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const PersoanlTransaction = mongoose.model<PersoanlTransactionDocument>(
-  'PersoanlTransaction',
-  PersoanlTransactionSchema
+export const Transaction = mongoose.model<TransactionDocument>(
+  'Transaction',
+  TransactionSchema
 );

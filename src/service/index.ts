@@ -11,7 +11,7 @@ export { moneyControlService } from "./moneyControl.service";
 export { conversationService } from "./conversation.service";
 export { conversationMemberService } from "./conversationMember.service";
 export { conversationMessageService } from "./conversationMessage.service";
-export { persoanlTransactionService } from "./persoanlTransaction.service";
+export { transactionService } from "./transaction.service";
 export { fyersService } from "./fyers.service";
 export { deviceService } from "./device.service";
 export { tradingviewService } from "./tradingview.service";

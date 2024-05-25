@@ -12,5 +12,5 @@ export { Conversation, ConversationDocument } from "./conversation.model";
 export { ConversationMember, ConversationMemberDocument } from "./conversationMember.model";
 export { ConversationMessage, ConversationMessageDocument } from "./conversationMessage.model";
 export { Notification, NotificationeDocument } from "./notification.model";
-export { PersoanlTransaction, PersoanlTransactionDocument } from "./persoanlTransaction.model";
+export { Transaction, TransactionDocument } from "./transaction.model";
 export { Tradingview, TradingviewDocument } from "./tradingview.model";
