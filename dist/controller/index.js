@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TradingviewController = exports.PlannerController = exports.CategoriesController = exports.BudgetController = exports.DeviceController = exports.ContactController = exports.FyersController = exports.PersonalTransactionController = exports.NotificationController = exports.ConversationController = exports.GroupController = exports.MoneyControlController = exports.UserController = exports.SocketController = exports.SessionController = exports.AuthController = void 0;
+exports.TradingviewController = exports.PlannerController = exports.CategoriesController = exports.BudgetController = exports.DeviceController = exports.ContactController = exports.FyersController = exports.TransactionController = exports.NotificationController = exports.ConversationController = exports.GroupController = exports.MoneyControlController = exports.UserController = exports.SocketController = exports.SessionController = exports.AuthController = void 0;
 var auth_controller_1 = require("./auth.controller");
 Object.defineProperty(exports, "AuthController", { enumerable: true, get: function () { return auth_controller_1.AuthController; } });
 var session_controller_1 = require("./session.controller");
@@ -17,8 +17,8 @@ var conversation_controller_1 = require("./conversation.controller");
 Object.defineProperty(exports, "ConversationController", { enumerable: true, get: function () { return conversation_controller_1.ConversationController; } });
 var notification_controller_1 = require("./notification.controller");
 Object.defineProperty(exports, "NotificationController", { enumerable: true, get: function () { return notification_controller_1.NotificationController; } });
-var personalTransaction_controller_1 = require("./personalTransaction.controller");
-Object.defineProperty(exports, "PersonalTransactionController", { enumerable: true, get: function () { return personalTransaction_controller_1.PersonalTransactionController; } });
+var transaction_controller_1 = require("./transaction.controller");
+Object.defineProperty(exports, "TransactionController", { enumerable: true, get: function () { return transaction_controller_1.TransactionController; } });
 var fyers_controller_1 = require("./fyers.controller");
 Object.defineProperty(exports, "FyersController", { enumerable: true, get: function () { return fyers_controller_1.FyersController; } });
 var contact_controller_1 = require("./contact.controller");

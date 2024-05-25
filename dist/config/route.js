@@ -12,7 +12,7 @@ exports.route.use('/money-control', route_1.moneyControl);
 exports.route.use('/group', route_1.group);
 exports.route.use('/conversation', route_1.conversation);
 exports.route.use('/notification', route_1.notification);
-exports.route.use('/personal/transaction', route_1.personalTransaction);
+exports.route.use('/transaction', route_1.transaction);
 exports.route.use('/fyers', route_1.fyers);
 exports.route.use('/tradingview', route_1.tradingview);
 exports.route.use('/device', route_1.device);

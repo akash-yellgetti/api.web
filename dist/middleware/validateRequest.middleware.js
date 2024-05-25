@@ -21,7 +21,7 @@ const validate = (schema) => (req, res, next) => __awaiter(void 0, void 0, void 
     }
     catch (e) {
         utils_1.log.error(e);
-        return new utils_1.Api(res).code(400).error().send({ message: 'Validation Failed.', data: e.inner });
+        return new utils_1.Api(res).code(422).error().send({ message: 'Validation Failed.', data: e.inner });
     }
 });
 exports.default = validate;

@@ -7,6 +7,7 @@ exports.Planner = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const PlannerSchema = new mongoose_1.default.Schema({
     userId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "User", required: true },
+    budgetId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Budget", required: true },
     type: { type: String, required: true },
     title: { type: String, required: true },
     description: { type: String },

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Tradingview = exports.PersoanlTransaction = exports.Notification = exports.ConversationMessage = exports.ConversationMember = exports.Conversation = exports.Otp = exports.Categories = exports.Device = exports.Session = exports.Socket = exports.Planner = exports.Budget = exports.Constant = exports.Contact = exports.User = void 0;
+exports.Tradingview = exports.Transaction = exports.Notification = exports.ConversationMessage = exports.ConversationMember = exports.Conversation = exports.Otp = exports.Categories = exports.Device = exports.Session = exports.Socket = exports.Planner = exports.Budget = exports.Constant = exports.Contact = exports.User = void 0;
 var user_model_1 = require("./user.model");
 Object.defineProperty(exports, "User", { enumerable: true, get: function () { return user_model_1.User; } });
 var contact_model_1 = require("./contact.model");
@@ -29,7 +29,7 @@ var conversationMessage_model_1 = require("./conversationMessage.model");
 Object.defineProperty(exports, "ConversationMessage", { enumerable: true, get: function () { return conversationMessage_model_1.ConversationMessage; } });
 var notification_model_1 = require("./notification.model");
 Object.defineProperty(exports, "Notification", { enumerable: true, get: function () { return notification_model_1.Notification; } });
-var persoanlTransaction_model_1 = require("./persoanlTransaction.model");
-Object.defineProperty(exports, "PersoanlTransaction", { enumerable: true, get: function () { return persoanlTransaction_model_1.PersoanlTransaction; } });
+var transaction_model_1 = require("./transaction.model");
+Object.defineProperty(exports, "Transaction", { enumerable: true, get: function () { return transaction_model_1.Transaction; } });
 var tradingview_model_1 = require("./tradingview.model");
 Object.defineProperty(exports, "Tradingview", { enumerable: true, get: function () { return tradingview_model_1.Tradingview; } });
