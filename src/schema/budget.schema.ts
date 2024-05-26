@@ -40,7 +40,7 @@ export const budget: any = {
         is: 'loan',
         then: object({
           borrowed: object({
-            date: number().required("Loan Borrowed Date Approx is required"),
+            date: date().required("Loan Borrowed Date Approx is required"),
             principalAmount: string().required("Loan Amount Paid is required"),
             amount: string().required("Loan Amount Borrowed is required"),
             rate: string().required("Rate Of Interest When Borrowed is required"),

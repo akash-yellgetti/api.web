@@ -40,4 +40,21 @@ const PlannerSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+
+
+PlannerSchema.virtual("user", {
+  ref: "User",
+  localField: "userId",
+  foreignField: "_id",
+  justOne: true,
+});
+
+PlannerSchema.virtual("budget", {
+  ref: "Budget",
+  localField: "budgetId",
+  foreignField: "_id",
+  justOne: true,
+});
+
+
 export const Planner = mongoose.model<PlannerDocument>("Planner", PlannerSchema);

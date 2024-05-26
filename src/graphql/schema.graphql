@@ -108,6 +108,19 @@ type hardDeleteOne {
 type Budget {
   _id: String!,
   userId: String!
+  type: String
+  category: String!
+  subcategory: String!
+  title: String!
+  description: String!
+  amount: String!
+  isActive: String!
+  user: User,
+}
+
+input BudgetInput {
+  userId: String!
+  type: String!
   category: String!
   subcategory: String!
   title: String!
@@ -116,25 +129,40 @@ type Budget {
   isActive: String!
 }
 
-input BudgetInput {
-  userId: String!
-  category: String!
-  subcategory: String!
-  title: String!
-  description: String!
-  amount: String!
-  isActive: String!
+input BudgetQueryInput {
+  userId: String
+  type: String
+  category: String
+  subcategory: String
+  title: String
+  description: String
+  amount: String
+  isActive: String
 }
 
 
 type Planner {
   _id: String!,
+  budgetId: String!
   userId: String!
+  title: String!
+  description: String!
+  data: String!
+  isActive: String!,
+  budget: Budget,
+  user: User,
+}
+
+input PlannerQueryInput {
+  userId: String!
+  type: String!
   title: String!
   description: String!
   data: String!
   isActive: String!
 }
+
+
 
 input PlannerInput {
   userId: String!
@@ -247,7 +275,8 @@ type Query {
   getConstants(input: ConstantQueryInput): [Constant],
   getDevice(id: String!): Device,
   getDevices: [Device],
-  getBudget: [Budget],
+  getBudget(input: BudgetQueryInput): [Budget],
+  getPlanner(input: PlannerQueryInput): [Planner],
   getCategories(input: QueryCategoryInput): [Category],
   getSocket(id: String!): Socket,
   getSockets(input: SocketInput): [Socket],

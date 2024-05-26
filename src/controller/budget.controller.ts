@@ -25,7 +25,7 @@ class Budget {
     inputs.userId = user._id;
     log.info('controller.budget.create');
     try {
-      const data: any = await budgetService.create(inputs);
+      const data: any = await budgetService.processCreate(inputs);
       const payload = { code: 200, data, message: 'Budget create.' };
       return new Api(response).success().code(200).send(payload);
     } catch (e) {
