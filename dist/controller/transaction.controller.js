@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TransactionController = void 0;
 const service_1 = require("../service");
 const utils_1 = require("../utils");
+const lodash_1 = __importDefault(require("lodash"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const excel_util_1 = require("../utils/excel.util");
 class Transaction {
@@ -45,10 +46,26 @@ class Transaction {
             // const self: any = this;
             // const file: any = _.find(files, { fieldname: 'file' });
             const fileData = excel_util_1.Excel.CONVERT_TO_JSON(file.buffer);
+            const keyToReplace = {
+                'Date': 'date',
+                'Description': 'description',
+                'Credit': 'credit',
+                'Debit': 'debit',
+                'Balance': 'balance'
+            };
+            let data = excel_util_1.Excel.transform(fileData, keyToReplace);
+            data = lodash_1.default.map(data, (item) => {
+                return Object.assign({ transactionDate: excel_util_1.Excel.date2ms(item.date) }, item);
+            });
             const user = request.user;
             utils_1.log.info('controller.User.detail');
             try {
-                const Transaction = yield service_1.transactionService.create(Object.assign({ userId: user._id }, inputs));
+                const Transaction = yield service_1.transactionService.create({
+                    userId: user._id,
+                    title: inputs.title,
+                    description: inputs.description || '#',
+                    data: data
+                });
                 const payload = {
                     code: 200,
                     data: Transaction,

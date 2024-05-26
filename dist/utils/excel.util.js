@@ -48,5 +48,16 @@ class Excel {
         });
         return json;
     }
+    static date2ms(d) {
+        let date = new Date(Math.round((d - 25569) * 864e5));
+        // date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+        return date;
+    }
+    static transform(array, keyToReplace) {
+        return array.map((item) => Object.fromEntries(Object.entries(item).map(([key, value]) => [
+            keyToReplace[key] || key,
+            value
+        ])));
+    }
 }
 exports.Excel = Excel;
