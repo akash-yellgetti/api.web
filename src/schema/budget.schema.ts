@@ -13,27 +13,37 @@ export const budget: any = {
       .when('type', {
         is: 'goal',
         then: object({
-          principalAmount: string().required("Principal Amount is required"),
-          amount: string().required("Amount is required"),
-          rate: string().required("Rate Of Interest is required"),
-          tenure: string().required("Tenure is required"),
+          old: object({
+            date: date().required("Investment Start Date Approx is required"),
+            amount: string().required("Target Investment Amount at the time of start of investment is required"),
+            rate: string().required("Rate Of Interest at the time of start of investment is required"),
+            tenure: string().required("Tenure at the time of start of investment is required"),
+          }),
+          current: object({
+            principalAmount: string().required("Currently Accumlated Investment Amount is required"),
+            amount: string().required("Current Targeted Investment Amount is required"),
+            rate: string().required("Current Rate Of Interest is required"),
+            tenure: string().required("Current Remaining Tenure of investment is required"),
+            isActive: string().required("Current Remaining Tenure of investment is required"),
+          }),
         }),
       })
       .when('type', {
         is: 'investment',
         then: object({
-          principalAmount: string().required("Principal Amount is required"),
-          amount: string().required("Amount is required"),
-          rate: string().required("Rate Of Interest is required"),
-          isActive: number().required("Is Active is required"),
-          tenure: string().when('isActive', {
-            is: 1,
-            then: object({
-              date: number().required("Start Date Approx is required"),
-              // tenure: string().required("Tenure is required"),
-            }),
+          old: object({
+            date: date().required("Investment Start Date Approx is required"),
+            amount: string().required("Target Investment Amount at the time of start of investment is required"),
+            rate: string().required("Rate Of Interest at the time of start of investment is required"),
+            tenure: string().required("Tenure at the time of start of investment is required"),
           }),
-          
+          current: object({
+            principalAmount: string().required("Currently Accumlated Investment Amount is required"),
+            amount: string().required("Current Targeted Investment Amount is required"),
+            rate: string().required("Current Rate Of Interest is required"),
+            tenure: string().required("Current Remaining Tenure of investment is required"),
+            isActive: string().required("Current Remaining Tenure of investment is required"),
+          }),
         }),
       })
       .when('category', {

@@ -22,7 +22,14 @@ class BudgetService extends Model {
     switch (inputs.type) {
       case 'investment':
       case 'goal':
-        
+        const data: any = _.omit(inputs, ['planner']);
+          // data.amount = _.get(inputs, 'planner.current.amount', 0);
+          budget = await this.create(data);
+          const current: any = _.omit(inputs.planner.current, ['emi']);
+          // current.amount = budget.amount;
+          await plannerService.create({ budgetId: budget._id, userId: budget.userId, title: data.title, description: data.description, type: inputs.type, data: inputs.planner, 
+            ...current
+          });
         break;
       case 'expense':
         if(inputs.category === 'loan') {
@@ -30,7 +37,7 @@ class BudgetService extends Model {
           data.amount = _.get(inputs, 'planner.current.emi', 0);
           budget = await this.create(data);
           const current: any = _.omit(inputs.planner.current, ['emi']);
-          plannerService.create({ budgetId: budget._id, userId: budget.userId, title: data.title, description: data.description, type: inputs.category, data: inputs.planner, 
+          await plannerService.create({ budgetId: budget._id, userId: budget.userId, title: data.title, description: data.description, type: inputs.category, data: inputs.planner, 
             ...current
           });
         }
