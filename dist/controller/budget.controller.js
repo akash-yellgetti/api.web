@@ -33,7 +33,7 @@ class Budget {
             inputs.userId = user._id;
             utils_1.log.info('controller.budget.create');
             try {
-                const data = yield service_1.budgetService.create(inputs);
+                const data = yield service_1.budgetService.processCreate(inputs);
                 const payload = { code: 200, data, message: 'Budget create.' };
                 return new utils_1.Api(response).success().code(200).send(payload);
             }

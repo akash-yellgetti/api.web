@@ -21,4 +21,16 @@ const PlannerSchema = new mongoose_1.default.Schema({
     updatedBy: { type: Number, default: null },
     deletedBy: { type: Number, default: null },
 }, { timestamps: true });
+PlannerSchema.virtual("user", {
+    ref: "User",
+    localField: "userId",
+    foreignField: "_id",
+    justOne: true,
+});
+PlannerSchema.virtual("budget", {
+    ref: "Budget",
+    localField: "budgetId",
+    foreignField: "_id",
+    justOne: true,
+});
 exports.Planner = mongoose_1.default.model("Planner", PlannerSchema);

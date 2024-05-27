@@ -15,25 +15,36 @@ exports.budget = {
                 .when('type', {
                 is: 'goal',
                 then: (0, yup_1.object)({
-                    principalAmount: (0, yup_1.string)().required("Principal Amount is required"),
-                    amount: (0, yup_1.string)().required("Amount is required"),
-                    rate: (0, yup_1.string)().required("Rate Of Interest is required"),
-                    tenure: (0, yup_1.string)().required("Tenure is required"),
+                    old: (0, yup_1.object)({
+                        date: (0, yup_1.date)().required("Investment Start Date Approx is required"),
+                        amount: (0, yup_1.string)().required("Target Investment Amount at the time of start of investment is required"),
+                        rate: (0, yup_1.string)().required("Rate Of Interest at the time of start of investment is required"),
+                        tenure: (0, yup_1.string)().required("Tenure at the time of start of investment is required"),
+                    }),
+                    current: (0, yup_1.object)({
+                        principalAmount: (0, yup_1.string)().required("Currently Accumlated Investment Amount is required"),
+                        amount: (0, yup_1.string)().required("Current Targeted Investment Amount is required"),
+                        rate: (0, yup_1.string)().required("Current Rate Of Interest is required"),
+                        tenure: (0, yup_1.string)().required("Current Remaining Tenure of investment is required"),
+                        isActive: (0, yup_1.string)().required("Current Remaining Tenure of investment is required"),
+                    }),
                 }),
             })
                 .when('type', {
                 is: 'investment',
                 then: (0, yup_1.object)({
-                    principalAmount: (0, yup_1.string)().required("Principal Amount is required"),
-                    amount: (0, yup_1.string)().required("Amount is required"),
-                    rate: (0, yup_1.string)().required("Rate Of Interest is required"),
-                    isActive: (0, yup_1.number)().required("Is Active is required"),
-                    tenure: (0, yup_1.string)().when('isActive', {
-                        is: 1,
-                        then: (0, yup_1.object)({
-                            date: (0, yup_1.number)().required("Start Date Approx is required"),
-                            // tenure: string().required("Tenure is required"),
-                        }),
+                    old: (0, yup_1.object)({
+                        date: (0, yup_1.date)().required("Investment Start Date Approx is required"),
+                        amount: (0, yup_1.string)().required("Target Investment Amount at the time of start of investment is required"),
+                        rate: (0, yup_1.string)().required("Rate Of Interest at the time of start of investment is required"),
+                        tenure: (0, yup_1.string)().required("Tenure at the time of start of investment is required"),
+                    }),
+                    current: (0, yup_1.object)({
+                        principalAmount: (0, yup_1.string)().required("Currently Accumlated Investment Amount is required"),
+                        amount: (0, yup_1.string)().required("Current Targeted Investment Amount is required"),
+                        rate: (0, yup_1.string)().required("Current Rate Of Interest is required"),
+                        tenure: (0, yup_1.string)().required("Current Remaining Tenure of investment is required"),
+                        isActive: (0, yup_1.string)().required("Current Remaining Tenure of investment is required"),
                     }),
                 }),
             })
@@ -41,7 +52,7 @@ exports.budget = {
                 is: 'loan',
                 then: (0, yup_1.object)({
                     borrowed: (0, yup_1.object)({
-                        date: (0, yup_1.number)().required("Loan Borrowed Date Approx is required"),
+                        date: (0, yup_1.date)().required("Loan Borrowed Date Approx is required"),
                         principalAmount: (0, yup_1.string)().required("Loan Amount Paid is required"),
                         amount: (0, yup_1.string)().required("Loan Amount Borrowed is required"),
                         rate: (0, yup_1.string)().required("Rate Of Interest When Borrowed is required"),

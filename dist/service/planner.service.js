@@ -6,9 +6,13 @@ const model_1 = require("../model");
 class PlannerService extends model_service_1.Model {
     constructor() {
         super(model_1.Planner);
-        this.populate = [{
+        this.populate = [
+            {
                 path: 'user', model: 'User', strictPopulate: false,
-            }];
+            }, {
+                path: 'budget', model: 'Budget', strictPopulate: false,
+            }
+        ];
     }
 }
 exports.plannerService = new PlannerService();
