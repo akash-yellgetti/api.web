@@ -13,7 +13,8 @@ export interface UserDocument extends mongoose.Document {
   password: string;
   avatar: string,
   avatareBackground?: string,
-  Active: number;
+  entryData: any;
+  isActive: number;
   createdBy: number;
   updatedBy: number;
   deletedBy?: number;
@@ -33,6 +34,7 @@ const UserSchema = new Schema(
     password: { type: String, required: true },
     avatar: { type: String, required: false },
     avatareBackground: { type: String, required: false },
+    entryData: { type: Object, required: false },
     isActive: { type: Number, default: 1 },
     createdBy: { type: Number, default: null },
     updatedBy: { type: Number, default: null },

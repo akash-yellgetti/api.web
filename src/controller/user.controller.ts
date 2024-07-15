@@ -67,7 +67,7 @@ class User {
   }
 
   update = async (request: any, response: express.Response) => {
-    const inputs = _.pick({ ...request.body, ...request.params}, ['firstName', 'lastName']);
+    const inputs = _.pick({ ...request.body, ...request.params}, ['firstName', 'lastName', 'entryData']);
     const user = request.user;
     log.info('controller.User.detail');
     try {
